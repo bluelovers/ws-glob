@@ -1,7 +1,7 @@
 {
   "name": "node-novel-globby",
   "version": "1.0.0",
-  "description": "",
+  "description": "globby module for node-novel",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,7 +12,8 @@
   "dependencies": {
     "bluebird": "^3.5.1",
     "globby": "^7.1.1",
-    "str-util": "^2.3.3"
+    "str-util": "^2.3.3",
+    "zh2cht": "0.0.2"
   },
   "devDependencies": {
     "@types/globby": "^6.1.0"

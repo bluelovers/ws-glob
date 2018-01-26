@@ -42,6 +42,7 @@ export declare function globbySync(patterns?: string[], options?: IOptions): IRe
 export declare function globbyASync(options: IOptions): Promise<IReturnList>;
 export declare function globbyASync(patterns?: string[], options?: IOptions): Promise<IReturnList>;
 export declare function glob_to_list(glob_ls: string[], options?: IOptions): IReturnList2;
+export declare function normalize_val(str: string): string;
 export declare function _p_sort_list1(ls: IReturnList2, options?: IOptions): {};
 export declare function _p_sort_list2(ls: any, options?: IOptions): IReturnList;
 export declare function p_sort_list(ls: IReturnList2, options?: IOptions): IReturnList;

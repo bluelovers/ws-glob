@@ -4,6 +4,7 @@ const Promise = require("bluebird");
 const path = require("path");
 const globby = require("globby");
 const StrUtil = require("str-util");
+const zh2cht_1 = require("zh2cht");
 exports.defaultPatternsExclude = [
     '!**/*.raw.*',
     '!**/*.new.*',
@@ -89,6 +90,8 @@ function glob_to_list(glob_ls, options = {}) {
             val_dir: dir.trim(),
         };
         if (options.useAutoHandle) {
+            row.val_file = StrUtil.toHalfWidth(row.val_file);
+            row.val_dir = StrUtil.toHalfWidth(row.val_dir);
             let r;
             if (/^\d+[\s_](.+)(_\(\d+\))$/.exec(row.volume_title)) {
                 row.volume_title = RegExp.$1;
@@ -126,20 +129,10 @@ function glob_to_list(glob_ls, options = {}) {
             if (r.test(row.val_file)) {
                 row.val_file = row.val_file.replace(r, '$1$2');
             }
-            row.val_file = row.val_file
-                .replace(/\-/g, '_');
-            row.val_dir = row.val_dir
-                .replace(/\-/g, '_');
             row.volume_title = row.volume_title.trim();
             row.chapter_title = row.chapter_title.trim();
-            row.val_dir = row.val_dir.trim();
-            row.val_file = row.val_file.trim();
-            row.val_dir = StrUtil.zh2jp(StrUtil.toHalfWidth(row.val_dir), {
-                safe: false,
-            });
-            row.val_file = StrUtil.zh2jp(StrUtil.toHalfWidth(row.val_file), {
-                safe: false,
-            });
+            row.val_dir = normalize_val(row.val_dir);
+            row.val_file = normalize_val(row.val_file);
         }
         a[row.val_dir] = a[row.val_dir] || {};
         a[row.val_dir][row.val_file] = row;
@@ -147,6 +140,18 @@ function glob_to_list(glob_ls, options = {}) {
     }, {});
 }
 exports.glob_to_list = glob_to_list;
+function normalize_val(str) {
+    str = StrUtil.toHalfWidth(str);
+    str = StrUtil.trim(str, '　');
+    str = str
+        .replace(/[―—一－──\-]/g, '_')
+        .replace(/\s/g, '_');
+    str = StrUtil.zh2jp(zh2cht_1.toCht(str), {
+        safe: false,
+    });
+    return str;
+}
+exports.normalize_val = normalize_val;
 function _p_sort_list1(ls, options = {}) {
     let ks = Object.keys(ls)
         .reduce(function (a, b) {

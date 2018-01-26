@@ -6,6 +6,7 @@ import * as Promise from 'bluebird';
 import * as path from 'path';
 import * as globby from 'globby';
 import * as StrUtil from 'str-util';
+import { toCht } from 'zh2cht';
 
 import { IOptions as IGlobOptions } from 'glob';
 
@@ -122,8 +123,6 @@ export function globbySync(patterns?, options: IOptions = {}): IReturnList
 	return p_sort_list(glob_to_list(ls, options), options);
 }
 
-
-
 export function globbyASync(options: IOptions): Promise<IReturnList>
 export function globbyASync(patterns?: string[], options?: IOptions): Promise<IReturnList>
 export function globbyASync(patterns?, options: IOptions = {}): Promise<IReturnList>
@@ -183,6 +182,9 @@ export function glob_to_list(glob_ls: string[], options: IOptions = {}): IReturn
 
 		if (options.useAutoHandle)
 		{
+			row.val_file = StrUtil.toHalfWidth(row.val_file);
+			row.val_dir = StrUtil.toHalfWidth(row.val_dir);
+
 			let r: RegExp;
 
 			if (/^\d+[\s_](.+)(_\(\d+\))$/.exec(row.volume_title))
@@ -240,24 +242,11 @@ export function glob_to_list(glob_ls: string[], options: IOptions = {}): IReturn
 				row.val_file = row.val_file.replace(r, '$1$2');
 			}
 
-			row.val_file = row.val_file
-				.replace(/\-/g, '_')
-			;
-			row.val_dir = row.val_dir
-				.replace(/\-/g, '_')
-			;
-
 			row.volume_title = row.volume_title.trim();
 			row.chapter_title = row.chapter_title.trim();
-			row.val_dir = row.val_dir.trim();
-			row.val_file = row.val_file.trim();
 
-			row.val_dir = StrUtil.zh2jp(StrUtil.toHalfWidth(row.val_dir), {
-				safe: false,
-			});
-			row.val_file = StrUtil.zh2jp(StrUtil.toHalfWidth(row.val_file), {
-				safe: false,
-			});
+			row.val_dir = normalize_val(row.val_dir);
+			row.val_file = normalize_val(row.val_file);
 		}
 
 		a[row.val_dir] = a[row.val_dir] || {};
@@ -265,6 +254,23 @@ export function glob_to_list(glob_ls: string[], options: IOptions = {}): IReturn
 
 		return a;
 	}, {});
+}
+
+export function normalize_val(str: string): string
+{
+	str = StrUtil.toHalfWidth(str);
+	str = StrUtil.trim(str, '　');
+
+	str = str
+		.replace(/[―—一－──\-]/g, '_')
+		.replace(/\s/g, '_')
+	;
+
+	str = StrUtil.zh2jp(toCht(str) as string, {
+		safe: false,
+	});
+
+	return str;
 }
 
 export function _p_sort_list1(ls: IReturnList2, options: IOptions = {})
