@@ -70,6 +70,16 @@ function globbyASync(patterns, options = {}) {
     });
 }
 exports.globbyASync = globbyASync;
+function returnGlobList(ls, options = {}) {
+    return Object.keys(ls)
+        .reduce(function (a, b) {
+        ls[b].forEach(function (value, index, array) {
+            a.push(options.useSourcePath ? value.path_source : value.path);
+        });
+        return a;
+    }, []);
+}
+exports.returnGlobList = returnGlobList;
 function glob_to_list(glob_ls, options = {}) {
     if (!Array.isArray(glob_ls) || !glob_ls.length) {
         throw new Error('glob_to_list');
@@ -79,6 +89,7 @@ function glob_to_list(glob_ls, options = {}) {
         let ext = path.extname(b);
         let file = path.basename(b, ext);
         let row = {
+            path_source: b,
             path: options.cwd && !path.isAbsolute(b) ? path.join(options.cwd, b) : b,
             path_dir: options.cwd && !path.isAbsolute(dir) ? path.join(options.cwd, dir) : dir,
             dir: dir,

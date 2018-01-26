@@ -34,15 +34,73 @@
 
 ```ts
 import globbyASync from 'node-novel-globby';
-import { globbyASync, globbySync } from 'node-novel-globby';
+import { globbyASync, globbySync, returnGlobList } from 'node-novel-globby';
 const globbyASync = require('node-novel-globby').globbyASync;
 ```
 
 ```ts
-globbyASync().tap(function (ls)
-{
-	console.log(ls);
-});
+globbyASync(patterns: string[], options: IOptions)
+	.tap(function (ls)
+	{
+		console.log(ls);
+	})
+	.then(returnGlobList)
+	.tap(function (ls)
+	{
+		console.log(ls);
+	})
+;
 
 console.log(globbySync());
+```
+
+### output
+
+```js
+{ temp: 
+   [ { path: 'temp/00000_序曲.txt',
+       path_dir: 'temp',
+       dir: 'temp',
+       file: '00000_序曲',
+       ext: '.txt',
+       volume_title: 'temp',
+       chapter_title: '序曲',
+       val_file: '00000_序曲',
+       val_dir: 'temp' },
+     { path: 'temp/0000_转载信息.64849.txt',
+       path_dir: 'temp',
+       dir: 'temp',
+       file: '0000_转载信息.64849',
+       ext: '.txt',
+       volume_title: 'temp',
+       chapter_title: '转载信息',
+       val_file: '0000_転載信息.64849',
+       val_dir: 'temp' },
+     { path: 'temp/六話　練級 経験值来源都多虧了山賊.txt',
+       path_dir: 'temp',
+       dir: 'temp',
+       file: '六話　練級 経験值来源都多虧了山賊',
+       ext: '.txt',
+       volume_title: 'temp',
+       chapter_title: '六話　練級 経験值来源都多虧了山賊',
+       val_file: '0006_練級_経験值来源都多虧了山賊',
+       val_dir: 'temp' },
+     { path: 'temp/123.txt',
+       path_dir: 'temp',
+       dir: 'temp',
+       file: '123',
+       ext: '.txt',
+       volume_title: 'temp',
+       chapter_title: '123',
+       val_file: '0123',
+       val_dir: 'temp' } ] }
+```
+
+### with returnGlobList
+
+```js
+[ 'temp/00000_序曲.txt',
+  'temp/0000_转载信息.64849.txt',
+  'temp/六話　練級 経験值来源都多虧了山賊.txt',
+  'temp/123.txt' ]
 ```

@@ -17,6 +17,7 @@ export interface IReturnOptions {
     options: IOptions;
 }
 export interface IReturnRow {
+    path_source: string;
     path: string;
     path_dir: string;
     dir: string;
@@ -41,6 +42,10 @@ export declare function globbySync(options: IOptions): IReturnList;
 export declare function globbySync(patterns?: string[], options?: IOptions): IReturnList;
 export declare function globbyASync(options: IOptions): Promise<IReturnList>;
 export declare function globbyASync(patterns?: string[], options?: IOptions): Promise<IReturnList>;
+export interface IReturnGlobListOptions {
+    useSourcePath?: boolean;
+}
+export declare function returnGlobList(ls: IReturnList, options?: IReturnGlobListOptions): string[];
 export declare function glob_to_list(glob_ls: string[], options?: IOptions): IReturnList2;
 export declare function normalize_val(str: string): string;
 export declare function _p_sort_list1(ls: IReturnList2, options?: IOptions): {};

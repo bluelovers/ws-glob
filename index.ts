@@ -57,6 +57,7 @@ export interface IReturnOptions
 
 export interface IReturnRow
 {
+	path_source: string,
 	path: string,
 	path_dir: string,
 	dir: string,
@@ -148,6 +149,26 @@ export function globbyASync(patterns?, options: IOptions = {}): Promise<IReturnL
 	;
 }
 
+export interface IReturnGlobListOptions
+{
+	useSourcePath?: boolean,
+}
+
+export function returnGlobList(ls: IReturnList, options: IReturnGlobListOptions = {}): string[]
+{
+	return Object.keys(ls)
+		.reduce(function (a, b)
+		{
+			ls[b].forEach(function (value, index, array)
+			{
+				a.push(options.useSourcePath ? value.path_source : value.path);
+			});
+
+			return a;
+		}, [])
+	;
+}
+
 export function glob_to_list(glob_ls: string[], options: IOptions = {}): IReturnList2
 {
 	if (!Array.isArray(glob_ls) || !glob_ls.length)
@@ -165,7 +186,9 @@ export function glob_to_list(glob_ls: string[], options: IOptions = {}): IReturn
 
 		//console.log(b);
 
-		let row = {
+		let row: IReturnRow = {
+			path_source: b,
+
 			path: options.cwd && !path.isAbsolute(b) ? path.join(options.cwd, b) : b,
 			path_dir: options.cwd && !path.isAbsolute(dir) ? path.join(options.cwd, dir) : dir,
 
