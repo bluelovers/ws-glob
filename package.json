@@ -17,5 +17,16 @@
   },
   "devDependencies": {
     "@types/globby": "^6.1.0"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bluelovers/node-novel-globby.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bluelovers/node-novel-globby/issues"
+  },
+  "homepage": "https://github.com/bluelovers/node-novel-globby#readme"
 }
