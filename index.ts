@@ -373,5 +373,6 @@ export function p_sort_list(ls: IReturnList2, options: IOptions = {}): IReturnLi
 	return _p_sort_list2(ret, options);
 }
 
-export default globbyASync;
+import * as self from './index';
+export default self;
 //export default exports;

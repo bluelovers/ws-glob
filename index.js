@@ -208,4 +208,5 @@ function p_sort_list(ls, options = {}) {
     return _p_sort_list2(ret, options);
 }
 exports.p_sort_list = p_sort_list;
-exports.default = globbyASync;
+const self = require("./index");
+exports.default = self;

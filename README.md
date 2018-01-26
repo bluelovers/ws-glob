@@ -33,7 +33,7 @@
 ## demo
 
 ```ts
-import globbyASync from 'node-novel-globby';
+import novelGlobby from 'node-novel-globby';
 import { globbyASync, globbySync, returnGlobList } from 'node-novel-globby';
 const globbyASync = require('node-novel-globby').globbyASync;
 ```

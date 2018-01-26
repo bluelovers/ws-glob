@@ -54,4 +54,5 @@ export declare function normalize_val(str: string): string;
 export declare function _p_sort_list1(ls: IReturnList2, options?: IOptions): {};
 export declare function _p_sort_list2(ls: any, options?: IOptions): IReturnList;
 export declare function p_sort_list(ls: IReturnList2, options?: IOptions): IReturnList;
-export default globbyASync;
+import * as self from './index';
+export default self;
