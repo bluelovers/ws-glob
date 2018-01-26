@@ -1,12 +1,14 @@
 {
   "name": "node-novel-globby",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "globby module for node-novel",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+    "node-novel"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {

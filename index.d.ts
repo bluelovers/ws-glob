@@ -5,9 +5,10 @@ export interface IOptions extends IGlobOptions {
     cwd?: string;
     absolute?: boolean;
     useDefaultPatternsExclude?: boolean;
-    useAutoHandle?: boolean;
+    disableAutoHandle?: boolean;
     disableSort?: boolean;
     libPromise?: Promise;
+    onListRow?: (a: IReturnList2, row: IReturnRow, options: IOptions) => IReturnRow;
 }
 export declare const defaultPatternsExclude: string[];
 export declare const defaultPatterns: string[];
@@ -17,7 +18,8 @@ export interface IReturnOptions {
     options: IOptions;
 }
 export interface IReturnRow {
-    path_source: string;
+    source_idx: number;
+    source_path: string;
     path: string;
     path_dir: string;
     dir: string;
@@ -42,6 +44,7 @@ export declare function globbySync(options: IOptions): IReturnList;
 export declare function globbySync(patterns?: string[], options?: IOptions): IReturnList;
 export declare function globbyASync(options: IOptions): Promise<IReturnList>;
 export declare function globbyASync(patterns?: string[], options?: IOptions): Promise<IReturnList>;
+export declare function globToList(glob_ls: string[], options?: IOptions): IReturnList;
 export interface IReturnGlobListOptions {
     useSourcePath?: boolean;
 }

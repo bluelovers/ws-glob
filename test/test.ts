@@ -4,7 +4,17 @@
 
 import * as self from '..';
 
-self.globbyASync()
+let a;
+
+self
+	.globbyASync({
+		onListRow(a, row)
+		{
+			console.log(row.chapter_title, row.source_idx);
+
+			return row;
+		}
+	})
 	.tap(function (ls)
 	{
 		console.log(ls);
@@ -13,5 +23,9 @@ self.globbyASync()
 	.tap(function (ls)
 	{
 		console.log(ls);
+	})
+	.tap(function (ls)
+	{
+		console.log(self.globToList(ls));
 	})
 ;

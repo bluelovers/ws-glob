@@ -17,10 +17,12 @@ export interface IOptions extends IGlobOptions
 
 	useDefaultPatternsExclude?: boolean,
 
-	useAutoHandle?: boolean,
+	disableAutoHandle?: boolean,
 	disableSort?: boolean,
 
 	libPromise?: Promise,
+
+	onListRow?: (a: IReturnList2, row: IReturnRow, options: IOptions) => IReturnRow,
 }
 
 export const defaultPatternsExclude: string[] = [
@@ -44,9 +46,9 @@ export const defaultPatterns: string[] = [
 ];
 
 export const defaultOptions: IOptions = {
-	absolute: false,
+	//absolute: false,
 	useDefaultPatternsExclude: true,
-	useAutoHandle: true,
+	disableAutoHandle: false,
 };
 
 export interface IReturnOptions
@@ -57,7 +59,8 @@ export interface IReturnOptions
 
 export interface IReturnRow
 {
-	path_source: string,
+	source_idx: number,
+	source_path: string,
 	path: string,
 	path_dir: string,
 	dir: string,
@@ -121,7 +124,7 @@ export function globbySync(patterns?, options: IOptions = {}): IReturnList
 
 	let ls = globby.sync(patterns, options);
 
-	return p_sort_list(glob_to_list(ls, options), options);
+	return globToList(ls, options);
 }
 
 export function globbyASync(options: IOptions): Promise<IReturnList>
@@ -140,13 +143,14 @@ export function globbyASync(patterns?, options: IOptions = {}): Promise<IReturnL
 	return p.resolve(ls)
 		.then(function (ls)
 		{
-			return glob_to_list(ls, options);
-		})
-		.then(function (ls)
-		{
-			return p_sort_list(ls, options);
+			return globToList(ls, options);
 		})
 	;
+}
+
+export function globToList(glob_ls: string[], options: IOptions = {}): IReturnList
+{
+	return p_sort_list(glob_to_list(glob_ls, options), options);
 }
 
 export interface IReturnGlobListOptions
@@ -157,11 +161,11 @@ export interface IReturnGlobListOptions
 export function returnGlobList(ls: IReturnList, options: IReturnGlobListOptions = {}): string[]
 {
 	return Object.keys(ls)
-		.reduce(function (a, b)
+		.reduce(function (a: string[], b)
 		{
 			ls[b].forEach(function (value, index, array)
 			{
-				a.push(options.useSourcePath ? value.path_source : value.path);
+				a.push(options.useSourcePath ? value.source_path : value.path);
 			});
 
 			return a;
@@ -178,7 +182,7 @@ export function glob_to_list(glob_ls: string[], options: IOptions = {}): IReturn
 
 	//console.log(glob_ls);
 
-	return glob_ls.reduce(function (a, b)
+	return glob_ls.reduce(function (a: IReturnList2, b: string, source_idx: number)
 	{
 		let dir = path.dirname(b);
 		let ext = path.extname(b);
@@ -187,7 +191,9 @@ export function glob_to_list(glob_ls: string[], options: IOptions = {}): IReturn
 		//console.log(b);
 
 		let row: IReturnRow = {
-			path_source: b,
+			source_path: b,
+
+			source_idx,
 
 			path: options.cwd && !path.isAbsolute(b) ? path.join(options.cwd, b) : b,
 			path_dir: options.cwd && !path.isAbsolute(dir) ? path.join(options.cwd, dir) : dir,
@@ -203,7 +209,7 @@ export function glob_to_list(glob_ls: string[], options: IOptions = {}): IReturn
 			val_dir: dir.trim(),
 		};
 
-		if (options.useAutoHandle)
+		if (!options.disableAutoHandle)
 		{
 			row.val_file = StrUtil.toHalfWidth(row.val_file);
 			row.val_dir = StrUtil.toHalfWidth(row.val_dir);
@@ -223,7 +229,7 @@ export function glob_to_list(glob_ls: string[], options: IOptions = {}): IReturn
 			{
 				row.chapter_title = RegExp.$1;
 			}
-			else if (/^\d{4,5}_(.+)$/.exec(row.chapter_title))
+			else if (/^\d{4,}_(.+)$/.exec(row.chapter_title))
 			{
 				row.chapter_title = RegExp.$1;
 			}
@@ -232,9 +238,9 @@ export function glob_to_list(glob_ls: string[], options: IOptions = {}): IReturn
 				row.chapter_title = '0_' + row.chapter_title;
 			}
 
-			r = /^第?(\d+)[話话]/;
 			let s2 = StrUtil.zh2num(row.val_file) as string;
 
+			r = /^第?(\d+)[話话]/;
 			if (r.test(s2))
 			{
 				row.val_file = s2.replace(r, '$1')
@@ -252,12 +258,7 @@ export function glob_to_list(glob_ls: string[], options: IOptions = {}): IReturn
 				});
 			}
 
-			row.val_dir = StrUtil.toHalfNumber(StrUtil.zh2num(row.val_dir).toString());
-
-			row.val_dir = row.val_dir.replace(/\d+/g, function ($0)
-			{
-				return $0.padStart(4, '0');
-			});
+			//row.val_dir = StrUtil.toHalfNumber(StrUtil.zh2num(row.val_dir).toString());
 
 			r = /^(web)版(\d+)/;
 			if (r.test(row.val_file))
@@ -272,6 +273,16 @@ export function glob_to_list(glob_ls: string[], options: IOptions = {}): IReturn
 			row.val_file = normalize_val(row.val_file);
 		}
 
+		if (options.onListRow)
+		{
+			row = options.onListRow(a, row, options);
+
+			if (!row)
+			{
+				throw new Error('onListRow');
+			}
+		}
+
 		a[row.val_dir] = a[row.val_dir] || {};
 		a[row.val_dir][row.val_file] = row;
 
@@ -284,7 +295,15 @@ export function normalize_val(str: string): string
 	str = StrUtil.toHalfWidth(str);
 	str = StrUtil.trim(str, '　');
 
+	str = StrUtil.zh2num(str).toString();
+
+	str = str.replace(/\d+/g, function ($0)
+	{
+		return $0.padStart(4, '0');
+	});
+
 	str = str
+		.replace(/\./g, '_')
 		.replace(/[―—一－──\-]/g, '_')
 		.replace(/\s/g, '_')
 	;

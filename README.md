@@ -7,7 +7,7 @@
 ## options
 
 - useDefaultPatternsExclude: true
-- useAutoHandle: true
+- disableAutoHandle: false
 - disableSort: false
 - libPromise: Promise from bluebird
 
