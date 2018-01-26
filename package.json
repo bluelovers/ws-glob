@@ -1,13 +1,20 @@
 {
   "name": "node-novel-globby",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "globby module for node-novel",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "node-novel"
+    "node-novel",
+    "txt",
+    "sort",
+    "globby",
+    "glob",
+    "path",
+    "chinese",
+    "novel"
   ],
   "author": "",
   "license": "ISC",
