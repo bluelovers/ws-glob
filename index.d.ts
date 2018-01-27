@@ -9,13 +9,21 @@ export interface IOptions extends IGlobOptions {
     disableSort?: boolean;
     libPromise?: Promise;
     onListRow?: (a: IReturnList2, row: IReturnRow, options: IOptions) => IReturnRow;
+    throwEmpty?: boolean;
 }
 export declare const defaultPatternsExclude: string[];
 export declare const defaultPatterns: string[];
 export declare const defaultOptions: IOptions;
-export interface IReturnOptions {
+export interface IReturnOptionsArray {
+    0: string[];
+    1: IOptions;
+}
+export interface IReturnOptionsObject {
     patterns: string[];
     options: IOptions;
+}
+export interface IReturnOptions extends IReturnOptionsArray, IReturnOptionsObject {
+    [Symbol.iterator](): any;
 }
 export interface IReturnRow {
     source_idx: number;

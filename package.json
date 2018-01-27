@@ -1,23 +1,34 @@
 {
   "name": "node-novel-globby",
-  "version": "1.2.2",
+  "version": "1.3.0",
   "description": "globby module for node-novel",
+  "keywords": [
+    "chinese",
+    "glob",
+    "globby",
+    "node-novel",
+    "novel",
+    "path",
+    "sort",
+    "txt"
+  ],
+  "homepage": "https://github.com/bluelovers/node-novel-globby#readme",
+  "bugs": {
+    "url": "https://github.com/bluelovers/node-novel-globby/issues"
+  },
+  "license": "ISC",
+  "author": "",
   "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bluelovers/node-novel-globby.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "node-novel",
-    "txt",
-    "sort",
-    "globby",
-    "glob",
-    "path",
-    "chinese",
-    "novel"
-  ],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "bluebird": "^3.5.1",
     "globby": "^7.1.1",
@@ -26,16 +37,5 @@
   },
   "devDependencies": {
     "@types/globby": "^6.1.0"
-  },
-  "directories": {
-    "test": "test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/bluelovers/node-novel-globby.git"
-  },
-  "bugs": {
-    "url": "https://github.com/bluelovers/node-novel-globby/issues"
-  },
-  "homepage": "https://github.com/bluelovers/node-novel-globby#readme"
+  }
 }

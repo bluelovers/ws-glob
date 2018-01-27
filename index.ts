@@ -23,6 +23,8 @@ export interface IOptions extends IGlobOptions
 	libPromise?: Promise,
 
 	onListRow?: (a: IReturnList2, row: IReturnRow, options: IOptions) => IReturnRow,
+
+	throwEmpty?: boolean,
 }
 
 export const defaultPatternsExclude: string[] = [
@@ -49,12 +51,26 @@ export const defaultOptions: IOptions = {
 	//absolute: false,
 	useDefaultPatternsExclude: true,
 	disableAutoHandle: false,
+	disableSort: false,
+
+	throwEmpty: true,
 };
 
-export interface IReturnOptions
+export interface IReturnOptionsArray
+{
+	0: string[];
+	1: IOptions;
+}
+
+export interface IReturnOptionsObject
 {
 	patterns: string[];
 	options: IOptions;
+}
+
+export interface IReturnOptions extends IReturnOptionsArray, IReturnOptionsObject
+{
+	[Symbol.iterator]()
 }
 
 export interface IReturnRow
@@ -98,9 +114,15 @@ export function getOptions(patterns?, options: IOptions = {}): IReturnOptions
 		patterns = defaultPatterns;
 	}
 
-	let ret: IReturnOptions = {
+	let ret: IReturnOptionsObject = {
 		patterns: patterns.slice(),
 		options: Object.assign({}, defaultOptions, options),
+	};
+
+	ret[Symbol.iterator] = function* ()
+	{
+		yield this.patterns;
+		yield this.options;
 	};
 
 	if (ret.options.useDefaultPatternsExclude)
@@ -108,9 +130,7 @@ export function getOptions(patterns?, options: IOptions = {}): IReturnOptions
 		ret.patterns = ret.patterns.concat(defaultPatternsExclude);
 	}
 
-	//console.log(ret);
-
-	return ret;
+	return ret as IReturnOptions;
 }
 
 export function globbySync(options: IOptions): IReturnList
@@ -134,6 +154,8 @@ export function globbyASync(patterns?, options: IOptions = {}): Promise<IReturnL
 	{
 		let ret = getOptions(patterns, options);
 		[patterns, options] = [ret.patterns, ret.options];
+
+		[patterns, options] = getOptions(patterns, options);
 	}
 
 	let ls = globby(patterns, options);
@@ -145,11 +167,21 @@ export function globbyASync(patterns?, options: IOptions = {}): Promise<IReturnL
 		{
 			return globToList(ls, options);
 		})
-	;
+		;
 }
 
 export function globToList(glob_ls: string[], options: IOptions = {}): IReturnList
 {
+	if (!Array.isArray(glob_ls) || !glob_ls.length)
+	{
+		if (options.throwEmpty)
+		{
+			throw new Error(`glob matched list is empty`);
+		}
+
+		return null;
+	}
+
 	return p_sort_list(glob_to_list(glob_ls, options), options);
 }
 
@@ -170,14 +202,14 @@ export function returnGlobList(ls: IReturnList, options: IReturnGlobListOptions 
 
 			return a;
 		}, [])
-	;
+		;
 }
 
 export function glob_to_list(glob_ls: string[], options: IOptions = {}): IReturnList2
 {
 	if (!Array.isArray(glob_ls) || !glob_ls.length)
 	{
-		throw new Error('glob_to_list');
+		throw new Error(`glob matched list is empty`);
 	}
 
 	//console.log(glob_ls);
@@ -344,6 +376,7 @@ export function _p_sort_list1(ls: IReturnList2, options: IOptions = {})
 
 	return ks3;
 }
+
 export function _p_sort_list2(ls, options: IOptions = {}): IReturnList
 {
 	for (let dir in ls)
@@ -374,5 +407,6 @@ export function p_sort_list(ls: IReturnList2, options: IOptions = {}): IReturnLi
 }
 
 import * as self from './index';
+
 export default self;
 //export default exports;

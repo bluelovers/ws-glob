@@ -26,6 +26,8 @@ exports.defaultPatterns = [
 exports.defaultOptions = {
     useDefaultPatternsExclude: true,
     disableAutoHandle: false,
+    disableSort: false,
+    throwEmpty: true,
 };
 function getOptions(patterns, options = {}) {
     if (!Array.isArray(patterns) && typeof patterns == 'object') {
@@ -37,6 +39,10 @@ function getOptions(patterns, options = {}) {
     let ret = {
         patterns: patterns.slice(),
         options: Object.assign({}, exports.defaultOptions, options),
+    };
+    ret[Symbol.iterator] = function* () {
+        yield this.patterns;
+        yield this.options;
     };
     if (ret.options.useDefaultPatternsExclude) {
         ret.patterns = ret.patterns.concat(exports.defaultPatternsExclude);
@@ -57,6 +63,7 @@ function globbyASync(patterns, options = {}) {
     {
         let ret = getOptions(patterns, options);
         [patterns, options] = [ret.patterns, ret.options];
+        [patterns, options] = getOptions(patterns, options);
     }
     let ls = globby(patterns, options);
     let p = options.libPromise ? options.libPromise : Promise;
@@ -67,6 +74,12 @@ function globbyASync(patterns, options = {}) {
 }
 exports.globbyASync = globbyASync;
 function globToList(glob_ls, options = {}) {
+    if (!Array.isArray(glob_ls) || !glob_ls.length) {
+        if (options.throwEmpty) {
+            throw new Error(`glob matched list is empty`);
+        }
+        return null;
+    }
     return p_sort_list(glob_to_list(glob_ls, options), options);
 }
 exports.globToList = globToList;
@@ -82,7 +95,7 @@ function returnGlobList(ls, options = {}) {
 exports.returnGlobList = returnGlobList;
 function glob_to_list(glob_ls, options = {}) {
     if (!Array.isArray(glob_ls) || !glob_ls.length) {
-        throw new Error('glob_to_list');
+        throw new Error(`glob matched list is empty`);
     }
     return glob_ls.reduce(function (a, b, source_idx) {
         let dir = path.dirname(b);

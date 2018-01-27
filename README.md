@@ -10,6 +10,7 @@
 - disableAutoHandle: false
 - disableSort: false
 - libPromise: Promise from bluebird
+- throwEmpty: true - throw error when list is empty
 
 ### defaultPatternsExclude
 
@@ -103,4 +104,16 @@ console.log(globbySync());
   'temp/0000_转载信息.64849.txt',
   'temp/六話　練級 経験值来源都多虧了山賊.txt',
   'temp/123.txt' ]
+```
+
+## getOptions(patterns, options)
+
+1
+```ts
+let ret = getOptions(patterns, options);
+[patterns, options] = [ret.patterns, ret.options];
+```
+2
+```ts
+[patterns, options] = getOptions(patterns, options);
 ```
