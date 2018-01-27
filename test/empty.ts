@@ -10,12 +10,14 @@ let a;
 self
 	.globbyASync({
 
+		cwd: path.join(process.cwd(), 'empty'),
+
 		onListRow(a, row)
 		{
 			console.log(row.chapter_title, row.source_idx);
 
 			return row;
-		},
+		}
 	})
 	.tap(function (ls)
 	{

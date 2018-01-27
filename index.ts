@@ -165,6 +165,11 @@ export function globbyASync(patterns?, options: IOptions = {}): Promise<IReturnL
 	return p.resolve(ls)
 		.then(function (ls)
 		{
+			if ((!ls || !ls.length) && options.throwEmpty)
+			{
+				return Promise.reject(new Error(`glob matched list is empty`));
+			}
+
 			return globToList(ls, options);
 		})
 		;
