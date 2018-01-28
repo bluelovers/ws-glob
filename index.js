@@ -3,11 +3,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const Promise = require("bluebird");
 const path = require("path");
 const globby = require("globby");
+exports.globby = globby;
 const StrUtil = require("str-util");
 const zh2cht_1 = require("zh2cht");
 exports.defaultPatternsExclude = [
     '!**/*.raw.*',
     '!**/*.new.*',
+    '!**/*.out.*',
     '!**/out/**/*',
     '!**/raw/**/*',
     '!**/*_out/**/*',

@@ -1,6 +1,8 @@
 /// <reference types="glob" />
 import * as Promise from 'bluebird';
+import * as globby from 'globby';
 import { IOptions as IGlobOptions } from 'glob';
+export { globby };
 export interface IOptions extends IGlobOptions {
     cwd?: string;
     absolute?: boolean;

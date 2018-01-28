@@ -10,6 +10,8 @@ import { toCht } from 'zh2cht';
 
 import { IOptions as IGlobOptions } from 'glob';
 
+export { globby }
+
 export interface IOptions extends IGlobOptions
 {
 	cwd?: string,
@@ -30,6 +32,7 @@ export interface IOptions extends IGlobOptions
 export const defaultPatternsExclude: string[] = [
 	'!**/*.raw.*',
 	'!**/*.new.*',
+	'!**/*.out.*',
 	'!**/out/**/*',
 	'!**/raw/**/*',
 	'!**/*_out/**/*',
