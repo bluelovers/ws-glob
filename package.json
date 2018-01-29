@@ -31,9 +31,9 @@
   },
   "dependencies": {
     "bluebird": "^3.5.1",
+    "chinese_convert": "^1.0.8",
     "globby": "^7.1.1",
-    "str-util": "^2.3.3",
-    "zh2cht": "0.0.2"
+    "str-util": "^2.3.3"
   },
   "devDependencies": {
     "@types/globby": "^6.1.0"

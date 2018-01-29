@@ -5,7 +5,7 @@ const path = require("path");
 const globby = require("globby");
 exports.globby = globby;
 const StrUtil = require("str-util");
-const zh2cht_1 = require("zh2cht");
+const chinese_convert_1 = require("chinese_convert");
 exports.defaultPatternsExclude = [
     '!**/*.raw.*',
     '!**/*.new.*',
@@ -183,7 +183,7 @@ function normalize_val(str) {
         .replace(/\./g, '_')
         .replace(/[―—一－──\-]/g, '_')
         .replace(/\s/g, '_');
-    str = StrUtil.zh2jp(zh2cht_1.toCht(str), {
+    str = StrUtil.zh2jp(chinese_convert_1.cn2tw(str), {
         safe: false,
     });
     return str;

@@ -6,7 +6,7 @@ import * as Promise from 'bluebird';
 import * as path from 'path';
 import * as globby from 'globby';
 import * as StrUtil from 'str-util';
-import { toCht } from 'zh2cht';
+import { cn2tw, tw2cn } from 'chinese_convert';
 
 import { IOptions as IGlobOptions } from 'glob';
 
@@ -348,7 +348,7 @@ export function normalize_val(str: string): string
 		.replace(/\s/g, '_')
 	;
 
-	str = StrUtil.zh2jp(toCht(str) as string, {
+	str = StrUtil.zh2jp(cn2tw(str) as string, {
 		safe: false,
 	});
 
