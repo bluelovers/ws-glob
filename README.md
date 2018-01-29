@@ -1,6 +1,6 @@
 # node-novel-globby
 
-> globby module for node-novel
+> globby with sort id/chinese/fullwidth number for node-novel
 
 `npm install node-novel-globby`
 
