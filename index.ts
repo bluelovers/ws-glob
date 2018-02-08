@@ -220,6 +220,8 @@ export function glob_to_list(glob_ls: string[], options: IOptions = {}): IReturn
 		throw new Error(`glob matched list is empty`);
 	}
 
+	let padNum = 4;
+
 	//console.log(glob_ls);
 
 	return glob_ls.reduce(function (a: IReturnList2, b: string, source_idx: number)
@@ -273,9 +275,10 @@ export function glob_to_list(glob_ls: string[], options: IOptions = {}): IReturn
 			{
 				row.chapter_title = RegExp.$1;
 			}
-			else if (/^(?:序|プロローグ)/.test(row.chapter_title))
+
+			if (/^(?:序|プロローグ)/.test(row.val_file))
 			{
-				row.chapter_title = '0_' + row.chapter_title;
+				row.val_file = '0_' + row.val_file;
 			}
 
 			let s2 = StrUtil.zh2num(row.val_file) as string;
@@ -286,7 +289,7 @@ export function glob_to_list(glob_ls: string[], options: IOptions = {}): IReturn
 				row.val_file = s2.replace(r, '$1')
 					.replace(/\d+/g, function ($0)
 					{
-						return $0.padStart(4, '0');
+						return $0.padStart(padNum, '0');
 					})
 				;
 			}
@@ -294,7 +297,7 @@ export function glob_to_list(glob_ls: string[], options: IOptions = {}): IReturn
 			{
 				row.val_file = s2.replace(/\d+/g, function ($0)
 				{
-					return $0.padStart(4, '0');
+					return $0.padStart(padNum, '0');
 				});
 			}
 
@@ -309,8 +312,8 @@ export function glob_to_list(glob_ls: string[], options: IOptions = {}): IReturn
 			row.volume_title = row.volume_title.trim();
 			row.chapter_title = row.chapter_title.trim();
 
-			row.val_dir = normalize_val(row.val_dir);
-			row.val_file = normalize_val(row.val_file);
+			row.val_dir = normalize_val(row.val_dir, padNum);
+			row.val_file = normalize_val(row.val_file, padNum);
 		}
 
 		if (options.onListRow)
@@ -330,7 +333,7 @@ export function glob_to_list(glob_ls: string[], options: IOptions = {}): IReturn
 	}, {});
 }
 
-export function normalize_val(str: string): string
+export function normalize_val(str: string, padNum: number = 4): string
 {
 	str = StrUtil.toHalfWidth(str);
 	str = StrUtil.trim(str, '　');
@@ -339,7 +342,7 @@ export function normalize_val(str: string): string
 
 	str = str.replace(/\d+/g, function ($0)
 	{
-		return $0.padStart(4, '0');
+		return $0.padStart(padNum, '0');
 	});
 
 	str = str
