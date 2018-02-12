@@ -371,7 +371,12 @@ export function defaultSortCallback(a, b)
 
 	if ((ta = r.exec(a)) && (tb = r.exec(b)))
 	{
-		return parseInt(ta) - parseInt(tb);
+		let r = parseInt(ta) - parseInt(tb);
+
+		if (r !== 0)
+		{
+			return r;
+		}
 	}
 
 	return (a > b) ? 1 : 0;

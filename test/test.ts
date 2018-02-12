@@ -7,10 +7,15 @@ import * as path from 'path';
 
 let a;
 
+let cwd;
+
+cwd = process.cwd();
+//cwd = 'D:/Users/Documents/The Project/nodejs-test/node-novel2/dist_novel/user_out/自分が異世界に転移するなら';
+
 self
 	.globbyASync({
 
-		cwd: 'D:/Users/Documents/The Project/nodejs-test/node-novel2/dist_novel/user_out/自分が異世界に転移するなら',
+		cwd: cwd,
 
 		onListRow(a, row)
 		{
@@ -21,11 +26,19 @@ self
 	})
 	.tap(function (ls)
 	{
-		//console.log(ls);
+		console.log(ls);
 	})
 	.then(self.returnGlobList)
 	.tap(function (ls)
 	{
+		if (cwd)
+		{
+			ls = ls.map(function (p)
+			{
+				return path.relative(cwd, p);
+			})
+		}
+
 		console.log(ls);
 	})
 	.tap(function (ls)
