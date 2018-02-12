@@ -3,6 +3,12 @@ import * as Promise from 'bluebird';
 import * as globby from 'globby';
 import { IOptions as IGlobOptions } from 'glob';
 export { globby };
+export interface IApi<T> {
+    (options: IOptions): T;
+    (patterns?: string[], options?: IOptions): T;
+}
+export declare type IApiSync = IApi<IReturnList>;
+export declare type IApiAsync = IApi<Promise<IReturnList>>;
 export interface IOptions extends IGlobOptions {
     cwd?: string;
     absolute?: boolean;
@@ -15,6 +21,7 @@ export interface IOptions extends IGlobOptions {
     sortCallback?(a: any, b: any): number;
     sortFn?<T>(arr: T): T;
 }
+export declare type IOptionsWithReturnGlobList = IOptions & IReturnGlobListOptions;
 export declare const defaultPatternsExclude: string[];
 export declare const defaultPatterns: string[];
 export declare const defaultOptions: IOptions;

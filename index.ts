@@ -13,6 +13,15 @@ import { IOptions as IGlobOptions } from 'glob';
 
 export { globby }
 
+export interface IApi<T>
+{
+	(options: IOptions): T
+	(patterns?: string[], options?: IOptions): T
+}
+
+export type IApiSync = IApi<IReturnList>;
+export type IApiAsync = IApi<Promise<IReturnList>>;
+
 export interface IOptions extends IGlobOptions
 {
 	cwd?: string,
@@ -32,6 +41,8 @@ export interface IOptions extends IGlobOptions
 	sortCallback?(a, b): number,
 	sortFn?<T>(arr: T): T,
 }
+
+export type IOptionsWithReturnGlobList = IOptions & IReturnGlobListOptions;
 
 export const defaultPatternsExclude: string[] = [
 	'!**/*.raw.*',
@@ -161,8 +172,10 @@ export function globbyASync(patterns?: string[], options?: IOptions): Promise<IR
 export function globbyASync(patterns?, options: IOptions = {}): Promise<IReturnList>
 {
 	{
+		/*
 		let ret = getOptions(patterns, options);
 		[patterns, options] = [ret.patterns, ret.options];
+		*/
 
 		[patterns, options] = getOptions(patterns, options);
 	}

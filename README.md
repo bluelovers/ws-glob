@@ -117,3 +117,19 @@ let ret = getOptions(patterns, options);
 ```ts
 [patterns, options] = getOptions(patterns, options);
 ```
+
+
+## use like globby
+
+```ts
+import globby, { globbyASync, globbySync } from 'node-novel-globby/g';
+```
+
+```ts
+globby(patterns, options)
+globby.sync(patterns, options)
+globby.async(patterns, options)
+
+globbyASync(patterns, options)
+globbySync(patterns, options)
+```

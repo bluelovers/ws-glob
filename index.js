@@ -65,8 +65,6 @@ function globbySync(patterns, options = {}) {
 exports.globbySync = globbySync;
 function globbyASync(patterns, options = {}) {
     {
-        let ret = getOptions(patterns, options);
-        [patterns, options] = [ret.patterns, ret.options];
         [patterns, options] = getOptions(patterns, options);
     }
     let ls = globby(patterns, options);
