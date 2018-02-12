@@ -7,6 +7,7 @@ import * as path from 'path';
 import * as globby from 'globby';
 import * as StrUtil from 'str-util';
 import { cn2tw, tw2cn } from 'chinese_convert';
+import * as libSort from './lib/sort';
 
 import { IOptions as IGlobOptions } from 'glob';
 
@@ -61,7 +62,7 @@ export const defaultOptions: IOptions = {
 
 	throwEmpty: true,
 
-	sortCallback: defaultSortCallback,
+	sortCallback: libSort.defaultSortCallback,
 };
 
 export interface IReturnOptionsArray
@@ -361,25 +362,6 @@ export function normalize_val(str: string, padNum: number = 4): string
 	});
 
 	return str;
-}
-
-export function defaultSortCallback(a, b)
-{
-	let r = /^(\d+)/;
-	let ta;
-	let tb;
-
-	if ((ta = r.exec(a)) && (tb = r.exec(b)))
-	{
-		let r = parseInt(ta) - parseInt(tb);
-
-		if (r !== 0)
-		{
-			return r;
-		}
-	}
-
-	return (a > b) ? 1 : 0;
 }
 
 export function _p_sort_list1(ls: IReturnList2, options: IOptions = {})

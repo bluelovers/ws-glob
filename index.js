@@ -6,6 +6,7 @@ const globby = require("globby");
 exports.globby = globby;
 const StrUtil = require("str-util");
 const chinese_convert_1 = require("chinese_convert");
+const libSort = require("./lib/sort");
 exports.defaultPatternsExclude = [
     '!**/*.raw.*',
     '!**/*.new.*',
@@ -30,7 +31,7 @@ exports.defaultOptions = {
     disableAutoHandle: false,
     disableSort: false,
     throwEmpty: true,
-    sortCallback: defaultSortCallback,
+    sortCallback: libSort.defaultSortCallback,
 };
 function getOptions(patterns, options = {}) {
     if (!Array.isArray(patterns) && typeof patterns == 'object') {
@@ -191,19 +192,6 @@ function normalize_val(str, padNum = 4) {
     return str;
 }
 exports.normalize_val = normalize_val;
-function defaultSortCallback(a, b) {
-    let r = /^(\d+)/;
-    let ta;
-    let tb;
-    if ((ta = r.exec(a)) && (tb = r.exec(b))) {
-        let r = parseInt(ta) - parseInt(tb);
-        if (r !== 0) {
-            return r;
-        }
-    }
-    return (a > b) ? 1 : 0;
-}
-exports.defaultSortCallback = defaultSortCallback;
 function _p_sort_list1(ls, options = {}) {
     let ks = Object.keys(ls)
         .reduce(function (a, b) {

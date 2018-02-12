@@ -10,7 +10,7 @@ let a;
 let cwd;
 
 cwd = process.cwd();
-//cwd = 'D:/Users/Documents/The Project/nodejs-test/node-novel2/dist_novel/user_out/自分が異世界に転移するなら';
+cwd = 'D:/Users/Documents/The Project/nodejs-test/node-novel2/dist_novel/user_out/自分が異世界に転移するなら';
 
 self
 	.globbyASync({
