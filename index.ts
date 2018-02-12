@@ -27,6 +27,9 @@ export interface IOptions extends IGlobOptions
 	onListRow?: (a: IReturnList2, row: IReturnRow, options: IOptions) => IReturnRow,
 
 	throwEmpty?: boolean,
+
+	sortCallback?(a, b): number,
+	sortFn?<T>(arr: T): T,
 }
 
 export const defaultPatternsExclude: string[] = [
@@ -57,6 +60,8 @@ export const defaultOptions: IOptions = {
 	disableSort: false,
 
 	throwEmpty: true,
+
+	sortCallback: defaultSortCallback,
 };
 
 export interface IReturnOptionsArray
@@ -220,7 +225,7 @@ export function glob_to_list(glob_ls: string[], options: IOptions = {}): IReturn
 		throw new Error(`glob matched list is empty`);
 	}
 
-	let padNum = 4;
+	let padNum = 5;
 
 	//console.log(glob_ls);
 
@@ -358,6 +363,20 @@ export function normalize_val(str: string, padNum: number = 4): string
 	return str;
 }
 
+export function defaultSortCallback(a, b)
+{
+	let r = /^(\d+)/;
+	let ta;
+	let tb;
+
+	if ((ta = r.exec(a)) && (tb = r.exec(b)))
+	{
+		return parseInt(ta) - parseInt(tb);
+	}
+
+	return (a > b) ? 1 : 0;
+}
+
 export function _p_sort_list1(ls: IReturnList2, options: IOptions = {})
 {
 	let ks = Object.keys(ls)
@@ -371,9 +390,13 @@ export function _p_sort_list1(ls: IReturnList2, options: IOptions = {})
 
 	let ks2 = Object.keys(ks);
 
-	if (!options || !options.disableSort)
+	if (options && options.sortFn)
 	{
-		ks2.sort();
+		ks2 = options.sortFn(ks2);
+	}
+	else if (!options || !options.disableSort)
+	{
+		ks2.sort(options && options.sortCallback);
 	}
 
 	let ks3 = ks2.reduce(function (a, b)
@@ -394,9 +417,13 @@ export function _p_sort_list2(ls, options: IOptions = {}): IReturnList
 	{
 		let a = Object.keys(ls[dir]);
 
-		if (!options || !options.disableSort)
+		if (options && options.sortFn)
 		{
-			a.sort();
+			a = options.sortFn(a);
+		}
+		else if (!options || !options.disableSort)
+		{
+			a.sort(options && options.sortCallback);
 		}
 
 		ls[dir] = Object.values(a.reduce(function (a, b)

@@ -10,6 +10,8 @@ let a;
 self
 	.globbyASync({
 
+		cwd: 'D:/Users/Documents/The Project/nodejs-test/node-novel2/dist_novel/user_out/自分が異世界に転移するなら',
+
 		onListRow(a, row)
 		{
 			console.log(row.chapter_title, row.source_idx);
@@ -19,7 +21,7 @@ self
 	})
 	.tap(function (ls)
 	{
-		console.log(ls);
+		//console.log(ls);
 	})
 	.then(self.returnGlobList)
 	.tap(function (ls)
@@ -28,6 +30,6 @@ self
 	})
 	.tap(function (ls)
 	{
-		console.log(self.globToList(ls));
+		//console.log(self.globToList(ls));
 	})
 ;

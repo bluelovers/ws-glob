@@ -30,6 +30,7 @@ exports.defaultOptions = {
     disableAutoHandle: false,
     disableSort: false,
     throwEmpty: true,
+    sortCallback: defaultSortCallback,
 };
 function getOptions(patterns, options = {}) {
     if (!Array.isArray(patterns) && typeof patterns == 'object') {
@@ -102,7 +103,7 @@ function glob_to_list(glob_ls, options = {}) {
     if (!Array.isArray(glob_ls) || !glob_ls.length) {
         throw new Error(`glob matched list is empty`);
     }
-    let padNum = 4;
+    let padNum = 5;
     return glob_ls.reduce(function (a, b, source_idx) {
         let dir = path.dirname(b);
         let ext = path.extname(b);
@@ -190,6 +191,16 @@ function normalize_val(str, padNum = 4) {
     return str;
 }
 exports.normalize_val = normalize_val;
+function defaultSortCallback(a, b) {
+    let r = /^(\d+)/;
+    let ta;
+    let tb;
+    if ((ta = r.exec(a)) && (tb = r.exec(b))) {
+        return parseInt(ta) - parseInt(tb);
+    }
+    return (a > b) ? 1 : 0;
+}
+exports.defaultSortCallback = defaultSortCallback;
 function _p_sort_list1(ls, options = {}) {
     let ks = Object.keys(ls)
         .reduce(function (a, b) {
@@ -197,8 +208,11 @@ function _p_sort_list1(ls, options = {}) {
         return a;
     }, {});
     let ks2 = Object.keys(ks);
-    if (!options || !options.disableSort) {
-        ks2.sort();
+    if (options && options.sortFn) {
+        ks2 = options.sortFn(ks2);
+    }
+    else if (!options || !options.disableSort) {
+        ks2.sort(options && options.sortCallback);
     }
     let ks3 = ks2.reduce(function (a, b) {
         let key = ks[b];
@@ -211,8 +225,11 @@ exports._p_sort_list1 = _p_sort_list1;
 function _p_sort_list2(ls, options = {}) {
     for (let dir in ls) {
         let a = Object.keys(ls[dir]);
-        if (!options || !options.disableSort) {
-            a.sort();
+        if (options && options.sortFn) {
+            a = options.sortFn(a);
+        }
+        else if (!options || !options.disableSort) {
+            a.sort(options && options.sortCallback);
         }
         ls[dir] = Object.values(a.reduce(function (a, b) {
             a[b] = ls[dir][b];
