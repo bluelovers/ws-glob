@@ -4,17 +4,20 @@
 
 import * as Promise from 'bluebird';
 export * from './index';
-import novelGlobby, {
-	getOptions,
-	IOptionsWithReturnGlobList,
-	returnGlobList,
-} from './index';
+export * from './lib';
 
-export interface IApiWithReturnGlob<T>
-{
-	(options: IOptionsWithReturnGlobList): T
-	(patterns?: string[], options?: IOptionsWithReturnGlobList): T
-}
+import novelGlobby from './index';
+
+import {
+	getOptions,
+	returnGlobList,
+
+	IApiWithReturnGlob,
+	IOptionsWithReturnGlobList,
+
+	IApiWithReturnGlobSync,
+	IApiWithReturnGlobAsync,
+} from './lib';
 
 export function globbyASync(options: IOptionsWithReturnGlobList): Promise<string[]>
 export function globbyASync(patterns?: string[], options?: IOptionsWithReturnGlobList): Promise<string[]>
@@ -29,11 +32,6 @@ export function globbyASync(patterns?, options: IOptionsWithReturnGlobList = {})
 		})
 	;
 }
-
-export type IReturnGlob = string[];
-
-export type IApiWithReturnGlobSync = IApiWithReturnGlob<IReturnGlob>;
-export type IApiWithReturnGlobAsync = IApiWithReturnGlob<Promise<IReturnGlob>>;
 
 export namespace globbyASync
 {

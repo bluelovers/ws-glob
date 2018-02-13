@@ -4,19 +4,21 @@ function __export(m) {
 }
 Object.defineProperty(exports, "__esModule", { value: true });
 __export(require("./index"));
+__export(require("./lib"));
 const index_1 = require("./index");
+const lib_1 = require("./lib");
 function globbyASync(patterns, options = {}) {
-    [patterns, options] = index_1.getOptions(patterns, options);
+    [patterns, options] = lib_1.getOptions(patterns, options);
     return index_1.default.globbyASync(patterns, options)
         .then(function (ls) {
-        return index_1.returnGlobList(ls, options);
+        return lib_1.returnGlobList(ls, options);
     });
 }
 exports.globbyASync = globbyASync;
 (function (globbyASync) {
     function sync(patterns, options = {}) {
-        [patterns, options] = index_1.getOptions(patterns, options);
-        return index_1.returnGlobList(index_1.default.globbySync(patterns, options), options);
+        [patterns, options] = lib_1.getOptions(patterns, options);
+        return lib_1.returnGlobList(index_1.default.globbySync(patterns, options), options);
     }
     globbyASync.sync = sync;
 })(globbyASync = exports.globbyASync || (exports.globbyASync = {}));

@@ -1,6 +1,6 @@
 {
   "name": "node-novel-globby",
-  "version": "1.4.3",
+  "version": "1.5.0",
   "description": "globby with sort id/chinese/fullwidth number for node-novel",
   "keywords": [
     "chinese",
@@ -13,6 +13,7 @@
     "number",
     "path",
     "sort",
+    "order",
     "txt",
     "zh"
   ],
@@ -34,12 +35,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "bluebird": "^3.5.1",
-    "chinese_convert": "^1.0.8",
-    "globby": "^7.1.1",
-    "str-util": "^2.3.3"
+    "bluebird": "latest",
+    "chinese_convert": "latest",
+    "globby": "latest",
+    "novel-text": "latest",
+    "str-util": "latest"
   },
   "devDependencies": {
-    "@types/globby": "^6.1.0"
+    "@types/globby": "latest"
   }
 }
