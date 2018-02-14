@@ -13,7 +13,9 @@ export function normalize_val(str: string, padNum: number = 4): string
 	str = StrUtil.toHalfWidth(str);
 	str = StrUtil.trim(str, '　');
 
-	str = StrUtil.zh2num(str).toString();
+	str = StrUtil.zh2num(str, {
+		truncateOne: 2,
+	}).toString();
 
 	str = str.replace(/\d+/g, function ($0)
 	{
@@ -24,6 +26,7 @@ export function normalize_val(str: string, padNum: number = 4): string
 		.replace(/\./g, '_')
 		.replace(/[―—一－──\-]/g, '_')
 		.replace(/\s/g, '_')
+		.replace(/_+/g, '_')
 	;
 
 	str = StrUtil.zh2jp(cn2tw(str) as string, {
