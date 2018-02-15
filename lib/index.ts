@@ -212,6 +212,8 @@ export function glob_to_list(glob_ls: string[], options: IOptions = {}): IReturn
 
 	let padNum = 5;
 
+	let CWD = options.cwd || process.cwd();
+
 	//console.log(glob_ls);
 
 	return glob_ls.reduce(function (a: IReturnList2, b: string, source_idx: number)
@@ -219,6 +221,12 @@ export function glob_to_list(glob_ls: string[], options: IOptions = {}): IReturn
 		let dir = path.dirname(b);
 		let ext = path.extname(b);
 		let file = path.basename(b, ext);
+
+		if (options.absolute)
+		{
+			// fix bug when absolute: true
+			dir = path.relative(CWD, dir);
+		}
 
 		//console.log(b);
 
