@@ -12,6 +12,8 @@ let cwd;
 cwd = process.cwd();
 cwd = 'D:/Users/Documents/The Project/nodejs-test/node-novel2/dist_novel/user_out/自分が異世界に転移するなら';
 
+cwd = 'D:/Users/Documents/The Project/nodejs-test/node-novel2/dist_novel/user_out/黑之魔王';
+
 self
 	.globbyASync({
 
@@ -19,7 +21,7 @@ self
 
 		onListRow(a, row)
 		{
-			console.log(row.chapter_title, row.source_idx);
+			//console.log(row.chapter_title, row.source_idx);
 
 			return row;
 		},

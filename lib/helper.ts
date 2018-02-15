@@ -23,10 +23,11 @@ export function normalize_val(str: string, padNum: number = 4): string
 	});
 
 	str = str
+		.replace(/^第+/, '')
 		.replace(/\./g, '_')
 		.replace(/[―—一－──\-]/g, '_')
 		.replace(/\s/g, '_')
-		.replace(/[・]/g, '_')
+		.replace(/[・:]/g, '_')
 		.replace(/_+/g, '_')
 	;
 
