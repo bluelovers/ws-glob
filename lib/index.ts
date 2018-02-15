@@ -163,6 +163,8 @@ export function getOptions(patterns?, options: IOptions = {}): IReturnOptions
 		ret.patterns = ret.patterns.concat(defaultPatternsExclude);
 	}
 
+	ret.options.sortCallback = ret.options.sortCallback || defaultOptions.sortCallback;
+
 	return ret as IReturnOptions;
 }
 
