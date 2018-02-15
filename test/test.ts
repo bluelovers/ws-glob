@@ -4,6 +4,7 @@
 
 import self from '..';
 import * as path from 'path';
+import * as fs from 'fs';
 
 let a;
 
@@ -13,6 +14,7 @@ cwd = process.cwd();
 cwd = 'D:/Users/Documents/The Project/nodejs-test/node-novel2/dist_novel/user_out/自分が異世界に転移するなら';
 
 cwd = 'D:/Users/Documents/The Project/nodejs-test/node-novel2/dist_novel/user_out/黑之魔王';
+cwd = 'D:/Users/Documents/The Project/nodejs-test/node-novel2/dist_novel/user_out/回復術士のやり直し～即死魔法とスキルコピーの超越ヒール～';
 
 self
 	.globbyASync({
@@ -41,7 +43,9 @@ self
 			})
 		}
 
-		console.log(ls);
+		//console.dir(ls);
+
+		fs.writeFileSync('./temp/test.txt', ls.join("\n"));
 	})
 	.tap(function (ls)
 	{
