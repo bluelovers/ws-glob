@@ -188,14 +188,21 @@ export interface IReturnGlobListOptions
 	useSourcePath?: boolean,
 }
 
-export function returnGlobList(ls: IReturnList, options: IReturnGlobListOptions = {}): string[]
+export function returnGlobList(ls: IReturnList, options: IReturnGlobListOptions & IOptions = {}): string[]
 {
+	let useSourcePath = (options.useSourcePath === true || options.useSourcePath === false) ? options.useSourcePath : !options.absolute;
+
+	if (!ls)
+	{
+		return [];
+	}
+
 	return Object.keys(ls)
 		.reduce(function (a: string[], b)
 		{
 			ls[b].forEach(function (value, index, array)
 			{
-				a.push(options.useSourcePath ? value.source_path : value.path);
+				a.push(useSourcePath ? value.source_path : value.path);
 			});
 
 			return a;

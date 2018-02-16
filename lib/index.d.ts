@@ -70,7 +70,7 @@ export declare function globToList(glob_ls: string[], options?: IOptions): IRetu
 export interface IReturnGlobListOptions {
     useSourcePath?: boolean;
 }
-export declare function returnGlobList(ls: IReturnList, options?: IReturnGlobListOptions): string[];
+export declare function returnGlobList(ls: IReturnList, options?: IReturnGlobListOptions & IOptions): string[];
 export declare function glob_to_list(glob_ls: string[], options?: IOptions): IReturnList2;
 export declare function _p_sort_list1(ls: IReturnList2, options?: IOptions): {};
 export declare function _p_sort_list2(ls: any, options?: IOptions): IReturnList;
