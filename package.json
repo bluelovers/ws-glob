@@ -42,8 +42,6 @@
     "str-util": "^2.3.9"
   },
   "devDependencies": {
-    "@types/globby": "^6.1.0",
-    "fs-iconv": "^1.3.4",
-    "jsdom-url": "^2.2.0"
+    "@types/globby": "^6.1.0"
   }
 }
