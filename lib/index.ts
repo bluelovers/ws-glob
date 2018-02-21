@@ -286,7 +286,7 @@ export function glob_to_list(glob_ls: string[], options: IOptions = {}): IReturn
 				row.val_file = '0_' + row.val_file;
 			}
 
-			let s2 = StrUtil.zh2num(row.val_file) as string;
+			let s2 = StrUtil.zh2num(row.val_file).toString();
 
 			r = /^第?(\d+)[話话]/;
 			if (r.test(s2))
