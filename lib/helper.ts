@@ -5,9 +5,16 @@
 import * as StrUtil from 'str-util';
 import NovelTextFile from 'novel-text/zhjp';
 import { cn2tw } from 'chinese_convert';
+import { convertRoman } from 'arabic-roman-convert.js';
+import * as deromanize from 'deromanize';
+import { IOptions } from './index';
 
-export function normalize_val(str: string, padNum: number = 4): string
+export { deromanize }
+
+export function normalize_val(str: string, padNum: number = 5, options: IOptions = {}): string
 {
+	padNum = padNum || options.padNum;
+
 	str = NovelTextFile.filename(str);
 
 	str = StrUtil.toHalfWidth(str)
@@ -18,6 +25,18 @@ export function normalize_val(str: string, padNum: number = 4): string
 	str = StrUtil.zh2num(str, {
 		truncateOne: 2,
 	}).toString();
+
+	if (options.checkRoman)
+	{
+		let m = isRoman(str);
+
+		if (m)
+		{
+			let n = deromanize(normalizeRoman(m[1]));
+			str = n.toString() + str.slice(m[1].length);
+			//console.log(m[1], n, str);
+		}
+	}
 
 	str = str.replace(/\d+/g, function ($0)
 	{
@@ -38,6 +57,24 @@ export function normalize_val(str: string, padNum: number = 4): string
 	});
 
 	return str;
+}
+
+export function isRoman(str)
+{
+	return /^([LCDMIVX\u2160-\u217f]+)(?![a-z\d])/ui.exec(str);
+}
+
+export function normalizeRoman(input: string, bool?: boolean)
+{
+	let ro = ['I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII',];
+
+	for (let i = 0; i < 12; i++)
+	{
+		let r = new RegExp(String.fromCharCode(0x2160 + i) + '|' + String.fromCharCode(0x2160 + 16 + i), 'g');
+		input = input.replace(r, bool ? String.fromCharCode(0x2160 + i) : ro[i]);
+	}
+
+	return input;
 }
 
 import * as self from './helper';

@@ -11,6 +11,8 @@
 - disableSort: false
 - libPromise: Promise from bluebird
 - throwEmpty: true - throw error when list is empty
+- checkRoman: false - if true will sort roman as number
+- sortCallback - sort compare function
 
 ### defaultPatternsExclude
 

@@ -83,6 +83,10 @@ export interface IOptions extends IGlobOptions
 
 	sortCallback?(a, b): number,
 	sortFn?<T>(arr: T): T,
+
+	padNum?: number,
+
+	checkRoman?: boolean,
 }
 
 export type IOptionsWithReturnGlobList = IOptions & IReturnGlobListOptions;
@@ -217,7 +221,7 @@ export function glob_to_list(glob_ls: string[], options: IOptions = {}): IReturn
 		throw new Error(`glob matched list is empty`);
 	}
 
-	let padNum = 5;
+	let padNum = options.padNum || 5;
 
 	let CWD = options.cwd || process.cwd();
 
@@ -317,8 +321,8 @@ export function glob_to_list(glob_ls: string[], options: IOptions = {}): IReturn
 			row.volume_title = row.volume_title.trim();
 			row.chapter_title = row.chapter_title.trim();
 
-			row.val_dir = normalize_val(row.val_dir, padNum);
-			row.val_file = normalize_val(row.val_file, padNum);
+			row.val_dir = normalize_val(row.val_dir, padNum, options);
+			row.val_file = normalize_val(row.val_file, padNum, options);
 		}
 
 		if (options.onListRow)

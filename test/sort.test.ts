@@ -33,16 +33,32 @@ describe(relative(__filename), () =>
 			cwd: __dirname,
 		});
 
+		const options = {
+			checkRoman: true,
+			onListRow(a, row, options)
+			{
+				//console.log(row);
+				return row;
+			}
+		};
+
 		ls.forEach(function (file)
 		{
-			let txt = fs.readFileSync(path.join(__dirname, file));
+			const txt = fs.readFileSync(path.join(__dirname, file));
 
-			let a = txt.toString().split("\n");
-
-			let b = returnGlobList(globToList(a));
+			const a = txt.toString().split("\n").filter(function (v)
+			{
+				//console.log(v, v.trim() !== '');
+				return v.trim() !== '';
+			});
 
 			it(file, function ()
 			{
+				let b = returnGlobList(globToList(a, options));
+
+				//console.log(a);
+				console.log(b);
+
 				expect(a).to.be.deep.equal(b);
 			});
 		});

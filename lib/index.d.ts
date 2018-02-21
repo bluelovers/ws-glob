@@ -29,6 +29,8 @@ export interface IOptions extends IGlobOptions {
     throwEmpty?: boolean;
     sortCallback?(a: any, b: any): number;
     sortFn?<T>(arr: T): T;
+    padNum?: number;
+    checkRoman?: boolean;
 }
 export declare type IOptionsWithReturnGlobList = IOptions & IReturnGlobListOptions;
 export interface IReturnOptionsArray {
