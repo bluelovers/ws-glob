@@ -4,7 +4,7 @@
 
 import self from '..';
 import * as path from 'path';
-import * as fs from 'fs';
+import * as fs from 'fs-iconv';
 
 let a;
 
@@ -15,6 +15,8 @@ cwd = 'D:/Users/Documents/The Project/nodejs-test/node-novel2/dist_novel/user_ou
 
 cwd = 'D:/Users/Documents/The Project/nodejs-test/node-novel2/dist_novel/user_out/黑之魔王';
 cwd = 'D:/Users/Documents/The Project/nodejs-test/node-novel2/dist_novel/user_out/回復術士のやり直し～即死魔法とスキルコピーの超越ヒール～';
+
+cwd = 'D:\\Users\\Documents\\The Project\\nodejs-test\\node-novel2\\dist_novel\\user_out\\暗黒騎士物語　～勇者を倒すために魔王に召喚されました～\\';
 
 self
 	.globbyASync({
@@ -31,11 +33,15 @@ self
 	.tap(function (ls)
 	{
 		console.log(ls);
+
+		fs.writeJsonSync('./temp/test.json', ls, {
+			spaces: "\t",
+		});
 	})
 	.then(self.returnGlobList)
 	.tap(function (ls)
 	{
-		if (cwd)
+		if (cwd && 0)
 		{
 			ls = ls.map(function (p)
 			{
