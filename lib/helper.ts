@@ -10,7 +10,9 @@ export function normalize_val(str: string, padNum: number = 4): string
 {
 	str = NovelTextFile.filename(str);
 
-	str = StrUtil.toHalfWidth(str);
+	str = StrUtil.toHalfWidth(str)
+		.toLowerCase()
+	;
 	str = StrUtil.trim(str, '　');
 
 	str = StrUtil.zh2num(str, {

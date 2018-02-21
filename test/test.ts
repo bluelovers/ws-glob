@@ -5,6 +5,7 @@
 import self from '..';
 import * as path from 'path';
 import * as fs from 'fs-iconv';
+import * as naturalCompare from 'string-natural-compare';
 
 let a;
 
@@ -22,6 +23,8 @@ self
 	.globbyASync({
 
 		cwd: cwd,
+
+		sortCallback: naturalCompare,
 
 		onListRow(a, row)
 		{

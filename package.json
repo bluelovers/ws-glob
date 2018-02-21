@@ -1,6 +1,6 @@
 {
   "name": "node-novel-globby",
-  "version": "1.6.5",
+  "version": "1.6.6",
   "description": "globby with sort id/chinese/fullwidth number for node-novel",
   "keywords": [
     "chinese",
@@ -39,7 +39,8 @@
     "chinese_convert": "^1.0.8",
     "globby": "^8.0.0",
     "novel-text": "^1.0.7",
-    "str-util": "^2.3.9"
+    "str-util": "^2.3.9",
+    "string-natural-compare": "^2.0.2"
   },
   "devDependencies": {
     "@types/globby": "^6.1.0",

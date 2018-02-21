@@ -2,6 +2,10 @@
  * Created by user on 2018/2/12/012.
  */
 
+import * as naturalCompare from 'string-natural-compare';
+
+export { naturalCompare }
+
 export function defaultSortCallback(a, b, cache = {})
 {
 	let r = /^(\d+)/;
@@ -28,13 +32,17 @@ export function defaultSortCallback(a, b, cache = {})
 		}
 
 		//console.log(cache);
+		//console.log(ta.input.localeCompare(tb.input));
+
+		//console.log(cache);
 		//cache.as = cache.as || a;
 		//cache.bs = cache.bs || b;
 
 		return defaultSortCallback(ta.input.slice(ta[0].length), tb.input.slice(tb[0].length), cache);
 	}
 
-	return (a > b) ? 1 : 0;
+	//return (a > b) ? 1 : 0;
+	return naturalCompare(a, b);
 }
 
 function _trim(input: string): string
@@ -42,6 +50,7 @@ function _trim(input: string): string
 	return input
 		.replace(/^[_\s]+(\d+)/, '$1')
 		.replace(/^\D(\d+)/, '$1')
+		.trim()
 	;
 }
 
