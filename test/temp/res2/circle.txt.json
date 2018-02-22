@@ -1,0 +1,121 @@
+{
+	"..dir": [
+		{
+			"source_path": "⓪",
+			"source_idx": 0,
+			"path": "⓪",
+			"path_dir": ".",
+			"dir": ".",
+			"file": "⓪",
+			"ext": "",
+			"volume_title": ".",
+			"chapter_title": "⓪",
+			"val_file": "00000",
+			"val_dir": "."
+		},
+		{
+			"source_path": "①",
+			"source_idx": 1,
+			"path": "①",
+			"path_dir": ".",
+			"dir": ".",
+			"file": "①",
+			"ext": "",
+			"volume_title": ".",
+			"chapter_title": "①",
+			"val_file": "00001",
+			"val_dir": "."
+		},
+		{
+			"source_path": "③",
+			"source_idx": 2,
+			"path": "③",
+			"path_dir": ".",
+			"dir": ".",
+			"file": "③",
+			"ext": "",
+			"volume_title": ".",
+			"chapter_title": "③",
+			"val_file": "00003",
+			"val_dir": "."
+		},
+		{
+			"source_path": "4",
+			"source_idx": 3,
+			"path": "4",
+			"path_dir": ".",
+			"dir": ".",
+			"file": "4",
+			"ext": "",
+			"volume_title": ".",
+			"chapter_title": "4",
+			"val_file": "00004",
+			"val_dir": "."
+		},
+		{
+			"source_path": "⑫",
+			"source_idx": 4,
+			"path": "⑫",
+			"path_dir": ".",
+			"dir": ".",
+			"file": "⑫",
+			"ext": "",
+			"volume_title": ".",
+			"chapter_title": "⑫",
+			"val_file": "00012",
+			"val_dir": "."
+		},
+		{
+			"source_path": "⑯",
+			"source_idx": 5,
+			"path": "⑯",
+			"path_dir": ".",
+			"dir": ".",
+			"file": "⑯",
+			"ext": "",
+			"volume_title": ".",
+			"chapter_title": "⑯",
+			"val_file": "00016",
+			"val_dir": "."
+		},
+		{
+			"source_path": "30",
+			"source_idx": 6,
+			"path": "30",
+			"path_dir": ".",
+			"dir": ".",
+			"file": "30",
+			"ext": "",
+			"volume_title": ".",
+			"chapter_title": "30",
+			"val_file": "00030",
+			"val_dir": "."
+		},
+		{
+			"source_path": "㉟",
+			"source_idx": 7,
+			"path": "㉟",
+			"path_dir": ".",
+			"dir": ".",
+			"file": "㉟",
+			"ext": "",
+			"volume_title": ".",
+			"chapter_title": "㉟",
+			"val_file": "00035",
+			"val_dir": "."
+		},
+		{
+			"source_path": "㊿",
+			"source_idx": 8,
+			"path": "㊿",
+			"path_dir": ".",
+			"dir": ".",
+			"file": "㊿",
+			"ext": "",
+			"volume_title": ".",
+			"chapter_title": "㊿",
+			"val_file": "00050",
+			"val_dir": "."
+		}
+	]
+}
