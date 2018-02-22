@@ -58,7 +58,7 @@ export function normalize_val(str: string, padNum: number = 5, options: IOptions
 	str = str
 		.replace(/^第+/, '')
 		//.replace(/\./g, '_')
-		.replace(/[―—－──\-―—─]/g, '_')
+		.replace(/[―—－──\-―—─＝=]/g, '_')
 		.replace(/[\s　]/g, '_')
 		.replace(/[\(\)〔［【《（「『』」》）】〕］]/g, '_')
 		.replace(/[·‧・···•]/g, '_')
