@@ -17,14 +17,26 @@ export function normalize_val(str: string, padNum: number = 5, options: IOptions
 
 	str = NovelTextFile.filename(str);
 
+	if (/^(?:序|プロローグ)/.test(str))
+	{
+		str = '0_' + str;
+	}
+
+	str = str.replace(/^(web)版(\d+)/i, '$1$2');
+
 	str = StrUtil.toHalfWidth(str)
 		.toLowerCase()
 	;
 	str = StrUtil.trim(str, '　');
 
+	str = StrUtil.zh2num(str);
+
 	str = StrUtil.zh2num(str, {
 		truncateOne: 2,
+		flags: 'ug',
 	}).toString();
+
+	//console.log(str);
 
 	if (options.checkRoman)
 	{
@@ -48,7 +60,7 @@ export function normalize_val(str: string, padNum: number = 5, options: IOptions
 		.replace(/\./g, '_')
 		.replace(/[―—－──\-]/g, '_')
 		.replace(/[\s　]/g, '_')
-		.replace(/[・:]/g, '_')
+		.replace(/[・:,]/g, '_')
 		.replace(/_+/g, '_')
 	;
 

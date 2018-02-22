@@ -1,6 +1,6 @@
 {
   "name": "node-novel-globby",
-  "version": "1.6.9",
+  "version": "1.7.0",
   "description": "globby with sort id/chinese/fullwidth number for node-novel",
   "keywords": [
     "alphanum",
@@ -49,10 +49,11 @@
     "bluebird": "^3.5.1",
     "chinese_convert": "^1.0.8",
     "deromanize": "^1.0.0",
-    "globby": "^8.0.0",
-    "novel-text": "^1.0.7",
-    "str-util": "^2.3.9",
-    "string-natural-compare": "^2.0.2"
+    "globby": "^8.0.1",
+    "novel-text": "^1.0.8",
+    "str-util": "^2.3.13",
+    "string-natural-compare": "^2.0.2",
+    "upath2": "^2.1.0"
   },
   "devDependencies": {
     "@types/globby": "^6.1.0",

@@ -3,7 +3,8 @@
  */
 
 import self from '..';
-import * as path from 'path';
+// @ts-ignore
+import * as path from 'upath2';
 import * as fs from 'fs-iconv';
 import * as naturalCompare from 'string-natural-compare';
 

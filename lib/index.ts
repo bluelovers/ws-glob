@@ -3,13 +3,16 @@
  */
 
 import * as Promise from 'bluebird';
-import * as path from 'path';
+// @ts-ignore
+import * as path from 'upath2';
+export { path }
 
 import * as StrUtil from 'str-util';
 
 import * as libSort from './sort';
 
 import { normalize_val } from './helper';
+
 export { normalize_val }
 
 import * as globby from 'globby';
@@ -50,6 +53,7 @@ export const defaultOptions: IOptions = {
 export interface IApi<T>
 {
 	(options: IOptions): T
+
 	(patterns?: string[], options?: IOptions): T
 }
 
@@ -59,6 +63,7 @@ export type IApiAsync = IApi<Promise<IReturnList>>;
 export interface IApiWithReturnGlob<T>
 {
 	(options: IOptionsWithReturnGlobList): T
+
 	(patterns?: string[], options?: IOptionsWithReturnGlobList): T
 }
 
@@ -82,6 +87,7 @@ export interface IOptions extends IGlobOptions
 	throwEmpty?: boolean,
 
 	sortCallback?(a, b): number,
+
 	sortFn?<T>(arr: T): T,
 
 	padNum?: number,
@@ -127,14 +133,20 @@ export interface IReturnRow
 
 export interface IReturnList
 {
+	[index: number]: IReturnRow[],
 	[key: string]: IReturnRow[],
 }
 
 export interface IReturnList2
 {
+	/*
 	[key: string]: {
+		[index: number]: IReturnRow,
 		[key: string]: IReturnRow,
 	},
+	*/
+	[key: string]: IReturnRow[],
+	[index: number]: IReturnRow[],
 }
 
 export function getOptions(options: IOptions): IReturnOptions
@@ -184,7 +196,8 @@ export function globToList(glob_ls: string[], options: IOptions = {}): IReturnLi
 		return null;
 	}
 
-	return p_sort_list(glob_to_list(glob_ls, options), options);
+	//return p_sort_list(glob_to_list(glob_ls, options), options);
+	return sortList2(glob_to_list(glob_ls, options), options);
 }
 
 export interface IReturnGlobListOptions
@@ -194,13 +207,30 @@ export interface IReturnGlobListOptions
 
 export function returnGlobList(ls: IReturnList, options: IReturnGlobListOptions & IOptions = {}): string[]
 {
-	let useSourcePath = (options.useSourcePath === true || options.useSourcePath === false) ? options.useSourcePath : !options.absolute;
+	let useSourcePath = (options.useSourcePath === true || options.useSourcePath === false)
+		? options.useSourcePath
+		: !options.absolute;
 
 	if (!ls)
 	{
 		return [];
 	}
 
+	return Object.values(ls)
+		.reduce(function (a: string[], b)
+		{
+			Object.values(b)
+				.forEach(function (value, index, array)
+				{
+					a.push(useSourcePath ? value.source_path : value.path);
+				})
+			;
+
+			return a;
+		}, [])
+		;
+
+	/*
 	return Object.keys(ls)
 		.reduce(function (a: string[], b)
 		{
@@ -212,6 +242,7 @@ export function returnGlobList(ls: IReturnList, options: IReturnGlobListOptions 
 			return a;
 		}, [])
 		;
+	*/
 }
 
 export function glob_to_list(glob_ls: string[], options: IOptions = {}): IReturnList2
@@ -285,6 +316,7 @@ export function glob_to_list(glob_ls: string[], options: IOptions = {}): IReturn
 				row.chapter_title = RegExp.$1;
 			}
 
+			/*
 			if (/^(?:序|プロローグ)/.test(row.val_file))
 			{
 				row.val_file = '0_' + row.val_file;
@@ -292,7 +324,7 @@ export function glob_to_list(glob_ls: string[], options: IOptions = {}): IReturn
 
 			let s2 = StrUtil.zh2num(row.val_file).toString();
 
-			r = /^第?(\d+)[話话]/;
+			r = /^第?(\d+)[話话章卷]/;
 			if (r.test(s2))
 			{
 				row.val_file = s2.replace(r, '$1')
@@ -309,17 +341,22 @@ export function glob_to_list(glob_ls: string[], options: IOptions = {}): IReturn
 					return $0.padStart(padNum, '0');
 				});
 			}
+			*/
 
 			//row.val_dir = StrUtil.toHalfNumber(StrUtil.zh2num(row.val_dir).toString());
 
-			r = /^(web)版(\d+)/;
+			/*
+			r = /^(web)版(\d+)/i;
 			if (r.test(row.val_file))
 			{
 				row.val_file = row.val_file.replace(r, '$1$2');
 			}
+			*/
 
-			row.volume_title = row.volume_title.trim();
-			row.chapter_title = row.chapter_title.trim();
+			row.volume_title = StrUtil.trim(row.volume_title, '　');
+			row.chapter_title = StrUtil.trim(row.chapter_title, '　');
+
+			//row.val_dir = StrUtil.zh2num(row.val_dir).toString();
 
 			row.val_dir = normalize_val(row.val_dir, padNum, options);
 			row.val_file = normalize_val(row.val_file, padNum, options);
@@ -335,13 +372,22 @@ export function glob_to_list(glob_ls: string[], options: IOptions = {}): IReturn
 			}
 		}
 
+		/*
 		a[row.val_dir] = a[row.val_dir] || {};
 		a[row.val_dir][row.val_file] = row;
+		*/
+
+		// 防止純數字的資料夾名稱導致排序失敗
+		let key = row.val_dir + '.dir';
+
+		a[key] = a[key] || [];
+		a[key].push(row);
 
 		return a;
-	}, {});
+	}, {} as IReturnList2);
 }
 
+/*
 export function _p_sort_list1(ls: IReturnList2, options: IOptions = {})
 {
 	let ks = Object.keys(ls)
@@ -401,13 +447,78 @@ export function _p_sort_list2(ls, options: IOptions = {}): IReturnList
 
 	return ls;
 }
+*/
 
 export function p_sort_list(ls: IReturnList2, options: IOptions = {}): IReturnList
 {
+	/*
 	let ret = _p_sort_list1(ls, options);
 
 	return _p_sort_list2(ret, options);
+	*/
+	return sortList2(ls, options);
+}
+
+export function sortList2(ls: IReturnList2, options: IOptions = {})
+{
+	let comp = options.sortCallback || libSort.defaultSortCallback;
+
+	let ls2 = Object.entries(ls);
+
+	if (options && options.sortFn)
+	{
+		ls2 = options.sortFn(ls2);
+	}
+	else if (!options || !options.disableSort)
+	{
+		ls2.sort(function (a, b)
+		{
+			return comp(a[0], b[0]);
+		});
+	}
+
+	return ls2
+		/*
+		.sort(function (a, b)
+		{
+			return comp(a[0], b[0]);
+		})
+		*/
+		.reduce(function (a, entries)
+		{
+			let dir: string;
+
+			let ls2 = Object.values(entries[1])
+				.sort(function (a, b)
+				{
+					//console.log(a.val_file, b.val_file);
+
+					return comp(a.val_file, b.val_file);
+				})
+				;
+
+			//console.log(ls2);
+
+			let ls = ls2
+				.reduce(function (a, row)
+				{
+					dir = row.dir;
+
+					//a[row.file.toString()] = row;
+					a.push(row);
+
+					return a;
+				}, [])
+			;
+
+			// 防止純數字的資料夾名稱導致排序失敗
+			a[dir + '.dir'] = ls;
+
+			return a;
+		}, {})
+	;
 }
 
 import * as self from './index';
+
 export default self;

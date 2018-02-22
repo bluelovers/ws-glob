@@ -1,5 +1,7 @@
 /// <reference types="glob" />
 import * as Promise from 'bluebird';
+import * as path from 'upath2';
+export { path };
 import { normalize_val } from './helper';
 export { normalize_val };
 import { IOptions as IGlobOptions } from 'glob';
@@ -59,12 +61,12 @@ export interface IReturnRow {
     val_dir: string;
 }
 export interface IReturnList {
+    [index: number]: IReturnRow[];
     [key: string]: IReturnRow[];
 }
 export interface IReturnList2 {
-    [key: string]: {
-        [key: string]: IReturnRow;
-    };
+    [key: string]: IReturnRow[];
+    [index: number]: IReturnRow[];
 }
 export declare function getOptions(options: IOptions): IReturnOptions;
 export declare function getOptions(patterns?: string[], options?: IOptions): IReturnOptions;
@@ -74,8 +76,7 @@ export interface IReturnGlobListOptions {
 }
 export declare function returnGlobList(ls: IReturnList, options?: IReturnGlobListOptions & IOptions): string[];
 export declare function glob_to_list(glob_ls: string[], options?: IOptions): IReturnList2;
-export declare function _p_sort_list1(ls: IReturnList2, options?: IOptions): {};
-export declare function _p_sort_list2(ls: any, options?: IOptions): IReturnList;
 export declare function p_sort_list(ls: IReturnList2, options?: IOptions): IReturnList;
+export declare function sortList2(ls: IReturnList2, options?: IOptions): {};
 import * as self from './index';
 export default self;

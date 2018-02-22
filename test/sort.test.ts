@@ -54,10 +54,18 @@ describe(relative(__filename), () =>
 
 			it(file, function ()
 			{
-				let b = returnGlobList(globToList(a, options));
+				let c = globToList(a, options);
+				let b = returnGlobList(c);
+
+				fs.outputFileSync(path.join(__dirname, './temp', `${file}.txt`), b.join("\n"));
+				fs.writeJsonSync(path.join(__dirname, './temp', `${file}.json`), c, {
+					spaces: "\t",
+				});
+
 
 				//console.log(a);
 				console.log(b);
+				//console.log(c);
 
 				expect(a).to.be.deep.equal(b);
 			});
