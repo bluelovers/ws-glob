@@ -1,6 +1,6 @@
 {
   "name": "node-novel-globby",
-  "version": "1.7.3",
+  "version": "1.7.5",
   "description": "globby with sort id/chinese/fullwidth number for node-novel",
   "keywords": [
     "alphanum",
@@ -47,7 +47,7 @@
   "dependencies": {
     "arabic-roman-convert.js": "^1.2.1",
     "bluebird": "^3.5.1",
-    "chinese_convert": "^1.0.8",
+    "cjk-conv": "^1.0.18",
     "deromanize": "^1.0.0",
     "globby": "^8.0.1",
     "novel-text": "^1.0.11",

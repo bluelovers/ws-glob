@@ -3,11 +3,10 @@
  */
 
 import * as StrUtil from 'str-util';
-import NovelTextFile from 'novel-text/zhjp';
-import { cn2tw } from 'chinese_convert';
 import { convertRoman } from 'arabic-roman-convert.js';
 import * as deromanize from 'deromanize';
 import { IOptions } from './index';
+import { cn2tw, zh2jp, novelFilename } from 'cjk-conv';
 
 export { deromanize }
 
@@ -15,7 +14,7 @@ export function normalize_val(str: string, padNum: number = 5, options: IOptions
 {
 	padNum = padNum || options.padNum;
 
-	str = NovelTextFile.filename(str);
+	str = novelFilename.filename(str);
 
 	if (/^(?:序|プロローグ|Prologue)/i.test(str))
 	{
@@ -69,7 +68,7 @@ export function normalize_val(str: string, padNum: number = 5, options: IOptions
 		.replace(/_+/g, '_')
 	;
 
-	str = StrUtil.zh2jp(cn2tw(str) as string, {
+	str = zh2jp(cn2tw(str) as string, {
 		safe: false,
 	});
 
