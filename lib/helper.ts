@@ -17,7 +17,7 @@ export function normalize_val(str: string, padNum: number = 5, options: IOptions
 
 	str = NovelTextFile.filename(str);
 
-	if (/^(?:序|プロローグ)/.test(str))
+	if (/^(?:序|プロローグ|Prologue)/i.test(str))
 	{
 		str = '0_' + str;
 	}

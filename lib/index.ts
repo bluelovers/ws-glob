@@ -19,19 +19,18 @@ import * as globby from 'globby';
 import { IOptions as IGlobOptions } from 'glob';
 
 export const defaultPatternsExclude: string[] = [
-	'!**/*.raw.*',
-	'!**/*.new.*',
-	'!**/*.out.*',
-	'!**/out/**/*',
-	'!**/raw/**/*',
-	'!**/*_out/**/*',
-	'!**/待修正屏蔽字.txt',
-	'!**/英語.txt',
-	'!**/node_modules/**/*',
-	'!**/.*/**/*',
-	'!**/~*/**/*',
-	'!**/~*',
-	'!**/.*',
+	'!*.raw.*',
+	'!*.new.*',
+	'!*.out.*',
+	'!out',
+	'!raw',
+	'!*_out',
+	'!待修正屏蔽字.txt',
+	'!英語.txt',
+	'!node_modules',
+	'!*.raw',
+	'!~*',
+	'!.*',
 ];
 
 export const defaultPatterns: string[] = [
