@@ -8,6 +8,11 @@ export { naturalCompare }
 
 export function defaultSortCallback(a, b, cache = {})
 {
+	if (a === b)
+	{
+		return 0;
+	}
+
 	let r = /^(\d+(?:\.\d+)?)/;
 	let ta: RegExpExecArray;
 	let tb: RegExpExecArray;
@@ -43,7 +48,7 @@ export function defaultSortCallback(a, b, cache = {})
 		let b1 = tb.input.slice(tb[0].length);
 
 		//while (a1[0] == b1[0] && (b1[0] == '_'))
-		while (a1[0] && a1[0] == b1[0] && (!/^\d$/.test(b1[0])))
+		while (a1 != b1 && a1[0] && a1[0] == b1[0] && (!/^\d$/.test(b1[0])))
 		{
 			a1 = a1.slice(1);
 			b1 = b1.slice(1);
