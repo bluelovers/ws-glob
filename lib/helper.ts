@@ -14,6 +14,8 @@ export function normalize_val(str: string, padNum: number = 5, options: IOptions
 {
 	padNum = padNum || options.padNum;
 
+	//console.log(111, str);
+
 	str = novelFilename.filename(str);
 
 	if (/^(?:序|プロローグ|Prologue)/i.test(str))
@@ -28,7 +30,7 @@ export function normalize_val(str: string, padNum: number = 5, options: IOptions
 	;
 	str = StrUtil.trim(str, '　');
 
-	str = StrUtil.zh2num(str);
+	str = StrUtil.zh2num(str).toString();
 
 	str = StrUtil.zh2num(str, {
 		truncateOne: 2,
@@ -58,6 +60,8 @@ export function normalize_val(str: string, padNum: number = 5, options: IOptions
 
 	str = str
 		.replace(/^第+/, '')
+		//.replace(/(\d)[章話]/g, '$1_')
+		//.replace(/第(\d)/g, '_$1')
 		//.replace(/\./g, '_')
 		.replace(/[―—－──\-―—─＝=]/g, '_')
 		.replace(/[\s　]/g, '_')
@@ -65,12 +69,16 @@ export function normalize_val(str: string, padNum: number = 5, options: IOptions
 		.replace(/[·‧・···•]/g, '_')
 		.replace(/[：：︰﹕：]/ug, '_')
 		.replace(/[・:,]/g, '_')
+		.replace(/_+$/g, '')
 		.replace(/_+/g, '_')
+
 	;
 
 	str = zh2jp(cn2tw(str) as string, {
 		safe: false,
 	});
+
+	//console.log(str);
 
 	return str;
 }

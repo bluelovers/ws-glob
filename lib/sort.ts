@@ -8,13 +8,14 @@ export { naturalCompare }
 
 export function defaultSortCallback(a, b, cache = {})
 {
-	let r = /^(\d+)/;
+	let r = /^(\d+(?:\.\d+)?)/;
 	let ta: RegExpExecArray;
 	let tb: RegExpExecArray;
 
 	if ((ta = r.exec(_trim(a))) && (tb = r.exec(_trim(b))))
 	{
 		/*
+		console.log(a, b);
 		console.log(ta, tb);
 		console.log(parseInt(ta[0]), parseInt(tb[0]));
 		console.log(parseInt(ta), parseInt(tb));
@@ -38,7 +39,17 @@ export function defaultSortCallback(a, b, cache = {})
 		//cache.as = cache.as || a;
 		//cache.bs = cache.bs || b;
 
-		return defaultSortCallback(ta.input.slice(ta[0].length), tb.input.slice(tb[0].length), cache);
+		let a1 = ta.input.slice(ta[0].length);
+		let b1 = tb.input.slice(tb[0].length);
+
+		//while (a1[0] == b1[0] && (b1[0] == '_'))
+		while (a1[0] && a1[0] == b1[0] && (!/^\d$/.test(b1[0])))
+		{
+			a1 = a1.slice(1);
+			b1 = b1.slice(1);
+		}
+
+		return defaultSortCallback(a1, b1, cache);
 	}
 
 	//return (a > b) ? 1 : 0;
