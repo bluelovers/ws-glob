@@ -6,7 +6,8 @@ import * as Promise from 'bluebird';
 export * from './index';
 export * from './lib';
 
-import novelGlobby from './index';
+import novelGlobby, { globby } from './index';
+export { globby }
 
 import {
 	getOptions,

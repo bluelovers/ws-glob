@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __export(require("./index"));
 __export(require("./lib"));
 const index_1 = require("./index");
+exports.globby = index_1.globby;
 const lib_1 = require("./lib");
 function globbyASync(patterns, options = {}) {
     [patterns, options] = lib_1.getOptions(patterns, options);

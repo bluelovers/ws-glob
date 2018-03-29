@@ -1,6 +1,8 @@
 import * as Promise from 'bluebird';
 export * from './index';
 export * from './lib';
+import { globby } from './index';
+export { globby };
 import { IApiWithReturnGlob, IOptionsWithReturnGlobList, IApiWithReturnGlobAsync } from './lib';
 export declare function globbyASync(options: IOptionsWithReturnGlobList): Promise<string[]>;
 export declare function globbyASync(patterns?: string[], options?: IOptionsWithReturnGlobList): Promise<string[]>;
