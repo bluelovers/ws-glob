@@ -8,6 +8,9 @@ import * as path from 'upath2';
 export { path }
 
 import * as StrUtil from 'str-util';
+export * from './options';
+import { IOptions, defaultPatternsExclude, getOptions } from './options';
+export { IOptions, defaultPatternsExclude, getOptions }
 
 import * as libSort from './sort';
 
@@ -16,38 +19,6 @@ import { normalize_strip, normalize_val } from './helper';
 export { normalize_val }
 
 import * as globby from 'globby';
-import { IOptions as IGlobOptions } from 'glob';
-
-export const defaultPatternsExclude: string[] = [
-	'!*.raw.*',
-	'!*.new.*',
-	'!*.out.*',
-	'!out',
-	'!raw',
-	'!*_out',
-	'!待修正屏蔽字.txt',
-	'!英語.txt',
-	'!node_modules',
-	'!*.raw',
-	'!~*',
-	'!.*',
-];
-
-export const defaultPatterns: string[] = [
-	'**/*.txt',
-	...defaultPatternsExclude,
-];
-
-export const defaultOptions: IOptions = {
-	//absolute: false,
-	useDefaultPatternsExclude: true,
-	disableAutoHandle: false,
-	disableSort: false,
-
-	throwEmpty: true,
-
-	sortCallback: libSort.defaultSortCallback,
-};
 
 export interface IApi<T>
 {
@@ -69,49 +40,7 @@ export interface IApiWithReturnGlob<T>
 export type IApiWithReturnGlobSync = IApiWithReturnGlob<IReturnGlob>;
 export type IApiWithReturnGlobAsync = IApiWithReturnGlob<Promise<IReturnGlob>>;
 
-export interface IOptions extends IGlobOptions
-{
-	cwd?: string,
-	absolute?: boolean,
-
-	useDefaultPatternsExclude?: boolean,
-
-	disableAutoHandle?: boolean,
-	disableSort?: boolean,
-
-	libPromise?: Promise,
-
-	onListRow?: (a: IReturnList2, row: IReturnRow, options: IOptions) => IReturnRow,
-
-	throwEmpty?: boolean,
-
-	sortCallback?(a, b): number,
-
-	sortFn?<T>(arr: T): T,
-
-	padNum?: number,
-
-	checkRoman?: boolean,
-}
-
 export type IOptionsWithReturnGlobList = IOptions & IReturnGlobListOptions;
-
-export interface IReturnOptionsArray
-{
-	0: string[];
-	1: IOptions;
-}
-
-export interface IReturnOptionsObject
-{
-	patterns: string[];
-	options: IOptions;
-}
-
-export interface IReturnOptions extends IReturnOptionsArray, IReturnOptionsObject
-{
-	[Symbol.iterator]()
-}
 
 export type IReturnGlob = string[];
 
@@ -146,41 +75,6 @@ export interface IReturnList2
 	*/
 	[key: string]: IReturnRow[],
 	[index: number]: IReturnRow[],
-}
-
-export function getOptions(options: IOptions): IReturnOptions
-export function getOptions(patterns?: string[], options?: IOptions): IReturnOptions
-export function getOptions(patterns?, options: IOptions = {}): IReturnOptions
-{
-	if (!Array.isArray(patterns) && typeof patterns == 'object')
-	{
-		[patterns, options] = [undefined, patterns];
-	}
-
-	if (patterns === null || typeof patterns == 'undefined')
-	{
-		patterns = defaultPatterns;
-	}
-
-	let ret: IReturnOptionsObject = {
-		patterns: patterns.slice(),
-		options: Object.assign({}, defaultOptions, options),
-	};
-
-	ret[Symbol.iterator] = function* ()
-	{
-		yield this.patterns;
-		yield this.options;
-	};
-
-	if (ret.options.useDefaultPatternsExclude)
-	{
-		ret.patterns = ret.patterns.concat(defaultPatternsExclude);
-	}
-
-	ret.options.sortCallback = ret.options.sortCallback || defaultOptions.sortCallback;
-
-	return ret as IReturnOptions;
 }
 
 export function globToList(glob_ls: string[], options: IOptions = {}): IReturnList

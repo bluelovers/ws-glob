@@ -6,7 +6,7 @@ import { globToTree, treeToGlob } from 'glob-tree-list';
 import { sort } from 'glob-tree-list/lib/util';
 import { naturalCompare, defaultSortCallback } from './sort';
 import { normalize_val } from './helper';
-import { IOptions } from './index';
+import { IOptions } from './options';
 
 export function sortTree(ls: string[], sortFn = defaultSortCallback, options: IOptions = {}): string[]
 {
