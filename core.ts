@@ -87,12 +87,14 @@ export function treeToGlob(a: ITree, d: string[] = []): string[]
 	}, [] as string[]);
 }
 
+export type ITreeEntries = string | ITreeRow | null;
+
 export type ITreeRow = {
-	[key: string]: string | ITreeRow | null;
+	[key: string]: ITreeEntries;
 }
 
 export type ITree = {
-	[key: string]: ITreeRow;
+	[key: string]: string | ITreeRow | null;
 }
 
 import * as self from './core';

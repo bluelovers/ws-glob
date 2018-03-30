@@ -1,6 +1,6 @@
 {
   "name": "glob-tree-list",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": ">",
   "keywords": [
     "dir",
@@ -25,6 +25,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "string-natural-compare": "^2.0.2",
     "upath2": "^2.1.2"
   },
   "devDependencies": {}
