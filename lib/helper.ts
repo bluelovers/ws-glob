@@ -10,6 +10,36 @@ import { cn2tw, zh2jp, novelFilename } from 'cjk-conv';
 
 export { deromanize }
 
+export function normalize_strip(str: string, isDir?: boolean)
+{
+	if (isDir)
+	{
+		if (/^\d+[\s_](.+)(_\(\d+\))$/.exec(str))
+		{
+			str = RegExp.$1;
+		}
+		else if (/^\d+[\s_](.+)(_\(\d+\))?$/.exec(str))
+		{
+			str = RegExp.$1;
+		}
+	}
+	else
+	{
+		if (/^\d+_(.+)\.\d+$/.exec(str))
+		{
+			str = RegExp.$1;
+		}
+		else if (/^\d{4,}_(.+)$/.exec(str))
+		{
+			str = RegExp.$1;
+		}
+	}
+
+	str = StrUtil.trim(str, '　');
+
+	return str;
+}
+
 export function normalize_val(str: string, padNum: number = 5, options: IOptions = {}): string
 {
 	padNum = padNum || options.padNum;

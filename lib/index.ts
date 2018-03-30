@@ -11,7 +11,7 @@ import * as StrUtil from 'str-util';
 
 import * as libSort from './sort';
 
-import { normalize_val } from './helper';
+import { normalize_strip, normalize_val } from './helper';
 
 export { normalize_val }
 
@@ -292,8 +292,10 @@ export function glob_to_list(glob_ls: string[], options: IOptions = {}): IReturn
 
 		if (!options.disableAutoHandle)
 		{
-			row.val_file = StrUtil.toHalfWidth(row.val_file);
-			row.val_dir = StrUtil.toHalfWidth(row.val_dir);
+			//row.val_file = StrUtil.toHalfWidth(row.val_file);
+			//row.val_dir = StrUtil.toHalfWidth(row.val_dir);
+
+			/*
 
 			let r: RegExp;
 
@@ -314,6 +316,8 @@ export function glob_to_list(glob_ls: string[], options: IOptions = {}): IReturn
 			{
 				row.chapter_title = RegExp.$1;
 			}
+
+			*/
 
 			/*
 			if (/^(?:序|プロローグ)/.test(row.val_file))
@@ -352,10 +356,13 @@ export function glob_to_list(glob_ls: string[], options: IOptions = {}): IReturn
 			}
 			*/
 
-			row.volume_title = StrUtil.trim(row.volume_title, '　');
-			row.chapter_title = StrUtil.trim(row.chapter_title, '　');
+			//row.volume_title = StrUtil.trim(row.volume_title, '　');
+			//row.chapter_title = StrUtil.trim(row.chapter_title, '　');
 
 			//row.val_dir = StrUtil.zh2num(row.val_dir).toString();
+
+			row.volume_title = normalize_strip(row.volume_title, true);
+			row.chapter_title = normalize_strip(row.chapter_title);
 
 			row.val_dir = normalize_val(row.val_dir, padNum, options);
 			row.val_file = normalize_val(row.val_file, padNum, options);
