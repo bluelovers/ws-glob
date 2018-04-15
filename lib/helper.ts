@@ -14,11 +14,11 @@ export function normalize_strip(str: string, isDir?: boolean)
 {
 	if (isDir)
 	{
-		if (/^\d+[\s_](.+)(_\(\d+\))$/.exec(str))
+		if (/^p?\d{4,}[\s_](.+)(_\(\d+\))$/.exec(str))
 		{
 			str = RegExp.$1;
 		}
-		else if (/^\d+[\s_](.+)(_\(\d+\))?$/.exec(str))
+		else if (/^p?\d{4,}[\s_](.+)(_\(\d+\))?$/.exec(str))
 		{
 			str = RegExp.$1;
 		}
@@ -29,7 +29,7 @@ export function normalize_strip(str: string, isDir?: boolean)
 		{
 			str = RegExp.$1;
 		}
-		else if (/^\d{4,}_(.+)$/.exec(str))
+		else if (/^c?\d{4,}_(.+)$/.exec(str))
 		{
 			str = RegExp.$1;
 		}
@@ -54,6 +54,8 @@ export function normalize_val(str: string, padNum: number = 5, options: IOptions
 	}
 
 	str = str.replace(/^(web)版(\d+)/i, '$1$2');
+
+	//str = str.replace(/^[cp](\d{4,}_)/, '$1');
 
 	str = StrUtil.toHalfWidth(str)
 		.toLowerCase()
