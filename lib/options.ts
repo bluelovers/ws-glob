@@ -11,22 +11,24 @@ import * as Promise from 'bluebird';
 import { IOptions as IGlobOptions } from 'glob';
 
 export const defaultPatternsExclude: string[] = [
-	'!*.raw.*',
 	'!*.new.*',
 	'!*.out.*',
-	'!out',
-	'!raw',
+	'!*.raw',
+	'!*.raw.*',
+	'!*.raw/**',
 	'!*_out',
-	'!待修正屏蔽字.txt',
-	'!英語.txt',
+	'!*out/**',
+	'!.*',
+	'!.*/**',
 	'!node_modules',
 	'!node_modules/**',
-	'!*.raw',
-	'!*.raw/**',
+	'!out',
+	'!raw',
+	'!raw/**',
 	'!~*',
-	'!.*',
 	'!~*/**',
-	'!.*/**',
+	'!待修正屏蔽字.txt',
+	'!英語.txt',
 ];
 
 export const defaultPatterns: string[] = [
