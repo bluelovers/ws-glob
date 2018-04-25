@@ -20,9 +20,13 @@ export const defaultPatternsExclude: string[] = [
 	'!待修正屏蔽字.txt',
 	'!英語.txt',
 	'!node_modules',
+	'!node_modules/**',
 	'!*.raw',
+	'!*.raw/**',
 	'!~*',
 	'!.*',
+	'!~*/**',
+	'!.*/**',
 ];
 
 export const defaultPatterns: string[] = [
