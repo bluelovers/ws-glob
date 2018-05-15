@@ -1,4 +1,3 @@
-/// <reference types="glob" />
 import { IReturnList2, IReturnRow } from './index';
 import * as Promise from 'bluebird';
 import { IOptions as IGlobOptions } from 'glob';
@@ -14,7 +13,7 @@ export declare type IOptions = IGlobOptions & {
     libPromise?: Promise;
     onListRow?: (a: IReturnList2, row: IReturnRow, options: IOptions) => IReturnRow;
     throwEmpty?: boolean;
-    sortCallback?(a, b): number;
+    sortCallback?(a: any, b: any): number;
     sortFn?<T>(arr: T): T;
     padNum?: number;
     checkRoman?: boolean;

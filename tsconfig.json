@@ -28,20 +28,20 @@
 
     "removeComments": true,
 
-    "baseUrl": ".",
-    "sourceRoot": ".",
-    "rootDir": ".",
-    "outDir": ".",
+//    "baseUrl": ".",
+//    "sourceRoot": ".",
+//    "rootDir": ".",
+//    "outDir": ".",
 
-    "paths": {
-
-    },
+//    "paths": {
+//
+//    },
 
     "traceResolution": true,
     "newLine": "lf"
-  },
+  }
 
-  "exclude": [
-    "node_modules"
-  ]
+//  "exclude": [
+//    "node_modules"
+//  ]
 }
