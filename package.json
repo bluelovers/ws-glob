@@ -45,8 +45,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@node-novel/normalize": "1",
-    "@node-novel/sort": "1",
+    "@node-novel/normalize": "^1",
+    "@node-novel/sort": "^1",
     "bluebird": "^3.5.1",
     "cjk-conv": "^1.0.35",
     "glob-tree-list": "^1.0.3",
