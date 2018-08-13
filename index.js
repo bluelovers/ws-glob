@@ -1,4 +1,7 @@
 "use strict";
+/**
+ * Created by user on 2018/1/26/026.
+ */
 function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
@@ -19,6 +22,10 @@ function globbySync(patterns, options = {}) {
 exports.globbySync = globbySync;
 function globbyASync(patterns, options = {}) {
     {
+        /*
+        let ret = getOptions(patterns, options);
+        [patterns, options] = [ret.patterns, ret.options];
+        */
         [patterns, options] = lib_1.getOptions(patterns, options);
     }
     let ls = globby(patterns, options);

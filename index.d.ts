@@ -1,3 +1,6 @@
+/**
+ * Created by user on 2018/1/26/026.
+ */
 import * as Promise from 'bluebird';
 import * as globby from 'globby';
 export * from './lib';
