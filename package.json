@@ -1,0 +1,62 @@
+{
+  "name": "glob-search",
+  "version": "1.0.0",
+  "description": "glob search from current cwd up to root or stopPath",
+  "keywords": [
+    "dir",
+    "directory",
+    "entry",
+    "file",
+    "find",
+    "find-up",
+    "findup",
+    "folder",
+    "glob",
+    "json",
+    "root",
+    "look",
+    "parent",
+    "look-up",
+    "match",
+    "npm",
+    "package",
+    "parent",
+    "parents",
+    "path",
+    "pattern",
+    "resolve",
+    "root",
+    "search",
+    "up",
+    "walk",
+    "walking"
+  ],
+  "homepage": "https://github.com/bluelovers/glob-search#readme",
+  "bugs": {
+    "url": "https://github.com/bluelovers/glob-search/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bluelovers/glob-search.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@types/bluebird": "^3",
+    "bluebird": "^3",
+    "chai": "^4",
+    "fast-glob": "^2",
+    "fs-extra": "^7",
+    "pkg-dir": "^3",
+    "string-natural-compare": "^2",
+    "ts-type": "^1",
+    "upath2": "^2"
+  }
+}
