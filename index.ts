@@ -555,7 +555,13 @@ export function handleArgs<T extends EntryItem = string>(pattern: string | strin
 
 	if (opts.stopPath == null || opts.stopPath === true)
 	{
-		opts.stopPath = [pkgDir.sync(cwd)];
+		let root = pkgDir.sync(cwd);
+
+		opts.stopPath = [];
+		if (root)
+		{
+			opts.stopPath.push(root);
+		}
 	}
 	else if (typeof opts.stopPath === 'string')
 	{
