@@ -1,6 +1,3 @@
-/**
- * Created by user on 2018/2/14/014.
- */
 import * as Promise from 'bluebird';
 import * as path from 'upath2';
 export { path };
