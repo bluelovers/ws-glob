@@ -1,5 +1,5 @@
-import * as Promise from 'bluebird';
-import * as path from 'upath2';
+import Promise = require('bluebird');
+import path = require('upath2');
 export { path };
 export * from './options';
 import { IOptions, defaultPatternsExclude, getOptions } from './options';
@@ -49,5 +49,5 @@ export declare function returnGlobList(ls: IReturnList, options?: IReturnGlobLis
 export declare function glob_to_list(glob_ls: string[], options?: IOptions): IReturnList2;
 export declare function p_sort_list(ls: IReturnList2, options?: IOptions): IReturnList;
 export declare function sortList2(ls: IReturnList2, options?: IOptions): {};
-import * as self from './index';
-export default self;
+declare const _default: typeof import(".");
+export default _default;

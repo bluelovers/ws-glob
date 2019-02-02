@@ -2,17 +2,17 @@
  * Created by user on 2018/2/14/014.
  */
 
-import * as Promise from 'bluebird';
+import Promise = require('bluebird');
 // @ts-ignore
-import * as path from 'upath2';
+import path = require('upath2');
 export { path }
 
-import * as StrUtil from 'str-util';
+import StrUtil = require('str-util');
 export * from './options';
 import { IOptions, defaultPatternsExclude, getOptions } from './options';
 export { IOptions, defaultPatternsExclude, getOptions }
 
-import * as libSort from './sort';
+import libSort = require('./sort');
 
 import { normalize_strip, normalize_val } from './helper';
 
@@ -419,6 +419,4 @@ export function sortList2(ls: IReturnList2, options: IOptions = {})
 	;
 }
 
-import * as self from './index';
-
-export default self;
+export default exports as typeof import('./index');

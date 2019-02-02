@@ -5,9 +5,6 @@
 import { globToList, returnGlobList } from '../lib';
 import { chai, relative, expect, path, assert, util, mochaAsync } from './_local-dev';
 
-// @ts-ignore
-import { describe, before, beforeEach, it, ITest } from 'mocha';
-
 import { globby } from '../index';
 import { globbyASync } from '../g';
 import * as fs from 'fs-iconv';
@@ -15,11 +12,12 @@ import * as fs from 'fs-iconv';
 // @ts-ignore
 describe(relative(__filename), () =>
 {
-	let currentTest: ITest;
+	let currentTest;
 
+	// @ts-ignore
 	beforeEach(function ()
 	{
-		currentTest = this.currentTest as ITest;
+		currentTest = this.currentTest;
 
 		//console.log('it:before', currentTest.title);
 		//console.log('it:before', currentTest.fullTitle());
@@ -39,7 +37,7 @@ describe(relative(__filename), () =>
 			{
 				//console.log(row);
 				return row;
-			}
+			},
 		};
 
 		ls.forEach(function (file)
@@ -52,6 +50,7 @@ describe(relative(__filename), () =>
 				return v.trim() !== '';
 			});
 
+			// @ts-ignore
 			it(file, function ()
 			{
 				let c = globToList(a, options);

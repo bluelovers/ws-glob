@@ -2,8 +2,8 @@
  * Created by user on 2018/1/26/026.
  */
 
-import * as Promise from 'bluebird';
-import * as globby from 'globby';
+import Promise = require('bluebird');
+import globby = require('globby');
 export * from './lib';
 
 export { globby }
@@ -46,6 +46,7 @@ export function globbyASync(patterns?, options: IOptions = {}): Promise<IReturnL
 
 	let ls = globby(patterns, options);
 
+	// @ts-ignore
 	let p: Promise = options.libPromise ? options.libPromise : Promise;
 
 	return p.resolve(ls)
@@ -61,5 +62,4 @@ export function globbyASync(patterns?, options: IOptions = {}): Promise<IReturnL
 		;
 }
 
-import * as self from './index';
-export default self;
+export default exports as typeof import('./index');

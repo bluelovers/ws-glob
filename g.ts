@@ -2,7 +2,7 @@
  * Created by user on 2018/2/12/012.
  */
 
-import * as Promise from 'bluebird';
+import Promise = require('bluebird');
 export * from './index';
 export * from './lib';
 

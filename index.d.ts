@@ -1,5 +1,5 @@
-import * as Promise from 'bluebird';
-import * as globby from 'globby';
+import Promise = require('bluebird');
+import globby = require('globby');
 export * from './lib';
 export { globby };
 import { IOptions, IReturnList } from './lib';
@@ -7,5 +7,5 @@ export declare function globbySync(options: IOptions): IReturnList;
 export declare function globbySync(patterns?: string[], options?: IOptions): IReturnList;
 export declare function globbyASync(options: IOptions): Promise<IReturnList>;
 export declare function globbyASync(patterns?: string[], options?: IOptions): Promise<IReturnList>;
-import * as self from './index';
-export default self;
+declare const _default: typeof import(".");
+export default _default;

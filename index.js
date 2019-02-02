@@ -32,5 +32,4 @@ function globbyASync(patterns, options = {}) {
     });
 }
 exports.globbyASync = globbyASync;
-const self = require("./index");
-exports.default = self;
+exports.default = exports;

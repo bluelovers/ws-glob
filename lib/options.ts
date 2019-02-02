@@ -7,7 +7,7 @@ import {
 	IReturnRow,
 } from './index';
 import libSort from './sort';
-import * as Promise from 'bluebird';
+import Promise = require('bluebird');
 import { IOptions as IGlobOptions } from 'glob';
 
 export const defaultPatternsExclude: string[] = [
@@ -56,7 +56,7 @@ export type IOptions = IGlobOptions & {
 	disableAutoHandle?: boolean,
 	disableSort?: boolean,
 
-	libPromise?: Promise,
+	libPromise?: Promise<unknown>,
 
 	onListRow?: (a: IReturnList2, row: IReturnRow, options: IOptions) => IReturnRow,
 
@@ -123,5 +123,4 @@ export function getOptions(patterns?, options: IOptions = {}): IReturnOptions
 	return ret as IReturnOptions;
 }
 
-import * as self from './options';
-export default self;
+export default exports as typeof import('./options');
