@@ -2,7 +2,7 @@
  * Created by user on 2018/3/30/030.
  */
 
-import { globToTree, treeToGlob } from '../index';
+import { globToTree, treeToGlob, ITree } from '../index';
 import { sort, naturalCompare } from '../lib/util';
 
 let data = `00020_1章.txt

@@ -1,6 +1,6 @@
 # glob-tree-list
 
->
+   glob result list to tree
 
 ## demo
 

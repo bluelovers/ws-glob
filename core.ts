@@ -87,15 +87,25 @@ export function treeToGlob(a: ITree, d: string[] = []): string[]
 	}, [] as string[]);
 }
 
-export type ITreeEntries = string | ITreeRow | null;
+export module globToTree
+{
+	export type ITreeEntries = string | ITreeRow | null;
 
-export type ITreeRow = {
-	[key: string]: ITreeEntries;
+	export type ITreeRow = {
+		[key: string]: ITreeEntries;
+	}
+
+	export type ITree = {
+		[key: string]: string | ITreeRow | null;
+	}
 }
 
-export type ITree = {
-	[key: string]: string | ITreeRow | null;
-}
+export import ITreeEntries = globToTree.ITreeEntries;
+export import ITreeRow = globToTree.ITreeRow;
+export import ITree = globToTree.ITree;
 
-import * as self from './core';
-export default self;
+globToTree.globToTree = globToTree;
+globToTree.treeToGlob = treeToGlob;
+globToTree.default = globToTree;
+
+export default exports as typeof import('./core');

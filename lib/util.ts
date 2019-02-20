@@ -2,7 +2,7 @@
  * Created by user on 2018/3/30/030.
  */
 
-import * as naturalCompare from 'string-natural-compare';
+import naturalCompare = require('string-natural-compare');
 export { naturalCompare }
 
 import { ITree, ITreeEntries } from '../core';
@@ -59,6 +59,4 @@ export function sort(a: ITree, fn: (a: string, b: string, cache) => number = nat
 	return entries_reduce(entries_sort(r, fn))
 }
 
-import * as self from './util';
-export default self;
-
+export default exports as typeof import('./util');
