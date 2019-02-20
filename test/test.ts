@@ -5,6 +5,7 @@
 import self from '..';
 // @ts-ignore
 import * as path from 'upath2';
+// @ts-ignore
 import * as fs from 'fs-iconv';
 import * as naturalCompare from 'string-natural-compare';
 
@@ -20,12 +21,16 @@ cwd = 'D:/Users/Documents/The Project/nodejs-test/node-novel2/dist_novel/user_ou
 
 //cwd = 'D:\\Users\\Documents\\The Project\\nodejs-test\\node-novel2\\dist_novel\\user_out\\暗黒騎士物語　～勇者を倒すために魔王に召喚されました～\\';
 
+cwd = 'D:/Users/Documents/The Project/nodejs-test/node-novel2/dist_novel/girl_out/你這種傢伙別想打贏魔王';
+
+//cwd = 'D:/Users/Documents/The Project/nodejs-test/node-novel2/dist_novel/user_out/誰にでもできる影から助ける魔王討伐';
+
 self
 	.globbyASync({
 
 		cwd: cwd,
 
-		sortCallback: naturalCompare,
+		//sortCallback: naturalCompare,
 
 		onListRow(a, row)
 		{
@@ -36,7 +41,7 @@ self
 	})
 	.tap(function (ls)
 	{
-		console.log(ls);
+		//console.log(ls);
 
 		fs.writeJsonSync('./temp/test.json', ls, {
 			spaces: "\t",

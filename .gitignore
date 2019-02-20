@@ -22,3 +22,4 @@ test/*.d.ts
 texst/temp
 /test/temp.ts
 !/test/temp/res2/
+/test/**/*.map

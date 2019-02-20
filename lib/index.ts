@@ -19,6 +19,9 @@ import { normalize_strip, normalize_val } from './helper';
 export { normalize_val }
 
 import * as globby from 'globby';
+import { sortTree } from './glob-sort';
+
+import { sort as globTreeListUtilSort } from 'glob-tree-list/lib/util';
 
 export interface IApi<T>
 {
@@ -90,7 +93,12 @@ export function globToList(glob_ls: string[], options: IOptions = {}): IReturnLi
 	}
 
 	//return p_sort_list(glob_to_list(glob_ls, options), options);
-	return sortList2(glob_to_list(glob_ls, options), options);
+//	return sortList2(glob_to_list(glob_ls, options), options);
+
+	let comp = options.sortCallback || libSort.defaultSortCallback;
+
+	return glob_to_list(sortTree(glob_ls, comp as any, options), options);
+	//return glob_to_list(glob_ls.sort(comp), options);
 }
 
 export interface IReturnGlobListOptions

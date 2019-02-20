@@ -1,3 +1,6 @@
+/**
+ * Created by user on 2018/3/30/030.
+ */
 import { IReturnList2, IReturnRow } from './index';
 import Promise = require('bluebird');
 import { IOptions as IGlobOptions } from 'glob';

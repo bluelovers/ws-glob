@@ -1,3 +1,6 @@
+/**
+ * Created by user on 2018/2/14/014.
+ */
 import Promise = require('bluebird');
 import path = require('upath2');
 export { path };

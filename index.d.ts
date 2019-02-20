@@ -1,3 +1,6 @@
+/**
+ * Created by user on 2018/1/26/026.
+ */
 import Promise = require('bluebird');
 import globby = require('globby');
 export * from './lib';

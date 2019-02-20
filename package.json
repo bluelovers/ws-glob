@@ -1,6 +1,6 @@
 {
   "name": "node-novel-globby",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "description": "globby with sort id/chinese/fullwidth number for node-novel",
   "keywords": [
     "alphanum",
@@ -45,10 +45,10 @@
     "test": "npx mocha \"!(node_modules)/**/*.+(test|spec).js\""
   },
   "dependencies": {
-    "@node-novel/normalize": "^1.0.5",
-    "@node-novel/sort": "^1.0.4",
+    "@node-novel/normalize": "^1.0.6",
+    "@node-novel/sort": "^1.0.5",
     "bluebird": "^3.5.3",
-    "cjk-conv": "^1.1.13",
+    "cjk-conv": "^1.1.14",
     "glob-tree-list": "^1.0.3",
     "globby": "^9.0.0",
     "novel-text": "^1.1.23",
@@ -56,6 +56,7 @@
     "upath2": "^2.1.3"
   },
   "devDependencies": {
+    "@bluelovers/tsconfig": "^1.0.1",
     "@types/globby": "^8.0.0",
     "fs-iconv": "^1.3.6"
   }
