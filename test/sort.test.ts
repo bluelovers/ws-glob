@@ -66,7 +66,7 @@ describe(relative(__filename), () =>
 				console.log(b);
 				//console.log(c);
 
-				expect(a).to.be.deep.equal(b);
+				expect(b).to.be.deep.equal(a);
 			});
 		});
 	});
