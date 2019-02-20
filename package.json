@@ -49,7 +49,7 @@
     "@node-novel/sort": "^1.0.5",
     "bluebird": "^3.5.3",
     "cjk-conv": "^1.1.14",
-    "glob-tree-list": "^1.0.3",
+    "glob-tree-list": "^1.0.4",
     "globby": "^9.0.0",
     "novel-text": "^1.1.23",
     "str-util": "^2.3.17",
