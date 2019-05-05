@@ -2,13 +2,16 @@
  * Created by user on 2018/1/26/026.
  */
 
-import self from '..';
+import self = require('../g');
 // @ts-ignore
 import * as path from 'upath2';
 // @ts-ignore
 import * as fs from 'fs-iconv';
 import * as naturalCompare from 'string-natural-compare';
 import { sortTree } from '../lib/glob-sort';
+import { getOptionsRuntime, glob_to_list } from '../lib/index';
+import { glob_to_list_array_deep } from '../lib/list';
+import { getOptions } from '../lib/options';
 
 let a;
 
@@ -26,29 +29,23 @@ cwd = 'D:/Users/Documents/The Project/nodejs-test/node-novel2/dist_novel/girl_ou
 
 cwd = 'D:/Users/Documents/The Project/nodejs-test/node-novel2/dist_novel/user_out/誰にでもできる影から助ける魔王討伐';
 
-self
-	.globbyASync({
+let options = getOptionsRuntime(getOptions({
 
-		cwd: cwd,
+	cwd: cwd,
 
-		//sortCallback: naturalCompare,
+	//sortCallback: naturalCompare,
 
-		onListRow(a, row)
-		{
-			//console.log(row.chapter_title, row.source_idx);
-
-			return row;
-		},
-	})
-	.tap(function (ls)
+	onListRow(a, row)
 	{
-		//console.log(ls);
+		//console.log(row.chapter_title, row.source_idx);
 
-		fs.writeJsonSync('./temp/test.json', ls, {
-			spaces: "\t",
-		});
-	})
-	.then(self.returnGlobList)
+		return row;
+	},
+}).options);
+
+self
+	.globbyASync(options)
+	.then(ls => sortTree(ls, null, options))
 	.tap(function (ls)
 	{
 		if (cwd && 0)
@@ -62,6 +59,20 @@ self
 		//console.dir(ls);
 
 		fs.writeFileSync('./temp/test.txt', ls.join("\n"));
+	})
+	.then(async function (ls)
+	{
+		let ret = await glob_to_list_array_deep(ls, options);
+
+		return ret;
+	})
+	.tap(function (ls)
+	{
+		//console.log(ls);
+
+		fs.writeJsonSync('./temp/test.json', ls, {
+			spaces: "\t",
+		});
 	})
 	.tap(function (ls)
 	{

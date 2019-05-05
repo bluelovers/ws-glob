@@ -9,7 +9,7 @@ export { path }
 
 import StrUtil = require('str-util');
 export * from './options';
-import { IOptions, defaultPatternsExclude, getOptions } from './options';
+import { IOptions, defaultPatternsExclude, getOptions, getOptionsRuntime } from './options';
 export { IOptions, defaultPatternsExclude, getOptions }
 
 import libSort = require('./sort');
@@ -22,6 +22,11 @@ import * as globby from 'globby';
 import { sortTree } from './glob-sort';
 
 import { sort as globTreeListUtilSort } from 'glob-tree-list/lib/util';
+import { glob_to_list_array, glob_to_list_array_deep, pathToListRow } from './list';
+import { IArrayDeepInterface, IArrayDeep, IForeachArrayDeepCache, IForeachArrayDeepReturn, foreachArrayDeepAsync, eachVolumeTitle, foreachArrayDeep } from './util';
+export { IArrayDeepInterface, IArrayDeep, IForeachArrayDeepCache, IForeachArrayDeepReturn, foreachArrayDeepAsync, eachVolumeTitle, foreachArrayDeep }
+
+export { pathToListRow }
 
 export interface IApi<T>
 {
@@ -80,26 +85,33 @@ export interface IReturnList2
 	[index: number]: IReturnRow[],
 }
 
-export function globToList(glob_ls: string[], options: IOptions = {}): IReturnList
+export function createGlobToType<T>(fn: (glob_ls: string[], options?: IOptions) => T)
 {
-	if (!Array.isArray(glob_ls) || !glob_ls.length)
+	return function (glob_ls: string[], options: IOptions = {})
 	{
-		if (options.throwEmpty)
+		if (!Array.isArray(glob_ls) || !glob_ls.length)
 		{
-			throw new Error(`glob matched list is empty`);
+			if (options.throwEmpty)
+			{
+				throw new Error(`glob matched list is empty`);
+			}
+
+			return null;
 		}
 
-		return null;
-	}
+		let comp = options.sortCallback || libSort.defaultSortCallback;
 
-	//return p_sort_list(glob_to_list(glob_ls, options), options);
-//	return sortList2(glob_to_list(glob_ls, options), options);
+		let ls = sortTree(glob_ls, comp as any, options);
 
-	let comp = options.sortCallback || libSort.defaultSortCallback;
-
-	return glob_to_list(sortTree(glob_ls, comp as any, options), options);
-	//return glob_to_list(glob_ls.sort(comp), options);
+		return fn(ls, options);
+	};
 }
+
+export const globToList = createGlobToType<IReturnList2>(glob_to_list);
+
+export const globToListArray = createGlobToType(glob_to_list_array);
+
+export const globToListArrayDeep = createGlobToType(glob_to_list_array_deep);
 
 export interface IReturnGlobListOptions
 {
@@ -153,137 +165,25 @@ export function glob_to_list(glob_ls: string[], options: IOptions = {}): IReturn
 		throw new Error(`glob matched list is empty`);
 	}
 
-	let padNum = options.padNum || 5;
-
-	let CWD = options.cwd || process.cwd();
+	options = getOptionsRuntime({
+		...options,
+	});
 
 	//console.log(glob_ls);
 
 	return glob_ls.reduce(function (a: IReturnList2, b: string, source_idx: number)
 	{
-		let dir = path.dirname(b);
-		let ext = path.extname(b);
-		let file = path.basename(b, ext);
-
-		if (options.absolute)
-		{
-			// fix bug when absolute: true
-			dir = path.relative(CWD, dir);
-		}
-
-		//console.log(b);
-
-		let row: IReturnRow = {
-			source_path: b,
-
-			source_idx,
-
-			path: options.cwd && !path.isAbsolute(b) ? path.join(options.cwd, b) : b,
-			path_dir: options.cwd && !path.isAbsolute(dir) ? path.join(options.cwd, dir) : dir,
-
-			dir: dir,
-			file: file,
-			ext: ext,
-
-			volume_title: dir.trim(),
-			chapter_title: file.trim(),
-
-			val_file: file.trim(),
-			val_dir: dir.trim(),
-		};
-
-		if (!options.disableAutoHandle)
-		{
-			//row.val_file = StrUtil.toHalfWidth(row.val_file);
-			//row.val_dir = StrUtil.toHalfWidth(row.val_dir);
-
-			/*
-
-			let r: RegExp;
-
-			if (/^\d+[\s_](.+)(_\(\d+\))$/.exec(row.volume_title))
-			{
-				row.volume_title = RegExp.$1;
-			}
-			else if (/^\d+[\s_](.+)(_\(\d+\))?$/.exec(row.volume_title))
-			{
-				row.volume_title = RegExp.$1;
-			}
-
-			if (/^\d+_(.+)\.\d+$/.exec(row.chapter_title))
-			{
-				row.chapter_title = RegExp.$1;
-			}
-			else if (/^\d{4,}_(.+)$/.exec(row.chapter_title))
-			{
-				row.chapter_title = RegExp.$1;
-			}
-
-			*/
-
-			/*
-			if (/^(?:序|プロローグ)/.test(row.val_file))
-			{
-				row.val_file = '0_' + row.val_file;
-			}
-
-			let s2 = StrUtil.zh2num(row.val_file).toString();
-
-			r = /^第?(\d+)[話话章卷]/;
-			if (r.test(s2))
-			{
-				row.val_file = s2.replace(r, '$1')
-					.replace(/\d+/g, function ($0)
-					{
-						return $0.padStart(padNum, '0');
-					})
-				;
-			}
-			else if (/^[^\d]*\d+/.test(s2))
-			{
-				row.val_file = s2.replace(/\d+/g, function ($0)
-				{
-					return $0.padStart(padNum, '0');
-				});
-			}
-			*/
-
-			//row.val_dir = StrUtil.toHalfNumber(StrUtil.zh2num(row.val_dir).toString());
-
-			/*
-			r = /^(web)版(\d+)/i;
-			if (r.test(row.val_file))
-			{
-				row.val_file = row.val_file.replace(r, '$1$2');
-			}
-			*/
-
-			//row.volume_title = StrUtil.trim(row.volume_title, '　');
-			//row.chapter_title = StrUtil.trim(row.chapter_title, '　');
-
-			//row.val_dir = StrUtil.zh2num(row.val_dir).toString();
-
-			row.volume_title = normalize_strip(row.volume_title, true);
-			row.chapter_title = normalize_strip(row.chapter_title);
-
-			row.val_dir = normalize_val(row.val_dir, padNum, options);
-			row.val_file = normalize_val(row.val_file, padNum, options);
-		}
+		let row = pathToListRow(b, source_idx, options);
 
 		if (options.onListRow)
 		{
-			row = options.onListRow(a, row, options);
+			row = options.onListRow<IReturnList2>(a, row, options);
 
 			if (!row)
 			{
 				throw new Error('onListRow');
 			}
 		}
-
-		/*
-		a[row.val_dir] = a[row.val_dir] || {};
-		a[row.val_dir][row.val_file] = row;
-		*/
 
 		// 防止純數字的資料夾名稱導致排序失敗
 		let key = row.val_dir + '.dir';

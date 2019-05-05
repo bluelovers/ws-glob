@@ -9,6 +9,10 @@ import { IOptions, defaultPatternsExclude, getOptions } from './options';
 export { IOptions, defaultPatternsExclude, getOptions };
 import { normalize_val } from './helper';
 export { normalize_val };
+import { pathToListRow } from './list';
+import { IArrayDeepInterface, IArrayDeep, IForeachArrayDeepCache, IForeachArrayDeepReturn, foreachArrayDeepAsync, eachVolumeTitle, foreachArrayDeep } from './util';
+export { IArrayDeepInterface, IArrayDeep, IForeachArrayDeepCache, IForeachArrayDeepReturn, foreachArrayDeepAsync, eachVolumeTitle, foreachArrayDeep };
+export { pathToListRow };
 export interface IApi<T> {
     (options: IOptions): T;
     (patterns?: string[], options?: IOptions): T;
@@ -44,7 +48,10 @@ export interface IReturnList2 {
     [key: string]: IReturnRow[];
     [index: number]: IReturnRow[];
 }
-export declare function globToList(glob_ls: string[], options?: IOptions): IReturnList;
+export declare function createGlobToType<T>(fn: (glob_ls: string[], options?: IOptions) => T): (glob_ls: string[], options?: IOptions) => T;
+export declare const globToList: (glob_ls: string[], options?: IOptions) => IReturnList2;
+export declare const globToListArray: (glob_ls: string[], options?: IOptions) => IReturnRow[];
+export declare const globToListArrayDeep: (glob_ls: string[], options?: IOptions) => IArrayDeepInterface<IReturnRow>;
 export interface IReturnGlobListOptions {
     useSourcePath?: boolean;
 }

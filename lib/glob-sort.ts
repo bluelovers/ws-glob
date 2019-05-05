@@ -12,6 +12,11 @@ export function sortTree(ls: string[], sortFn = defaultSortCallback, options: IO
 {
 	let padNum = options.padNum || 5;
 
+	if (sortFn == null)
+	{
+		sortFn = defaultSortCallback;
+	}
+
 	let t = globToTree(ls);
 	let _cache = {};
 	let t2 = sort(t, function (a, b, cache)
