@@ -3,12 +3,13 @@
  */
 import path from 'upath2';
 export { path };
-export declare function globToTree(data: string[]): ITree;
-export declare namespace globToTree {
+declare function globToTree(data: string[]): ITree;
+declare namespace globToTree {
     var globToTree: typeof globToTree;
     var treeToGlob: typeof treeToGlob;
     var default: typeof globToTree;
 }
+export default globToTree;
 export declare function treeToGlob(a: ITree, d?: string[]): string[];
 export declare module globToTree {
     type ITreeEntries = string | ITreeRow | null;
