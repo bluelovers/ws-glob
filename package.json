@@ -1,6 +1,6 @@
 {
   "name": "node-novel-globby",
-  "version": "2.0.7",
+  "version": "2.0.9",
   "description": "globby with sort id/chinese/fullwidth number for node-novel",
   "keywords": [
     "alphanum",

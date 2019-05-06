@@ -1,14 +1,14 @@
 /**
  * Created by user on 2018/2/12/012.
  */
-import Promise = require('bluebird');
+import Bluebird = require('bluebird');
 export * from './index';
 export * from './lib';
 import { globby } from './index';
 export { globby };
 import { IApiWithReturnGlob, IOptionsWithReturnGlobList, IApiWithReturnGlobAsync } from './lib';
-export declare function globbyASync(options: IOptionsWithReturnGlobList): Promise<string[]>;
-export declare function globbyASync(patterns?: string[], options?: IOptionsWithReturnGlobList): Promise<string[]>;
+export declare function globbyASync(options: IOptionsWithReturnGlobList): Bluebird<string[]>;
+export declare function globbyASync(patterns?: string[], options?: IOptionsWithReturnGlobList): Bluebird<string[]>;
 export declare namespace globbyASync {
     let async: IApiWithReturnGlobAsync;
     function sync(options: IOptionsWithReturnGlobList): string[];

@@ -3,14 +3,15 @@
  */
 
 import Promise = require('bluebird');
+import Bluebird = require('bluebird');
 // @ts-ignore
 import path = require('upath2');
 export { path }
 
 import StrUtil = require('str-util');
 export * from './options';
-import { IOptions, defaultPatternsExclude, getOptions, getOptionsRuntime } from './options';
-export { IOptions, defaultPatternsExclude, getOptions }
+import { IOptions, defaultPatternsExclude, getOptions, getOptionsRuntime, getOptions2 } from './options';
+export { IOptions, defaultPatternsExclude, getOptions, getOptionsRuntime, getOptions2 }
 
 import libSort = require('./sort');
 
@@ -36,7 +37,7 @@ export interface IApi<T>
 }
 
 export type IApiSync = IApi<IReturnList>;
-export type IApiAsync = IApi<Promise<IReturnList>>;
+export type IApiAsync = IApi<Bluebird<IReturnList>>;
 
 export interface IApiWithReturnGlob<T>
 {
@@ -46,7 +47,7 @@ export interface IApiWithReturnGlob<T>
 }
 
 export type IApiWithReturnGlobSync = IApiWithReturnGlob<IReturnGlob>;
-export type IApiWithReturnGlobAsync = IApiWithReturnGlob<Promise<IReturnGlob>>;
+export type IApiWithReturnGlobAsync = IApiWithReturnGlob<Bluebird<IReturnGlob>>;
 
 export type IOptionsWithReturnGlobList = IOptions & IReturnGlobListOptions;
 
@@ -107,6 +108,9 @@ export function createGlobToType<T>(fn: (glob_ls: string[], options?: IOptions) 
 	};
 }
 
+/**
+ * @deprecated
+ */
 export const globToList = createGlobToType<IReturnList2>(glob_to_list);
 
 export const globToListArray = createGlobToType(glob_to_list_array);

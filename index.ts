@@ -3,6 +3,7 @@
  */
 
 import Promise = require('bluebird');
+import Bluebird = require('bluebird');
 import globby = require('globby');
 export * from './lib';
 
@@ -31,9 +32,11 @@ export function globbySync(patterns?, options: IOptions = {}): IReturnList
 	return globToList(ls, options);
 }
 
-export function globbyASync(options: IOptions): Promise<IReturnList>
-export function globbyASync(patterns?: string[], options?: IOptions): Promise<IReturnList>
-export function globbyASync(patterns?, options: IOptions = {}): Promise<IReturnList>
+type IglobbyASyncReturnType = ReturnType<typeof globToList>;
+
+export function globbyASync(options: IOptions): Bluebird<IglobbyASyncReturnType>
+export function globbyASync(patterns?: string[], options?: IOptions): Bluebird<IglobbyASyncReturnType>
+export function globbyASync(patterns?, options: IOptions = {}): Bluebird<IglobbyASyncReturnType>
 {
 	{
 		/*
@@ -47,14 +50,14 @@ export function globbyASync(patterns?, options: IOptions = {}): Promise<IReturnL
 	let ls = globby(patterns, options);
 
 	// @ts-ignore
-	let p: Promise = options.libPromise ? options.libPromise : Promise;
+	let p: typeof Bluebird = options.libPromise ? options.libPromise : Bluebird;
 
 	return p.resolve(ls)
 		.then(function (ls)
 		{
 			if ((!ls || !ls.length) && options.throwEmpty)
 			{
-				return Promise.reject(new Error(`glob matched list is empty`));
+				return Bluebird.reject(new Error(`glob matched list is empty`)) as any as IglobbyASyncReturnType;
 			}
 
 			return globToList(ls, options);

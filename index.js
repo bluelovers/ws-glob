@@ -6,7 +6,7 @@ function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
 Object.defineProperty(exports, "__esModule", { value: true });
-const Promise = require("bluebird");
+const Bluebird = require("bluebird");
 const globby = require("globby");
 exports.globby = globby;
 __export(require("./lib"));
@@ -30,11 +30,11 @@ function globbyASync(patterns, options = {}) {
     }
     let ls = globby(patterns, options);
     // @ts-ignore
-    let p = options.libPromise ? options.libPromise : Promise;
+    let p = options.libPromise ? options.libPromise : Bluebird;
     return p.resolve(ls)
         .then(function (ls) {
         if ((!ls || !ls.length) && options.throwEmpty) {
-            return Promise.reject(new Error(`glob matched list is empty`));
+            return Bluebird.reject(new Error(`glob matched list is empty`));
         }
         return lib_1.globToList(ls, options);
     });

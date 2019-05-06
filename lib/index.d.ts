@@ -1,12 +1,12 @@
 /**
  * Created by user on 2018/2/14/014.
  */
-import Promise = require('bluebird');
+import Bluebird = require('bluebird');
 import path = require('upath2');
 export { path };
 export * from './options';
-import { IOptions, defaultPatternsExclude, getOptions } from './options';
-export { IOptions, defaultPatternsExclude, getOptions };
+import { IOptions, defaultPatternsExclude, getOptions, getOptionsRuntime, getOptions2 } from './options';
+export { IOptions, defaultPatternsExclude, getOptions, getOptionsRuntime, getOptions2 };
 import { normalize_val } from './helper';
 export { normalize_val };
 import { pathToListRow } from './list';
@@ -18,13 +18,13 @@ export interface IApi<T> {
     (patterns?: string[], options?: IOptions): T;
 }
 export declare type IApiSync = IApi<IReturnList>;
-export declare type IApiAsync = IApi<Promise<IReturnList>>;
+export declare type IApiAsync = IApi<Bluebird<IReturnList>>;
 export interface IApiWithReturnGlob<T> {
     (options: IOptionsWithReturnGlobList): T;
     (patterns?: string[], options?: IOptionsWithReturnGlobList): T;
 }
 export declare type IApiWithReturnGlobSync = IApiWithReturnGlob<IReturnGlob>;
-export declare type IApiWithReturnGlobAsync = IApiWithReturnGlob<Promise<IReturnGlob>>;
+export declare type IApiWithReturnGlobAsync = IApiWithReturnGlob<Bluebird<IReturnGlob>>;
 export declare type IOptionsWithReturnGlobList = IOptions & IReturnGlobListOptions;
 export declare type IReturnGlob = string[];
 export interface IReturnRow {
@@ -49,6 +49,9 @@ export interface IReturnList2 {
     [index: number]: IReturnRow[];
 }
 export declare function createGlobToType<T>(fn: (glob_ls: string[], options?: IOptions) => T): (glob_ls: string[], options?: IOptions) => T;
+/**
+ * @deprecated
+ */
 export declare const globToList: (glob_ls: string[], options?: IOptions) => IReturnList2;
 export declare const globToListArray: (glob_ls: string[], options?: IOptions) => IReturnRow[];
 export declare const globToListArrayDeep: (glob_ls: string[], options?: IOptions) => IArrayDeepInterface<IReturnRow>;

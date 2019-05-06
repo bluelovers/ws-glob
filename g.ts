@@ -3,6 +3,7 @@
  */
 
 import Promise = require('bluebird');
+import Bluebird = require('bluebird');
 export * from './index';
 export * from './lib';
 
@@ -20,9 +21,9 @@ import {
 	IApiWithReturnGlobAsync,
 } from './lib';
 
-export function globbyASync(options: IOptionsWithReturnGlobList): Promise<string[]>
-export function globbyASync(patterns?: string[], options?: IOptionsWithReturnGlobList): Promise<string[]>
-export function globbyASync(patterns?, options: IOptionsWithReturnGlobList = {}): Promise<string[]>
+export function globbyASync(options: IOptionsWithReturnGlobList): Bluebird<string[]>
+export function globbyASync(patterns?: string[], options?: IOptionsWithReturnGlobList): Bluebird<string[]>
+export function globbyASync(patterns?, options: IOptionsWithReturnGlobList = {}): Bluebird<string[]>
 {
 	[patterns, options] = getOptions(patterns, options);
 
