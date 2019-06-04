@@ -641,5 +641,4 @@ export function _error<E extends Error, D extends any>(data: {
 	return e;
 }
 
-import GlobSearch = require('./index');
-export default GlobSearch
+export default exports as typeof import('./index')

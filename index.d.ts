@@ -70,5 +70,5 @@ export declare function _error<E extends Error, D extends any>(data: {
 }, Err?: (new (...args: any[]) => E)): E & {
     _data?: D;
 };
-import GlobSearch = require('./index');
-export default GlobSearch;
+declare const _default: typeof import(".");
+export default _default;

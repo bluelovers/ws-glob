@@ -1,6 +1,6 @@
 {
   "name": "glob-search",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "glob search from current cwd up to root or stopPath",
   "keywords": [
     "dir",
@@ -13,9 +13,7 @@
     "folder",
     "glob",
     "json",
-    "root",
     "look",
-    "parent",
     "look-up",
     "match",
     "npm",
@@ -46,6 +44,12 @@
     "test": "test"
   },
   "scripts": {
+    "coverage": "npx nyc npm run test",
+    "lint": "npx eslint **/*.ts",
+    "ncu": "npx yarn-tool ncu -u",
+    "prepublishOnly": "npm run ncu && npm run sort-package-json",
+    "postpublish": "git commit -m \"publish new version\" .",
+    "sort-package-json": "npx sort-package-json ./package.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
@@ -53,10 +57,11 @@
     "bluebird": "^3",
     "chai": "^4",
     "fast-glob": "^2",
-    "fs-extra": "^7",
-    "pkg-dir": "^3",
+    "fs-extra": "^8",
+    "pkg-dir": "^4",
     "string-natural-compare": "^2",
     "ts-type": "^1",
     "upath2": "^2"
-  }
+  },
+  "devDependencies": {}
 }
