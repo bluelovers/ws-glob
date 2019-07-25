@@ -7,8 +7,6 @@ import Bluebird = require('bluebird');
 // @ts-ignore
 import path = require('upath2');
 export { path }
-
-import StrUtil = require('str-util');
 export * from './options';
 import { IOptions, defaultPatternsExclude, getOptions, getOptionsRuntime, getOptions2 } from './options';
 export { IOptions, defaultPatternsExclude, getOptions, getOptionsRuntime, getOptions2 }
