@@ -2,16 +2,15 @@
  * Created by user on 2018/12/4/004.
  */
 
-import fs = require('fs-extra');
-import FastGlob = require('fast-glob');
-import Bluebird = require('bluebird');
-import _path = require('path');
-import _upath = require('upath2');
-import { EntryItem } from 'fast-glob/out/types/entries';
+import fs from 'fs-extra';
+import FastGlob, { EntryItem } from '@bluelovers/fast-glob';
+import Bluebird from 'bluebird';
+import _path from 'path';
 import { expect } from 'chai';
-import naturalCompare = require('string-natural-compare');
-import pkgDir = require('pkg-dir');
+import naturalCompare from 'string-natural-compare';
+import pkgDir from 'pkg-dir';
 import { ITSOverwrite, ITSResolvable } from 'ts-type';
+import findRoot from '@yarn-tool/find-root';
 
 export function globSearch<T extends EntryItem = string>(pattern: string | string[], options?: IOptions<T>)
 {
@@ -21,7 +20,7 @@ export function globSearch<T extends EntryItem = string>(pattern: string | strin
 
 	return new Bluebird<IReturnValue<T>>(async (resolve, reject) =>
 	{
-		let cwd = _path.normalize(options.cwd);
+		let cwd = path.normalize(options.cwd);
 		let opts = Object.assign({}, options) as IOptionsRuntime<T>;
 
 		let history: string[] = [];
@@ -171,7 +170,7 @@ export function globSearchSync<T extends EntryItem = string>(pattern: string | s
 
 	const path = options.pathLib as IOptionsRuntime<T>["pathLib"];
 
-	let cwd = _path.normalize(options.cwd);
+	let cwd = path.normalize(options.cwd);
 	let opts = Object.assign({}, options) as IOptionsRuntime<T>;
 
 	let history: string[] = [];
@@ -418,10 +417,10 @@ export {
 	globSearchSync as sync,
 }
 
-export interface IOptions<T extends EntryItem> extends FastGlob.Options<T>
+export interface IOptions<T extends EntryItem> extends FastGlob.Options
 {
 	cwd?: string,
-	deep?: number | boolean;
+	deep?: number;
 
 	/**
 	 * @default current package path
@@ -479,7 +478,6 @@ export interface IPathLibBase
 	join(...paths: string[]): string;
 }
 
-
 export type IReturnError<T extends EntryItem, E extends Error = Error> = E & {
 	message: string,
 	_data: {
@@ -533,7 +531,6 @@ export function handleArgs<T extends EntryItem = string>(pattern: string | strin
 		ignore: [],
 	}, options || {});
 
-
 	expect(opts.cwd).is.an('string');
 
 	opts.pathLib = opts.pathLib || _path;
@@ -555,7 +552,9 @@ export function handleArgs<T extends EntryItem = string>(pattern: string | strin
 
 	if (opts.stopPath == null || opts.stopPath === true)
 	{
-		let root = pkgDir.sync(cwd);
+		let { root } = findRoot({
+			cwd
+		});
 
 		opts.stopPath = [];
 		if (root)
@@ -641,4 +640,4 @@ export function _error<E extends Error, D extends any>(data: {
 	return e;
 }
 
-export default exports as typeof import('./index')
+export default globSearch

@@ -1,16 +1,15 @@
 /**
  * Created by user on 2018/12/4/004.
  */
-import FastGlob = require('fast-glob');
-import Bluebird = require('bluebird');
-import { EntryItem } from 'fast-glob/out/types/entries';
+import FastGlob, { EntryItem } from '@bluelovers/fast-glob';
+import Bluebird from 'bluebird';
 import { ITSOverwrite } from 'ts-type';
 export declare function globSearch<T extends EntryItem = string>(pattern: string | string[], options?: IOptions<T>): Bluebird<IReturnValue<T>>;
 export declare function globSearchSync<T extends EntryItem = string>(pattern: string | string[], options?: IOptions<T>): IReturnValueSync<T>;
 export { globSearch as async, globSearchSync as sync, };
-export interface IOptions<T extends EntryItem> extends FastGlob.Options<T> {
+export interface IOptions<T extends EntryItem> extends FastGlob.Options {
     cwd?: string;
-    deep?: number | boolean;
+    deep?: number;
     /**
      * @default current package path
      */
@@ -70,5 +69,4 @@ export declare function _error<E extends Error, D extends any>(data: {
 }, Err?: (new (...args: any[]) => E)): E & {
     _data?: D;
 };
-declare const _default: typeof import(".");
-export default _default;
+export default globSearch;

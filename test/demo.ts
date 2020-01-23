@@ -4,7 +4,7 @@
 
 import { globSearch, globSearchSync, async, sync } from '..';
 import { expect } from 'chai';
-import Bluebird = require('bluebird');
+import Bluebird from 'bluebird';
 
 globSearch('*/demo.ts', {
 	disableThrowWhenEmpty: true,

@@ -1,6 +1,6 @@
 {
   "name": "glob-search",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "glob search from current cwd up to root or stopPath",
   "keywords": [
     "dir",
@@ -47,21 +47,32 @@
     "coverage": "npx nyc npm run test",
     "lint": "npx eslint **/*.ts",
     "ncu": "npx yarn-tool ncu -u",
-    "prepublishOnly": "npm run ncu && npm run sort-package-json",
+    "npm:publish": "npm publish",
+    "postpublish_": "git commit -m \"publish new version\" .",
+    "prepublish:lockfile": "npx sync-lockfile .",
+    "prepublishOnly": "yarn run ncu && yarn run sort-package-json && yarn run test",
     "postpublish": "git commit -m \"publish new version\" .",
-    "sort-package-json": "npx sort-package-json ./package.json",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "sort-package-json": "npx yarn-tool sort",
+    "test": "ts-node ./test/demo.ts",
+    "test:mocha": "npx mocha --require ts-node/register \"!(node_modules)/**/*.{test,spec}.{ts,tsx}\"",
+    "tsc:default": "tsc -p tsconfig.json",
+    "tsc:esm": "tsc -p tsconfig.esm.json"
   },
   "dependencies": {
     "@types/bluebird": "^3",
+    "@bluelovers/fast-glob": "^3.0.4",
+    "@yarn-tool/find-root": "^1.0.2",
     "bluebird": "^3",
     "chai": "^4",
-    "fast-glob": "^2",
     "fs-extra": "^8",
     "pkg-dir": "^4",
-    "string-natural-compare": "^2",
+    "string-natural-compare": "^3",
     "ts-type": "^1",
     "upath2": "^2"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@bluelovers/tsconfig": "^1.0.15",
+    "@types/chai": "^4.2.7",
+    "@types/fs-extra": "^8.0.1"
+  }
 }
