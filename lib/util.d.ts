@@ -1,7 +1,7 @@
 /**
  * Created by user on 2019/5/6.
  */
-import Bluebird = require('bluebird');
+import Bluebird from 'bluebird';
 export interface IForeachArrayDeepCache<D = any, U = any> {
     deep: number;
     data: D;

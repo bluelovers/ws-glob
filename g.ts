@@ -2,11 +2,8 @@
  * Created by user on 2018/2/12/012.
  */
 
-import Promise = require('bluebird');
-import Bluebird = require('bluebird');
-export * from './index';
-export * from './lib';
 
+import Bluebird from 'bluebird';
 import novelGlobby, { globby } from './index';
 export { globby }
 
@@ -19,7 +16,7 @@ import {
 
 	IApiWithReturnGlobSync,
 	IApiWithReturnGlobAsync,
-} from './lib';
+} from './lib/index';
 
 export function globbyASync(options: IOptionsWithReturnGlobList): Bluebird<string[]>
 export function globbyASync(patterns?: string[], options?: IOptionsWithReturnGlobList): Bluebird<string[]>
@@ -56,3 +53,5 @@ export const async = globbyASync;
 export const sync = globbyASync.sync as IApiWithReturnGlobSync;
 
 export default globbyASync;
+export * from './index';
+export * from './lib';

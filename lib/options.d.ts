@@ -2,18 +2,18 @@
  * Created by user on 2018/3/30/030.
  */
 import { IReturnRow } from './index';
-import Promise = require('bluebird');
-import { IOptions as IGlobOptions } from 'glob';
+import Bluebird from 'bluebird';
+import { GlobbyOptions } from 'globby';
 export declare const defaultPatternsExclude: string[];
 export declare const defaultPatterns: string[];
 export declare const defaultOptions: IOptions;
-export declare type IOptions = IGlobOptions & {
+export declare type IOptions = GlobbyOptions & {
     cwd?: string;
     absolute?: boolean;
     useDefaultPatternsExclude?: boolean;
     disableAutoHandle?: boolean;
     disableSort?: boolean;
-    libPromise?: Promise<unknown>;
+    libPromise?: Bluebird<unknown>;
     onListRow?<T>(a: T, row: IReturnRow, options: IOptions): IReturnRow;
     throwEmpty?: boolean;
     sortCallback?(a: any, b: any): number;

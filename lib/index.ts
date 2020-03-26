@@ -2,22 +2,19 @@
  * Created by user on 2018/2/14/014.
  */
 
-import Promise = require('bluebird');
-import Bluebird = require('bluebird');
+import Bluebird from 'bluebird';
 // @ts-ignore
-import path = require('upath2');
+import path from 'upath2';
 export { path }
-export * from './options';
 import { IOptions, defaultPatternsExclude, getOptions, getOptionsRuntime, getOptions2 } from './options';
 export { IOptions, defaultPatternsExclude, getOptions, getOptionsRuntime, getOptions2 }
 
-import libSort = require('./sort');
+import libSort from './sort';
 
 import { normalize_strip, normalize_val } from './helper';
 
 export { normalize_val }
 
-import * as globby from 'globby';
 import { sortTree } from './glob-sort';
 
 import { sort as globTreeListUtilSort } from 'glob-tree-list/lib/util';
@@ -330,3 +327,4 @@ export function sortList2(ls: IReturnList2, options: IOptions = {})
 }
 
 export default exports as typeof import('./index');
+export * from './options';

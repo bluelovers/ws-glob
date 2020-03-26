@@ -2,7 +2,7 @@
  * Created by user on 2019/5/6.
  */
 
-import Bluebird = require('bluebird');
+import Bluebird from 'bluebird';
 import { normalize_strip } from '@node-novel/normalize';
 
 export interface IForeachArrayDeepCache<D = any, U = any>
@@ -146,21 +146,26 @@ export function foreachArrayDeepAsync<T, R extends unknown = unknown, D = unknow
 		.then(async function ()
 		{
 			let ret = await Bluebird.resolve(arr)
-				.mapSeries(((value, index, array) => {
-					return fnDeep(value, index, array, topCache)
-				}))
+				.then(array => {
+					return Bluebird.mapSeries(array, ((value, index) => {
+						return fnDeep(value, index, array, topCache)
+					}))
+				})
 			;
 
 			function fnDeep(value: T | IArrayDeepInterface<T>, index: number, array: IArrayDeepInterface<T>, cache: IForeachArrayDeepCache<D, U>)
 			{
 				if (Array.isArray(value))
 				{
-					return Bluebird.resolve(value).mapSeries((value, index, array) => {
-						return fnDeep(value, index, array, {
-							...cache,
-							deep: cache.deep + 1,
+					return Bluebird.resolve(value)
+						.then(array => {
+							return Bluebird.mapSeries(array, (value, index) => {
+								return fnDeep(value, index, array, {
+									...cache,
+									deep: cache.deep + 1,
+								})
+							})
 						})
-					})
 				}
 				else
 				{

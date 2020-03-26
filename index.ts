@@ -2,21 +2,19 @@
  * Created by user on 2018/1/26/026.
  */
 
-import Promise = require('bluebird');
-import Bluebird = require('bluebird');
-import globby = require('globby');
-export * from './lib';
-
+import Bluebird from 'bluebird';
+import globby from 'globby';
 export { globby }
 
 import {
-	getOptions,
 
 	IOptions,
 	IReturnList,
+
 	globToList,
 
-} from './lib';
+} from './lib/index';
+import { getOptions } from './lib/options';
 
 export function globbySync(options: IOptions): IReturnList
 export function globbySync(patterns?: string[], options?: IOptions): IReturnList
@@ -66,3 +64,4 @@ export function globbyASync(patterns?, options: IOptions = {}): Bluebird<Iglobby
 }
 
 export default exports as typeof import('./index');
+export * from './lib';

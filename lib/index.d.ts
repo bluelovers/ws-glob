@@ -1,10 +1,9 @@
 /**
  * Created by user on 2018/2/14/014.
  */
-import Bluebird = require('bluebird');
-import path = require('upath2');
+import Bluebird from 'bluebird';
+import path from 'upath2';
 export { path };
-export * from './options';
 import { IOptions, defaultPatternsExclude, getOptions, getOptionsRuntime, getOptions2 } from './options';
 export { IOptions, defaultPatternsExclude, getOptions, getOptionsRuntime, getOptions2 };
 import { normalize_val } from './helper';
@@ -64,3 +63,4 @@ export declare function p_sort_list(ls: IReturnList2, options?: IOptions): IRetu
 export declare function sortList2(ls: IReturnList2, options?: IOptions): {};
 declare const _default: typeof import(".");
 export default _default;
+export * from './options';

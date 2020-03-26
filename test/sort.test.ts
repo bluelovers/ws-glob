@@ -2,12 +2,12 @@
  * Created by user on 2018/2/21/021.
  */
 
-import { globToList, returnGlobList } from '../lib';
+import { globToList, returnGlobList } from '../lib/index';
 import { chai, relative, expect, path, assert, util, mochaAsync } from './_local-dev';
 
 import { globby } from '../index';
 import { globbyASync } from '../g';
-import * as fs from 'fs-iconv';
+import fs from 'fs-iconv';
 
 // @ts-ignore
 describe(relative(__filename), () =>
@@ -17,6 +17,7 @@ describe(relative(__filename), () =>
 	// @ts-ignore
 	beforeEach(function ()
 	{
+		// @ts-ignore
 		currentTest = this.currentTest;
 
 		//console.log('it:before', currentTest.title);

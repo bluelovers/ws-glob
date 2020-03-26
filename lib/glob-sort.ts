@@ -1,7 +1,7 @@
 /**
  * Created by user on 2018/3/29/029.
  */
-
+// @ts-ignore
 import { globToTree, treeToGlob, ITree } from 'glob-tree-list';
 import { sort } from 'glob-tree-list/lib/util';
 import { naturalCompare, defaultSortCallback } from './sort';
@@ -17,6 +17,7 @@ export function sortTree(ls: string[], sortFn = defaultSortCallback, options: IO
 		sortFn = defaultSortCallback;
 	}
 
+	// @ts-ignore
 	let t = globToTree(ls);
 	let _cache = {};
 	let t2 = sort(t, function (a, b, cache)
