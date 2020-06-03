@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["index.ts"],"names":[],"mappings":";AAAA;;GAEG;AAEH,iCAA+E;AAE/E,iBAAS,iBAAU,CAAC","sourcesContent":["/**\n * Created by user on 2018/3/29/029.\n */\n\nimport { globToTree, treeToGlob, ITree, ITreeRow, ITreeEntries } from './core';\n\nexport = globToTree;\n"]}

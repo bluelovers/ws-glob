@@ -1,0 +1,35 @@
+{
+  "name": "glob-tree-list",
+  "version": "1.0.5",
+  "description": "glob result list to tree",
+  "keywords": [
+    "node-novel",
+    "dir",
+    "glob",
+    "tree"
+  ],
+  "homepage": "https://github.com/bluelovers/glob-tree-list#readme",
+  "bugs": {
+    "url": "https://github.com/bluelovers/glob-tree-list/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bluelovers/glob-tree-list.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "string-natural-compare": "^2.0.3",
+    "upath2": "^2.1.3"
+  },
+  "devDependencies": {
+    "@bluelovers/tsconfig": "^1.0.3"
+  }
+}
