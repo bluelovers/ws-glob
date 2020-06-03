@@ -1,6 +1,6 @@
 {
   "name": "node-novel-globby",
-  "version": "2.0.11",
+  "version": "2.0.12",
   "description": "globby with sort id/chinese/fullwidth number for node-novel",
   "keywords": [
     "alphanum",
@@ -63,7 +63,7 @@
     "@types/bluebird": "*",
     "@types/globby": "*",
     "bluebird": "^3.7.2",
-    "glob-tree-list": "^1.0.5",
+    "glob-tree-list": "^1.0.6",
     "globby": "^11.0.1",
     "upath2": "^2.1.3"
   },
