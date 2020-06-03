@@ -10,8 +10,8 @@ var __createBinding = (this && this.__createBinding) || (Object.create ? (functi
     o[k2] = m[k];
 }));
 var __exportStar = (this && this.__exportStar) || function(m, exports) {
-    for (var p in m) if (!exports.hasOwnProperty(p)) __createBinding(exports, m, p);
-}
+    for (var p in m) if (p !== "default" && !exports.hasOwnProperty(p)) __createBinding(exports, m, p);
+};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
@@ -20,6 +20,7 @@ exports.globbyASync = exports.globbySync = exports.globby = void 0;
 const bluebird_1 = __importDefault(require("bluebird"));
 const globby_1 = __importDefault(require("globby"));
 exports.globby = globby_1.default;
+__exportStar(require("./lib"), exports);
 const index_1 = require("./lib/index");
 const options_1 = require("./lib/options");
 function globbySync(patterns, options = {}) {
@@ -52,5 +53,4 @@ function globbyASync(patterns, options = {}) {
 }
 exports.globbyASync = globbyASync;
 exports.default = exports;
-__exportStar(require("./lib"), exports);
 //# sourceMappingURL=index.js.map

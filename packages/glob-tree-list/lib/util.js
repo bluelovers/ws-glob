@@ -2,10 +2,14 @@
 /**
  * Created by user on 2018/3/30/030.
  */
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const naturalCompare = require("string-natural-compare");
-exports.naturalCompare = naturalCompare;
-function entries_sort(entries, fn = naturalCompare, cache = {}) {
+exports.sort = exports.entries_reduce = exports.entries_sort = exports.naturalCompare = void 0;
+const string_natural_compare_1 = __importDefault(require("string-natural-compare"));
+exports.naturalCompare = string_natural_compare_1.default;
+function entries_sort(entries, fn = string_natural_compare_1.default, cache = {}) {
     entries = entries.reduce(function (a, b) {
         if (b[1] === null || typeof b[1] == 'string') {
             a.push(b);
@@ -36,7 +40,7 @@ function entries_reduce(entries) {
     }, {});
 }
 exports.entries_reduce = entries_reduce;
-function sort(a, fn = naturalCompare) {
+function sort(a, fn = string_natural_compare_1.default) {
     let r = Object.entries(a);
     return entries_reduce(entries_sort(r, fn));
 }

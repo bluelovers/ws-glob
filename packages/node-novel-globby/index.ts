@@ -4,6 +4,8 @@
 
 import Bluebird from 'bluebird';
 import globby from 'globby';
+export * from './lib';
+
 export { globby }
 
 import {
@@ -64,4 +66,4 @@ export function globbyASync(patterns?, options: IOptions = {}): Bluebird<Iglobby
 }
 
 export default exports as typeof import('./index');
-export * from './lib';
+

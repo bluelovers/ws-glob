@@ -1,7 +1,7 @@
 /**
  * Created by user on 2018/3/30/030.
  */
-import naturalCompare = require('string-natural-compare');
+import naturalCompare from 'string-natural-compare';
 export { naturalCompare };
 import { ITree } from '../core';
 export declare function entries_sort(entries: any, fn?: (a: string, b: string, cache: any) => number, cache?: any): any;

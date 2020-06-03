@@ -3,6 +3,7 @@
  */
 import Bluebird from 'bluebird';
 import globby from 'globby';
+export * from './lib';
 export { globby };
 import { IOptions, IReturnList, globToList } from './lib/index';
 export declare function globbySync(options: IOptions): IReturnList;
@@ -12,4 +13,3 @@ export declare function globbyASync(options: IOptions): Bluebird<IglobbyASyncRet
 export declare function globbyASync(patterns?: string[], options?: IOptions): Bluebird<IglobbyASyncReturnType>;
 declare const _default: typeof import(".");
 export default _default;
-export * from './lib';

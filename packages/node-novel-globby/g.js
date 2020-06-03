@@ -9,25 +9,19 @@ var __createBinding = (this && this.__createBinding) || (Object.create ? (functi
     if (k2 === undefined) k2 = k;
     o[k2] = m[k];
 }));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
 var __exportStar = (this && this.__exportStar) || function(m, exports) {
-    for (var p in m) if (!exports.hasOwnProperty(p)) __createBinding(exports, m, p);
-}
+    for (var p in m) if (p !== "default" && !exports.hasOwnProperty(p)) __createBinding(exports, m, p);
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.sync = exports.async = exports.globbySync = exports.globbyASync = exports.globby = void 0;
-const index_1 = __importStar(require("./index"));
-Object.defineProperty(exports, "globby", { enumerable: true, get: function () { return index_1.globby; } });
+const index_1 = __importDefault(require("./index"));
+const globby_1 = __importDefault(require("globby"));
+exports.globby = globby_1.default;
+__exportStar(require("./index"), exports);
+__exportStar(require("./lib"), exports);
 const index_2 = require("./lib/index");
 function globbyASync(patterns, options = {}) {
     [patterns, options] = index_2.getOptions(patterns, options);
@@ -49,6 +43,4 @@ globbyASync.async = globbyASync;
 exports.async = globbyASync;
 exports.sync = globbyASync.sync;
 exports.default = globbyASync;
-__exportStar(require("./index"), exports);
-__exportStar(require("./lib"), exports);
 //# sourceMappingURL=g.js.map

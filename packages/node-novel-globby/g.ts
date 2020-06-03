@@ -4,7 +4,11 @@
 
 
 import Bluebird from 'bluebird';
-import novelGlobby, { globby } from './index';
+import novelGlobby from './index';
+import globby from 'globby';
+export * from './index';
+export * from './lib';
+
 export { globby }
 
 import {
@@ -53,5 +57,4 @@ export const async = globbyASync;
 export const sync = globbyASync.sync as IApiWithReturnGlobSync;
 
 export default globbyASync;
-export * from './index';
-export * from './lib';
+

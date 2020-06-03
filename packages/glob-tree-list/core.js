@@ -2,8 +2,12 @@
 /**
  * Created by user on 2018/3/29/029.
  */
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const upath2_1 = require("upath2");
+exports.treeToGlob = exports.globToTree = exports.path = void 0;
+const upath2_1 = __importDefault(require("upath2"));
 exports.path = upath2_1.default;
 function globToTree(data) {
     return data.reduce(function (a, b) {
