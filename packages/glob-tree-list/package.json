@@ -8,13 +8,13 @@
     "glob",
     "tree"
   ],
-  "homepage": "https://github.com/bluelovers/glob-tree-list#readme",
+  "homepage": "https://github.com/bluelovers/ws-glob/tree/master/packages/glob-tree-list#readme",
   "bugs": {
-    "url": "https://github.com/bluelovers/glob-tree-list/issues"
+    "url": "https://github.com/bluelovers/ws-glob/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bluelovers/glob-tree-list.git"
+    "url": "git+https://github.com/bluelovers/ws-glob.git"
   },
   "license": "ISC",
   "author": "bluelovers",

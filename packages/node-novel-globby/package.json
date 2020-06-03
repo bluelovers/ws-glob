@@ -27,13 +27,13 @@
     "txt",
     "zh"
   ],
-  "homepage": "https://github.com/bluelovers/node-novel-globby#readme",
+  "homepage": "https://github.com/bluelovers/ws-glob/tree/master/packages/node-novel-globby#readme",
   "bugs": {
-    "url": "https://github.com/bluelovers/node-novel-globby/issues"
+    "url": "https://github.com/bluelovers/ws-glob/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bluelovers/node-novel-globby.git"
+    "url": "git+https://github.com/bluelovers/ws-glob.git"
   },
   "license": "ISC",
   "author": "bluelovers",

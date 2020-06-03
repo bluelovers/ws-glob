@@ -29,13 +29,13 @@
     "walk",
     "walking"
   ],
-  "homepage": "https://github.com/bluelovers/glob-search#readme",
+  "homepage": "https://github.com/bluelovers/ws-glob/tree/master/packages/glob-search#readme",
   "bugs": {
-    "url": "https://github.com/bluelovers/glob-search/issues"
+    "url": "https://github.com/bluelovers/ws-glob/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bluelovers/glob-search.git"
+    "url": "git+https://github.com/bluelovers/ws-glob.git"
   },
   "license": "ISC",
   "author": "bluelovers",
