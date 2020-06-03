@@ -1,0 +1,121 @@
+{
+	"..dir": [
+		{
+			"source_path": "⓪.txt",
+			"source_idx": 0,
+			"path": "G:/Users/The Project/temp-fork/node-novel-globby/⓪.txt",
+			"path_dir": "G:/Users/The Project/temp-fork/node-novel-globby",
+			"dir": ".",
+			"file": "⓪",
+			"ext": ".txt",
+			"volume_title": ".",
+			"chapter_title": "⓪",
+			"val_file": "00000",
+			"val_dir": "."
+		},
+		{
+			"source_path": "①.txt",
+			"source_idx": 1,
+			"path": "G:/Users/The Project/temp-fork/node-novel-globby/①.txt",
+			"path_dir": "G:/Users/The Project/temp-fork/node-novel-globby",
+			"dir": ".",
+			"file": "①",
+			"ext": ".txt",
+			"volume_title": ".",
+			"chapter_title": "①",
+			"val_file": "00001",
+			"val_dir": "."
+		},
+		{
+			"source_path": "③.txt",
+			"source_idx": 2,
+			"path": "G:/Users/The Project/temp-fork/node-novel-globby/③.txt",
+			"path_dir": "G:/Users/The Project/temp-fork/node-novel-globby",
+			"dir": ".",
+			"file": "③",
+			"ext": ".txt",
+			"volume_title": ".",
+			"chapter_title": "③",
+			"val_file": "00003",
+			"val_dir": "."
+		},
+		{
+			"source_path": "4.txt",
+			"source_idx": 3,
+			"path": "G:/Users/The Project/temp-fork/node-novel-globby/4.txt",
+			"path_dir": "G:/Users/The Project/temp-fork/node-novel-globby",
+			"dir": ".",
+			"file": "4",
+			"ext": ".txt",
+			"volume_title": ".",
+			"chapter_title": "4",
+			"val_file": "00004",
+			"val_dir": "."
+		},
+		{
+			"source_path": "⑫.txt",
+			"source_idx": 4,
+			"path": "G:/Users/The Project/temp-fork/node-novel-globby/⑫.txt",
+			"path_dir": "G:/Users/The Project/temp-fork/node-novel-globby",
+			"dir": ".",
+			"file": "⑫",
+			"ext": ".txt",
+			"volume_title": ".",
+			"chapter_title": "⑫",
+			"val_file": "00012",
+			"val_dir": "."
+		},
+		{
+			"source_path": "⑯.txt",
+			"source_idx": 5,
+			"path": "G:/Users/The Project/temp-fork/node-novel-globby/⑯.txt",
+			"path_dir": "G:/Users/The Project/temp-fork/node-novel-globby",
+			"dir": ".",
+			"file": "⑯",
+			"ext": ".txt",
+			"volume_title": ".",
+			"chapter_title": "⑯",
+			"val_file": "00016",
+			"val_dir": "."
+		},
+		{
+			"source_path": "30.txt",
+			"source_idx": 6,
+			"path": "G:/Users/The Project/temp-fork/node-novel-globby/30.txt",
+			"path_dir": "G:/Users/The Project/temp-fork/node-novel-globby",
+			"dir": ".",
+			"file": "30",
+			"ext": ".txt",
+			"volume_title": ".",
+			"chapter_title": "30",
+			"val_file": "00030",
+			"val_dir": "."
+		},
+		{
+			"source_path": "㉟.txt",
+			"source_idx": 7,
+			"path": "G:/Users/The Project/temp-fork/node-novel-globby/㉟.txt",
+			"path_dir": "G:/Users/The Project/temp-fork/node-novel-globby",
+			"dir": ".",
+			"file": "㉟",
+			"ext": ".txt",
+			"volume_title": ".",
+			"chapter_title": "㉟",
+			"val_file": "00035",
+			"val_dir": "."
+		},
+		{
+			"source_path": "㊿.txt",
+			"source_idx": 8,
+			"path": "G:/Users/The Project/temp-fork/node-novel-globby/㊿.txt",
+			"path_dir": "G:/Users/The Project/temp-fork/node-novel-globby",
+			"dir": ".",
+			"file": "㊿",
+			"ext": ".txt",
+			"volume_title": ".",
+			"chapter_title": "㊿",
+			"val_file": "00050",
+			"val_dir": "."
+		}
+	]
+}
