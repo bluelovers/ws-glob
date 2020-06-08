@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.16](https://github.com/bluelovers/ws-glob/compare/node-novel-globby@2.0.15...node-novel-globby@2.0.16) (2020-06-08)
+
+
+### Bug Fixes
+
+* fix test ([deff5d8](https://github.com/bluelovers/ws-glob/commit/deff5d86b64362c781d94e8f6e83cd885709a1dd))
+
+
+
+
+
 ## [2.0.15](https://github.com/bluelovers/ws-glob/compare/node-novel-globby@2.0.14...node-novel-globby@2.0.15) (2020-06-08)
 
 

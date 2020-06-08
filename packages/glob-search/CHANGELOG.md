@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.5](https://github.com/bluelovers/ws-glob/compare/glob-search@2.0.4...glob-search@2.0.5) (2020-06-08)
+
+
+### Bug Fixes
+
+* fix test ([deff5d8](https://github.com/bluelovers/ws-glob/commit/deff5d86b64362c781d94e8f6e83cd885709a1dd))
+
+
+
+
+
 ## [2.0.4](https://github.com/bluelovers/ws-glob/compare/glob-search@2.0.3...glob-search@2.0.4) (2020-06-08)
 
 

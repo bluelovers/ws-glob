@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.10](https://github.com/bluelovers/ws-glob/compare/glob-tree-list@1.0.9...glob-tree-list@1.0.10) (2020-06-08)
+
+
+### Bug Fixes
+
+* fix test ([deff5d8](https://github.com/bluelovers/ws-glob/commit/deff5d86b64362c781d94e8f6e83cd885709a1dd))
+
+
+
+
+
 ## [1.0.9](https://github.com/bluelovers/ws-glob/compare/glob-tree-list@1.0.8...glob-tree-list@1.0.9) (2020-06-08)
 
 
