@@ -17,7 +17,7 @@
     "coverage": "npx nyc yarn run test",
     "lint": "npx eslint **/*.ts",
     "test": "yarn run test:jest",
-    "test:jest": "jest --coverage",
+    "test:jest": "jest",
     "test:mocha": "npx mocha --require ts-node/register \"!(node_modules)/**/*.{test,spec}.{ts,tsx}\"",
     "npm:publish": "npm publish",
     "npm:publish:lerna": "lerna publish --yes",
@@ -32,8 +32,8 @@
   "dependencies": {
     "@lazy-glob/sort-entries": "^1.0.0",
     "@lazy-glob/util": "^1.0.0",
-    "@node-novel/normalize": "^1.0.16",
-    "@node-novel/sort": "^1.0.11",
+    "@node-novel/normalize": "^1.0.17",
+    "@node-novel/sort": "^1.0.12",
     "glob-tree-list": "^1.0.7"
   },
   "devDependencies": {},
