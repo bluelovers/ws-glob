@@ -59,7 +59,7 @@
   },
   "dependencies": {
     "@bluelovers/fast-glob": "^3.0.4",
-    "@bluelovers/string-natural-compare": "^1.0.2",
+    "@bluelovers/string-natural-compare": "^1.0.3",
     "@yarn-tool/find-root": "^1.0.12",
     "bluebird": "^3",
     "chai": "^4",
