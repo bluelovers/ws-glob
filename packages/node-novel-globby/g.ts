@@ -13,14 +13,13 @@ export { globby }
 
 import {
 	getOptions,
-	returnGlobList,
-
-	IApiWithReturnGlob,
-	IOptionsWithReturnGlobList,
-
-	IApiWithReturnGlobSync,
-	IApiWithReturnGlobAsync,
 } from './lib/index';
+import {
+	returnGlobList,
+	IOptionsWithReturnGlobList,
+	IApiWithReturnGlobAsync,
+	IApiWithReturnGlobSync, IApiWithReturnGlob,
+} from './lib/types';
 
 export function globbyASync(options: IOptionsWithReturnGlobList): Bluebird<string[]>
 export function globbyASync(patterns?: string[], options?: IOptionsWithReturnGlobList): Bluebird<string[]>

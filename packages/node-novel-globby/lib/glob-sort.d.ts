@@ -1,3 +1,6 @@
-import { defaultSortCallback } from './sort';
-import { IOptions } from './options';
-export declare function sortTree(ls: string[], sortFn?: typeof defaultSortCallback, options?: IOptions): string[];
+/**
+ * Created by user on 2018/3/29/029.
+ */
+import m from '@lazy-glob/sort-tree';
+export * from '@lazy-glob/sort-tree';
+export default m;

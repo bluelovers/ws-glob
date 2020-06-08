@@ -7,8 +7,7 @@ import self from '..';
 import * as path from 'upath2';
 // @ts-ignore
 import * as fs from 'fs-iconv';
-import * as naturalCompare from 'string-natural-compare';
-import { sortTree } from '../lib/glob-sort';
+import { returnGlobList } from '../lib/types';
 
 let a;
 
@@ -48,7 +47,7 @@ self
 			spaces: "\t",
 		});
 	})
-	.then(self.returnGlobList)
+	.then(returnGlobList)
 	.tap(function (ls)
 	{
 		if (cwd && 0)

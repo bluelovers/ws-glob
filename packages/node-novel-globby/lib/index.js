@@ -16,7 +16,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.sortList2 = exports.p_sort_list = exports.glob_to_list = exports.returnGlobList = exports.globToListArrayDeep = exports.globToListArray = exports.globToList = exports.createGlobToType = exports.pathToListRow = exports.foreachArrayDeep = exports.eachVolumeTitle = exports.foreachArrayDeepAsync = exports.normalize_val = exports.getOptions2 = exports.getOptionsRuntime = exports.getOptions = exports.defaultPatternsExclude = exports.path = void 0;
+exports.sortList2 = exports.p_sort_list = exports.glob_to_list = exports.globToListArrayDeep = exports.globToListArray = exports.globToList = exports.createGlobToType = exports.pathToListRow = exports.foreachArrayDeep = exports.eachVolumeTitle = exports.foreachArrayDeepAsync = exports.normalize_val = exports.getOptions2 = exports.getOptionsRuntime = exports.getOptions = exports.defaultPatternsExclude = exports.path = void 0;
 // @ts-ignore
 const upath2_1 = __importDefault(require("upath2"));
 exports.path = upath2_1.default;
@@ -25,16 +25,18 @@ Object.defineProperty(exports, "defaultPatternsExclude", { enumerable: true, get
 Object.defineProperty(exports, "getOptions", { enumerable: true, get: function () { return options_1.getOptions; } });
 Object.defineProperty(exports, "getOptionsRuntime", { enumerable: true, get: function () { return options_1.getOptionsRuntime; } });
 Object.defineProperty(exports, "getOptions2", { enumerable: true, get: function () { return options_1.getOptions2; } });
-const sort_1 = __importDefault(require("./sort"));
-const helper_1 = require("./helper");
-Object.defineProperty(exports, "normalize_val", { enumerable: true, get: function () { return helper_1.normalize_val; } });
-const glob_sort_1 = require("./glob-sort");
+const sort_1 = require("@node-novel/sort");
+const normalize_1 = require("@node-novel/normalize");
+Object.defineProperty(exports, "normalize_val", { enumerable: true, get: function () { return normalize_1.normalize_val; } });
 const list_1 = require("./list");
 Object.defineProperty(exports, "pathToListRow", { enumerable: true, get: function () { return list_1.pathToListRow; } });
 const util_1 = require("./util");
 Object.defineProperty(exports, "foreachArrayDeepAsync", { enumerable: true, get: function () { return util_1.foreachArrayDeepAsync; } });
 Object.defineProperty(exports, "eachVolumeTitle", { enumerable: true, get: function () { return util_1.eachVolumeTitle; } });
 Object.defineProperty(exports, "foreachArrayDeep", { enumerable: true, get: function () { return util_1.foreachArrayDeep; } });
+const sort_tree_1 = __importDefault(require("@lazy-glob/sort-tree"));
+__exportStar(require("./types"), exports);
+__exportStar(require("@lazy-glob/util/lib/types/glob"), exports);
 function createGlobToType(fn) {
     return function (glob_ls, options = {}) {
         if (!Array.isArray(glob_ls) || !glob_ls.length) {
@@ -43,8 +45,8 @@ function createGlobToType(fn) {
             }
             return null;
         }
-        let comp = options.sortCallback || sort_1.default.defaultSortCallback;
-        let ls = glob_sort_1.sortTree(glob_ls, comp, options);
+        let comp = options.sortCallback || sort_1.defaultSortCallback;
+        let ls = sort_tree_1.default(glob_ls, comp, options);
         return fn(ls, options);
     };
 }
@@ -55,36 +57,6 @@ exports.createGlobToType = createGlobToType;
 exports.globToList = createGlobToType(glob_to_list);
 exports.globToListArray = createGlobToType(list_1.glob_to_list_array);
 exports.globToListArrayDeep = createGlobToType(list_1.glob_to_list_array_deep);
-function returnGlobList(ls, options = {}) {
-    let useSourcePath = (options.useSourcePath === true || options.useSourcePath === false)
-        ? options.useSourcePath
-        : !options.absolute;
-    if (!ls) {
-        return [];
-    }
-    return Object.values(ls)
-        .reduce(function (a, b) {
-        Object.values(b)
-            .forEach(function (value, index, array) {
-            a.push(useSourcePath ? value.source_path : value.path);
-        });
-        return a;
-    }, []);
-    /*
-    return Object.keys(ls)
-        .reduce(function (a: string[], b)
-        {
-            ls[b].forEach(function (value, index, array)
-            {
-                a.push(useSourcePath ? value.source_path : value.path);
-            });
-
-            return a;
-        }, [])
-        ;
-    */
-}
-exports.returnGlobList = returnGlobList;
 function glob_to_list(glob_ls, options = {}) {
     if (!Array.isArray(glob_ls) || !glob_ls.length) {
         throw new Error(`glob matched list is empty`);
@@ -180,7 +152,7 @@ function p_sort_list(ls, options = {}) {
 }
 exports.p_sort_list = p_sort_list;
 function sortList2(ls, options = {}) {
-    let comp = options.sortCallback || sort_1.default.defaultSortCallback;
+    let comp = options.sortCallback || sort_1.defaultSortCallback;
     let ls2 = Object.entries(ls);
     if (options && options.sortFn) {
         ls2 = options.sortFn(ls2);
@@ -218,6 +190,6 @@ function sortList2(ls, options = {}) {
     }, {});
 }
 exports.sortList2 = sortList2;
-exports.default = exports;
 __exportStar(require("./options"), exports);
+exports.default = exports;
 //# sourceMappingURL=index.js.map

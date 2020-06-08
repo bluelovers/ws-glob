@@ -4,5 +4,6 @@
 
 
 import * as libSort from '@node-novel/sort';
-export default libSort
 export * from '@node-novel/sort';
+
+export default libSort

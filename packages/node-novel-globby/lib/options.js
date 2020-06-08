@@ -2,12 +2,20 @@
 /**
  * Created by user on 2018/3/30/030.
  */
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __exportStar = (this && this.__exportStar) || function(m, exports) {
+    for (var p in m) if (p !== "default" && !exports.hasOwnProperty(p)) __createBinding(exports, m, p);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getOptionsRuntime = exports.getOptions2 = exports.getOptions = exports.defaultOptions = exports.defaultPatterns = exports.defaultPatternsExclude = void 0;
-const sort_1 = __importDefault(require("./sort"));
+const sort_1 = require("@node-novel/sort");
+__exportStar(require("@lazy-glob/util/lib/types/glob"), exports);
 exports.defaultPatternsExclude = [
     '!*.new.*',
     '!*.out.*',
@@ -38,7 +46,7 @@ exports.defaultOptions = {
     disableAutoHandle: false,
     disableSort: false,
     throwEmpty: true,
-    sortCallback: sort_1.default.defaultSortCallback,
+    sortCallback: sort_1.defaultSortCallback,
 };
 function getOptions(patterns, options = {}) {
     if (!Array.isArray(patterns) && typeof patterns == 'object') {

@@ -8,15 +8,11 @@ export * from './lib';
 
 export { globby }
 
-import {
+import { IOptions, } from '@lazy-glob/util/lib/types/glob';
 
-	IOptions,
-	IReturnList,
-
-	globToList,
-
-} from './lib/index';
+import { globToList, } from './lib/index';
 import { getOptions } from './lib/options';
+import { IReturnList } from './lib/types';
 
 export function globbySync(options: IOptions): IReturnList
 export function globbySync(patterns?: string[], options?: IOptions): IReturnList

@@ -1,10 +1,24 @@
 "use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __exportStar = (this && this.__exportStar) || function(m, exports) {
+    for (var p in m) if (p !== "default" && !exports.hasOwnProperty(p)) __createBinding(exports, m, p);
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.pathToListRow = exports.glob_to_list_array_deep = exports.glob_to_list_array = void 0;
 const options_1 = require("./options");
-const index_1 = require("./index");
+__exportStar(require("@lazy-glob/util/lib/types/glob"), exports);
 const normalize_1 = require("@node-novel/normalize");
 const util_1 = require("./util");
+const upath2_1 = __importDefault(require("upath2"));
 function glob_to_list_array(glob_ls, options = {}) {
     if (!Array.isArray(glob_ls) || !glob_ls.length) {
         throw new Error(`glob matched list is empty`);
@@ -104,19 +118,19 @@ function pathToListRow(b, source_idx, options = {}) {
     options = options_1.getOptionsRuntime(options);
     const padNum = options.padNum;
     const CWD = options.cwd;
-    let dir = index_1.path.dirname(b);
-    let ext = index_1.path.extname(b);
-    let file = index_1.path.basename(b, ext);
+    let dir = upath2_1.default.dirname(b);
+    let ext = upath2_1.default.extname(b);
+    let file = upath2_1.default.basename(b, ext);
     if (options.absolute) {
         // fix bug when absolute: true
-        dir = index_1.path.relative(CWD, dir);
+        dir = upath2_1.default.relative(CWD, dir);
     }
     //console.log(b);
     let row = {
         source_path: b,
         source_idx,
-        path: options.cwd && !index_1.path.isAbsolute(b) ? index_1.path.join(options.cwd, b) : b,
-        path_dir: options.cwd && !index_1.path.isAbsolute(dir) ? index_1.path.join(options.cwd, dir) : dir,
+        path: options.cwd && !upath2_1.default.isAbsolute(b) ? upath2_1.default.join(options.cwd, b) : b,
+        path_dir: options.cwd && !upath2_1.default.isAbsolute(dir) ? upath2_1.default.join(options.cwd, dir) : dir,
         dir: dir,
         file: file,
         ext: ext,

@@ -4,14 +4,14 @@
 
 import self = require('../g');
 // @ts-ignore
-import * as path from 'upath2';
+import path from 'upath2';
 // @ts-ignore
-import * as fs from 'fs-iconv';
-import * as naturalCompare from 'string-natural-compare';
-import { sortTree } from '../lib/glob-sort';
+import fs from 'fs-iconv';
+import naturalCompare from '@bluelovers/string-natural-compare';
 import { getOptionsRuntime, glob_to_list } from '../lib/index';
 import { glob_to_list_array_deep } from '../lib/list';
 import { getOptions } from '../lib/options';
+import sortTree from '@lazy-glob/sort-tree';
 
 let a;
 

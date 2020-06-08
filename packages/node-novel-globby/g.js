@@ -23,18 +23,19 @@ exports.globby = globby_1.default;
 __exportStar(require("./index"), exports);
 __exportStar(require("./lib"), exports);
 const index_2 = require("./lib/index");
+const types_1 = require("./lib/types");
 function globbyASync(patterns, options = {}) {
     [patterns, options] = index_2.getOptions(patterns, options);
     return index_1.default.globbyASync(patterns, options)
         .then(function (ls) {
-        return index_2.returnGlobList(ls, options);
+        return types_1.returnGlobList(ls, options);
     });
 }
 exports.globbyASync = globbyASync;
 (function (globbyASync) {
     function sync(patterns, options = {}) {
         [patterns, options] = index_2.getOptions(patterns, options);
-        return index_2.returnGlobList(index_1.default.globbySync(patterns, options), options);
+        return types_1.returnGlobList(index_1.default.globbySync(patterns, options), options);
     }
     globbyASync.sync = sync;
 })(globbyASync = exports.globbyASync || (exports.globbyASync = {}));

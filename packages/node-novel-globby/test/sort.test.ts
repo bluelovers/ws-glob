@@ -2,12 +2,13 @@
  * Created by user on 2018/2/21/021.
  */
 
-import { globToList, returnGlobList } from '../lib/index';
+import { globToList} from '../lib/index';
 import { chai, relative, expect, path, assert, util, mochaAsync } from './_local-dev';
 
 import { globby } from '../index';
 import { globbyASync } from '../g';
 import fs from 'fs-iconv';
+import { returnGlobList } from '../lib/types';
 
 // @ts-ignore
 describe(relative(__filename), () =>

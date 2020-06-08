@@ -1,7 +1,6 @@
-import { IOptions } from './options';
-import { IReturnRow } from './index';
-export { IArrayDeepInterface, IArrayDeep, IForeachArrayDeepCache, IForeachArrayDeepReturn } from './util';
-import { IArrayDeepInterface } from './util';
+export * from '@lazy-glob/util/lib/types/glob';
+import { IOptions, IArrayDeepInterface } from '@lazy-glob/util/lib/types/glob';
+import { IReturnRow } from './types';
 export { IReturnRow };
 export declare function glob_to_list_array(glob_ls: string[], options?: IOptions): IReturnRow[];
 export declare function glob_to_list_array_deep(glob_ls: string[], options?: IOptions): IArrayDeepInterface<IReturnRow>;

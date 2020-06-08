@@ -2,84 +2,40 @@
  * Created by user on 2018/2/14/014.
  */
 
-import Bluebird from 'bluebird';
 // @ts-ignore
 import path from 'upath2';
+import {
+	IOptions,
+	IArrayDeepInterface,
+	IArrayDeep,
+	IForeachArrayDeepReturn,
+	IForeachArrayDeepCache,
+} from '@lazy-glob/util/lib/types/glob';
+import {
+	defaultPatternsExclude,
+	getOptions,
+	getOptionsRuntime,
+	getOptions2,
+} from './options';
+import { defaultSortCallback as libSortDefaultSortCallback } from '@node-novel/sort';
+
+import { normalize_val } from '@node-novel/normalize';
+import { glob_to_list_array, glob_to_list_array_deep, pathToListRow } from './list';
+import { foreachArrayDeepAsync, eachVolumeTitle, foreachArrayDeep } from './util';
+import sortTree from '@lazy-glob/sort-tree';
+import { IReturnList2, IReturnList } from './types';
+export * from './types';
+
 export { path }
-import { IOptions, defaultPatternsExclude, getOptions, getOptionsRuntime, getOptions2 } from './options';
-export { IOptions, defaultPatternsExclude, getOptions, getOptionsRuntime, getOptions2 }
-
-import libSort from './sort';
-
-import { normalize_strip, normalize_val } from './helper';
+export { defaultPatternsExclude, getOptions, getOptionsRuntime, getOptions2 }
 
 export { normalize_val }
 
-import { sortTree } from './glob-sort';
+export * from '@lazy-glob/util/lib/types/glob';
 
-import { sort as globTreeListUtilSort } from 'glob-tree-list/lib/util';
-import { glob_to_list_array, glob_to_list_array_deep, pathToListRow } from './list';
-import { IArrayDeepInterface, IArrayDeep, IForeachArrayDeepCache, IForeachArrayDeepReturn, foreachArrayDeepAsync, eachVolumeTitle, foreachArrayDeep } from './util';
-export { IArrayDeepInterface, IArrayDeep, IForeachArrayDeepCache, IForeachArrayDeepReturn, foreachArrayDeepAsync, eachVolumeTitle, foreachArrayDeep }
+export { foreachArrayDeepAsync, eachVolumeTitle, foreachArrayDeep }
 
 export { pathToListRow }
-
-export interface IApi<T>
-{
-	(options: IOptions): T
-
-	(patterns?: string[], options?: IOptions): T
-}
-
-export type IApiSync = IApi<IReturnList>;
-export type IApiAsync = IApi<Bluebird<IReturnList>>;
-
-export interface IApiWithReturnGlob<T>
-{
-	(options: IOptionsWithReturnGlobList): T
-
-	(patterns?: string[], options?: IOptionsWithReturnGlobList): T
-}
-
-export type IApiWithReturnGlobSync = IApiWithReturnGlob<IReturnGlob>;
-export type IApiWithReturnGlobAsync = IApiWithReturnGlob<Bluebird<IReturnGlob>>;
-
-export type IOptionsWithReturnGlobList = IOptions & IReturnGlobListOptions;
-
-export type IReturnGlob = string[];
-
-export interface IReturnRow
-{
-	source_idx: number,
-	source_path: string,
-	path: string,
-	path_dir: string,
-	dir: string,
-	file: string,
-	ext: string,
-	volume_title: string,
-	chapter_title: string,
-	val_file: string,
-	val_dir: string,
-}
-
-export interface IReturnList
-{
-	[index: number]: IReturnRow[],
-	[key: string]: IReturnRow[],
-}
-
-export interface IReturnList2
-{
-	/*
-	[key: string]: {
-		[index: number]: IReturnRow,
-		[key: string]: IReturnRow,
-	},
-	*/
-	[key: string]: IReturnRow[],
-	[index: number]: IReturnRow[],
-}
 
 export function createGlobToType<T>(fn: (glob_ls: string[], options?: IOptions) => T)
 {
@@ -95,7 +51,7 @@ export function createGlobToType<T>(fn: (glob_ls: string[], options?: IOptions) 
 			return null;
 		}
 
-		let comp = options.sortCallback || libSort.defaultSortCallback;
+		let comp = options.sortCallback || libSortDefaultSortCallback;
 
 		let ls = sortTree(glob_ls, comp as any, options);
 
@@ -111,51 +67,6 @@ export const globToList = createGlobToType<IReturnList2>(glob_to_list);
 export const globToListArray = createGlobToType(glob_to_list_array);
 
 export const globToListArrayDeep = createGlobToType(glob_to_list_array_deep);
-
-export interface IReturnGlobListOptions
-{
-	useSourcePath?: boolean,
-}
-
-export function returnGlobList(ls: IReturnList, options: IReturnGlobListOptions & IOptions = {}): string[]
-{
-	let useSourcePath = (options.useSourcePath === true || options.useSourcePath === false)
-		? options.useSourcePath
-		: !options.absolute;
-
-	if (!ls)
-	{
-		return [];
-	}
-
-	return Object.values(ls)
-		.reduce(function (a: string[], b)
-		{
-			Object.values(b)
-				.forEach(function (value, index, array)
-				{
-					a.push(useSourcePath ? value.source_path : value.path);
-				})
-			;
-
-			return a;
-		}, [])
-		;
-
-	/*
-	return Object.keys(ls)
-		.reduce(function (a: string[], b)
-		{
-			ls[b].forEach(function (value, index, array)
-			{
-				a.push(useSourcePath ? value.source_path : value.path);
-			});
-
-			return a;
-		}, [])
-		;
-	*/
-}
 
 export function glob_to_list(glob_ls: string[], options: IOptions = {}): IReturnList2
 {
@@ -268,7 +179,7 @@ export function p_sort_list(ls: IReturnList2, options: IOptions = {}): IReturnLi
 
 export function sortList2(ls: IReturnList2, options: IOptions = {})
 {
-	let comp = options.sortCallback || libSort.defaultSortCallback;
+	let comp = options.sortCallback || libSortDefaultSortCallback;
 
 	let ls2 = Object.entries(ls);
 
@@ -326,5 +237,6 @@ export function sortList2(ls: IReturnList2, options: IOptions = {})
 	;
 }
 
-export default exports as typeof import('./index');
 export * from './options';
+
+export default exports as typeof import('./index');

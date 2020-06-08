@@ -3,3 +3,5 @@
  */
 
 export * from '@node-novel/normalize';
+import m from '@node-novel/normalize';
+export default m

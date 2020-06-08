@@ -6,7 +6,7 @@ import globby from 'globby';
 export * from './index';
 export * from './lib';
 export { globby };
-import { IOptionsWithReturnGlobList, IApiWithReturnGlobSync, IApiWithReturnGlobAsync } from './lib/index';
+import { IOptionsWithReturnGlobList, IApiWithReturnGlobAsync, IApiWithReturnGlobSync } from './lib/types';
 export declare function globbyASync(options: IOptionsWithReturnGlobList): Bluebird<string[]>;
 export declare function globbyASync(patterns?: string[], options?: IOptionsWithReturnGlobList): Bluebird<string[]>;
 export declare namespace globbyASync {

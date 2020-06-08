@@ -4,6 +4,7 @@
 
 import self from '..';
 import * as path from 'path';
+import { returnGlobList } from '../lib/types';
 
 let a;
 
@@ -23,7 +24,7 @@ self
 	{
 		console.log(ls);
 	})
-	.then(self.returnGlobList)
+	.then(returnGlobList)
 	.tap(function (ls)
 	{
 		console.log(ls);

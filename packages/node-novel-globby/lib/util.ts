@@ -4,21 +4,9 @@
 
 import Bluebird from 'bluebird';
 import { normalize_strip } from '@node-novel/normalize';
+import { IArrayDeepInterface, IForeachArrayDeepReturn, IForeachArrayDeepCache } from '@lazy-glob/util/lib/types/glob';
 
-export interface IForeachArrayDeepCache<D = any, U = any>
-{
-	deep: number,
-	data: D,
-	temp: U,
-	topCache?: IForeachArrayDeepCache<D, U>,
-}
-
-export interface IForeachArrayDeepReturn<T, R extends unknown = unknown, D = unknown, U = unknown>
-{
-	ret: R[];
-	data: D;
-	temp: U;
-}
+export * from '@lazy-glob/util/lib/types/glob'
 
 export function eachVolumeTitle(volume_title: string | string[], strip: boolean = true)
 {
@@ -185,9 +173,3 @@ export function foreachArrayDeepAsync<T, R extends unknown = unknown, D = unknow
 	;
 }
 
-export type IArrayDeep<T> = (T | T[] | (T | T[])[])[]
-
-export interface IArrayDeepInterface<T extends unknown> extends Array<T | T[] | IArrayDeepInterface<T>>
-{
-
-}

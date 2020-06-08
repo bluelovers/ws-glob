@@ -1,8 +1,13 @@
-import { getOptionsRuntime, IOptions } from './options';
-import { IReturnRow, path } from './index';
+import { getOptionsRuntime } from './options';
+
+export * from '@lazy-glob/util/lib/types/glob';
+import { IOptions, IArrayDeepInterface } from '@lazy-glob/util/lib/types/glob';
+
 import { normalize_strip, normalize_val } from '@node-novel/normalize';
-export { IArrayDeepInterface, IArrayDeep, IForeachArrayDeepCache, IForeachArrayDeepReturn } from './util';
-import { eachVolumeTitle, IArrayDeepInterface } from './util';
+import { eachVolumeTitle } from './util';
+import path from 'upath2';
+import { IReturnRow } from './types';
+
 export { IReturnRow }
 
 export function glob_to_list_array(glob_ls: string[], options: IOptions = {}): IReturnRow[]
@@ -75,8 +80,8 @@ export function glob_to_list_array_deep(glob_ls: string[], options: IOptions = {
 		if (keys.length)
 		{
 			let aa = eachVolumeTitle(keys, false).titles_full
-				.reduce((aa, key) => {
-
+				.reduce((aa, key) =>
+				{
 
 					let ca = cache[key] = cache[key] || [];
 
