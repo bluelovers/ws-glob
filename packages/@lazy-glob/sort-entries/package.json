@@ -1,6 +1,6 @@
 {
   "name": "@lazy-glob/sort-entries",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "homepage": "https://github.com/bluelovers/ws-glob/tree/master/packages/@lazy-glob/sort-entries#readme",
   "bugs": {
@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "@bluelovers/string-natural-compare": "^1.0.2",
-    "@lazy-glob/util": "^1.0.1"
+    "@lazy-glob/util": "^1.0.2"
   },
   "publishConfig": {
     "access": "public"

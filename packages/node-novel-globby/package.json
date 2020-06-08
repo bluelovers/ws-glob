@@ -1,6 +1,6 @@
 {
   "name": "node-novel-globby",
-  "version": "2.0.14",
+  "version": "2.0.15",
   "description": "globby with sort id/chinese/fullwidth number for node-novel",
   "keywords": [
     "alphanum",
@@ -58,14 +58,14 @@
     "tsc:esm": "tsc -p tsconfig.esm.json"
   },
   "dependencies": {
-    "@lazy-glob/sort-tree": "^1.0.1",
-    "@lazy-glob/util": "^1.0.1",
+    "@lazy-glob/sort-tree": "^1.0.2",
+    "@lazy-glob/util": "^1.0.2",
     "@node-novel/normalize": "^1.0.17",
     "@node-novel/sort": "^1.0.12",
     "@types/bluebird": "*",
     "@types/globby": "*",
     "bluebird": "^3.7.2",
-    "glob-tree-list": "^1.0.8",
+    "glob-tree-list": "^1.0.9",
     "globby": "^11.0.1",
     "upath2": "^2.1.3"
   },
