@@ -1,6 +1,6 @@
 {
   "name": "glob-search",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "glob search from current cwd up to root or stopPath",
   "keywords": [
     "dir",
@@ -67,6 +67,5 @@
     "pkg-dir": "^4",
     "ts-type": "^1",
     "upath2": "^2"
-  },
-  "devDependencies": {}
+  }
 }
