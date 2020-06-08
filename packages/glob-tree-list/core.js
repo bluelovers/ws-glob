@@ -34,7 +34,7 @@ function globToTree(data) {
         //console.log([dirname, basename]);
         if (dirname == '.') {
             let f = a;
-            f[basename] = isdir ? {} : basename;
+            f[basename] = isdir ? null : basename;
         }
         else {
             let c = dirname

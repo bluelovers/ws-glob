@@ -32,7 +32,7 @@ export function globToTree(data: string[]): ITree
 		{
 			let f = a;
 
-			f[basename] = isdir ? {} : basename;
+			f[basename] = isdir ? null : basename;
 		}
 		else
 		{

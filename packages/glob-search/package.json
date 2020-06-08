@@ -67,5 +67,6 @@
     "pkg-dir": "^4",
     "ts-type": "^1",
     "upath2": "^2"
-  }
+  },
+  "gitHead": "e80bd9b07a85d59624f011a4dd236e7c08b3163b"
 }
