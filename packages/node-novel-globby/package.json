@@ -45,8 +45,7 @@
   "scripts": {
     "coverage": "npx nyc yarn run test",
     "lint": "npx eslint **/*.ts",
-    "test": "yarn run test:mocha",
-    "test:mocha": "npx mocha --require ts-node/register \"!(node_modules)/**/*.{test,spec}.{ts,tsx}\"",
+    "test": "jest",
     "npm:publish": "npm publish",
     "npm:publish:lerna": "npx lerna publish --yes --cd-version patch",
     "prepublish:lockfile": "npx sync-lockfile .",
@@ -69,5 +68,5 @@
     "globby": "^11.0.1",
     "upath2": "^2.1.3"
   },
-  "gitHead": "e80bd9b07a85d59624f011a4dd236e7c08b3163b"
+  "gitHead": "abd32e1be69b41f53f982edf0f11b65a491014c8"
 }
