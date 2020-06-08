@@ -17,8 +17,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.naturalCompare = void 0;
-const string_natural_compare_1 = __importDefault(require("@bluelovers/string-natural-compare"));
-exports.naturalCompare = string_natural_compare_1.default;
+const core_1 = __importDefault(require("@bluelovers/string-natural-compare/core"));
+exports.naturalCompare = core_1.default;
 __exportStar(require("@lazy-glob/sort-entries"), exports);
 exports.default = exports;
 //# sourceMappingURL=util.js.map

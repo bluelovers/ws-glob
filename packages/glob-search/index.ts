@@ -7,7 +7,7 @@ import FastGlob, { EntryItem } from '@bluelovers/fast-glob';
 import Bluebird from 'bluebird';
 import _path from 'path';
 import { expect } from 'chai';
-import naturalCompare from '@bluelovers/string-natural-compare';
+import naturalCompare from '@bluelovers/string-natural-compare/core';
 import pkgDir from 'pkg-dir';
 import { ITSOverwrite, ITSResolvable } from 'ts-type';
 import findRoot from '@yarn-tool/find-root';

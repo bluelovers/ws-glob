@@ -12,7 +12,7 @@ const fast_glob_1 = __importDefault(require("@bluelovers/fast-glob"));
 const bluebird_1 = __importDefault(require("bluebird"));
 const path_1 = __importDefault(require("path"));
 const chai_1 = require("chai");
-const string_natural_compare_1 = __importDefault(require("@bluelovers/string-natural-compare"));
+const core_1 = __importDefault(require("@bluelovers/string-natural-compare/core"));
 const find_root_1 = __importDefault(require("@yarn-tool/find-root"));
 function globSearch(pattern, options) {
     ({ pattern, options } = handleArgs(pattern, options));
@@ -369,7 +369,7 @@ function handleArgs(pattern, options) {
         }
     });
     if (opts.sortCompareFn === true || opts.sortCompareFn == null) {
-        opts.sortCompareFn = string_natural_compare_1.default;
+        opts.sortCompareFn = core_1.default;
     }
     else if (opts.sortCompareFn) {
         chai_1.expect(opts.sortCompareFn).is.an('function');

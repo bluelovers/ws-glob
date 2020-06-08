@@ -17,8 +17,8 @@ export function sortTree(ls: string[], sortFn = defaultSortCallback, options: IO
 		sortFn = defaultSortCallback;
 	}
 
-	// @ts-ignore
 	let t = globToTree(ls);
+
 	let _cache = {};
 	let t2 = sort(t, function (a, b, cache)
 	{

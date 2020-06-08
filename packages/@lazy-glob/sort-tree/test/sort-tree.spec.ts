@@ -21,7 +21,7 @@ describe(`no empty`, () =>
 			let actual = sortTree(ls);
 
 			expect(actual).toHaveLength(len);
-			expect(actual).toContain(expected);
+			expect(actual.slice().sort()).toStrictEqual(expected.slice().sort());
 			expect(actual).toMatchSnapshot();
 
 		});

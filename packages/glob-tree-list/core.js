@@ -18,6 +18,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.treeToGlob = exports.globToTree = exports.path = void 0;
 //export * from './lib/types'
+const util_1 = require("@lazy-glob/util");
 __exportStar(require("@lazy-glob/util/lib/types"), exports);
 const upath2_1 = __importDefault(require("upath2"));
 exports.path = upath2_1.default;
@@ -33,7 +34,7 @@ function globToTree(data) {
         //console.log([dirname, basename]);
         if (dirname == '.') {
             let f = a;
-            f[basename] = isdir ? null : basename;
+            f[basename] = isdir ? {} : basename;
         }
         else {
             let c = dirname
@@ -48,6 +49,10 @@ function globToTree(data) {
                 f = f[e];
             });
             f[basename] = isdir ? (f[basename] || {}) : basename;
+            if (isdir) {
+                f[basename][util_1.SymGlobTree] = true;
+                //console.dir({ b, basename, f })
+            }
         }
         return a;
     }, {});
@@ -67,8 +72,18 @@ function treeToGlob(a, d = []) {
             }
         }
         else {
-            // @ts-ignore
-            a = a.concat(treeToGlob(b[1], d.concat(b[0])));
+            let ls = treeToGlob(b[1], d.concat(b[0]));
+            if (b[1][util_1.SymGlobTree]) {
+                let k = b[0];
+                if (d.length) {
+                    // @ts-ignore
+                    a.push(upath2_1.default.join(...d, k));
+                }
+                else {
+                    a.push(k);
+                }
+            }
+            a = a.concat(ls);
         }
         return a;
     }, []);

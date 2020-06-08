@@ -1,12 +1,15 @@
 import { GlobbyOptions } from 'globby';
 import Bluebird from 'bluebird';
 import { IReturnRow } from 'node-novel-globby';
+import { SymGlobTree } from '../index';
 export declare type ITreeEntries = string | ITreeRow | null;
 export declare type ITreeRow = {
     [key: string]: ITreeEntries;
+    [SymGlobTree]?: any;
 };
 export declare type ITree = {
     [key: string]: string | ITreeRow | null;
+    [SymGlobTree]?: any;
 };
 export declare type IOptionsNovelGlobby = GlobbyOptions & {
     cwd?: string;

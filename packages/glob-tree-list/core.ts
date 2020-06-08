@@ -3,6 +3,8 @@
  */
 
 //export * from './lib/types'
+import { SymGlobTree } from '@lazy-glob/util';
+
 export * from '@lazy-glob/util/lib/types';
 import path from 'upath2';
 
@@ -30,7 +32,7 @@ export function globToTree(data: string[]): ITree
 		{
 			let f = a;
 
-			f[basename] = isdir ? null : basename;
+			f[basename] = isdir ? {} : basename;
 		}
 		else
 		{
@@ -55,6 +57,12 @@ export function globToTree(data: string[]): ITree
 			});
 
 			f[basename] = isdir ? (f[basename] || {}) : basename;
+
+			if (isdir)
+			{
+				f[basename][SymGlobTree] = true;
+				//console.dir({ b, basename, f })
+			}
 		}
 
 		return a;
@@ -83,8 +91,24 @@ export function treeToGlob(a: ITree, d: string[] = []): string[]
 		}
 		else
 		{
-			// @ts-ignore
-			a = a.concat(treeToGlob(b[1], d.concat(b[0])));
+			let ls = treeToGlob(b[1], d.concat(b[0]));
+
+			if (b[1][SymGlobTree])
+			{
+				let k = b[0];
+
+				if (d.length)
+				{
+					// @ts-ignore
+					a.push(path.join(...d, k));
+				}
+				else
+				{
+					a.push(k);
+				}
+			}
+
+			a = a.concat(ls);
 		}
 
 		return a;

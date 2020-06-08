@@ -13,7 +13,6 @@ function sortTree(ls, sortFn = sort_1.defaultSortCallback, options = {}) {
     if (sortFn == null) {
         sortFn = sort_1.defaultSortCallback;
     }
-    // @ts-ignore
     let t = core_1.globToTree(ls);
     let _cache = {};
     let t2 = sort_entries_1.sort(t, function (a, b, cache) {
