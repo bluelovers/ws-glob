@@ -1,5 +1,7 @@
 {
   "packages": [
+    "packages/@lazy-glob/*",
+    "packages/@node-novel/*",
     "packages/*"
   ],
   "command": {

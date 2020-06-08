@@ -3,7 +3,8 @@
  */
 
 import { globToTree, treeToGlob, ITree } from '../index';
-import { sort, naturalCompare } from '../lib/util';
+import { naturalCompare } from '../lib/util';
+import { sort } from '@node-novel/glob-tree-sort/lib/entries';
 
 let data = `00020_1章.txt
 00020_2章/

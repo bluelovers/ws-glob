@@ -1,7 +1,4 @@
 "use strict";
-/**
- * Created by user on 2018/3/29/029.
- */
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
@@ -12,7 +9,6 @@ var __createBinding = (this && this.__createBinding) || (Object.create ? (functi
 var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !exports.hasOwnProperty(p)) __createBinding(exports, m, p);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("@lazy-glob/util/lib/types"), exports);
-const core_1 = require("./core");
-module.exports = core_1.globToTree;
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=types.js.map

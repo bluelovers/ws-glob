@@ -2,7 +2,11 @@
  * Created by user on 2018/3/29/029.
  */
 
+//export * from './lib/types'
+export * from '@lazy-glob/util/lib/types';
 import path from 'upath2';
+
+import { ITree } from '@lazy-glob/util/lib/types';
 export { path }
 
 export function globToTree(data: string[]): ITree
@@ -87,25 +91,9 @@ export function treeToGlob(a: ITree, d: string[] = []): string[]
 	}, [] as string[]);
 }
 
-export module globToTree
-{
-	export type ITreeEntries = string | ITreeRow | null;
-
-	export type ITreeRow = {
-		[key: string]: ITreeEntries;
-	}
-
-	export type ITree = {
-		[key: string]: string | ITreeRow | null;
-	}
-}
-
-export import ITreeEntries = globToTree.ITreeEntries;
-export import ITreeRow = globToTree.ITreeRow;
-export import ITree = globToTree.ITree;
-
 globToTree.globToTree = globToTree;
 globToTree.treeToGlob = treeToGlob;
 globToTree.default = globToTree;
 
 export default exports as typeof import('./core');
+

@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "workspaces": [
+    "packages/@lazy-glob/*",
+    "packages/@node-novel/*",
     "packages/*"
   ],
   "scripts": {
@@ -18,16 +20,20 @@
     "sort-package-json:ws": "npx yarn-tool ws exec yarn-tool sort"
   },
   "resolutions": {},
-  "devDependencies": {
-    "@bluelovers/tsconfig": "^1.0.19",
-    "@types/jest": "^25.2.3",
-    "@types/node": "*"
-  },
-  "peerDependencies": {
-    "lerna": "^3"
-  },
   "dependencies": {
     "jest": "^26.0.1",
     "ts-jest": "^26.1.0"
+  },
+  "devDependencies": {
+    "@bluelovers/tsconfig": "^1.0.19",
+    "@types/chai": "^4.2.11",
+    "@types/fs-extra": "^9.0.1",
+    "@types/jest": "^25.2.3",
+    "@types/node": "*",
+    "cjk-conv": "^1.2.81",
+    "fs-iconv": "^3.0.5"
+  },
+  "peerDependencies": {
+    "lerna": "^3"
   }
 }

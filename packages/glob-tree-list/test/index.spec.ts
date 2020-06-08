@@ -1,5 +1,6 @@
-import { sort, naturalCompare } from '../lib/util';
+import { naturalCompare } from '../lib/util';
 import { globToTree, treeToGlob } from '../core';
+import { sort } from '@node-novel/glob-tree-sort/lib/entries';
 
 let data = `00020_1章.txt
 00020_2章/

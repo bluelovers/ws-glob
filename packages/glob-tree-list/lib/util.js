@@ -2,48 +2,23 @@
 /**
  * Created by user on 2018/3/30/030.
  */
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __exportStar = (this && this.__exportStar) || function(m, exports) {
+    for (var p in m) if (p !== "default" && !exports.hasOwnProperty(p)) __createBinding(exports, m, p);
+};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.sort = exports.entries_reduce = exports.entries_sort = exports.naturalCompare = void 0;
-const string_natural_compare_1 = __importDefault(require("string-natural-compare"));
+exports.naturalCompare = void 0;
+const string_natural_compare_1 = __importDefault(require("@bluelovers/string-natural-compare"));
 exports.naturalCompare = string_natural_compare_1.default;
-function entries_sort(entries, fn = string_natural_compare_1.default, cache = {}) {
-    entries = entries.reduce(function (a, b) {
-        if (b[1] === null || typeof b[1] == 'string') {
-            a.push(b);
-        }
-        else {
-            let d = Object.entries(b[1]);
-            a.push([b[0], entries_sort(d, fn)]);
-        }
-        return a;
-    }, []);
-    entries.sort(function (a, b) {
-        let r = fn(a[0], b[0], cache);
-        return r;
-    });
-    return entries;
-}
-exports.entries_sort = entries_sort;
-function entries_reduce(entries) {
-    return entries
-        .reduce(function (a, b) {
-        if (b[1] === null || typeof b[1] == 'string') {
-            a[b[0]] = b[1];
-        }
-        else {
-            a[b[0]] = entries_reduce(b[1]);
-        }
-        return a;
-    }, {});
-}
-exports.entries_reduce = entries_reduce;
-function sort(a, fn = string_natural_compare_1.default) {
-    let r = Object.entries(a);
-    return entries_reduce(entries_sort(r, fn));
-}
-exports.sort = sort;
+__exportStar(require("@lazy-glob/sort-entries"), exports);
 exports.default = exports;
 //# sourceMappingURL=util.js.map
