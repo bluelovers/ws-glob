@@ -60,13 +60,13 @@
     "@lazy-glob/sort-tree": "^1.0.4",
     "@lazy-glob/util": "^1.0.3",
     "@node-novel/normalize": "^1.0.17",
-    "@node-novel/sort": "^1.0.12",
+    "@node-novel/sort": "^1.0.14",
     "@types/bluebird": "*",
     "@types/globby": "*",
     "bluebird": "^3.7.2",
     "glob-tree-list": "^1.0.11",
     "globby": "^11.0.1",
-    "upath2": "^2.1.3"
+    "upath2": "^3.0.2"
   },
   "gitHead": "abd32e1be69b41f53f982edf0f11b65a491014c8"
 }

@@ -28,10 +28,10 @@
     "@bluelovers/tsconfig": "^1.0.19",
     "@types/chai": "^4.2.11",
     "@types/fs-extra": "^9.0.1",
-    "@types/jest": "^25.2.3",
+    "@types/jest": "^26.0.0",
     "@types/node": "*",
-    "cjk-conv": "^1.2.81",
-    "fs-iconv": "^3.0.5"
+    "cjk-conv": "^1.2.83",
+    "fs-iconv": "^3.0.7"
   },
   "peerDependencies": {
     "lerna": "^3"

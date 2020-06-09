@@ -60,13 +60,13 @@
   "dependencies": {
     "@bluelovers/fast-glob": "^3.0.4",
     "@bluelovers/string-natural-compare": "^1.0.3",
-    "@yarn-tool/find-root": "^1.0.12",
+    "@yarn-tool/find-root": "^1.0.13",
     "bluebird": "^3",
     "chai": "^4",
     "fs-extra": "^9",
     "pkg-dir": "^4",
     "ts-type": "^1",
-    "upath2": "^2"
+    "upath2": "^3"
   },
   "gitHead": "abd32e1be69b41f53f982edf0f11b65a491014c8"
 }
