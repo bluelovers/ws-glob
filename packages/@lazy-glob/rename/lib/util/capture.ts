@@ -8,7 +8,7 @@
  */
 import { globGroupsCollectionFactory } from './globGroupsCollection';
 
-function capture(names: string[], glob: string)
+export function capture(names: string[], glob: string)
 {
 	if (!Array.isArray(names) || !names.length)
 	{

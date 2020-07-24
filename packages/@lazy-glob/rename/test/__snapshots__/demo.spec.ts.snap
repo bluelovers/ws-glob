@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`demo [
+  [
+    'larry-fine-lines-season1-episode3.txt',
+    'moe-howard-lines-s04-ep01.txt',
+    'curly-howard-lines-s2-e2.txt'
+  ],
+  '**-*-lines-*?-*?.txt',
+  '*_*-lines-s?e?.txt'
+] 1`] = `
+Array [
+  "larry_fine-lines-s1e3.txt",
+  "moe_howard-lines-s4e1.txt",
+  "curly_howard-lines-s2e2.txt",
+]
+`;
+
+exports[`demo [
+  [
+    'larry-fine-lines-season1-episode3.txt',
+    'moe-howard-lines-s04-ep01.txt',
+    'curly-howard-lines-s2-e2.txt'
+  ],
+  '*.txt',
+  'temp/*.old'
+] 1`] = `
+Array [
+  "temp/larry-fine-lines-season1-episode3.old",
+  "temp/moe-howard-lines-s04-ep01.old",
+  "temp/curly-howard-lines-s2-e2.old",
+]
+`;
+
+exports[`demo [ '123.456', '*.*', '**' ] 1`] = `
+Array [
+  "123456",
+]
+`;
+
+exports[`demo [ '123.456', '*.*', '*.ts' ] 1`] = `
+Array [
+  "123.ts",
+]
+`;

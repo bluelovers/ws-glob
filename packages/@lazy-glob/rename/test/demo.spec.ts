@@ -1,18 +1,4 @@
-# README.md
 
-    compute rename from glob like pattern
-
-code split from https://github.com/dienluong/mvmv
-
-## install
-
-```bash
-yarn add @lazy-glob/rename
-yarn-tool add @lazy-glob/rename
-yt add @lazy-glob/rename
-```
-
-```ts
 import { inspect } from 'util';
 import { computeName } from '../lib/util/computeName';
 
@@ -51,4 +37,3 @@ describe(`demo`, () =>
 	})
 
 })
-```

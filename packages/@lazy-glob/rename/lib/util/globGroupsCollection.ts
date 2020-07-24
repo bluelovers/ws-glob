@@ -1,6 +1,6 @@
 import { deconstruct } from './deconstruct';
 import { convertToRegExWithCaptureGroups } from './convertToRegExWithCaptureGroups';
-import { EnumWildcard, IQuestionMark, IAsterisk, IPartsAst, IPartsPattern, EnumPartsAstType } from '../types';
+import { EnumWildcard, IQuestionMark, IAsterisk, IPartsAst, IPartsPattern, EnumPartsAstType, ILiteral } from '../types';
 import { isQuestionMark, isAsterisk } from './ast';
 
 export class globGroupsCollectionInterface
@@ -68,7 +68,7 @@ export class globGroupsCollectionInterface
 	 * @return {Object[] | null} Array of match object for each part of the glob pattern; empty if no match; null if collection not built.
 	 *                           Example of match object: {type: 'literal', pattern: 'h', match: 'h'}
 	 */
-	getGroups()
+	getGroups(): (Error | IPartsAst)[]
 	{
 		return this._groups;
 	}
@@ -144,7 +144,7 @@ export class globGroupsCollectionInterface
 					type: EnumPartsAstType.literal,
 					pattern: g,
 					match: matches[idx + 1],
-				}));
+				}) as ILiteral);
 			}
 		});
 

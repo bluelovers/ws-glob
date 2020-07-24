@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.capture = void 0;
 /**
  * For each string in names array, return a globGroupsCollection (an object implementing globGroupsCollectionInterface) containing the substring matched by each part of the glob pattern.
  * Example of parts of a glob: "?omer.*" => Parts: ["?"] ["omer."] ["*"]
@@ -24,4 +25,5 @@ function capture(names, glob) {
         return groupsObj;
     });
 }
+exports.capture = capture;
 //# sourceMappingURL=capture.js.map
