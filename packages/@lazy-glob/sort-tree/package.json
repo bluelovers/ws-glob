@@ -32,8 +32,8 @@
   "dependencies": {
     "@lazy-glob/sort-entries": "^1.0.4",
     "@lazy-glob/util": "^1.0.3",
-    "@node-novel/normalize": "^1.0.17",
-    "@node-novel/sort": "^1.0.14",
+    "@node-novel/normalize": "^1.0.24",
+    "@node-novel/sort": "^1.0.17",
     "glob-tree-list": "^1.0.12"
   },
   "publishConfig": {

@@ -59,8 +59,8 @@
   },
   "dependencies": {
     "@bluelovers/fast-glob": "^3.0.4",
-    "@bluelovers/string-natural-compare": "^1.0.3",
-    "@yarn-tool/find-root": "^1.0.15",
+    "@bluelovers/string-natural-compare": "^1.1.2",
+    "@yarn-tool/find-root": "^1.0.29",
     "bluebird": "^3",
     "chai": "^4",
     "fs-extra": "^9",

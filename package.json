@@ -21,17 +21,17 @@
   },
   "resolutions": {},
   "dependencies": {
-    "jest": "^26.0.1",
-    "ts-jest": "^26.1.0"
+    "jest": "^26.1.0",
+    "ts-jest": "^26.1.3"
   },
   "devDependencies": {
-    "@bluelovers/tsconfig": "^1.0.19",
-    "@types/chai": "^4.2.11",
+    "@bluelovers/tsconfig": "^1.0.20",
+    "@types/chai": "^4.2.12",
     "@types/fs-extra": "^9.0.1",
-    "@types/jest": "^26.0.0",
+    "@types/jest": "^26.0.7",
     "@types/node": "*",
-    "cjk-conv": "^1.2.83",
-    "fs-iconv": "^3.0.7"
+    "cjk-conv": "^1.2.108",
+    "fs-iconv": "^3.0.10"
   },
   "peerDependencies": {
     "lerna": "^3"
