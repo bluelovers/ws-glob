@@ -7,6 +7,7 @@
  */
 import { deconstruct } from './deconstruct';
 import { escapeRegexChars } from './escapeRegexChars';
+import { normalize } from 'upath2';
 
 export function convertToRegExWithCaptureGroups(glob: string) {
 	let parts = deconstruct(glob, {collapse: true});
@@ -21,7 +22,7 @@ export function convertToRegExWithCaptureGroups(glob: string) {
 					return '(.)';
 					break;
 				default:
-					p = escapeRegexChars(p);
+					p = escapeRegexChars(normalize(p));
 					return `(${p})`;
 			}
 		}
