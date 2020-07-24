@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`When element in names array is not a string capture()[x].getGroups() should return an array containing an Error object 1`] = `[TypeError: Invalid type! Expects a string.]`;
+
+exports[`When element in names array is not a string capture()[x].getGroups() should return an array containing an Error object 2`] = `[TypeError: Invalid type! Expects a string.]`;
+
+exports[`When element in names array is not a string capture()[x].getGroups() should return an array containing an Error object 3`] = `[TypeError: Invalid type! Expects a string.]`;
+
+exports[`When element in names array is not a string capture()[x].getGroups() should return an array containing an Error object 4`] = `undefined`;
+
+exports[`When element in names array is not a string capture()[x].getGroups() should return an array containing an Error object 5`] = `[TypeError: Invalid type! Expects a string.]`;

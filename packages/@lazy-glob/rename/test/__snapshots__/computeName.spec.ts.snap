@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`When number of given wildcard in destination glob is higher than in source glob computeName(names, srcGlob, dstGlob) should throw an Error 1`] = `"Invalid glob pattern. Destination glob contains incorrect number or type of wildcard. (** is treated as * in source glob.)"`;
+
+exports[`When number of given wildcard in destination glob is higher than in source glob computeName(names, srcGlob, dstGlob) should throw an Error 2`] = `"Invalid glob pattern. Destination glob contains incorrect number or type of wildcard. (** is treated as * in source glob.)"`;
+
+exports[`When number of given wildcard in destination glob is higher than in source glob computeName(names, srcGlob, dstGlob) should throw an Error 3`] = `"Invalid glob pattern. Destination glob contains incorrect number or type of wildcard. (** is treated as * in source glob.)"`;
+
+exports[`When number of given wildcard in destination glob is higher than in source glob computeName(names, srcGlob, dstGlob) should throw an Error 4`] = `"Invalid glob pattern. Destination glob contains incorrect number or type of wildcard. (** is treated as * in source glob.)"`;
+
+exports[`When number of given wildcard in destination glob is higher than in source glob computeName(names, srcGlob, dstGlob) should throw an Error 5`] = `"Invalid glob pattern. Destination glob contains incorrect number or type of wildcard. (** is treated as * in source glob.)"`;
+
+exports[`When number of given wildcard in destination glob is higher than in source glob computeName(names, srcGlob, dstGlob) should throw an Error 6`] = `"Invalid glob pattern. Destination glob contains incorrect number or type of wildcard. (** is treated as * in source glob.)"`;
+
+exports[`When number of given wildcard in destination glob is higher than in source glob computeName(names, srcGlob, dstGlob) should throw an Error 7`] = `"Invalid glob pattern. Destination glob contains incorrect number or type of wildcard. (** is treated as * in source glob.)"`;
+
+exports[`When number of given wildcard in destination glob is higher than in source glob computeName(names, srcGlob, dstGlob) should throw an Error 8`] = `"Invalid glob pattern. Destination glob contains incorrect number or type of wildcard. (** is treated as * in source glob.)"`;
+
+exports[`When number of given wildcard in destination glob is higher than in source glob computeName(names, srcGlob, dstGlob) should throw an Error 9`] = `"Invalid glob pattern. Destination glob contains incorrect number or type of wildcard. (** is treated as * in source glob.)"`;
+
+exports[`When number of given wildcard in destination glob is higher than in source glob computeName(names, srcGlob, dstGlob) should throw an Error 10`] = `"Invalid glob pattern. Destination glob contains incorrect number or type of wildcard. (** is treated as * in source glob.)"`;
+
+exports[`When number of given wildcard in destination glob is higher than in source glob computeName(names, srcGlob, dstGlob) should throw an Error 11`] = `"Invalid glob pattern. Destination glob contains incorrect number or type of wildcard. (** is treated as * in source glob.)"`;
+
+exports[`When parameters of invalid type are passed renamer.computeName(names, srcGlob, dstGlob) should throw a TypeError 1`] = `"Invalid type for names! Must be a string or an Array of string."`;
+
+exports[`When parameters of invalid type are passed renamer.computeName(names, srcGlob, dstGlob) should throw a TypeError 2`] = `"Invalid type for names! Must be a string or an Array of string."`;
+
+exports[`When parameters of invalid type are passed renamer.computeName(names, srcGlob, dstGlob) should throw a TypeError 3`] = `"Invalid type for glob pattern! Must be a non-empty string."`;
+
+exports[`When parameters of invalid type are passed renamer.computeName(names, srcGlob, dstGlob) should throw a TypeError 4`] = `"Invalid type for glob pattern! Must be a non-empty string."`;
+
+exports[`When parameters of invalid type are passed renamer.computeName(names, srcGlob, dstGlob) should throw a TypeError 5`] = `"Invalid type for glob pattern! Must be a non-empty string."`;
+
+exports[`When parameters of invalid type are passed renamer.computeName(names, srcGlob, dstGlob) should throw a TypeError 6`] = `"Invalid type for glob pattern! Must be a non-empty string."`;
+
+exports[`When parameters of invalid type are passed renamer.computeName(names, srcGlob, dstGlob) should throw a TypeError 7`] = `"Invalid type for glob pattern! Must be a non-empty string."`;
+
+exports[`When parameters of invalid type are passed renamer.computeName(names, srcGlob, dstGlob) should throw a TypeError 8`] = `"Invalid names list. Array must be non-empty."`;
