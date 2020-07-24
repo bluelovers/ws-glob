@@ -25,9 +25,7 @@
     "ncu": "yarn-tool ncu -u",
     "sort-package-json": "yarn-tool sort"
   },
-  "dependencies": {
-    "upath2": "^3.1.5"
-  },
+  "dependencies": {},
   "devDependencies": {},
   "peerDependencies": {},
   "publishConfig": {

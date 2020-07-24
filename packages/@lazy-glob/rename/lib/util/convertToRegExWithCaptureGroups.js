@@ -10,7 +10,6 @@ exports.convertToRegExWithCaptureGroups = void 0;
  */
 const deconstruct_1 = require("./deconstruct");
 const escapeRegexChars_1 = require("./escapeRegexChars");
-const upath2_1 = require("upath2");
 function convertToRegExWithCaptureGroups(glob) {
     let parts = deconstruct_1.deconstruct(glob, { collapse: true });
     let partsWithCaptureGroups = parts.map(function processPart(p) {
@@ -23,7 +22,7 @@ function convertToRegExWithCaptureGroups(glob) {
                     return '(.)';
                     break;
                 default:
-                    p = escapeRegexChars_1.escapeRegexChars(upath2_1.normalize(p));
+                    p = escapeRegexChars_1.escapeRegexChars(p);
                     return `(${p})`;
             }
         }
