@@ -1,6 +1,6 @@
 {
   "name": "@lazy-glob/rename",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "compute rename from glob like pattern",
   "homepage": "https://github.com/bluelovers/ws-glob/tree/master/packages/@lazy-glob/rename#readme",
   "bugs": {
@@ -27,8 +27,6 @@
   "dependencies": {
     "tslib": "^2.3.0"
   },
-  "devDependencies": {},
-  "peerDependencies": {},
   "publishConfig": {
     "access": "public"
   }

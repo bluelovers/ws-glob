@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.5](https://github.com/bluelovers/ws-glob/compare/@lazy-glob/util@1.0.3...@lazy-glob/util@1.0.5) (2021-07-08)
+
+**Note:** Version bump only for package @lazy-glob/util
+
+
+
+
+
 ## [1.0.4](https://github.com/bluelovers/ws-glob/compare/@lazy-glob/util@1.0.3...@lazy-glob/util@1.0.4) (2021-07-08)
 
 **Note:** Version bump only for package @lazy-glob/util
