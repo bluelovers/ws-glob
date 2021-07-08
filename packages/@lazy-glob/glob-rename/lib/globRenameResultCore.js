@@ -8,7 +8,7 @@ function* globRenameResultCore(fileList, resultGlobList, options) {
         let target = source;
         let changed = false;
         for (let [srcGlob, dstGlob] of resultGlobList) {
-            target = rename_1.computeName(source, srcGlob, dstGlob)[0];
+            target = (0, rename_1.computeName)(source, srcGlob, dstGlob)[0];
             if (pipeResult !== true) {
                 break;
             }

@@ -49,8 +49,8 @@
     "test": "jest",
     "npm:publish": "npm publish",
     "npm:publish:lerna": "npx lerna publish --yes --cd-version patch",
+    "preversion": "yarn run test",
     "prepublish:lockfile": "npx sync-lockfile .",
-    "prepublishOnly": "yarn run test",
     "postpublish_": "git commit -m \"publish new version\" .",
     "ncu": "npx yarn-tool ncu -u",
     "sort-package-json": "npx yarn-tool sort",
@@ -60,12 +60,13 @@
   "dependencies": {
     "@bluelovers/fast-glob": "^3.0.4",
     "@bluelovers/string-natural-compare": "^1.1.2",
-    "@yarn-tool/find-root": "^1.0.29",
+    "@yarn-tool/find-root": "^1.0.42",
     "bluebird": "^3",
     "chai": "^4",
-    "fs-extra": "^9",
-    "pkg-dir": "^4",
+    "fs-extra": "^10",
+    "pkg-dir": "^5",
     "ts-type": "^1",
+    "tslib": "^2.3.0",
     "upath2": "^3"
   },
   "gitHead": "abd32e1be69b41f53f982edf0f11b65a491014c8"

@@ -19,7 +19,7 @@ function capture(names, glob) {
     }
     // For each name received, create an object of type 'globGroupsCollection' containing the match for each part of the glob
     return names.map(function buildGlobGroupsCollection(name) {
-        let groupsObj = globGroupsCollection_1.globGroupsCollectionFactory();
+        let groupsObj = (0, globGroupsCollection_1.globGroupsCollectionFactory)();
         groupsObj.initGroups(glob);
         groupsObj.buildGroups(name);
         return groupsObj;

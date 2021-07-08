@@ -2,18 +2,16 @@
 /**
  * Created by user on 2018/12/4/004.
  */
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports._error = exports.handleArgs = exports.isPromise = exports.sync = exports.async = exports.globSearchSync = exports.globSearch = void 0;
-const fs_extra_1 = __importDefault(require("fs-extra"));
-const fast_glob_1 = __importDefault(require("@bluelovers/fast-glob"));
-const bluebird_1 = __importDefault(require("bluebird"));
-const path_1 = __importDefault(require("path"));
+const tslib_1 = require("tslib");
+const fs_extra_1 = (0, tslib_1.__importDefault)(require("fs-extra"));
+const fast_glob_1 = (0, tslib_1.__importDefault)(require("@bluelovers/fast-glob"));
+const bluebird_1 = (0, tslib_1.__importDefault)(require("bluebird"));
+const path_1 = (0, tslib_1.__importDefault)(require("path"));
 const chai_1 = require("chai");
-const core_1 = __importDefault(require("@bluelovers/string-natural-compare/core"));
-const find_root_1 = __importDefault(require("@yarn-tool/find-root"));
+const core_1 = (0, tslib_1.__importDefault)(require("@bluelovers/string-natural-compare/core"));
+const find_root_1 = (0, tslib_1.__importDefault)(require("@yarn-tool/find-root"));
 function globSearch(pattern, options) {
     ({ pattern, options } = handleArgs(pattern, options));
     const path = options.pathLib;
@@ -311,9 +309,9 @@ function handleArgs(pattern, options) {
     if (typeof pattern === 'string') {
         pattern = [pattern];
     }
-    chai_1.expect(pattern).is.an('array');
+    (0, chai_1.expect)(pattern).is.an('array');
     pattern = pattern.filter(v => typeof v === 'string' && v !== '');
-    chai_1.expect(pattern).have.lengthOf.gt(0);
+    (0, chai_1.expect)(pattern).have.lengthOf.gt(0);
     let opts = Object.assign({
         followSymlinkedDirectories: true,
         markDirectories: true,
@@ -322,20 +320,20 @@ function handleArgs(pattern, options) {
         //stopPath: [],
         ignore: [],
     }, options || {});
-    chai_1.expect(opts.cwd).is.an('string');
+    (0, chai_1.expect)(opts.cwd).is.an('string');
     opts.pathLib = opts.pathLib || path_1.default;
     const path = opts.pathLib;
-    chai_1.expect(path.join).is.an('function');
-    chai_1.expect(path.sep).is.an('string');
-    chai_1.expect(path.normalize).is.an('function');
-    chai_1.expect(path.resolve).is.an('function');
+    (0, chai_1.expect)(path.join).is.an('function');
+    (0, chai_1.expect)(path.sep).is.an('string');
+    (0, chai_1.expect)(path.normalize).is.an('function');
+    (0, chai_1.expect)(path.resolve).is.an('function');
     let cwd = path.normalize(opts.cwd);
     if (cwd === '.' || cwd === '..') {
         cwd = path.resolve(cwd);
     }
     opts.cwd = cwd;
     if (opts.stopPath == null || opts.stopPath === true) {
-        let { root } = find_root_1.default({
+        let { root } = (0, find_root_1.default)({
             cwd
         });
         opts.stopPath = [];
@@ -349,10 +347,10 @@ function handleArgs(pattern, options) {
     else if (opts.stopPath === false) {
         opts.stopPath = [];
     }
-    chai_1.expect(opts.stopPath).is.an('array');
+    (0, chai_1.expect)(opts.stopPath).is.an('array');
     opts.stopPath = opts.stopPath.map(v => {
         if (typeof v !== 'string') {
-            chai_1.expect(v, `options.stopPath must is string or string[]`).is.an('string');
+            (0, chai_1.expect)(v, `options.stopPath must is string or string[]`).is.an('string');
         }
         return path.normalize(v);
     });
@@ -362,17 +360,17 @@ function handleArgs(pattern, options) {
     else if (typeof opts.ignore === 'string') {
         opts.ignore = [opts.ignore];
     }
-    chai_1.expect(opts.ignore).is.an('array');
+    (0, chai_1.expect)(opts.ignore).is.an('array');
     opts.ignore.forEach(v => {
         if (typeof v !== 'string') {
-            chai_1.expect(v, `options.ignore must is string[]`).is.an('string');
+            (0, chai_1.expect)(v, `options.ignore must is string[]`).is.an('string');
         }
     });
     if (opts.sortCompareFn === true || opts.sortCompareFn == null) {
         opts.sortCompareFn = core_1.default;
     }
     else if (opts.sortCompareFn) {
-        chai_1.expect(opts.sortCompareFn).is.an('function');
+        (0, chai_1.expect)(opts.sortCompareFn).is.an('function');
     }
     else {
         opts.sortCompareFn = null;

@@ -2,12 +2,10 @@
 /**
  * Created by user on 2020/6/9.
  */
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.sort = exports.entries_reduce = exports.entries_sort = void 0;
-const core_1 = __importDefault(require("@bluelovers/string-natural-compare/core"));
+const tslib_1 = require("tslib");
+const core_1 = (0, tslib_1.__importDefault)(require("@bluelovers/string-natural-compare/core"));
 const util_1 = require("@lazy-glob/util");
 function entries_sort(entries, fn = core_1.default, cache = {}) {
     entries = entries.reduce(function (a, b) {

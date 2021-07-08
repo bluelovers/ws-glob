@@ -1,4 +1,4 @@
-import { IQuestionMark, IAsterisk, IPartsAst, IPartsPattern, ILiteral } from '../types';
+import { IQuestionMark, IAsterisk, IPartsAst, IPartsPattern } from '../types';
 export declare class globGroupsCollectionInterface {
     /**
      * array of 'match' objects (see method buildGroups) for all groups of the glob
@@ -44,7 +44,7 @@ export declare class globGroupsCollectionInterface {
      *                 - If there is no match, then array is empty;
      *                 - If there's an error, array contains an Error object.
      */
-    buildGroups(text: string, glob?: string): (Error | IAsterisk | IQuestionMark | ILiteral)[];
+    buildGroups(text: string, glob?: string): (Error | IPartsAst)[];
     /**
      * Whether the glob matches the text
      * @method hasMatch

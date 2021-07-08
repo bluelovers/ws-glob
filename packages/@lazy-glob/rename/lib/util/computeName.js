@@ -31,23 +31,23 @@ function computeName(filenames, srcGlob, dstGlob) {
         }
     }
     // Deconstruct the source glob into literal and wildcard parts
-    let srcGlobParts = deconstruct_1.deconstruct(srcGlob, { collapse: true });
+    let srcGlobParts = (0, deconstruct_1.deconstruct)(srcGlob, { collapse: true });
     if (!srcGlobParts.length) {
         throw new Error('Unexpected error while parsing glob.');
     }
     // Deconstruct the destination glob into literal and wildcard parts
-    let dstGlobParts = deconstruct_1.deconstruct(dstGlob, { collapse: false });
+    let dstGlobParts = (0, deconstruct_1.deconstruct)(dstGlob, { collapse: false });
     if (!dstGlobParts.length) {
         throw new Error('Unexpected error while parsing glob.');
     }
-    let srcWildcardsCount = countWildcards_1.countWildcards(srcGlobParts);
-    let dstWildcardsCount = countWildcards_1.countWildcards(dstGlobParts);
+    let srcWildcardsCount = (0, countWildcards_1.countWildcards)(srcGlobParts);
+    let dstWildcardsCount = (0, countWildcards_1.countWildcards)(dstGlobParts);
     // Check if destination glob has more * and/or ? wildcards than source glob does...
     if ((dstWildcardsCount.stars > srcWildcardsCount.stars) || (dstWildcardsCount.questions > srcWildcardsCount.questions)) {
         throw new Error('Invalid glob pattern. Destination glob contains incorrect number or type of wildcard. (** is treated as * in source glob.)');
     }
     // extract matches for each wildcard (and literal) parts of the source glob
-    let srcCaptureGroupsArray = capture_1.capture(filenames, srcGlob);
+    let srcCaptureGroupsArray = (0, capture_1.capture)(filenames, srcGlob);
     if (!srcCaptureGroupsArray) {
         throw new Error('Unexpected error while extracting glob matches.');
     }
@@ -60,7 +60,8 @@ function computeName(filenames, srcGlob, dstGlob) {
         let srcAsteriskList = srcCaptureGroupsArray[nameIdx].getAsterisk();
         let srcAsteriskIterator = (srcAsteriskList === null || srcAsteriskList === void 0 ? void 0 : srcAsteriskList.length) ? srcAsteriskList.entries() : null;
         let srcQuestionMarkList = srcCaptureGroupsArray[nameIdx].getQuestionMark();
-        let srcQuestionMarkIterator = (srcQuestionMarkList === null || srcQuestionMarkList === void 0 ? void 0 : srcQuestionMarkList.length) ? srcQuestionMarkList.entries()
+        let srcQuestionMarkIterator = (srcQuestionMarkList === null || srcQuestionMarkList === void 0 ? void 0 : srcQuestionMarkList.length)
+            ? srcQuestionMarkList.entries()
             : null;
         // Cycle through the parts of the destination glob to build the new name
         for (const destPart of dstGlobParts) {

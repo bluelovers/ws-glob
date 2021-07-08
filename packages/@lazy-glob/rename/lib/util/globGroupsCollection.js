@@ -26,8 +26,8 @@ class globGroupsCollectionInterface {
         this._groups = null;
         this._asterisk = null;
         this._questionMark = null;
-        this._regexWithCapture = convertToRegExWithCaptureGroups_1.convertToRegExWithCaptureGroups(glob);
-        this._globPartsArray = deconstruct_1.deconstruct(glob, { collapse: true });
+        this._regexWithCapture = (0, convertToRegExWithCaptureGroups_1.convertToRegExWithCaptureGroups)(glob);
+        this._globPartsArray = (0, deconstruct_1.deconstruct)(glob, { collapse: true });
         if (text) {
             this.buildGroups(text);
         }

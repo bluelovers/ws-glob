@@ -2,25 +2,13 @@
 /**
  * Created by user on 2018/3/29/029.
  */
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __exportStar = (this && this.__exportStar) || function(m, exports) {
-    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.treeToGlob = exports.globToTree = exports.path = void 0;
+const tslib_1 = require("tslib");
 //export * from './lib/types'
 const util_1 = require("@lazy-glob/util");
-__exportStar(require("@lazy-glob/util/lib/types"), exports);
-const upath2_1 = __importDefault(require("upath2"));
+(0, tslib_1.__exportStar)(require("@lazy-glob/util/lib/types"), exports);
+const upath2_1 = (0, tslib_1.__importDefault)(require("upath2"));
 exports.path = upath2_1.default;
 function globToTree(data) {
     return data.reduce(function (a, b) {

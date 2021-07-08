@@ -13,9 +13,9 @@ function sortTree(ls, sortFn = sort_1.defaultSortCallback, options = {}) {
     if (sortFn == null) {
         sortFn = sort_1.defaultSortCallback;
     }
-    let t = core_1.globToTree(ls);
+    let t = (0, core_1.globToTree)(ls);
     let _cache = {};
-    let t2 = sort_entries_1.sort(t, function (a, b, cache) {
+    let t2 = (0, sort_entries_1.sort)(t, function (a, b, cache) {
         return sortFn(_c(a, cache), _c(b, cache));
     });
     function _c(k, cache) {
@@ -23,11 +23,11 @@ function sortTree(ls, sortFn = sort_1.defaultSortCallback, options = {}) {
         if (k in cache) {
             return cache[k];
         }
-        cache[k] = normalize_1.normalize_val(k, padNum, options);
+        cache[k] = (0, normalize_1.normalize_val)(k, padNum, options);
         _cache = cache;
         return cache[k];
     }
-    return core_1.treeToGlob(t2);
+    return (0, core_1.treeToGlob)(t2);
 }
 exports.sortTree = sortTree;
 exports.default = sortTree;
