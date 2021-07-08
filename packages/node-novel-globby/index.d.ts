@@ -13,5 +13,5 @@ export declare function globbySync(patterns?: string[], options?: IOptions): IRe
 declare type IglobbyASyncReturnType = ReturnType<typeof globToList>;
 export declare function globbyASync(options: IOptions): Bluebird<IglobbyASyncReturnType>;
 export declare function globbyASync(patterns?: string[], options?: IOptions): Bluebird<IglobbyASyncReturnType>;
-declare const _default: typeof import(".");
+declare const _default: typeof import("./index");
 export default _default;

@@ -81,9 +81,9 @@ export function glob_to_list(glob_ls: string[], options: IOptions = {}): IReturn
 
 	//console.log(glob_ls);
 
-	return glob_ls.reduce(function (a: IReturnList2, b: string, source_idx: number)
+	return glob_ls.reduce(function (a: IReturnList2, b: string, source_idx: number, arr)
 	{
-		let row = pathToListRow(b, source_idx, options);
+		let row = pathToListRow(b, source_idx, options, arr.length);
 
 		if (options.onListRow)
 		{

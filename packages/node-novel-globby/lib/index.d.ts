@@ -26,5 +26,5 @@ export declare function glob_to_list(glob_ls: string[], options?: IOptions): IRe
 export declare function p_sort_list(ls: IReturnList2, options?: IOptions): IReturnList;
 export declare function sortList2(ls: IReturnList2, options?: IOptions): {};
 export * from './options';
-declare const _default: typeof import(".");
+declare const _default: typeof import("./index");
 export default _default;

@@ -4,6 +4,6 @@ import { IReturnRow } from './types';
 export { IReturnRow };
 export declare function glob_to_list_array(glob_ls: string[], options?: IOptions): IReturnRow[];
 export declare function glob_to_list_array_deep(glob_ls: string[], options?: IOptions): IArrayDeepInterface<IReturnRow>;
-export declare function pathToListRow(b: string, source_idx: number, options?: IOptions): IReturnRow;
+export declare function pathToListRow(b: string, source_idx: number, options?: IOptions, source_totals?: number): IReturnRow;
 declare const _default: typeof import("./list");
 export default _default;

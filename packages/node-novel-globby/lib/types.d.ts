@@ -19,6 +19,7 @@ export declare type IOptionsWithReturnGlobList = IOptions & IReturnGlobListOptio
 export declare type IReturnGlob = string[];
 export interface IReturnRow {
     source_idx: number;
+    source_totals: number;
     source_path: string;
     path: string;
     path_dir: string;

@@ -21,9 +21,9 @@ export function glob_to_list_array(glob_ls: string[], options: IOptions = {}): I
 		...options,
 	});
 
-	return glob_ls.reduce(function (a, b: string, source_idx: number)
+	return glob_ls.reduce(function (a, b: string, source_idx: number, arr)
 	{
-		let row = pathToListRow(b, source_idx, options);
+		let row = pathToListRow(b, source_idx, options, arr.length);
 
 		if (options.onListRow)
 		{
@@ -61,9 +61,9 @@ export function glob_to_list_array_deep(glob_ls: string[], options: IOptions = {
 		[key: string]: IArrayDeepInterface<IReturnRow>,
 	} = {};
 
-	return glob_ls.reduce(function (a, b: string, source_idx: number)
+	return glob_ls.reduce(function (a, b: string, source_idx: number, arr)
 	{
-		let row = pathToListRow(b, source_idx, options);
+		let row = pathToListRow(b, source_idx, options, arr.length);
 
 		if (options.onListRow)
 		{
@@ -144,7 +144,7 @@ export function glob_to_list_array_deep(glob_ls: string[], options: IOptions = {
 	}, [] as IArrayDeepInterface<IReturnRow>);
 }
 
-export function pathToListRow(b: string, source_idx: number, options: IOptions = {}): IReturnRow
+export function pathToListRow(b: string, source_idx: number, options: IOptions = {}, source_totals?: number): IReturnRow
 {
 	options = getOptionsRuntime(options);
 
@@ -167,6 +167,7 @@ export function pathToListRow(b: string, source_idx: number, options: IOptions =
 		source_path: b,
 
 		source_idx,
+		source_totals,
 
 		path: options.cwd && !path.isAbsolute(b) ? path.join(options.cwd, b) : b,
 		path_dir: options.cwd && !path.isAbsolute(dir) ? path.join(options.cwd, dir) : dir,

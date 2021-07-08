@@ -2,23 +2,11 @@
 /**
  * Created by user on 2018/2/14/014.
  */
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __exportStar = (this && this.__exportStar) || function(m, exports) {
-    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.sortList2 = exports.p_sort_list = exports.glob_to_list = exports.globToListArrayDeep = exports.globToListArray = exports.globToList = exports.createGlobToType = exports.pathToListRow = exports.foreachArrayDeep = exports.eachVolumeTitle = exports.foreachArrayDeepAsync = exports.normalize_val = exports.getOptions2 = exports.getOptionsRuntime = exports.getOptions = exports.defaultPatternsExclude = exports.path = void 0;
+const tslib_1 = require("tslib");
 // @ts-ignore
-const upath2_1 = __importDefault(require("upath2"));
+const upath2_1 = (0, tslib_1.__importDefault)(require("upath2"));
 exports.path = upath2_1.default;
 const options_1 = require("./options");
 Object.defineProperty(exports, "defaultPatternsExclude", { enumerable: true, get: function () { return options_1.defaultPatternsExclude; } });
@@ -34,9 +22,9 @@ const util_1 = require("./util");
 Object.defineProperty(exports, "foreachArrayDeepAsync", { enumerable: true, get: function () { return util_1.foreachArrayDeepAsync; } });
 Object.defineProperty(exports, "eachVolumeTitle", { enumerable: true, get: function () { return util_1.eachVolumeTitle; } });
 Object.defineProperty(exports, "foreachArrayDeep", { enumerable: true, get: function () { return util_1.foreachArrayDeep; } });
-const sort_tree_1 = __importDefault(require("@lazy-glob/sort-tree"));
-__exportStar(require("./types"), exports);
-__exportStar(require("@lazy-glob/util/lib/types/glob"), exports);
+const sort_tree_1 = (0, tslib_1.__importDefault)(require("@lazy-glob/sort-tree"));
+(0, tslib_1.__exportStar)(require("./types"), exports);
+(0, tslib_1.__exportStar)(require("@lazy-glob/util/lib/types/glob"), exports);
 function createGlobToType(fn) {
     return function (glob_ls, options = {}) {
         if (!Array.isArray(glob_ls) || !glob_ls.length) {
@@ -46,7 +34,7 @@ function createGlobToType(fn) {
             return null;
         }
         let comp = options.sortCallback || sort_1.defaultSortCallback;
-        let ls = sort_tree_1.default(glob_ls, comp, options);
+        let ls = (0, sort_tree_1.default)(glob_ls, comp, options);
         return fn(ls, options);
     };
 }
@@ -61,12 +49,12 @@ function glob_to_list(glob_ls, options = {}) {
     if (!Array.isArray(glob_ls) || !glob_ls.length) {
         throw new Error(`glob matched list is empty`);
     }
-    options = options_1.getOptionsRuntime({
+    options = (0, options_1.getOptionsRuntime)({
         ...options,
     });
     //console.log(glob_ls);
-    return glob_ls.reduce(function (a, b, source_idx) {
-        let row = list_1.pathToListRow(b, source_idx, options);
+    return glob_ls.reduce(function (a, b, source_idx, arr) {
+        let row = (0, list_1.pathToListRow)(b, source_idx, options, arr.length);
         if (options.onListRow) {
             row = options.onListRow(a, row, options);
             if (!row) {
@@ -190,6 +178,6 @@ function sortList2(ls, options = {}) {
     }, {});
 }
 exports.sortList2 = sortList2;
-__exportStar(require("./options"), exports);
+(0, tslib_1.__exportStar)(require("./options"), exports);
 exports.default = exports;
 //# sourceMappingURL=index.js.map

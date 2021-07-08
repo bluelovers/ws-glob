@@ -2,24 +2,12 @@
 /**
  * Created by user on 2019/5/6.
  */
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __exportStar = (this && this.__exportStar) || function(m, exports) {
-    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.foreachArrayDeepAsync = exports.foreachArrayDeep = exports.eachVolumeTitle = void 0;
-const bluebird_1 = __importDefault(require("bluebird"));
+const tslib_1 = require("tslib");
+const bluebird_1 = (0, tslib_1.__importDefault)(require("bluebird"));
 const normalize_1 = require("@node-novel/normalize");
-__exportStar(require("@lazy-glob/util/lib/types/glob"), exports);
+(0, tslib_1.__exportStar)(require("@lazy-glob/util/lib/types/glob"), exports);
 function eachVolumeTitle(volume_title, strip = true) {
     let vs;
     if (Array.isArray(volume_title)) {
@@ -31,7 +19,7 @@ function eachVolumeTitle(volume_title, strip = true) {
             .split('/');
     }
     if (strip) {
-        vs = vs.map(t => normalize_1.normalize_strip(t, true));
+        vs = vs.map(t => (0, normalize_1.normalize_strip)(t, true));
     }
     let ret = {
         volume_title,
