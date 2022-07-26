@@ -3,10 +3,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.pathToListRow = exports.glob_to_list_array_deep = exports.glob_to_list_array = void 0;
 const tslib_1 = require("tslib");
 const options_1 = require("./options");
-(0, tslib_1.__exportStar)(require("@lazy-glob/util/lib/types/glob"), exports);
+tslib_1.__exportStar(require("@lazy-glob/util/lib/types/glob"), exports);
 const normalize_1 = require("@node-novel/normalize");
 const util_1 = require("./util");
-const upath2_1 = (0, tslib_1.__importDefault)(require("upath2"));
+const upath2_1 = tslib_1.__importDefault(require("upath2"));
 function glob_to_list_array(glob_ls, options = {}) {
     if (!Array.isArray(glob_ls) || !glob_ls.length) {
         throw new Error(`glob matched list is empty`);

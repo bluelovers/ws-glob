@@ -30,7 +30,8 @@
     "tsc:esm": "tsc -p tsconfig.esm.json"
   },
   "dependencies": {
-    "tslib": "^2.3.0"
+    "globby": "<13 >=12.2.0",
+    "tslib": "^2"
   },
   "publishConfig": {
     "access": "public"

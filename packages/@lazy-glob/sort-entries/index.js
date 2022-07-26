@@ -5,7 +5,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.sort = exports.entries_reduce = exports.entries_sort = void 0;
 const tslib_1 = require("tslib");
-const core_1 = (0, tslib_1.__importDefault)(require("@bluelovers/string-natural-compare/core"));
+const core_1 = tslib_1.__importDefault(require("@bluelovers/string-natural-compare/core"));
 const util_1 = require("@lazy-glob/util");
 function entries_sort(entries, fn = core_1.default, cache = {}) {
     entries = entries.reduce(function (a, b) {

@@ -5,7 +5,7 @@ const tslib_1 = require("tslib");
 const globRenameResult_1 = require("./lib/globRenameResult");
 Object.defineProperty(exports, "globRenameResult", { enumerable: true, get: function () { return globRenameResult_1.globRenameResult; } });
 const defaultRenameHandler_1 = require("./lib/defaultRenameHandler");
-(0, tslib_1.__exportStar)(require("./lib/types"), exports);
+tslib_1.__exportStar(require("./lib/types"), exports);
 function globRenameSync(searchGlobPattern, resultGlobList, options) {
     const { handler = defaultRenameHandler_1.defaultRenameHandler } = options;
     const resultList = (0, globRenameResult_1.globRenameResult)(searchGlobPattern, resultGlobList, options);

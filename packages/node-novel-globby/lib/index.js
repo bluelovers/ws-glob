@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.sortList2 = exports.p_sort_list = exports.glob_to_list = exports.globToListArrayDeep = exports.globToListArray = exports.globToList = exports.createGlobToType = exports.pathToListRow = exports.foreachArrayDeep = exports.eachVolumeTitle = exports.foreachArrayDeepAsync = exports.normalize_val = exports.getOptions2 = exports.getOptionsRuntime = exports.getOptions = exports.defaultPatternsExclude = exports.path = void 0;
 const tslib_1 = require("tslib");
 // @ts-ignore
-const upath2_1 = (0, tslib_1.__importDefault)(require("upath2"));
+const upath2_1 = tslib_1.__importDefault(require("upath2"));
 exports.path = upath2_1.default;
 const options_1 = require("./options");
 Object.defineProperty(exports, "defaultPatternsExclude", { enumerable: true, get: function () { return options_1.defaultPatternsExclude; } });
@@ -22,9 +22,9 @@ const util_1 = require("./util");
 Object.defineProperty(exports, "foreachArrayDeepAsync", { enumerable: true, get: function () { return util_1.foreachArrayDeepAsync; } });
 Object.defineProperty(exports, "eachVolumeTitle", { enumerable: true, get: function () { return util_1.eachVolumeTitle; } });
 Object.defineProperty(exports, "foreachArrayDeep", { enumerable: true, get: function () { return util_1.foreachArrayDeep; } });
-const sort_tree_1 = (0, tslib_1.__importDefault)(require("@lazy-glob/sort-tree"));
-(0, tslib_1.__exportStar)(require("./types"), exports);
-(0, tslib_1.__exportStar)(require("@lazy-glob/util/lib/types/glob"), exports);
+const sort_tree_1 = tslib_1.__importDefault(require("@lazy-glob/sort-tree"));
+tslib_1.__exportStar(require("./types"), exports);
+tslib_1.__exportStar(require("@lazy-glob/util/lib/types/glob"), exports);
 function createGlobToType(fn) {
     return function (glob_ls, options = {}) {
         if (!Array.isArray(glob_ls) || !glob_ls.length) {
@@ -178,6 +178,6 @@ function sortList2(ls, options = {}) {
     }, {});
 }
 exports.sortList2 = sortList2;
-(0, tslib_1.__exportStar)(require("./options"), exports);
+tslib_1.__exportStar(require("./options"), exports);
 exports.default = exports;
 //# sourceMappingURL=index.js.map

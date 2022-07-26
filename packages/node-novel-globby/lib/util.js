@@ -5,9 +5,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.foreachArrayDeepAsync = exports.foreachArrayDeep = exports.eachVolumeTitle = void 0;
 const tslib_1 = require("tslib");
-const bluebird_1 = (0, tslib_1.__importDefault)(require("bluebird"));
+const bluebird_1 = tslib_1.__importDefault(require("bluebird"));
 const normalize_1 = require("@node-novel/normalize");
-(0, tslib_1.__exportStar)(require("@lazy-glob/util/lib/types/glob"), exports);
+tslib_1.__exportStar(require("@lazy-glob/util/lib/types/glob"), exports);
 function eachVolumeTitle(volume_title, strip = true) {
     let vs;
     if (Array.isArray(volume_title)) {

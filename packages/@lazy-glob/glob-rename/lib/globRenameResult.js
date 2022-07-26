@@ -4,7 +4,7 @@ exports.globRenameResult = void 0;
 const tslib_1 = require("tslib");
 const handleResultGlobList_1 = require("./handleResultGlobList");
 const handleOptions_1 = require("./handleOptions");
-const fast_glob_1 = (0, tslib_1.__importDefault)(require("@bluelovers/fast-glob"));
+const fast_glob_1 = tslib_1.__importDefault(require("@bluelovers/fast-glob"));
 const globRenameResultCore_1 = require("./globRenameResultCore");
 function globRenameResult(searchGlobPattern, resultGlobList, options = {}) {
     if (!searchGlobPattern.length) {

@@ -5,11 +5,11 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.sync = exports.async = exports.globbySync = exports.globbyASync = exports.globby = void 0;
 const tslib_1 = require("tslib");
-const index_1 = (0, tslib_1.__importDefault)(require("./index"));
-const globby_1 = (0, tslib_1.__importDefault)(require("globby"));
+const index_1 = tslib_1.__importDefault(require("./index"));
+const globby_1 = tslib_1.__importDefault(require("globby"));
 exports.globby = globby_1.default;
-(0, tslib_1.__exportStar)(require("./index"), exports);
-(0, tslib_1.__exportStar)(require("./lib"), exports);
+tslib_1.__exportStar(require("./index"), exports);
+tslib_1.__exportStar(require("./lib"), exports);
 const index_2 = require("./lib/index");
 const types_1 = require("./lib/types");
 function globbyASync(patterns, options = {}) {

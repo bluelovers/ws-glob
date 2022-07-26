@@ -2,15 +2,14 @@
  * Created by user on 2018/12/4/004.
  */
 
-import fs from 'fs-extra';
+import { pathExists, pathExistsSync } from 'fs-extra';
 import FastGlob, { EntryItem } from '@bluelovers/fast-glob';
 import Bluebird from 'bluebird';
 import _path from 'path';
 import { expect } from 'chai';
-import naturalCompare from '@bluelovers/string-natural-compare/core';
-import pkgDir from 'pkg-dir';
-import { ITSOverwrite, ITSResolvable } from 'ts-type';
-import findRoot from '@yarn-tool/find-root';
+import { naturalCompare } from '@bluelovers/string-natural-compare';
+import { ITSOverwrite } from 'ts-type/lib/type/record';
+import { findRoot } from '@yarn-tool/find-root';
 
 export function globSearch<T extends EntryItem = string>(pattern: string | string[], options?: IOptions<T>)
 {
@@ -26,7 +25,7 @@ export function globSearch<T extends EntryItem = string>(pattern: string | strin
 		let history: string[] = [];
 		let bool = true;
 
-		if (await fs.pathExists(cwd))
+		if (await pathExists(cwd))
 		{
 			while (bool)
 			{
@@ -176,7 +175,7 @@ export function globSearchSync<T extends EntryItem = string>(pattern: string | s
 	let history: string[] = [];
 	let bool = true;
 
-	if (fs.pathExistsSync(cwd))
+	if (pathExistsSync(cwd))
 	{
 		while (bool)
 		{
@@ -605,6 +604,7 @@ export function handleArgs<T extends EntryItem = string>(pattern: string | strin
 
 	if (opts.sortCompareFn === true || opts.sortCompareFn == null)
 	{
+		// @ts-ignore
 		opts.sortCompareFn = naturalCompare;
 	}
 	else if (opts.sortCompareFn)

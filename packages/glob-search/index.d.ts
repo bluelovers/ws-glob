@@ -3,7 +3,7 @@
  */
 import FastGlob, { EntryItem } from '@bluelovers/fast-glob';
 import Bluebird from 'bluebird';
-import { ITSOverwrite } from 'ts-type';
+import { ITSOverwrite } from 'ts-type/lib/type/record';
 export declare function globSearch<T extends EntryItem = string>(pattern: string | string[], options?: IOptions<T>): Bluebird<IReturnValue<T>>;
 export declare function globSearchSync<T extends EntryItem = string>(pattern: string | string[], options?: IOptions<T>): IReturnValueSync<T>;
 export { globSearch as async, globSearchSync as sync, };

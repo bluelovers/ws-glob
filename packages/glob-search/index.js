@@ -5,13 +5,13 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports._error = exports.handleArgs = exports.isPromise = exports.sync = exports.async = exports.globSearchSync = exports.globSearch = void 0;
 const tslib_1 = require("tslib");
-const fs_extra_1 = (0, tslib_1.__importDefault)(require("fs-extra"));
-const fast_glob_1 = (0, tslib_1.__importDefault)(require("@bluelovers/fast-glob"));
-const bluebird_1 = (0, tslib_1.__importDefault)(require("bluebird"));
-const path_1 = (0, tslib_1.__importDefault)(require("path"));
+const fs_extra_1 = require("fs-extra");
+const fast_glob_1 = tslib_1.__importDefault(require("@bluelovers/fast-glob"));
+const bluebird_1 = tslib_1.__importDefault(require("bluebird"));
+const path_1 = tslib_1.__importDefault(require("path"));
 const chai_1 = require("chai");
-const core_1 = (0, tslib_1.__importDefault)(require("@bluelovers/string-natural-compare/core"));
-const find_root_1 = (0, tslib_1.__importDefault)(require("@yarn-tool/find-root"));
+const string_natural_compare_1 = require("@bluelovers/string-natural-compare");
+const find_root_1 = require("@yarn-tool/find-root");
 function globSearch(pattern, options) {
     ({ pattern, options } = handleArgs(pattern, options));
     const path = options.pathLib;
@@ -20,7 +20,7 @@ function globSearch(pattern, options) {
         let opts = Object.assign({}, options);
         let history = [];
         let bool = true;
-        if (await fs_extra_1.default.pathExists(cwd)) {
+        if (await (0, fs_extra_1.pathExists)(cwd)) {
             while (bool) {
                 if (cwd === '.' || cwd === '..') {
                     cwd = path.resolve(cwd);
@@ -131,7 +131,7 @@ function globSearchSync(pattern, options) {
     let opts = Object.assign({}, options);
     let history = [];
     let bool = true;
-    if (fs_extra_1.default.pathExistsSync(cwd)) {
+    if ((0, fs_extra_1.pathExistsSync)(cwd)) {
         while (bool) {
             if (cwd === '.' || cwd === '..') {
                 cwd = path.resolve(cwd);
@@ -333,7 +333,7 @@ function handleArgs(pattern, options) {
     }
     opts.cwd = cwd;
     if (opts.stopPath == null || opts.stopPath === true) {
-        let { root } = (0, find_root_1.default)({
+        let { root } = (0, find_root_1.findRoot)({
             cwd
         });
         opts.stopPath = [];
@@ -367,7 +367,8 @@ function handleArgs(pattern, options) {
         }
     });
     if (opts.sortCompareFn === true || opts.sortCompareFn == null) {
-        opts.sortCompareFn = core_1.default;
+        // @ts-ignore
+        opts.sortCompareFn = string_natural_compare_1.naturalCompare;
     }
     else if (opts.sortCompareFn) {
         (0, chai_1.expect)(opts.sortCompareFn).is.an('function');

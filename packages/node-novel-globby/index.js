@@ -5,10 +5,10 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.globbyASync = exports.globbySync = exports.globby = void 0;
 const tslib_1 = require("tslib");
-const bluebird_1 = (0, tslib_1.__importDefault)(require("bluebird"));
-const globby_1 = (0, tslib_1.__importDefault)(require("globby"));
+const bluebird_1 = tslib_1.__importDefault(require("bluebird"));
+const globby_1 = tslib_1.__importDefault(require("globby"));
 exports.globby = globby_1.default;
-(0, tslib_1.__exportStar)(require("./lib"), exports);
+tslib_1.__exportStar(require("./lib"), exports);
 const index_1 = require("./lib/index");
 const options_1 = require("./lib/options");
 function globbySync(patterns, options = {}) {

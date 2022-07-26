@@ -7,8 +7,8 @@ exports.treeToGlob = exports.globToTree = exports.path = void 0;
 const tslib_1 = require("tslib");
 //export * from './lib/types'
 const util_1 = require("@lazy-glob/util");
-(0, tslib_1.__exportStar)(require("@lazy-glob/util/lib/types"), exports);
-const upath2_1 = (0, tslib_1.__importDefault)(require("upath2"));
+tslib_1.__exportStar(require("@lazy-glob/util/lib/types"), exports);
+const upath2_1 = tslib_1.__importDefault(require("upath2"));
 exports.path = upath2_1.default;
 function globToTree(data) {
     return data.reduce(function (a, b) {

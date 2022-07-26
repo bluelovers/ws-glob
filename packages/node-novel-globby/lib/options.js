@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.getOptionsRuntime = exports.getOptions2 = exports.getOptions = exports.defaultOptions = exports.defaultPatterns = exports.defaultPatternsExclude = void 0;
 const tslib_1 = require("tslib");
 const sort_1 = require("@node-novel/sort");
-(0, tslib_1.__exportStar)(require("@lazy-glob/util/lib/types/glob"), exports);
+tslib_1.__exportStar(require("@lazy-glob/util/lib/types/glob"), exports);
 exports.defaultPatternsExclude = [
     '!*.new.*',
     '!*.out.*',
