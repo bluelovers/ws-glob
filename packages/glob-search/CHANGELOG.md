@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.9](https://github.com/bluelovers/ws-glob/compare/glob-search@2.0.8...glob-search@2.0.9) (2022-07-26)
+
+**Note:** Version bump only for package glob-search
+
+
+
+
+
 ## [2.0.8](https://github.com/bluelovers/ws-glob/compare/glob-search@2.0.7...glob-search@2.0.8) (2021-07-08)
 
 **Note:** Version bump only for package glob-search

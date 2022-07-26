@@ -1,7 +1,7 @@
 
 import { globToTree, treeToGlob } from '../core';
 import { sort } from '@lazy-glob/sort-entries';
-import naturalCompare from '@bluelovers/string-natural-compare/core';
+import { naturalCompare } from '@bluelovers/string-natural-compare';
 
 let data = `00020_1章.txt
 00020_2章/

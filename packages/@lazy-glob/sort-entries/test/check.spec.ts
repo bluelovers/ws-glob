@@ -1,6 +1,5 @@
 import { globToTree } from 'glob-tree-list/core';
 import { inspect } from "util";
-import sortTree from '@lazy-glob/sort-tree';
 import { sort, entries_sort, entries_reduce } from '../index';
 
 describe(`no empty`, () =>

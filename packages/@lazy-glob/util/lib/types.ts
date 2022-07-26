@@ -1,4 +1,4 @@
-import { GlobbyOptions } from 'globby';
+import { IOptions as GlobbyOptions } from 'glob';
 import Bluebird from 'bluebird';
 import { IReturnRow } from 'node-novel-globby';
 import { SymGlobTree } from '../index';
@@ -38,4 +38,3 @@ export type IOptionsNovelGlobby = GlobbyOptions & {
 
 	checkRoman?: boolean,
 }
-

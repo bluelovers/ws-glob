@@ -7,7 +7,7 @@ import self = require('../g');
 import path from 'upath2';
 // @ts-ignore
 import fs from 'fs-iconv';
-import naturalCompare from '@bluelovers/string-natural-compare/core';
+import { naturalCompare } from '@bluelovers/string-natural-compare';
 import { getOptionsRuntime, glob_to_list } from '../lib/index';
 import { glob_to_list_array_deep } from '../lib/list';
 import { getOptions } from '../lib/options';

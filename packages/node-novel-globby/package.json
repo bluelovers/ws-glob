@@ -62,7 +62,7 @@
     "@node-novel/normalize": "^1.0.30",
     "@node-novel/sort": "^1.0.20",
     "@types/bluebird": "*",
-    "@types/globby": "*",
+    "@types/globby": "<8 >=6.1.0",
     "bluebird": "^3.7.2",
     "glob-tree-list": "^1.0.13",
     "globby": "<13 >=12.2.0",

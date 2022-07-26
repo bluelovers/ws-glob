@@ -4,10 +4,9 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.sort = exports.entries_reduce = exports.entries_sort = void 0;
-const tslib_1 = require("tslib");
-const core_1 = tslib_1.__importDefault(require("@bluelovers/string-natural-compare/core"));
+const string_natural_compare_1 = require("@bluelovers/string-natural-compare");
 const util_1 = require("@lazy-glob/util");
-function entries_sort(entries, fn = core_1.default, cache = {}) {
+function entries_sort(entries, fn = string_natural_compare_1.naturalCompare, cache = {}) {
     entries = entries.reduce(function (a, b) {
         let v = b[1];
         if (v === null || typeof v == 'string') {
@@ -42,7 +41,7 @@ function entries_reduce(entries) {
     }, {});
 }
 exports.entries_reduce = entries_reduce;
-function sort(a, fn = core_1.default) {
+function sort(a, fn = string_natural_compare_1.naturalCompare) {
     let r = Object.entries(a);
     let a1 = entries_sort(r, fn);
     let a2 = entries_reduce(a1);

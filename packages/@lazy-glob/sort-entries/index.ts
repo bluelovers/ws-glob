@@ -2,7 +2,7 @@
  * Created by user on 2020/6/9.
  */
 
-import naturalCompare from '@bluelovers/string-natural-compare/core';
+import { naturalCompare } from '@bluelovers/string-natural-compare';
 import { ITree } from '@lazy-glob/util/lib/types';
 import { ISortEntriesSort, ISortEntriesSortRow } from '@lazy-glob/util/lib/types/entries';
 import { SymGlobTree } from '@lazy-glob/util';

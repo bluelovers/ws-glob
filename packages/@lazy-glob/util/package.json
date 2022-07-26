@@ -1,6 +1,6 @@
 {
   "name": "@lazy-glob/util",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "",
   "homepage": "https://github.com/bluelovers/ws-glob/tree/master/packages/@lazy-glob/types#readme",
   "bugs": {
@@ -36,5 +36,8 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "abd32e1be69b41f53f982edf0f11b65a491014c8"
+  "gitHead": "abd32e1be69b41f53f982edf0f11b65a491014c8",
+  "devDependencies": {
+    "@types/glob": "^7.2.0"
+  }
 }
