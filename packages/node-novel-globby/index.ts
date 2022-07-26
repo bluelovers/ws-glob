@@ -23,6 +23,7 @@ export function globbySync(patterns?, options: IOptions = {}): IReturnList
 		[patterns, options] = [ret.patterns, ret.options];
 	}
 
+	// @ts-ignore
 	let ls = globby.sync(patterns, options);
 
 	return globToList(ls, options);
@@ -43,6 +44,7 @@ export function globbyASync(patterns?, options: IOptions = {}): Bluebird<Iglobby
 		[patterns, options] = getOptions(patterns, options);
 	}
 
+	// @ts-ignore
 	let ls = globby(patterns, options);
 
 	// @ts-ignore
@@ -62,4 +64,3 @@ export function globbyASync(patterns?, options: IOptions = {}): Bluebird<Iglobby
 }
 
 export default exports as typeof import('./index');
-

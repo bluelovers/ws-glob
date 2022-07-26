@@ -16,6 +16,7 @@ function globbySync(patterns, options = {}) {
         let ret = (0, options_1.getOptions)(patterns, options);
         [patterns, options] = [ret.patterns, ret.options];
     }
+    // @ts-ignore
     let ls = globby_1.default.sync(patterns, options);
     return (0, index_1.globToList)(ls, options);
 }
@@ -28,6 +29,7 @@ function globbyASync(patterns, options = {}) {
         */
         [patterns, options] = (0, options_1.getOptions)(patterns, options);
     }
+    // @ts-ignore
     let ls = (0, globby_1.default)(patterns, options);
     // @ts-ignore
     let p = options.libPromise ? options.libPromise : bluebird_1.default;
