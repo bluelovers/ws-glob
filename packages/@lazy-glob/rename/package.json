@@ -1,6 +1,6 @@
 {
   "name": "@lazy-glob/rename",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "compute rename from glob like pattern",
   "homepage": "https://github.com/bluelovers/ws-glob/tree/master/packages/@lazy-glob/rename#readme",
   "bugs": {
