@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`globToTree / treeToGlob 1`] = `
-Object {
+{
   "00020_1章.txt": "00020_1章.txt",
   "00020_2章/": null,
-  "00020_3章/": Object {
+  "00020_3章/": {
     "3章 10話.txt": "3章 10話.txt",
     "3章 11話.txt": "3章 11話.txt",
     "3章 12話.txt": "3章 12話.txt",
@@ -15,7 +15,7 @@ Object {
     "3章 16話.txt": "3章 16話.txt",
     "3章 17話.txt": "3章 17話.txt",
     "3章 8話.txt": "3章 8話.txt",
-    "3章 9話/": Object {
+    "3章 9話/": {
       "3章 9話file.txt": "3章 9話file.txt",
     },
   },
@@ -23,10 +23,10 @@ Object {
 `;
 
 exports[`globToTree / treeToGlob 2`] = `
-Object {
+{
   "00020_1章.txt": "00020_1章.txt",
   "00020_2章/": null,
-  "00020_3章/": Object {
+  "00020_3章/": {
     "3章 10話.txt": "3章 10話.txt",
     "3章 11話.txt": "3章 11話.txt",
     "3章 12話.txt": "3章 12話.txt",
@@ -37,7 +37,7 @@ Object {
     "3章 16話.txt": "3章 16話.txt",
     "3章 17話.txt": "3章 17話.txt",
     "3章 8話.txt": "3章 8話.txt",
-    "3章 9話/": Object {
+    "3章 9話/": {
       "3章 9話file.txt": "3章 9話file.txt",
     },
   },
@@ -45,7 +45,7 @@ Object {
 `;
 
 exports[`globToTree / treeToGlob 3`] = `
-Array [
+[
   "00020_1章.txt",
   "00020_2章/",
   "00020_3章/3章 8話.txt",

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`res2/*.txt res2/0.5.txt 1`] = `
-Array [
+[
   "00020_3章/3章 10話.txt",
   "00020_3章/3章 11話.txt",
   "00020_3章/3章 12話.txt",
@@ -15,9 +15,9 @@ Array [
 `;
 
 exports[`res2/*.txt res2/0.5.txt 2`] = `
-Object {
-  "00020_00003章.dir": Array [
-    Object {
+{
+  "00020_00003章.dir": [
+    {
       "chapter_title": "3章 10話",
       "dir": "00020_3章",
       "ext": ".txt",
@@ -31,7 +31,7 @@ Object {
       "val_file": "00003章_00010䛡",
       "volume_title": "3章",
     },
-    Object {
+    {
       "chapter_title": "3章 11話",
       "dir": "00020_3章",
       "ext": ".txt",
@@ -45,7 +45,7 @@ Object {
       "val_file": "00003章_00011䛡",
       "volume_title": "3章",
     },
-    Object {
+    {
       "chapter_title": "3章 12話",
       "dir": "00020_3章",
       "ext": ".txt",
@@ -59,7 +59,7 @@ Object {
       "val_file": "00003章_00012䛡",
       "volume_title": "3章",
     },
-    Object {
+    {
       "chapter_title": "3章 13話",
       "dir": "00020_3章",
       "ext": ".txt",
@@ -73,7 +73,7 @@ Object {
       "val_file": "00003章_00013䛡",
       "volume_title": "3章",
     },
-    Object {
+    {
       "chapter_title": "3章 14話",
       "dir": "00020_3章",
       "ext": ".txt",
@@ -87,7 +87,7 @@ Object {
       "val_file": "00003章_00014䛡",
       "volume_title": "3章",
     },
-    Object {
+    {
       "chapter_title": "3章 15話",
       "dir": "00020_3章",
       "ext": ".txt",
@@ -101,7 +101,7 @@ Object {
       "val_file": "00003章_00015䛡",
       "volume_title": "3章",
     },
-    Object {
+    {
       "chapter_title": "3章 15.5話 特別閑話",
       "dir": "00020_3章",
       "ext": ".txt",
@@ -115,7 +115,7 @@ Object {
       "val_file": "00003章_00015.00005䛡_特別閑䛡",
       "volume_title": "3章",
     },
-    Object {
+    {
       "chapter_title": "3章 16話",
       "dir": "00020_3章",
       "ext": ".txt",
@@ -129,7 +129,7 @@ Object {
       "val_file": "00003章_00016䛡",
       "volume_title": "3章",
     },
-    Object {
+    {
       "chapter_title": "3章 17話",
       "dir": "00020_3章",
       "ext": ".txt",
@@ -148,7 +148,7 @@ Object {
 `;
 
 exports[`res2/*.txt res2/circle.txt 1`] = `
-Array [
+[
   "⓪.txt",
   "①.txt",
   "③.txt",
@@ -162,9 +162,9 @@ Array [
 `;
 
 exports[`res2/*.txt res2/circle.txt 2`] = `
-Object {
-  "..dir": Array [
-    Object {
+{
+  "..dir": [
+    {
       "chapter_title": "⓪",
       "dir": ".",
       "ext": ".txt",
@@ -178,7 +178,7 @@ Object {
       "val_file": "00000",
       "volume_title": ".",
     },
-    Object {
+    {
       "chapter_title": "①",
       "dir": ".",
       "ext": ".txt",
@@ -192,7 +192,7 @@ Object {
       "val_file": "00001",
       "volume_title": ".",
     },
-    Object {
+    {
       "chapter_title": "③",
       "dir": ".",
       "ext": ".txt",
@@ -206,7 +206,7 @@ Object {
       "val_file": "00003",
       "volume_title": ".",
     },
-    Object {
+    {
       "chapter_title": "4",
       "dir": ".",
       "ext": ".txt",
@@ -220,7 +220,7 @@ Object {
       "val_file": "00004",
       "volume_title": ".",
     },
-    Object {
+    {
       "chapter_title": "⑫",
       "dir": ".",
       "ext": ".txt",
@@ -234,7 +234,7 @@ Object {
       "val_file": "00012",
       "volume_title": ".",
     },
-    Object {
+    {
       "chapter_title": "⑯",
       "dir": ".",
       "ext": ".txt",
@@ -248,7 +248,7 @@ Object {
       "val_file": "00016",
       "volume_title": ".",
     },
-    Object {
+    {
       "chapter_title": "30",
       "dir": ".",
       "ext": ".txt",
@@ -262,7 +262,7 @@ Object {
       "val_file": "00030",
       "volume_title": ".",
     },
-    Object {
+    {
       "chapter_title": "㉟",
       "dir": ".",
       "ext": ".txt",
@@ -276,7 +276,7 @@ Object {
       "val_file": "00035",
       "volume_title": ".",
     },
-    Object {
+    {
       "chapter_title": "㊿",
       "dir": ".",
       "ext": ".txt",
@@ -295,7 +295,7 @@ Object {
 `;
 
 exports[`res2/*.txt res2/n.txt 1`] = `
-Array [
+[
   "1.txt",
   "2.txt",
   "3.txt",
@@ -311,9 +311,9 @@ Array [
 `;
 
 exports[`res2/*.txt res2/n.txt 2`] = `
-Object {
-  "..dir": Array [
-    Object {
+{
+  "..dir": [
+    {
       "chapter_title": "1",
       "dir": ".",
       "ext": ".txt",
@@ -327,7 +327,7 @@ Object {
       "val_file": "00001",
       "volume_title": ".",
     },
-    Object {
+    {
       "chapter_title": "2",
       "dir": ".",
       "ext": ".txt",
@@ -341,7 +341,7 @@ Object {
       "val_file": "00002",
       "volume_title": ".",
     },
-    Object {
+    {
       "chapter_title": "3",
       "dir": ".",
       "ext": ".txt",
@@ -355,7 +355,7 @@ Object {
       "val_file": "00003",
       "volume_title": ".",
     },
-    Object {
+    {
       "chapter_title": "4",
       "dir": ".",
       "ext": ".txt",
@@ -369,7 +369,7 @@ Object {
       "val_file": "00004",
       "volume_title": ".",
     },
-    Object {
+    {
       "chapter_title": "5",
       "dir": ".",
       "ext": ".txt",
@@ -383,7 +383,7 @@ Object {
       "val_file": "00005",
       "volume_title": ".",
     },
-    Object {
+    {
       "chapter_title": "6",
       "dir": ".",
       "ext": ".txt",
@@ -397,7 +397,7 @@ Object {
       "val_file": "00006",
       "volume_title": ".",
     },
-    Object {
+    {
       "chapter_title": "7",
       "dir": ".",
       "ext": ".txt",
@@ -411,7 +411,7 @@ Object {
       "val_file": "00007",
       "volume_title": ".",
     },
-    Object {
+    {
       "chapter_title": "8",
       "dir": ".",
       "ext": ".txt",
@@ -425,7 +425,7 @@ Object {
       "val_file": "00008",
       "volume_title": ".",
     },
-    Object {
+    {
       "chapter_title": "9",
       "dir": ".",
       "ext": ".txt",
@@ -439,7 +439,7 @@ Object {
       "val_file": "00009",
       "volume_title": ".",
     },
-    Object {
+    {
       "chapter_title": "10",
       "dir": ".",
       "ext": ".txt",
@@ -453,7 +453,7 @@ Object {
       "val_file": "00010",
       "volume_title": ".",
     },
-    Object {
+    {
       "chapter_title": "15",
       "dir": ".",
       "ext": ".txt",
@@ -472,7 +472,7 @@ Object {
 `;
 
 exports[`res2/*.txt res2/n-n.txt 1`] = `
-Array [
+[
   "00010_第１章　謎の暗黒騎士/00020_1-1　為了打敗勇者，被魔王召唤了.txt",
   "00010_第１章　謎の暗黒騎士/00030_1-2　光之勇者與青梅竹馬.txt",
   "00010_第１章　謎の暗黒騎士/00040_1-3　戦斗的理由.txt",
@@ -622,9 +622,9 @@ Array [
 `;
 
 exports[`res2/*.txt res2/n-n.txt 2`] = `
-Object {
-  "00010_第00001章_迷の暗黑騎士.dir": Array [
-    Object {
+{
+  "00010_第00001章_迷の暗黑騎士.dir": [
+    {
       "chapter_title": "1-1　為了打敗勇者，被魔王召唤了",
       "dir": "00010_第１章　謎の暗黒騎士",
       "ext": ".txt",
@@ -638,7 +638,7 @@ Object {
       "val_file": "00020_00001_00001_为了打敗勇者_被魔王召唤了",
       "volume_title": "第１章　謎の暗黒騎士",
     },
-    Object {
+    {
       "chapter_title": "1-2　光之勇者與青梅竹馬",
       "dir": "00010_第１章　謎の暗黒騎士",
       "ext": ".txt",
@@ -652,7 +652,7 @@ Object {
       "val_file": "00030_00001_00002_光の勇者と青梅竹馬",
       "volume_title": "第１章　謎の暗黒騎士",
     },
-    Object {
+    {
       "chapter_title": "1-3　戦斗的理由",
       "dir": "00010_第１章　謎の暗黒騎士",
       "ext": ".txt",
@@ -666,7 +666,7 @@ Object {
       "val_file": "00040_00001_00003_战斗の理由",
       "volume_title": "第１章　謎の暗黒騎士",
     },
-    Object {
+    {
       "chapter_title": "1-4　迷之暗黒騎士登場",
       "dir": "00010_第１章　謎の暗黒騎士",
       "ext": ".txt",
@@ -680,7 +680,7 @@ Object {
       "val_file": "00050_00001_00004_迷の暗黑騎士登厂",
       "volume_title": "第１章　謎の暗黒騎士",
     },
-    Object {
+    {
       "chapter_title": "1-5　女神的憂郁",
       "dir": "00010_第１章　謎の暗黒騎士",
       "ext": ".txt",
@@ -694,7 +694,7 @@ Object {
       "val_file": "00060_00001_00005_女神の優郁",
       "volume_title": "第１章　謎の暗黒騎士",
     },
-    Object {
+    {
       "chapter_title": "1-6　暗之女王的困惑",
       "dir": "00010_第１章　謎の暗黒騎士",
       "ext": ".txt",
@@ -708,7 +708,7 @@ Object {
       "val_file": "00070_00001_00006_暗の女王の困惑",
       "volume_title": "第１章　謎の暗黒騎士",
     },
-    Object {
+    {
       "chapter_title": "1-7　魔法之力",
       "dir": "00010_第１章　謎の暗黒騎士",
       "ext": ".txt",
@@ -722,7 +722,7 @@ Object {
       "val_file": "00080_00001_00007_魔法の力",
       "volume_title": "第１章　謎の暗黒騎士",
     },
-    Object {
+    {
       "chapter_title": "1-8　她的担憂",
       "dir": "00010_第１章　謎の暗黒騎士",
       "ext": ".txt",
@@ -736,7 +736,7 @@ Object {
       "val_file": "00090_00001_00008_它の担優",
       "volume_title": "第１章　謎の暗黒騎士",
     },
-    Object {
+    {
       "chapter_title": "1-9　勇者衆的会議",
       "dir": "00010_第１章　謎の暗黒騎士",
       "ext": ".txt",
@@ -750,7 +750,7 @@ Object {
       "val_file": "00100_00001_00009_勇者众の㑹議",
       "volume_title": "第１章　謎の暗黒騎士",
     },
-    Object {
+    {
       "chapter_title": "1-10　妖精之森",
       "dir": "00010_第１章　謎の暗黒騎士",
       "ext": ".txt",
@@ -764,7 +764,7 @@ Object {
       "val_file": "00110_00001_00010_妖精の森",
       "volume_title": "第１章　謎の暗黒騎士",
     },
-    Object {
+    {
       "chapter_title": "1-11　女神之国",
       "dir": "00010_第１章　謎の暗黒騎士",
       "ext": ".txt",
@@ -778,7 +778,7 @@ Object {
       "val_file": "00120_00001_00011_女神の囯",
       "volume_title": "第１章　謎の暗黒騎士",
     },
-    Object {
+    {
       "chapter_title": "1-12　遭遇変態",
       "dir": "00010_第１章　謎の暗黒騎士",
       "ext": ".txt",
@@ -792,7 +792,7 @@ Object {
       "val_file": "00130_00001_00012_遭遇变态",
       "volume_title": "第１章　謎の暗黒騎士",
     },
-    Object {
+    {
       "chapter_title": "1-13　在神殿的訓練場",
       "dir": "00010_第１章　謎の暗黒騎士",
       "ext": ".txt",
@@ -806,7 +806,7 @@ Object {
       "val_file": "00140_00001_00013_在神殿の訓炼厂",
       "volume_title": "第１章　謎の暗黒騎士",
     },
-    Object {
+    {
       "chapter_title": "1-14　変態的正体",
       "dir": "00010_第１章　謎の暗黒騎士",
       "ext": ".txt",
@@ -820,7 +820,7 @@ Object {
       "val_file": "00150_00001_00014_变态の00000体",
       "volume_title": "第１章　謎の暗黒騎士",
     },
-    Object {
+    {
       "chapter_title": "1-15　與蕾娜的会談，然后",
       "dir": "00010_第１章　謎の暗黒騎士",
       "ext": ".txt",
@@ -834,7 +834,7 @@ Object {
       "val_file": "00160_00001_00015_と雷那の㑹坛_然后",
       "volume_title": "第１章　謎の暗黒騎士",
     },
-    Object {
+    {
       "chapter_title": "1-16　入侵者",
       "dir": "00010_第１章　謎の暗黒騎士",
       "ext": ".txt",
@@ -848,7 +848,7 @@ Object {
       "val_file": "00170_00001_00016_入侵者",
       "volume_title": "第１章　謎の暗黒騎士",
     },
-    Object {
+    {
       "chapter_title": "1-17　與青梅竹馬的対决",
       "dir": "00010_第１章　謎の暗黒騎士",
       "ext": ".txt",
@@ -862,7 +862,7 @@ Object {
       "val_file": "00180_00001_00017_と青梅竹馬の对决",
       "volume_title": "第１章　謎の暗黒騎士",
     },
-    Object {
+    {
       "chapter_title": "1-18　各自的想法",
       "dir": "00010_第１章　謎の暗黒騎士",
       "ext": ".txt",
@@ -877,8 +877,8 @@ Object {
       "volume_title": "第１章　謎の暗黒騎士",
     },
   ],
-  "00020_第00002章_圣竜王の脚.dir": Array [
-    Object {
+  "00020_第00002章_圣竜王の脚.dir": [
+    {
       "chapter_title": "2-1　在娜迩葛尔的天空下",
       "dir": "00020_第２章　聖竜王の角",
       "ext": ".txt",
@@ -892,7 +892,7 @@ Object {
       "val_file": "00200_00002_00001_在那迩葛尓の天空下",
       "volume_title": "第２章　聖竜王の角",
     },
-    Object {
+    {
       "chapter_title": "2-2　聖龙居住之地",
       "dir": "00020_第２章　聖竜王の角",
       "ext": ".txt",
@@ -906,7 +906,7 @@ Object {
       "val_file": "00210_00002_00002_圣竜居住の地",
       "volume_title": "第２章　聖竜王の角",
     },
-    Object {
+    {
       "chapter_title": "2-3　勇者来訪",
       "dir": "00020_第２章　聖竜王の角",
       "ext": ".txt",
@@ -920,7 +920,7 @@ Object {
       "val_file": "00220_00002_00003_勇者來訪",
       "volume_title": "第２章　聖竜王の角",
     },
-    Object {
+    {
       "chapter_title": "2-4　女神的仮日",
       "dir": "00020_第２章　聖竜王の角",
       "ext": ".txt",
@@ -934,7 +934,7 @@ Object {
       "val_file": "00230_00002_00004_女神の仮日",
       "volume_title": "第２章　聖竜王の角",
     },
-    Object {
+    {
       "chapter_title": "2-5　愛的魔法薬",
       "dir": "00020_第２章　聖竜王の角",
       "ext": ".txt",
@@ -948,7 +948,7 @@ Object {
       "val_file": "00240_00002_00005_愛の魔法药",
       "volume_title": "第２章　聖竜王の角",
     },
-    Object {
+    {
       "chapter_title": "2-6　夜之宴",
       "dir": "00020_第２章　聖竜王の角",
       "ext": ".txt",
@@ -962,7 +962,7 @@ Object {
       "val_file": "00250_00002_00006_夜の宴",
       "volume_title": "第２章　聖竜王の角",
     },
-    Object {
+    {
       "chapter_title": "2-7　斯特里希斯的塔",
       "dir": "00020_第２章　聖竜王の角",
       "ext": ".txt",
@@ -976,7 +976,7 @@ Object {
       "val_file": "00260_00002_00007_斯特裏希斯の塔",
       "volume_title": "第２章　聖竜王の角",
     },
-    Object {
+    {
       "chapter_title": "2-8　黒霧",
       "dir": "00020_第２章　聖竜王の角",
       "ext": ".txt",
@@ -990,7 +990,7 @@ Object {
       "val_file": "00270_00002_00008_黑雾",
       "volume_title": "第２章　聖竜王の角",
     },
-    Object {
+    {
       "chapter_title": "2-9　駆逐黒暗之人與照亮光明之人",
       "dir": "00020_第２章　聖竜王の角",
       "ext": ".txt",
@@ -1004,7 +1004,7 @@ Object {
       "val_file": "00280_00002_00009_駆逐黑暗の人と照亮光明の人",
       "volume_title": "第２章　聖竜王の角",
     },
-    Object {
+    {
       "chapter_title": "2-10　羅庫斯王国的離别",
       "dir": "00020_第２章　聖竜王の角",
       "ext": ".txt",
@@ -1018,7 +1018,7 @@ Object {
       "val_file": "00290_00002_00010_㑩库斯王囯の离別",
       "volume_title": "第２章　聖竜王の角",
     },
-    Object {
+    {
       "chapter_title": "2-11　聖龙山的死斗",
       "dir": "00020_第２章　聖竜王の角",
       "ext": ".txt",
@@ -1032,7 +1032,7 @@ Object {
       "val_file": "00300_00002_00011_圣竜山の死斗",
       "volume_title": "第２章　聖竜王の角",
     },
-    Object {
+    {
       "chapter_title": "2-12　新的女神",
       "dir": "00020_第２章　聖竜王の角",
       "ext": ".txt",
@@ -1046,7 +1046,7 @@ Object {
       "val_file": "00305_00002_00012_新の女神",
       "volume_title": "第２章　聖竜王の角",
     },
-    Object {
+    {
       "chapter_title": "キャラ紹介等の設定（第２部終了時点）",
       "dir": "00020_第２章　聖竜王の角",
       "ext": ".txt",
@@ -1061,8 +1061,8 @@ Object {
       "volume_title": "第２章　聖竜王の角",
     },
   ],
-  "00030_第00003章_白銀の魔女.dir": Array [
-    Object {
+  "00030_第00003章_白銀の魔女.dir": [
+    {
       "chapter_title": "3-1　ドワーフの都 矮人都市",
       "dir": "00030_第３章　白银之魔女",
       "ext": ".txt",
@@ -1076,7 +1076,7 @@ Object {
       "val_file": "00320_00003_00001_ドワ_フの都_矮人都市",
       "volume_title": "第３章　白银之魔女",
     },
-    Object {
+    {
       "chapter_title": "3-2　サリアの学院　萨里亞学院",
       "dir": "00030_第３章　白银之魔女",
       "ext": ".txt",
@@ -1090,7 +1090,7 @@ Object {
       "val_file": "00330_00003_00002_サリアの学院_撒裏亚学院",
       "volume_title": "第３章　白银之魔女",
     },
-    Object {
+    {
       "chapter_title": "3-3　アルゴアの王子 阿尔戈亞的王子",
       "dir": "00030_第３章　白银之魔女",
       "ext": ".txt",
@@ -1104,7 +1104,7 @@ Object {
       "val_file": "00340_00003_00003_アルゴアの王子_啊尓戈亚の王子",
       "volume_title": "第３章　白银之魔女",
     },
-    Object {
+    {
       "chapter_title": "3-4　鬼の支配する地 被鬼支配之地",
       "dir": "00030_第３章　白银之魔女",
       "ext": ".txt",
@@ -1118,7 +1118,7 @@ Object {
       "val_file": "00350_00003_00004_鬼の只配する地_被鬼只配の地",
       "volume_title": "第３章　白银之魔女",
     },
-    Object {
+    {
       "chapter_title": "3-5　王子とゴブリン 王子與哥布林",
       "dir": "00030_第３章　白银之魔女",
       "ext": ".txt",
@@ -1132,7 +1132,7 @@ Object {
       "val_file": "00360_00003_00005_王子とゴブリン_王子と哥佈林",
       "volume_title": "第３章　白银之魔女",
     },
-    Object {
+    {
       "chapter_title": "3-6　北の都 北方之都",
       "dir": "00030_第３章　白银之魔女",
       "ext": ".txt",
@@ -1146,7 +1146,7 @@ Object {
       "val_file": "00370_00003_00006_北の都_北方の都",
       "volume_title": "第３章　白银之魔女",
     },
-    Object {
+    {
       "chapter_title": "3-7　貝洛斯的舞会",
       "dir": "00030_第３章　白银之魔女",
       "ext": ".txt",
@@ -1160,7 +1160,7 @@ Object {
       "val_file": "00380_00003_00007_貝洛斯の舞㑹",
       "volume_title": "第３章　白银之魔女",
     },
-    Object {
+    {
       "chapter_title": "3-8　襲撃的巨人",
       "dir": "00030_第３章　白银之魔女",
       "ext": ".txt",
@@ -1174,7 +1174,7 @@ Object {
       "val_file": "00390_00003_00008_袭击の巨人",
       "volume_title": "第３章　白银之魔女",
     },
-    Object {
+    {
       "chapter_title": "3-9　被捕获的莉潔娜",
       "dir": "00030_第３章　白银之魔女",
       "ext": ".txt",
@@ -1188,7 +1188,7 @@ Object {
       "val_file": "00400_00003_00009_被捕獲の利傑那",
       "volume_title": "第３章　白银之魔女",
     },
-    Object {
+    {
       "chapter_title": "3-10　蚁人",
       "dir": "00030_第３章　白银之魔女",
       "ext": ".txt",
@@ -1202,7 +1202,7 @@ Object {
       "val_file": "00410_00003_00010_蚁人",
       "volume_title": "第３章　白银之魔女",
     },
-    Object {
+    {
       "chapter_title": "3-11　吟游詩人",
       "dir": "00030_第３章　白银之魔女",
       "ext": ".txt",
@@ -1216,7 +1216,7 @@ Object {
       "val_file": "00420_00003_00011_吟游詩人",
       "volume_title": "第３章　白银之魔女",
     },
-    Object {
+    {
       "chapter_title": "3-12　点心城里奇怪的戦斗",
       "dir": "00030_第３章　白银之魔女",
       "ext": ".txt",
@@ -1230,7 +1230,7 @@ Object {
       "val_file": "00430_00003_00012_点心城裏奇怪の战斗",
       "volume_title": "第３章　白银之魔女",
     },
-    Object {
+    {
       "chapter_title": "3-13　因縁之戦",
       "dir": "00030_第３章　白银之魔女",
       "ext": ".txt",
@@ -1244,7 +1244,7 @@ Object {
       "val_file": "00440_00003_00013_因緣の战",
       "volume_title": "第３章　白银之魔女",
     },
-    Object {
+    {
       "chapter_title": "3-14　百臂巨人",
       "dir": "00030_第３章　白银之魔女",
       "ext": ".txt",
@@ -1258,7 +1258,7 @@ Object {
       "val_file": "00450_00003_00014_00100臂巨人",
       "volume_title": "第３章　白银之魔女",
     },
-    Object {
+    {
       "chapter_title": "3-15　平靜而吵鬧的日子",
       "dir": "00030_第３章　白银之魔女",
       "ext": ".txt",
@@ -1273,8 +1273,8 @@ Object {
       "volume_title": "第３章　白银之魔女",
     },
   ],
-  "00035_第00004章_邪神の迷宫.dir": Array [
-    Object {
+  "00035_第00004章_邪神の迷宫.dir": [
+    {
       "chapter_title": "4-1　邪神的策謀",
       "dir": "00035_第４章　邪神の迷宮",
       "ext": ".txt",
@@ -1288,7 +1288,7 @@ Object {
       "val_file": "00470_00004_00001_邪神の策謀",
       "volume_title": "第４章　邪神の迷宮",
     },
-    Object {
+    {
       "chapter_title": "4-2　豊饶的亞里亞蒂亞",
       "dir": "00035_第４章　邪神の迷宮",
       "ext": ".txt",
@@ -1302,7 +1302,7 @@ Object {
       "val_file": "00480_00004_00002_丰饒の亚裏亚蒂亚",
       "volume_title": "第４章　邪神の迷宮",
     },
-    Object {
+    {
       "chapter_title": "4-3　魔物與勇者",
       "dir": "00035_第４章　邪神の迷宮",
       "ext": ".txt",
@@ -1316,7 +1316,7 @@ Object {
       "val_file": "00490_00004_00003_魔物と勇者",
       "volume_title": "第４章　邪神の迷宮",
     },
-    Object {
+    {
       "chapter_title": "4-4　自由戦士之城",
       "dir": "00035_第４章　邪神の迷宮",
       "ext": ".txt",
@@ -1330,7 +1330,7 @@ Object {
       "val_file": "00500_00004_00004_自由战士の城",
       "volume_title": "第４章　邪神の迷宮",
     },
-    Object {
+    {
       "chapter_title": "4-5　雞蛇之庭院",
       "dir": "00035_第４章　邪神の迷宮",
       "ext": ".txt",
@@ -1344,7 +1344,7 @@ Object {
       "val_file": "00510_00004_00005_雞蛇の庭院",
       "volume_title": "第４章　邪神の迷宮",
     },
-    Object {
+    {
       "chapter_title": "4-6　地下迷宫",
       "dir": "00035_第４章　邪神の迷宮",
       "ext": ".txt",
@@ -1358,7 +1358,7 @@ Object {
       "val_file": "00520_00004_00006_地下迷宫",
       "volume_title": "第４章　邪神の迷宮",
     },
-    Object {
+    {
       "chapter_title": "4-7　天界的書物庫",
       "dir": "00035_第４章　邪神の迷宮",
       "ext": ".txt",
@@ -1372,7 +1372,7 @@ Object {
       "val_file": "00530_00004_00007_天界の书物库",
       "volume_title": "第４章　邪神の迷宮",
     },
-    Object {
+    {
       "chapter_title": "4-8　女神と魔王",
       "dir": "00035_第４章　邪神の迷宮",
       "ext": ".txt",
@@ -1386,7 +1386,7 @@ Object {
       "val_file": "00540_00004_00008_女神と魔王",
       "volume_title": "第４章　邪神の迷宮",
     },
-    Object {
+    {
       "chapter_title": "4-9　救出作戦",
       "dir": "00035_第４章　邪神の迷宮",
       "ext": ".txt",
@@ -1400,7 +1400,7 @@ Object {
       "val_file": "00550_00004_00009_救出作战",
       "volume_title": "第４章　邪神の迷宮",
     },
-    Object {
+    {
       "chapter_title": "4-10　迷宮都市拉維琳朵斯",
       "dir": "00035_第４章　邪神の迷宮",
       "ext": ".txt",
@@ -1414,7 +1414,7 @@ Object {
       "val_file": "00560_00004_00010_迷宫都市拉維林朵斯",
       "volume_title": "第４章　邪神の迷宮",
     },
-    Object {
+    {
       "chapter_title": "4-11　愛與美之神殿",
       "dir": "00035_第４章　邪神の迷宮",
       "ext": ".txt",
@@ -1428,7 +1428,7 @@ Object {
       "val_file": "00570_00004_00011_愛と美の神殿",
       "volume_title": "第４章　邪神の迷宮",
     },
-    Object {
+    {
       "chapter_title": "4-12　蜥蜴人",
       "dir": "00035_第４章　邪神の迷宮",
       "ext": ".txt",
@@ -1442,7 +1442,7 @@ Object {
       "val_file": "00580_00004_00012_蜥蜴人",
       "volume_title": "第４章　邪神の迷宮",
     },
-    Object {
+    {
       "chapter_title": "4-13　蜘蛛女神",
       "dir": "00035_第４章　邪神の迷宮",
       "ext": ".txt",
@@ -1456,7 +1456,7 @@ Object {
       "val_file": "00590_00004_00013_蜘蛛女神",
       "volume_title": "第４章　邪神の迷宮",
     },
-    Object {
+    {
       "chapter_title": "4-14　塔拉斯克",
       "dir": "00035_第４章　邪神の迷宮",
       "ext": ".txt",
@@ -1470,7 +1470,7 @@ Object {
       "val_file": "00600_00004_00014_塔拉斯克",
       "volume_title": "第４章　邪神の迷宮",
     },
-    Object {
+    {
       "chapter_title": "4-15　迷宫的弥諾陶洛斯",
       "dir": "00035_第４章　邪神の迷宮",
       "ext": ".txt",
@@ -1484,7 +1484,7 @@ Object {
       "val_file": "00610_00004_00015_迷宫の米諾陶洛斯",
       "volume_title": "第４章　邪神の迷宮",
     },
-    Object {
+    {
       "chapter_title": "4-16　邪神拉維琉斯",
       "dir": "00035_第４章　邪神の迷宮",
       "ext": ".txt",
@@ -1498,7 +1498,7 @@ Object {
       "val_file": "00630_00004_00016_邪神拉維琉斯",
       "volume_title": "第４章　邪神の迷宮",
     },
-    Object {
+    {
       "chapter_title": "4-17　光と闇の輪舞曲",
       "dir": "00035_第４章　邪神の迷宮",
       "ext": ".txt",
@@ -1512,7 +1512,7 @@ Object {
       "val_file": "00640_00004_00017_光と暗の沦舞曲",
       "volume_title": "第４章　邪神の迷宮",
     },
-    Object {
+    {
       "chapter_title": "4-18　再会を喜んで。",
       "dir": "00035_第４章　邪神の迷宮",
       "ext": ".txt",
@@ -1527,8 +1527,8 @@ Object {
       "volume_title": "第４章　邪神の迷宮",
     },
   ],
-  "00050_第00005章_月光の女神.dir": Array [
-    Object {
+  "00050_第00005章_月光の女神.dir": [
+    {
       "chapter_title": "5-1　月光的女神",
       "dir": "00050_第５章　月光の女神",
       "ext": ".txt",
@@ -1542,7 +1542,7 @@ Object {
       "val_file": "00005_00001_月光の女神",
       "volume_title": "第５章　月光の女神",
     },
-    Object {
+    {
       "chapter_title": "5-2　海上的盛宴",
       "dir": "00050_第５章　月光の女神",
       "ext": ".txt",
@@ -1556,7 +1556,7 @@ Object {
       "val_file": "00005_00002_海上の盛宴",
       "volume_title": "第５章　月光の女神",
     },
-    Object {
+    {
       "chapter_title": "5-3　カルキノスの襲撃",
       "dir": "00050_第５章　月光の女神",
       "ext": ".txt",
@@ -1570,7 +1570,7 @@ Object {
       "val_file": "00005_00003_カルキノスの袭击",
       "volume_title": "第５章　月光の女神",
     },
-    Object {
+    {
       "chapter_title": "5-4　剣舞者",
       "dir": "00050_第５章　月光の女神",
       "ext": ".txt",
@@ -1584,7 +1584,7 @@ Object {
       "val_file": "00005_00004_剑舞者",
       "volume_title": "第５章　月光の女神",
     },
-    Object {
+    {
       "chapter_title": "5-5　月光之中（月光の中で）",
       "dir": "00050_第５章　月光の女神",
       "ext": ".txt",
@@ -1598,7 +1598,7 @@ Object {
       "val_file": "00005_00005_月光の中_月光の中で",
       "volume_title": "第５章　月光の女神",
     },
-    Object {
+    {
       "chapter_title": "5-6　迷宮捜査",
       "dir": "00050_第５章　月光の女神",
       "ext": ".txt",
@@ -1612,7 +1612,7 @@ Object {
       "val_file": "00005_00006_迷宫搜察",
       "volume_title": "第５章　月光の女神",
     },
-    Object {
+    {
       "chapter_title": "5-7　歌神の劇場",
       "dir": "00050_第５章　月光の女神",
       "ext": ".txt",
@@ -1626,7 +1626,7 @@ Object {
       "val_file": "00005_00007_歌神の剧厂",
       "volume_title": "第５章　月光の女神",
     },
-    Object {
+    {
       "chapter_title": "5-8　山羊男の行方",
       "dir": "00050_第５章　月光の女神",
       "ext": ".txt",
@@ -1640,7 +1640,7 @@ Object {
       "val_file": "00005_00008_山羊男の型方",
       "volume_title": "第５章　月光の女神",
     },
-    Object {
+    {
       "chapter_title": "5-9　无頭騎士",
       "dir": "00050_第５章　月光の女神",
       "ext": ".txt",
@@ -1654,7 +1654,7 @@ Object {
       "val_file": "00005_00009_无头騎士",
       "volume_title": "第５章　月光の女神",
     },
-    Object {
+    {
       "chapter_title": "5-10　女資助者",
       "dir": "00050_第５章　月光の女神",
       "ext": ".txt",
@@ -1668,7 +1668,7 @@ Object {
       "val_file": "00005_00010_女資助者",
       "volume_title": "第５章　月光の女神",
     },
-    Object {
+    {
       "chapter_title": "5-11　睡眠之神賛特",
       "dir": "00050_第５章　月光の女神",
       "ext": ".txt",
@@ -1682,7 +1682,7 @@ Object {
       "val_file": "00005_00011_睡眠の神賛特",
       "volume_title": "第５章　月光の女神",
     },
-    Object {
+    {
       "chapter_title": "5-12　上京食尸鬼",
       "dir": "00050_第５章　月光の女神",
       "ext": ".txt",
@@ -1696,7 +1696,7 @@ Object {
       "val_file": "00005_00012_上00000食尸鬼",
       "volume_title": "第５章　月光の女神",
     },
-    Object {
+    {
       "chapter_title": "5-13　〇便消失去哪児了？",
       "dir": "00050_第５章　月光の女神",
       "ext": ".txt",
@@ -1710,7 +1710,7 @@ Object {
       "val_file": "00005_00013_00000便消失去那儿了?",
       "volume_title": "第５章　月光の女神",
     },
-    Object {
+    {
       "chapter_title": "5-14　地下水道是夢之国",
       "dir": "00050_第５章　月光の女神",
       "ext": ".txt",
@@ -1724,7 +1724,7 @@ Object {
       "val_file": "00005_00014_地下水道是夢の囯",
       "volume_title": "第５章　月光の女神",
     },
-    Object {
+    {
       "chapter_title": "5-15　悪魔的契約者",
       "dir": "00050_第５章　月光の女神",
       "ext": ".txt",
@@ -1738,7 +1738,7 @@ Object {
       "val_file": "00005_00015_噁魔の契約者",
       "volume_title": "第５章　月光の女神",
     },
-    Object {
+    {
       "chapter_title": "5-16　風暴的開始",
       "dir": "00050_第５章　月光の女神",
       "ext": ".txt",
@@ -1752,7 +1752,7 @@ Object {
       "val_file": "00005_00016_風暴の开始",
       "volume_title": "第５章　月光の女神",
     },
-    Object {
+    {
       "chapter_title": "5-17　黄金の夜明けをもたらす者",
       "dir": "00050_第５章　月光の女神",
       "ext": ".txt",
@@ -1766,7 +1766,7 @@ Object {
       "val_file": "00005_00017_黃金の夜明けをもたらす者",
       "volume_title": "第５章　月光の女神",
     },
-    Object {
+    {
       "chapter_title": "5-18　光也絶対无法触及的黒暗",
       "dir": "00050_第５章　月光の女神",
       "ext": ".txt",
@@ -1780,7 +1780,7 @@ Object {
       "val_file": "00005_00018_光也决对无法触及の黑暗",
       "volume_title": "第５章　月光の女神",
     },
-    Object {
+    {
       "chapter_title": "5-19　嵐の後で",
       "dir": "00050_第５章　月光の女神",
       "ext": ".txt",
@@ -1795,8 +1795,8 @@ Object {
       "volume_title": "第５章　月光の女神",
     },
   ],
-  "00060_第00006章_魔界の姫君.dir": Array [
-    Object {
+  "00060_第00006章_魔界の姫君.dir": [
+    {
       "chapter_title": "6-1　艾利奧斯的女神们",
       "dir": "00060_第６章　魔界の姫君",
       "ext": ".txt",
@@ -1810,7 +1810,7 @@ Object {
       "val_file": "00006_00001_艾利奥斯の女神们",
       "volume_title": "第６章　魔界の姫君",
     },
-    Object {
+    {
       "chapter_title": "6-2　魔王陛下的小天使",
       "dir": "00060_第６章　魔界の姫君",
       "ext": ".txt",
@@ -1824,7 +1824,7 @@ Object {
       "val_file": "00006_00002_魔王陛下の小天使",
       "volume_title": "第６章　魔界の姫君",
     },
-    Object {
+    {
       "chapter_title": "6-3　勇者達の事情",
       "dir": "00060_第６章　魔界の姫君",
       "ext": ".txt",
@@ -1838,7 +1838,7 @@ Object {
       "val_file": "00006_00003_勇者达の事情",
       "volume_title": "第６章　魔界の姫君",
     },
-    Object {
+    {
       "chapter_title": "6-4　黒樹老師的甜蜜教学",
       "dir": "00060_第６章　魔界の姫君",
       "ext": ".txt",
@@ -1852,7 +1852,7 @@ Object {
       "val_file": "00006_00004_黑树老师の甜蜜敎学",
       "volume_title": "第６章　魔界の姫君",
     },
-    Object {
+    {
       "chapter_title": "6-5　沼沢的大魔女",
       "dir": "00060_第６章　魔界の姫君",
       "ext": ".txt",
@@ -1866,7 +1866,7 @@ Object {
       "val_file": "00006_00005_沼択の大魔女",
       "volume_title": "第６章　魔界の姫君",
     },
-    Object {
+    {
       "chapter_title": "6-6　夢中相見",
       "dir": "00060_第６章　魔界の姫君",
       "ext": ".txt",
@@ -1880,7 +1880,7 @@ Object {
       "val_file": "00006_00006_夢中相見",
       "volume_title": "第６章　魔界の姫君",
     },
-    Object {
+    {
       "chapter_title": "6-7　蛇亀的島",
       "dir": "00060_第６章　魔界の姫君",
       "ext": ".txt",
@@ -1894,7 +1894,7 @@ Object {
       "val_file": "00006_00007_蛇亀の岛",
       "volume_title": "第６章　魔界の姫君",
     },
-    Object {
+    {
       "chapter_title": "6-8　亞馬逊女戦士的少女",
       "dir": "00060_第６章　魔界の姫君",
       "ext": ".txt",
@@ -1908,7 +1908,7 @@ Object {
       "val_file": "00006_00008_亚馬逊女战士の少女",
       "volume_title": "第６章　魔界の姫君",
     },
-    Object {
+    {
       "chapter_title": "6-9　小醜",
       "dir": "00060_第６章　魔界の姫君",
       "ext": ".txt",
@@ -1922,7 +1922,7 @@ Object {
       "val_file": "00006_00009_小丑",
       "volume_title": "第６章　魔界の姫君",
     },
-    Object {
+    {
       "chapter_title": "6-10　海豹人的村子",
       "dir": "00060_第６章　魔界の姫君",
       "ext": ".txt",
@@ -1936,7 +1936,7 @@ Object {
       "val_file": "00006_00010_海豹人の村子",
       "volume_title": "第６章　魔界の姫君",
     },
-    Object {
+    {
       "chapter_title": "6-11　潜蔵在大海的東西",
       "dir": "00060_第６章　魔界の姫君",
       "ext": ".txt",
@@ -1950,7 +1950,7 @@ Object {
       "val_file": "00006_00011_潛蔵在大海の东西",
       "volume_title": "第６章　魔界の姫君",
     },
-    Object {
+    {
       "chapter_title": "6-12　冰海的克拉肯",
       "dir": "00060_第６章　魔界の姫君",
       "ext": ".txt",
@@ -1964,7 +1964,7 @@ Object {
       "val_file": "00006_00012_冰海の克拉肯",
       "volume_title": "第６章　魔界の姫君",
     },
-    Object {
+    {
       "chapter_title": "6-13　黒色狮子",
       "dir": "00060_第６章　魔界の姫君",
       "ext": ".txt",
@@ -1978,7 +1978,7 @@ Object {
       "val_file": "00006_00013_黑色狮子",
       "volume_title": "第６章　魔界の姫君",
     },
-    Object {
+    {
       "chapter_title": "6-14　野営",
       "dir": "00060_第６章　魔界の姫君",
       "ext": ".txt",
@@ -1992,7 +1992,7 @@ Object {
       "val_file": "00006_00014_野営",
       "volume_title": "第６章　魔界の姫君",
     },
-    Object {
+    {
       "chapter_title": "6-15　歌と芸術の神",
       "dir": "00060_第６章　魔界の姫君",
       "ext": ".txt",
@@ -2006,7 +2006,7 @@ Object {
       "val_file": "00006_00015_歌と艺术の神",
       "volume_title": "第６章　魔界の姫君",
     },
-    Object {
+    {
       "chapter_title": "6-16　魔姫双影Ⅰ",
       "dir": "00060_第６章　魔界の姫君",
       "ext": ".txt",
@@ -2020,7 +2020,7 @@ Object {
       "val_file": "00006_00016_魔姫双影ⅰ",
       "volume_title": "第６章　魔界の姫君",
     },
-    Object {
+    {
       "chapter_title": "6-17　魔姫双影Ⅱ",
       "dir": "00060_第６章　魔界の姫君",
       "ext": ".txt",
@@ -2034,7 +2034,7 @@ Object {
       "val_file": "00006_00017_魔姫双影ⅱ",
       "volume_title": "第６章　魔界の姫君",
     },
-    Object {
+    {
       "chapter_title": "6-18　狙撃手",
       "dir": "00060_第６章　魔界の姫君",
       "ext": ".txt",
@@ -2048,7 +2048,7 @@ Object {
       "val_file": "00006_00018_狙击手",
       "volume_title": "第６章　魔界の姫君",
     },
-    Object {
+    {
       "chapter_title": "6-19　純白の聖騎士",
       "dir": "00060_第６章　魔界の姫君",
       "ext": ".txt",
@@ -2062,7 +2062,7 @@ Object {
       "val_file": "00006_00019_純白の圣騎士",
       "volume_title": "第６章　魔界の姫君",
     },
-    Object {
+    {
       "chapter_title": "6-20　雲海の上で",
       "dir": "00060_第６章　魔界の姫君",
       "ext": ".txt",
@@ -2076,7 +2076,7 @@ Object {
       "val_file": "00006_00020_云海の上で",
       "volume_title": "第６章　魔界の姫君",
     },
-    Object {
+    {
       "chapter_title": "6-21　魔竜ＶＳ聖竜",
       "dir": "00060_第６章　魔界の姫君",
       "ext": ".txt",
@@ -2090,7 +2090,7 @@ Object {
       "val_file": "00006_00021_魔竜vs圣竜",
       "volume_title": "第６章　魔界の姫君",
     },
-    Object {
+    {
       "chapter_title": "6-22　邪神的争斗",
       "dir": "00060_第６章　魔界の姫君",
       "ext": ".txt",
@@ -2104,7 +2104,7 @@ Object {
       "val_file": "00006_00022_邪神の争斗",
       "volume_title": "第６章　魔界の姫君",
     },
-    Object {
+    {
       "chapter_title": "6-23　水晶庭園",
       "dir": "00060_第６章　魔界の姫君",
       "ext": ".txt",
@@ -2118,7 +2118,7 @@ Object {
       "val_file": "00006_00023_水晶庭园",
       "volume_title": "第６章　魔界の姫君",
     },
-    Object {
+    {
       "chapter_title": "6-24　暗黒騎士ＶＳ聖騎士",
       "dir": "00060_第６章　魔界の姫君",
       "ext": ".txt",
@@ -2132,7 +2132,7 @@ Object {
       "val_file": "00006_00024_暗黑騎士vs圣騎士",
       "volume_title": "第６章　魔界の姫君",
     },
-    Object {
+    {
       "chapter_title": "6-25　最強の剣士",
       "dir": "00060_第６章　魔界の姫君",
       "ext": ".txt",
@@ -2146,7 +2146,7 @@ Object {
       "val_file": "00006_00025_最強の剑士",
       "volume_title": "第６章　魔界の姫君",
     },
-    Object {
+    {
       "chapter_title": "6-26　竜の覺醒",
       "dir": "00060_第６章　魔界の姫君",
       "ext": ".txt",
@@ -2160,7 +2160,7 @@ Object {
       "val_file": "00006_00026_竜の覚醒",
       "volume_title": "第６章　魔界の姫君",
     },
-    Object {
+    {
       "chapter_title": "6-27　美神の到着",
       "dir": "00060_第６章　魔界の姫君",
       "ext": ".txt",
@@ -2174,7 +2174,7 @@ Object {
       "val_file": "00006_00027_美神の到着",
       "volume_title": "第６章　魔界の姫君",
     },
-    Object {
+    {
       "chapter_title": "6-28　衆神的騒乱",
       "dir": "00060_第６章　魔界の姫君",
       "ext": ".txt",
@@ -2188,7 +2188,7 @@ Object {
       "val_file": "00006_00028_众神の騒乱",
       "volume_title": "第６章　魔界の姫君",
     },
-    Object {
+    {
       "chapter_title": "6-29　女神絶不会放開你",
       "dir": "00060_第６章　魔界の姫君",
       "ext": ".txt",
@@ -2202,7 +2202,7 @@ Object {
       "val_file": "00006_00029_女神决不㑹放开你",
       "volume_title": "第６章　魔界の姫君",
     },
-    Object {
+    {
       "chapter_title": "6-30　醜陋的魔王之子",
       "dir": "00060_第６章　魔界の姫君",
       "ext": ".txt",
@@ -2217,8 +2217,8 @@ Object {
       "volume_title": "第６章　魔界の姫君",
     },
   ],
-  "00070_第00007章_沙漠の兽神.dir": Array [
-    Object {
+  "00070_第00007章_沙漠の兽神.dir": [
+    {
       "chapter_title": "7-1　阿波菲斯的蛇",
       "dir": "00070_第７章　砂漠の獣神",
       "ext": ".txt",
@@ -2232,7 +2232,7 @@ Object {
       "val_file": "00007_00001_啊波匪斯の蛇",
       "volume_title": "第７章　砂漠の獣神",
     },
-    Object {
+    {
       "chapter_title": "7-2　蠍神の毒",
       "dir": "00070_第７章　砂漠の獣神",
       "ext": ".txt",
@@ -2246,7 +2246,7 @@ Object {
       "val_file": "00007_00002_蝎神の毒",
       "volume_title": "第７章　砂漠の獣神",
     },
-    Object {
+    {
       "chapter_title": "7-3　吉普希尔之地",
       "dir": "00070_第７章　砂漠の獣神",
       "ext": ".txt",
@@ -2260,7 +2260,7 @@ Object {
       "val_file": "00007_00003_吉普希尓の地",
       "volume_title": "第７章　砂漠の獣神",
     },
-    Object {
+    {
       "chapter_title": "7-4　獣人の国",
       "dir": "00070_第７章　砂漠の獣神",
       "ext": ".txt",
@@ -2274,7 +2274,7 @@ Object {
       "val_file": "00007_00004_兽人の囯",
       "volume_title": "第７章　砂漠の獣神",
     },
-    Object {
+    {
       "chapter_title": "7-5　吉普希尔的魔術師",
       "dir": "00070_第７章　砂漠の獣神",
       "ext": ".txt",
@@ -2288,7 +2288,7 @@ Object {
       "val_file": "00007_00005_吉普希尓の魔术师",
       "volume_title": "第７章　砂漠の獣神",
     },
-    Object {
+    {
       "chapter_title": "7-6　捕捉奇美拉",
       "dir": "00070_第７章　砂漠の獣神",
       "ext": ".txt",
@@ -2302,7 +2302,7 @@ Object {
       "val_file": "00007_00006_捕捉奇美拉",
       "volume_title": "第７章　砂漠の獣神",
     },
-    Object {
+    {
       "chapter_title": "7-7　吉普缇斯的斯芬克斯",
       "dir": "00070_第７章　砂漠の獣神",
       "ext": ".txt",
@@ -2316,7 +2316,7 @@ Object {
       "val_file": "00007_00007_吉普堤斯の斯份克斯",
       "volume_title": "第７章　砂漠の獣神",
     },
-    Object {
+    {
       "chapter_title": "7-8　與蛇的遭遇",
       "dir": "00070_第７章　砂漠の獣神",
       "ext": ".txt",
@@ -2330,7 +2330,7 @@ Object {
       "val_file": "00007_00008_と蛇の遭遇",
       "volume_title": "第７章　砂漠の獣神",
     },
-    Object {
+    {
       "chapter_title": "7-9　合流",
       "dir": "00070_第７章　砂漠の獣神",
       "ext": ".txt",
@@ -2344,7 +2344,7 @@ Object {
       "val_file": "00007_00009_合流",
       "volume_title": "第７章　砂漠の獣神",
     },
-    Object {
+    {
       "chapter_title": "7-10　猫之王女與狮子女王",
       "dir": "00070_第７章　砂漠の獣神",
       "ext": ".txt",
@@ -2358,7 +2358,7 @@ Object {
       "val_file": "00007_00010_猫の王女と狮子女王",
       "volume_title": "第７章　砂漠の獣神",
     },
-    Object {
+    {
       "chapter_title": "7-11　黄金之都阿尔納克",
       "dir": "00070_第７章　砂漠の獣神",
       "ext": ".txt",
@@ -2372,7 +2372,7 @@ Object {
       "val_file": "00007_00011_黃金の都啊尓納克",
       "volume_title": "第７章　砂漠の獣神",
     },
-    Object {
+    {
       "chapter_title": "7-12　黒色的金字塔",
       "dir": "00070_第７章　砂漠の獣神",
       "ext": ".txt",
@@ -2386,7 +2386,7 @@ Object {
       "val_file": "00007_00012_黑色の金字塔",
       "volume_title": "第７章　砂漠の獣神",
     },
-    Object {
+    {
       "chapter_title": "7-13　獣の饗宴",
       "dir": "00070_第７章　砂漠の獣神",
       "ext": ".txt",
@@ -2400,7 +2400,7 @@ Object {
       "val_file": "00007_00013_兽の飨宴",
       "volume_title": "第７章　砂漠の獣神",
     },
-    Object {
+    {
       "chapter_title": "7-14　托托娜的努力",
       "dir": "00070_第７章　砂漠の獣神",
       "ext": ".txt",
@@ -2414,7 +2414,7 @@ Object {
       "val_file": "00007_00014_托托那の努力",
       "volume_title": "第７章　砂漠の獣神",
     },
-    Object {
+    {
       "chapter_title": "7-15　中庭の猫達",
       "dir": "00070_第７章　砂漠の獣神",
       "ext": ".txt",
@@ -2428,7 +2428,7 @@ Object {
       "val_file": "00007_00015_中庭の猫达",
       "volume_title": "第７章　砂漠の獣神",
     },
-    Object {
+    {
       "chapter_title": "7-16　砂嵐",
       "dir": "00070_第７章　砂漠の獣神",
       "ext": ".txt",
@@ -2442,7 +2442,7 @@ Object {
       "val_file": "00007_00016_沙岚",
       "volume_title": "第７章　砂漠の獣神",
     },
-    Object {
+    {
       "chapter_title": "7-17　墳墓の王",
       "dir": "00070_第７章　砂漠の獣神",
       "ext": ".txt",
@@ -2456,7 +2456,7 @@ Object {
       "val_file": "00007_00017_坟墓の王",
       "volume_title": "第７章　砂漠の獣神",
     },
-    Object {
+    {
       "chapter_title": "7-18　猫の盾",
       "dir": "00070_第７章　砂漠の獣神",
       "ext": ".txt",
@@ -2470,7 +2470,7 @@ Object {
       "val_file": "00007_00018_猫の盾",
       "volume_title": "第７章　砂漠の獣神",
     },
-    Object {
+    {
       "chapter_title": "7-19　金字塔の戦",
       "dir": "00070_第７章　砂漠の獣神",
       "ext": ".txt",
@@ -2484,7 +2484,7 @@ Object {
       "val_file": "00007_00019_金字塔の战",
       "volume_title": "第７章　砂漠の獣神",
     },
-    Object {
+    {
       "chapter_title": "7-20　死神の復活",
       "dir": "00070_第７章　砂漠の獣神",
       "ext": ".txt",
@@ -2498,7 +2498,7 @@ Object {
       "val_file": "00007_00020_死神の复活",
       "volume_title": "第７章　砂漠の獣神",
     },
-    Object {
+    {
       "chapter_title": "7-21　勝利の女神来たる",
       "dir": "00070_第７章　砂漠の獣神",
       "ext": ".txt",
@@ -2512,7 +2512,7 @@ Object {
       "val_file": "00007_00021_勝利の女神來たる",
       "volume_title": "第７章　砂漠の獣神",
     },
-    Object {
+    {
       "chapter_title": "7-22　吞噬噬光者之人",
       "dir": "00070_第７章　砂漠の獣神",
       "ext": ".txt",
@@ -2526,7 +2526,7 @@ Object {
       "val_file": "00007_00022_吞噬噬光者の人",
       "volume_title": "第７章　砂漠の獣神",
     },
-    Object {
+    {
       "chapter_title": "7-23　過去の幻影",
       "dir": "00070_第７章　砂漠の獣神",
       "ext": ".txt",
@@ -2540,7 +2540,7 @@ Object {
       "val_file": "00007_00023_过去の幻影",
       "volume_title": "第７章　砂漠の獣神",
     },
-    Object {
+    {
       "chapter_title": "7-24　不毛之地的预感",
       "dir": "00070_第７章　砂漠の獣神",
       "ext": ".txt",
@@ -2554,7 +2554,7 @@ Object {
       "val_file": "00007_00024_不毛の地の預感",
       "volume_title": "第７章　砂漠の獣神",
     },
-    Object {
+    {
       "chapter_title": "7-25　梦中的念想（第七章尾声１）",
       "dir": "00070_第７章　砂漠の獣神",
       "ext": ".txt",
@@ -2568,7 +2568,7 @@ Object {
       "val_file": "00007_00025_夢中の00020想_第七章尾声00001",
       "volume_title": "第７章　砂漠の獣神",
     },
-    Object {
+    {
       "chapter_title": "7-26　黑暗中的念想（第七章尾声２）",
       "dir": "00070_第７章　砂漠の獣神",
       "ext": ".txt",
@@ -2583,8 +2583,8 @@ Object {
       "volume_title": "第７章　砂漠の獣神",
     },
   ],
-  "00080_第00008章_幽幻の死都.dir": Array [
-    Object {
+  "00080_第00008章_幽幻の死都.dir": [
+    {
       "chapter_title": "8-1　大賢者",
       "dir": "00080_第８章　幽幻の死都",
       "ext": ".txt",
@@ -2598,7 +2598,7 @@ Object {
       "val_file": "00008_00001_大賢者",
       "volume_title": "第８章　幽幻の死都",
     },
-    Object {
+    {
       "chapter_title": "8-2　娜尔葛尔的神明们",
       "dir": "00080_第８章　幽幻の死都",
       "ext": ".txt",
@@ -2612,7 +2612,7 @@ Object {
       "val_file": "00008_00002_那尓葛尓の神明们",
       "volume_title": "第８章　幽幻の死都",
     },
-    Object {
+    {
       "chapter_title": "8-3　魔戦士",
       "dir": "00080_第８章　幽幻の死都",
       "ext": ".txt",
@@ -2626,7 +2626,7 @@ Object {
       "val_file": "00008_00003_魔战士",
       "volume_title": "第８章　幽幻の死都",
     },
-    Object {
+    {
       "chapter_title": "8-4　吸血鬼伯爵",
       "dir": "00080_第８章　幽幻の死都",
       "ext": ".txt",
@@ -2640,7 +2640,7 @@ Object {
       "val_file": "00008_00004_吸血鬼伯爵",
       "volume_title": "第８章　幽幻の死都",
     },
-    Object {
+    {
       "chapter_title": "8-5　嘆息之森",
       "dir": "00080_第８章　幽幻の死都",
       "ext": ".txt",
@@ -2654,7 +2654,7 @@ Object {
       "val_file": "00008_00005_叹息の森",
       "volume_title": "第８章　幽幻の死都",
     },
-    Object {
+    {
       "chapter_title": "8-6　死之都摩多噶尔",
       "dir": "00080_第８章　幽幻の死都",
       "ext": ".txt",
@@ -2673,7 +2673,7 @@ Object {
 `;
 
 exports[`res2/*.txt res2/roman.txt 1`] = `
-Array [
+[
   "Ⅰ.txt",
   "Ⅱ.txt",
   "Ⅲ.txt",
@@ -2692,9 +2692,9 @@ Array [
 `;
 
 exports[`res2/*.txt res2/roman.txt 2`] = `
-Object {
-  "..dir": Array [
-    Object {
+{
+  "..dir": [
+    {
       "chapter_title": "Ⅰ",
       "dir": ".",
       "ext": ".txt",
@@ -2708,7 +2708,7 @@ Object {
       "val_file": "00001",
       "volume_title": ".",
     },
-    Object {
+    {
       "chapter_title": "Ⅱ",
       "dir": ".",
       "ext": ".txt",
@@ -2722,7 +2722,7 @@ Object {
       "val_file": "00002",
       "volume_title": ".",
     },
-    Object {
+    {
       "chapter_title": "Ⅲ",
       "dir": ".",
       "ext": ".txt",
@@ -2736,7 +2736,7 @@ Object {
       "val_file": "00003",
       "volume_title": ".",
     },
-    Object {
+    {
       "chapter_title": "Ⅳ",
       "dir": ".",
       "ext": ".txt",
@@ -2750,7 +2750,7 @@ Object {
       "val_file": "00004",
       "volume_title": ".",
     },
-    Object {
+    {
       "chapter_title": "Ⅴ",
       "dir": ".",
       "ext": ".txt",
@@ -2764,7 +2764,7 @@ Object {
       "val_file": "00005",
       "volume_title": ".",
     },
-    Object {
+    {
       "chapter_title": "Ⅵ",
       "dir": ".",
       "ext": ".txt",
@@ -2778,7 +2778,7 @@ Object {
       "val_file": "00006",
       "volume_title": ".",
     },
-    Object {
+    {
       "chapter_title": "Ⅶ",
       "dir": ".",
       "ext": ".txt",
@@ -2792,7 +2792,7 @@ Object {
       "val_file": "00007",
       "volume_title": ".",
     },
-    Object {
+    {
       "chapter_title": "ⅷ",
       "dir": ".",
       "ext": ".txt",
@@ -2806,7 +2806,7 @@ Object {
       "val_file": "00008",
       "volume_title": ".",
     },
-    Object {
+    {
       "chapter_title": "Ⅸ",
       "dir": ".",
       "ext": ".txt",
@@ -2820,7 +2820,7 @@ Object {
       "val_file": "00009",
       "volume_title": ".",
     },
-    Object {
+    {
       "chapter_title": "Ⅹ",
       "dir": ".",
       "ext": ".txt",
@@ -2834,7 +2834,7 @@ Object {
       "val_file": "00010",
       "volume_title": ".",
     },
-    Object {
+    {
       "chapter_title": "Ⅺ",
       "dir": ".",
       "ext": ".txt",
@@ -2848,7 +2848,7 @@ Object {
       "val_file": "00011",
       "volume_title": ".",
     },
-    Object {
+    {
       "chapter_title": "Ⅻ",
       "dir": ".",
       "ext": ".txt",
@@ -2862,7 +2862,7 @@ Object {
       "val_file": "00012",
       "volume_title": ".",
     },
-    Object {
+    {
       "chapter_title": "xiii",
       "dir": ".",
       "ext": ".txt",
@@ -2876,7 +2876,7 @@ Object {
       "val_file": "00013",
       "volume_title": ".",
     },
-    Object {
+    {
       "chapter_title": "ⅩⅤ",
       "dir": ".",
       "ext": ".txt",
@@ -2895,7 +2895,7 @@ Object {
 `;
 
 exports[`res2/*.txt res2/roman2.txt 1`] = `
-Array [
+[
   "I.txt",
   "II.txt",
   "III.txt",
@@ -2914,9 +2914,9 @@ Array [
 `;
 
 exports[`res2/*.txt res2/roman2.txt 2`] = `
-Object {
-  "..dir": Array [
-    Object {
+{
+  "..dir": [
+    {
       "chapter_title": "I",
       "dir": ".",
       "ext": ".txt",
@@ -2930,7 +2930,7 @@ Object {
       "val_file": "00001",
       "volume_title": ".",
     },
-    Object {
+    {
       "chapter_title": "II",
       "dir": ".",
       "ext": ".txt",
@@ -2944,7 +2944,7 @@ Object {
       "val_file": "00002",
       "volume_title": ".",
     },
-    Object {
+    {
       "chapter_title": "III",
       "dir": ".",
       "ext": ".txt",
@@ -2958,7 +2958,7 @@ Object {
       "val_file": "00003",
       "volume_title": ".",
     },
-    Object {
+    {
       "chapter_title": "IV",
       "dir": ".",
       "ext": ".txt",
@@ -2972,7 +2972,7 @@ Object {
       "val_file": "00004",
       "volume_title": ".",
     },
-    Object {
+    {
       "chapter_title": "V",
       "dir": ".",
       "ext": ".txt",
@@ -2986,7 +2986,7 @@ Object {
       "val_file": "00005",
       "volume_title": ".",
     },
-    Object {
+    {
       "chapter_title": "VI",
       "dir": ".",
       "ext": ".txt",
@@ -3000,7 +3000,7 @@ Object {
       "val_file": "00006",
       "volume_title": ".",
     },
-    Object {
+    {
       "chapter_title": "VII",
       "dir": ".",
       "ext": ".txt",
@@ -3014,7 +3014,7 @@ Object {
       "val_file": "00007",
       "volume_title": ".",
     },
-    Object {
+    {
       "chapter_title": "VIII",
       "dir": ".",
       "ext": ".txt",
@@ -3028,7 +3028,7 @@ Object {
       "val_file": "00008",
       "volume_title": ".",
     },
-    Object {
+    {
       "chapter_title": "IX",
       "dir": ".",
       "ext": ".txt",
@@ -3042,7 +3042,7 @@ Object {
       "val_file": "00009",
       "volume_title": ".",
     },
-    Object {
+    {
       "chapter_title": "X",
       "dir": ".",
       "ext": ".txt",
@@ -3056,7 +3056,7 @@ Object {
       "val_file": "00010",
       "volume_title": ".",
     },
-    Object {
+    {
       "chapter_title": "12",
       "dir": ".",
       "ext": ".txt",
@@ -3070,7 +3070,7 @@ Object {
       "val_file": "00012",
       "volume_title": ".",
     },
-    Object {
+    {
       "chapter_title": "13",
       "dir": ".",
       "ext": ".txt",
@@ -3084,7 +3084,7 @@ Object {
       "val_file": "00013",
       "volume_title": ".",
     },
-    Object {
+    {
       "chapter_title": "XV",
       "dir": ".",
       "ext": ".txt",
@@ -3098,7 +3098,7 @@ Object {
       "val_file": "00015",
       "volume_title": ".",
     },
-    Object {
+    {
       "chapter_title": "16",
       "dir": ".",
       "ext": ".txt",
@@ -3117,7 +3117,7 @@ Object {
 `;
 
 exports[`res2/*.txt res2/回復術士のやり直し.txt 1`] = `
-Array [
+[
   "第一章：少年はすべてを思い出し回復術士になる/序幕：回復術士，重新開始！.txt",
   "第一章：少年はすべてを思い出し回復術士になる/第一話：少年は夢を見る.txt",
   "第一章：少年はすべてを思い出し回復術士になる/第二話：少年回憶起一切.txt",
@@ -3165,9 +3165,9 @@ Array [
 `;
 
 exports[`res2/*.txt res2/回復術士のやり直し.txt 2`] = `
-Object {
-  "00001章_少年はすべてを思い出し回复术士になる.dir": Array [
-    Object {
+{
+  "00001章_少年はすべてを思い出し回复术士になる.dir": [
+    {
       "chapter_title": "序幕：回復術士，重新開始！",
       "dir": "第一章：少年はすべてを思い出し回復術士になる",
       "ext": ".txt",
@@ -3181,7 +3181,7 @@ Object {
       "val_file": "00000_序幕_回复术士_重新开始!",
       "volume_title": "第一章：少年はすべてを思い出し回復術士になる",
     },
-    Object {
+    {
       "chapter_title": "第一話：少年は夢を見る",
       "dir": "第一章：少年はすべてを思い出し回復術士になる",
       "ext": ".txt",
@@ -3195,7 +3195,7 @@ Object {
       "val_file": "00001䛡_少年は夢を見る",
       "volume_title": "第一章：少年はすべてを思い出し回復術士になる",
     },
-    Object {
+    {
       "chapter_title": "第二話：少年回憶起一切",
       "dir": "第一章：少年はすべてを思い出し回復術士になる",
       "ext": ".txt",
@@ -3209,7 +3209,7 @@ Object {
       "val_file": "00002䛡_少年回忆起一切",
       "volume_title": "第一章：少年はすべてを思い出し回復術士になる",
     },
-    Object {
+    {
       "chapter_title": "第三話：少年覺醒為回復術士",
       "dir": "第一章：少年はすべてを思い出し回復術士になる",
       "ext": ".txt",
@@ -3223,7 +3223,7 @@ Object {
       "val_file": "00003䛡_少年覚醒为回复术士",
       "volume_title": "第一章：少年はすべてを思い出し回復術士になる",
     },
-    Object {
+    {
       "chapter_title": "第四話：回復術士與【術】之勇者相遇",
       "dir": "第一章：少年はすべてを思い出し回復術士になる",
       "ext": ".txt",
@@ -3237,7 +3237,7 @@ Object {
       "val_file": "00004䛡_回复术士と_术_の勇者相遇",
       "volume_title": "第一章：少年はすべてを思い出し回復術士になる",
     },
-    Object {
+    {
       "chapter_title": "第五話：回復術士受邀至王都",
       "dir": "第一章：少年はすべてを思い出し回復術士になる",
       "ext": ".txt",
@@ -3251,7 +3251,7 @@ Object {
       "val_file": "00005䛡_回复术士受邀至王都",
       "volume_title": "第一章：少年はすべてを思い出し回復術士になる",
     },
-    Object {
+    {
       "chapter_title": "第六話：回復術士登上大人的階梯",
       "dir": "第一章：少年はすべてを思い出し回復術士になる",
       "ext": ".txt",
@@ -3265,7 +3265,7 @@ Object {
       "val_file": "00006䛡_回复术士登上大人の阶梯",
       "volume_title": "第一章：少年はすべてを思い出し回復術士になる",
     },
-    Object {
+    {
       "chapter_title": "第七話：回復術士燃起復仇的火焔",
       "dir": "第一章：少年はすべてを思い出し回復術士になる",
       "ext": ".txt",
@@ -3279,7 +3279,7 @@ Object {
       "val_file": "00007䛡_回复术士燃起复仇の火焔",
       "volume_title": "第一章：少年はすべてを思い出し回復術士になる",
     },
-    Object {
+    {
       "chapter_title": "第八話：回復術士成為了狗",
       "dir": "第一章：少年はすべてを思い出し回復術士になる",
       "ext": ".txt",
@@ -3293,7 +3293,7 @@ Object {
       "val_file": "00008䛡_回复术士成为了犬",
       "volume_title": "第一章：少年はすべてを思い出し回復術士になる",
     },
-    Object {
+    {
       "chapter_title": "第九話：回復術士不再忍耐",
       "dir": "第一章：少年はすべてを思い出し回復術士になる",
       "ext": ".txt",
@@ -3307,7 +3307,7 @@ Object {
       "val_file": "00009䛡_回复术士不在忍耐",
       "volume_title": "第一章：少年はすべてを思い出し回復術士になる",
     },
-    Object {
+    {
       "chapter_title": "第十話：回復術士出発去見芙蕾雅",
       "dir": "第一章：少年はすべてを思い出し回復術士になる",
       "ext": ".txt",
@@ -3321,7 +3321,7 @@ Object {
       "val_file": "00010䛡_回复术士出发去見芙雷雅",
       "volume_title": "第一章：少年はすべてを思い出し回復術士になる",
     },
-    Object {
+    {
       "chapter_title": "第十一話：回復術士玩壊王女",
       "dir": "第一章：少年はすべてを思い出し回復術士になる",
       "ext": ".txt",
@@ -3335,7 +3335,7 @@ Object {
       "val_file": "00011䛡_回复术士玩坏王女",
       "volume_title": "第一章：少年はすべてを思い出し回復術士になる",
     },
-    Object {
+    {
       "chapter_title": "第十二話：回復術士前往下个城鎮尋找伙伴",
       "dir": "第一章：少年はすべてを思い出し回復術士になる",
       "ext": ".txt",
@@ -3349,7 +3349,7 @@ Object {
       "val_file": "00012䛡_回复术士前往下个城鎮寻找伙伴",
       "volume_title": "第一章：少年はすべてを思い出し回復術士になる",
     },
-    Object {
+    {
       "chapter_title": "第十三話：回復術士懐念着即将要去的新城鎮",
       "dir": "第一章：少年はすべてを思い出し回復術士になる",
       "ext": ".txt",
@@ -3363,7 +3363,7 @@ Object {
       "val_file": "00013䛡_回复术士怀念着即将要去の新城鎮",
       "volume_title": "第一章：少年はすべてを思い出し回復術士になる",
     },
-    Object {
+    {
       "chapter_title": "第十四話：回復術士抵達弱肉强食之鎮",
       "dir": "第一章：少年はすべてを思い出し回復術士になる",
       "ext": ".txt",
@@ -3377,7 +3377,7 @@ Object {
       "val_file": "00014䛡_回复术士抵达弱宍強食の鎮",
       "volume_title": "第一章：少年はすべてを思い出し回復術士になる",
     },
-    Object {
+    {
       "chapter_title": "第十五話：回復術士拯救城鎮？",
       "dir": "第一章：少年はすべてを思い出し回復術士になる",
       "ext": ".txt",
@@ -3391,7 +3391,7 @@ Object {
       "val_file": "00015䛡_回复术士拯救城鎮?",
       "volume_title": "第一章：少年はすべてを思い出し回復術士になる",
     },
-    Object {
+    {
       "chapter_title": "第十六話：回復術士做生意",
       "dir": "第一章：少年はすべてを思い出し回復術士になる",
       "ext": ".txt",
@@ -3405,7 +3405,7 @@ Object {
       "val_file": "00016䛡_回复术士作生义",
       "volume_title": "第一章：少年はすべてを思い出し回復術士になる",
     },
-    Object {
+    {
       "chapter_title": "第十七話：回復術士购買奴隷",
       "dir": "第一章：少年はすべてを思い出し回復術士になる",
       "ext": ".txt",
@@ -3419,7 +3419,7 @@ Object {
       "val_file": "00017䛡_回复术士購买奴隶",
       "volume_title": "第一章：少年はすべてを思い出し回復術士になる",
     },
-    Object {
+    {
       "chapter_title": "第十八話：回復術士安慰少女",
       "dir": "第一章：少年はすべてを思い出し回復術士になる",
       "ext": ".txt",
@@ -3433,7 +3433,7 @@ Object {
       "val_file": "00018䛡_回复术士安尉少女",
       "volume_title": "第一章：少年はすべてを思い出し回復術士になる",
     },
-    Object {
+    {
       "chapter_title": "第十九話 回復術士到達冰狼族的村子",
       "dir": "第一章：少年はすべてを思い出し回復術士になる",
       "ext": ".txt",
@@ -3447,7 +3447,7 @@ Object {
       "val_file": "00019䛡_回复术士到达冰狼族の村子",
       "volume_title": "第一章：少年はすべてを思い出し回復術士になる",
     },
-    Object {
+    {
       "chapter_title": "第二十話：回復術士成為英雄",
       "dir": "第一章：少年はすべてを思い出し回復術士になる",
       "ext": ".txt",
@@ -3461,7 +3461,7 @@ Object {
       "val_file": "00020䛡_回复术士成为英雄",
       "volume_title": "第一章：少年はすべてを思い出し回復術士になる",
     },
-    Object {
+    {
       "chapter_title": "尾声：回復術士入手刹那了",
       "dir": "第一章：少年はすべてを思い出し回復術士になる",
       "ext": ".txt",
@@ -3476,8 +3476,8 @@ Object {
       "volume_title": "第一章：少年はすべてを思い出し回復術士になる",
     },
   ],
-  "00002章_回复术士は嘲笑う.dir": Array [
-    Object {
+  "00002章_回复术士は嘲笑う.dir": [
+    {
       "chapter_title": "序幕：回復術士被記恨",
       "dir": "第二章：回復術士は嘲笑う",
       "ext": ".txt",
@@ -3491,7 +3491,7 @@ Object {
       "val_file": "00000_序幕_回复术士被記恨",
       "volume_title": "第二章：回復術士は嘲笑う",
     },
-    Object {
+    {
       "chapter_title": "第一話：回復術士去洗澡",
       "dir": "第二章：回復術士は嘲笑う",
       "ext": ".txt",
@@ -3505,7 +3505,7 @@ Object {
       "val_file": "00001䛡_回复术士去洗澡",
       "volume_title": "第二章：回復術士は嘲笑う",
     },
-    Object {
+    {
       "chapter_title": "第二話：回復術士享受復仇甜点",
       "dir": "第二章：回復術士は嘲笑う",
       "ext": ".txt",
@@ -3519,7 +3519,7 @@ Object {
       "val_file": "00002䛡_回复术士享受复仇甜点",
       "volume_title": "第二章：回復術士は嘲笑う",
     },
-    Object {
+    {
       "chapter_title": "第三話：回復術士预想外的再会",
       "dir": "第二章：回復術士は嘲笑う",
       "ext": ".txt",
@@ -3533,7 +3533,7 @@ Object {
       "val_file": "00003䛡_回复术士預想外の在㑹",
       "volume_title": "第二章：回復術士は嘲笑う",
     },
-    Object {
+    {
       "chapter_title": "第四話：回復術士発現新的玩具",
       "dir": "第二章：回復術士は嘲笑う",
       "ext": ".txt",
@@ -3547,7 +3547,7 @@ Object {
       "val_file": "00004䛡_回复术士发现新の玩具",
       "volume_title": "第二章：回復術士は嘲笑う",
     },
-    Object {
+    {
       "chapter_title": "第五話：回復術士超越最强",
       "dir": "第二章：回復術士は嘲笑う",
       "ext": ".txt",
@@ -3561,7 +3561,7 @@ Object {
       "val_file": "00005䛡_回复术士超越最強",
       "volume_title": "第二章：回復術士は嘲笑う",
     },
-    Object {
+    {
       "chapter_title": "第六話：回復術士洗白自己",
       "dir": "第二章：回復術士は嘲笑う",
       "ext": ".txt",
@@ -3575,7 +3575,7 @@ Object {
       "val_file": "00006䛡_回复术士洗白自己",
       "volume_title": "第二章：回復術士は嘲笑う",
     },
-    Object {
+    {
       "chapter_title": "第七話：回復術士抚慰剣聖",
       "dir": "第二章：回復術士は嘲笑う",
       "ext": ".txt",
@@ -3589,7 +3589,7 @@ Object {
       "val_file": "00007䛡_回复术士抚尉剑圣",
       "volume_title": "第二章：回復術士は嘲笑う",
     },
-    Object {
+    {
       "chapter_title": "第八話：回復術士想起故郷",
       "dir": "第二章：回復術士は嘲笑う",
       "ext": ".txt",
@@ -3603,7 +3603,7 @@ Object {
       "val_file": "00008䛡_回复术士想起故乡",
       "volume_title": "第二章：回復術士は嘲笑う",
     },
-    Object {
+    {
       "chapter_title": "第九話：回復術士享受恋人游戯",
       "dir": "第二章：回復術士は嘲笑う",
       "ext": ".txt",
@@ -3617,7 +3617,7 @@ Object {
       "val_file": "00009䛡_回复术士享受恋人游戏",
       "volume_title": "第二章：回復術士は嘲笑う",
     },
-    Object {
+    {
       "chapter_title": "第十話：回復術士流下血與涙",
       "dir": "第二章：回復術士は嘲笑う",
       "ext": ".txt",
@@ -3631,7 +3631,7 @@ Object {
       "val_file": "00010䛡_回复术士流下血と泪",
       "volume_title": "第二章：回復術士は嘲笑う",
     },
-    Object {
+    {
       "chapter_title": "第十一話：回復術士開始行動",
       "dir": "第二章：回復術士は嘲笑う",
       "ext": ".txt",
@@ -3645,7 +3645,7 @@ Object {
       "val_file": "00011䛡_回复术士开始型动",
       "volume_title": "第二章：回復術士は嘲笑う",
     },
-    Object {
+    {
       "chapter_title": "第十二話：和回復術士冷眼旁観騎士们的舞蹈",
       "dir": "第二章：回復術士は嘲笑う",
       "ext": ".txt",
@@ -3659,7 +3659,7 @@ Object {
       "val_file": "00012䛡_和回复术士冷眼旁覌騎士们の舞蹈",
       "volume_title": "第二章：回復術士は嘲笑う",
     },
-    Object {
+    {
       "chapter_title": "第十三話：妹姫懐念姉姫",
       "dir": "第二章：回復術士は嘲笑う",
       "ext": ".txt",
@@ -3673,7 +3673,7 @@ Object {
       "val_file": "00013䛡_妹姫怀念姉姫",
       "volume_title": "第二章：回復術士は嘲笑う",
     },
-    Object {
+    {
       "chapter_title": "第十四話：回復術士譲笑容変得恐怖",
       "dir": "第二章：回復術士は嘲笑う",
       "ext": ".txt",
@@ -3687,7 +3687,7 @@ Object {
       "val_file": "00014䛡_回复术士譲笑容变の恐怖",
       "volume_title": "第二章：回復術士は嘲笑う",
     },
-    Object {
+    {
       "chapter_title": "第十五話：回復術士試着将結界変成血界",
       "dir": "第二章：回復術士は嘲笑う",
       "ext": ".txt",
@@ -3701,7 +3701,7 @@ Object {
       "val_file": "00015䛡_回复术士試着将結界变成血界",
       "volume_title": "第二章：回復術士は嘲笑う",
     },
-    Object {
+    {
       "chapter_title": "第十六話：回復術士懐念着曽経的聚会",
       "dir": "第二章：回復術士は嘲笑う",
       "ext": ".txt",
@@ -3715,7 +3715,7 @@ Object {
       "val_file": "00016䛡_回复术士怀念着曽経の聚㑹",
       "volume_title": "第二章：回復術士は嘲笑う",
     },
-    Object {
+    {
       "chapter_title": "第十七話：回復術士鍛炼芙蕾雅",
       "dir": "第二章：回復術士は嘲笑う",
       "ext": ".txt",
@@ -3729,7 +3729,7 @@ Object {
       "val_file": "00017䛡_回复术士煅炼芙雷雅",
       "volume_title": "第二章：回復術士は嘲笑う",
     },
-    Object {
+    {
       "chapter_title": "第十八話：回復術士執行正義",
       "dir": "第二章：回復術士は嘲笑う",
       "ext": ".txt",
@@ -3743,7 +3743,7 @@ Object {
       "val_file": "00018䛡_回复术士執型正义",
       "volume_title": "第二章：回復術士は嘲笑う",
     },
-    Object {
+    {
       "chapter_title": "第十九話：回復術士的舞台熱闹非凡",
       "dir": "第二章：回復術士は嘲笑う",
       "ext": ".txt",
@@ -3757,7 +3757,7 @@ Object {
       "val_file": "00019䛡_回复术士の舞台热闹匪凡",
       "volume_title": "第二章：回復術士は嘲笑う",
     },
-    Object {
+    {
       "chapter_title": "第二十話：回復術士和拉納利塔再見，拜拜",
       "dir": "第二章：回復術士は嘲笑う",
       "ext": ".txt",

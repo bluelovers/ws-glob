@@ -6,21 +6,21 @@ exports[`no empty [
   'packages/ws-pkg-list/lib/',
   'packages/@yarn-tool/find-root/'
 ] 1`] = `
-Object {
-  "packages/": Object {
-    "@yarn-tool/": Object {
-      "find-root/": Object {
+{
+  "packages/": {
+    "@yarn-tool/": {
+      "find-root/": {
         Symbol(@lazy-glob/sort-tree): true,
       },
-      "ws-changed/": Object {
-        "lib/": Object {
+      "ws-changed/": {
+        "lib/": {
           Symbol(@lazy-glob/sort-tree): true,
         },
         Symbol(@lazy-glob/sort-tree): true,
       },
     },
-    "ws-pkg-list/": Object {
-      "lib/": Object {
+    "ws-pkg-list/": {
+      "lib/": {
         Symbol(@lazy-glob/sort-tree): true,
       },
     },
@@ -34,23 +34,23 @@ exports[`no empty [
   'packages/ws-pkg-list/lib/',
   'packages/@yarn-tool/find-root/'
 ] 2`] = `
-Array [
-  Array [
+[
+  [
     "packages/",
-    Object {
-      "@yarn-tool/": Object {
-        "find-root/": Object {
+    {
+      "@yarn-tool/": {
+        "find-root/": {
           Symbol(@lazy-glob/sort-tree): true,
         },
-        "ws-changed/": Object {
-          "lib/": Object {
+        "ws-changed/": {
+          "lib/": {
             Symbol(@lazy-glob/sort-tree): true,
           },
           Symbol(@lazy-glob/sort-tree): true,
         },
       },
-      "ws-pkg-list/": Object {
-        "lib/": Object {
+      "ws-pkg-list/": {
+        "lib/": {
           Symbol(@lazy-glob/sort-tree): true,
         },
       },
@@ -65,24 +65,24 @@ exports[`no empty [
   'packages/ws-pkg-list/lib/',
   'packages/@yarn-tool/find-root/'
 ] 3`] = `
-Array [
-  Array [
+[
+  [
     "packages/",
-    Array [
-      Array [
+    [
+      [
         "@yarn-tool/",
-        Array [
-          Array [
+        [
+          [
             "find-root/",
-            Array [],
+            [],
             true,
           ],
-          Array [
+          [
             "ws-changed/",
-            Array [
-              Array [
+            [
+              [
                 "lib/",
-                Array [],
+                [],
                 true,
               ],
             ],
@@ -91,12 +91,12 @@ Array [
         ],
         undefined,
       ],
-      Array [
+      [
         "ws-pkg-list/",
-        Array [
-          Array [
+        [
+          [
             "lib/",
-            Array [],
+            [],
             true,
           ],
         ],

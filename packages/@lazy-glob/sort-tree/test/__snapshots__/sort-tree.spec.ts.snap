@@ -6,7 +6,7 @@ exports[`no empty [
   'packages/ws-pkg-list/lib/',
   'packages/@yarn-tool/find-root/'
 ] 1`] = `
-Array [
+[
   "packages/@yarn-tool/find-root/",
   "packages/@yarn-tool/ws-changed/",
   "packages/@yarn-tool/ws-changed/lib/",

@@ -14,7 +14,11 @@ test(`globSearch`, async () =>
 		.catch(console.error)
 	;
 
-	expect(actual).toMatchSnapshot();
+	expect(actual).toMatchSnapshot({
+		cwd: expect.any(String),
+		history: expect.any(Array),
+		options: expect.any(Object),
+	});
 
 });
 
@@ -33,6 +37,10 @@ test(`globSearchSync`, () =>
 		})
 	;
 
-	expect(actual).toMatchSnapshot();
+	expect(actual).toMatchSnapshot({
+		cwd: expect.any(String),
+		history: expect.any(Array),
+		options: expect.any(Object),
+	});
 
 });
