@@ -25,6 +25,6 @@ export interface IForeachArrayDeepReturn<T, R extends unknown = unknown, D = unk
     data: D;
     temp: U;
 }
-export declare type IArrayDeep<T> = (T | T[] | (T | T[])[])[];
+export type IArrayDeep<T> = (T | T[] | (T | T[])[])[];
 export interface IArrayDeepInterface<T extends unknown> extends Array<T | T[] | IArrayDeepInterface<T>> {
 }

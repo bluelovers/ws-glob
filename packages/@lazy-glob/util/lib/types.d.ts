@@ -2,16 +2,16 @@ import { IOptions as GlobbyOptions } from 'glob';
 import Bluebird from 'bluebird';
 import { IReturnRow } from 'node-novel-globby';
 import { SymGlobTree } from '../index';
-export declare type ITreeEntries = string | ITreeRow | null;
-export declare type ITreeRow = {
+export type ITreeEntries = string | ITreeRow | null;
+export type ITreeRow = {
     [key: string]: ITreeEntries;
     [SymGlobTree]?: any;
 };
-export declare type ITree = {
+export type ITree = {
     [key: string]: string | ITreeRow | null;
     [SymGlobTree]?: any;
 };
-export declare type IOptionsNovelGlobby = GlobbyOptions & {
+export type IOptionsNovelGlobby = GlobbyOptions & {
     cwd?: string;
     absolute?: boolean;
     useDefaultPatternsExclude?: boolean;

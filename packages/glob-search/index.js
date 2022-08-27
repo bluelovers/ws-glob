@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports._error = exports.handleArgs = exports.isPromise = exports.sync = exports.async = exports.globSearchSync = exports.globSearch = void 0;
 const tslib_1 = require("tslib");
 const fs_extra_1 = require("fs-extra");
-const fast_glob_1 = tslib_1.__importDefault(require("@bluelovers/fast-glob"));
+const fast_glob_1 = require("@bluelovers/fast-glob");
 const bluebird_1 = tslib_1.__importDefault(require("bluebird"));
 const path_1 = tslib_1.__importDefault(require("path"));
 const chai_1 = require("chai");
@@ -28,8 +28,7 @@ function globSearch(pattern, options) {
                 history.push(cwd);
                 //console.log(cwd);
                 opts.cwd = cwd;
-                let value = await fast_glob_1.default
-                    .async(pattern, opts)
+                let value = await (0, fast_glob_1.async)(pattern, opts)
                     .catch(function (e) {
                     bool = false;
                     e._data = {
@@ -141,7 +140,7 @@ function globSearchSync(pattern, options) {
             opts.cwd = cwd;
             let value;
             try {
-                value = fast_glob_1.default.sync(pattern, opts);
+                value = (0, fast_glob_1.sync)(pattern, opts);
             }
             catch (e) {
                 return rejectFail(e);

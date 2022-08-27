@@ -46,6 +46,9 @@
     "coverage": "npx nyc yarn run test",
     "lint": "npx eslint **/*.ts",
     "test": "jest",
+    "test:jest": "jest --passWithNoTests",
+    "test:jest:snapshot": "yarn run test:jest -- -u",
+    "test:snapshot": "yarn run test -- -u",
     "npm:publish": "npm publish",
     "npm:publish:lerna": "npx lerna publish --yes --cd-version patch",
     "preversion": "yarn run test",
@@ -67,7 +70,7 @@
     "glob-tree-list": "^1.0.16",
     "globby": "<12 >=11.1.0",
     "tslib": "^2",
-    "upath2": "^3.1.13"
+    "upath2": "^3.1.15"
   },
   "gitHead": "abd32e1be69b41f53f982edf0f11b65a491014c8"
 }

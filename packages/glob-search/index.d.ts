@@ -1,13 +1,13 @@
 /**
  * Created by user on 2018/12/4/004.
  */
-import FastGlob, { EntryItem } from '@bluelovers/fast-glob';
+import { EntryItem, Options } from '@bluelovers/fast-glob';
 import Bluebird from 'bluebird';
 import { ITSOverwrite } from 'ts-type/lib/type/record';
 export declare function globSearch<T extends EntryItem = string>(pattern: string | string[], options?: IOptions<T>): Bluebird<IReturnValue<T>>;
 export declare function globSearchSync<T extends EntryItem = string>(pattern: string | string[], options?: IOptions<T>): IReturnValueSync<T>;
 export { globSearch as async, globSearchSync as sync, };
-export interface IOptions<T extends EntryItem> extends FastGlob.Options {
+export interface IOptions<T extends EntryItem> extends Options {
     cwd?: string;
     deep?: number;
     /**
@@ -37,7 +37,7 @@ export interface IReturnValueSync<T extends EntryItem> extends IReturnValue<T> {
     tap(fn: (data: IReturnValueSync<T>) => any): IReturnValueSync<T>;
     tapCatch(fn: (err: IReturnError<T>) => any): IReturnValueSync<T>;
 }
-export declare type IOptionsRuntime<T extends EntryItem> = ITSOverwrite<IOptions<T>, {
+export type IOptionsRuntime<T extends EntryItem> = ITSOverwrite<IOptions<T>, {
     sortCompareFn?(a: T, b: T): number;
     ignore?: string[];
     stopPath?: string[];
@@ -48,7 +48,7 @@ export interface IPathLibBase {
     resolve(...paths: string[]): string;
     join(...paths: string[]): string;
 }
-export declare type IReturnError<T extends EntryItem, E extends Error = Error> = E & {
+export type IReturnError<T extends EntryItem, E extends Error = Error> = E & {
     message: string;
     _data: {
         cwd: string;

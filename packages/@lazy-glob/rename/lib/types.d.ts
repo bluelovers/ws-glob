@@ -22,5 +22,5 @@ export interface IQuestionMark {
 export interface ILiteral extends IPartAstInterface {
     type: EnumPartsAstType.literal;
 }
-export declare type IPartsAst = IAsterisk | IQuestionMark | ILiteral;
-export declare type IPartsPattern = IPartsAst["pattern"];
+export type IPartsAst = IAsterisk | IQuestionMark | ILiteral;
+export type IPartsPattern = IPartsAst["pattern"];

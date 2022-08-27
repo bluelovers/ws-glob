@@ -25,6 +25,9 @@
   },
   "scripts": {
     "test": "jest",
+    "test:jest": "jest --passWithNoTests",
+    "test:jest:snapshot": "yarn run test:jest -- -u",
+    "test:snapshot": "yarn run test -- -u",
     "npm:publish": "npm publish",
     "npm:publish:lerna": "npx lerna publish --yes --cd-version patch",
     "preversion": "yarn run test",
@@ -38,7 +41,7 @@
     "@lazy-glob/sort-entries": "^1.0.8",
     "@lazy-glob/util": "^1.0.9",
     "tslib": "^2",
-    "upath2": "^3.1.13"
+    "upath2": "^3.1.15"
   },
   "gitHead": "abd32e1be69b41f53f982edf0f11b65a491014c8"
 }

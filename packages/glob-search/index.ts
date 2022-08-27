@@ -3,7 +3,7 @@
  */
 
 import { pathExists, pathExistsSync } from 'fs-extra';
-import FastGlob, { EntryItem } from '@bluelovers/fast-glob';
+import { EntryItem, sync as syncFastGlob, async as asyncFastGlob, Options } from '@bluelovers/fast-glob';
 import Bluebird from 'bluebird';
 import _path from 'path';
 import { expect } from 'chai';
@@ -40,8 +40,7 @@ export function globSearch<T extends EntryItem = string>(pattern: string | strin
 
 				opts.cwd = cwd;
 
-				let value = await FastGlob
-					.async<T>(pattern, opts)
+				let value = await asyncFastGlob<T>(pattern, opts)
 					.catch(function (e)
 					{
 						bool = false;
@@ -194,7 +193,7 @@ export function globSearchSync<T extends EntryItem = string>(pattern: string | s
 
 			try
 			{
-				value = FastGlob.sync<T>(pattern, opts);
+				value = syncFastGlob<T>(pattern, opts);
 			}
 			catch (e)
 			{
@@ -416,7 +415,7 @@ export {
 	globSearchSync as sync,
 }
 
-export interface IOptions<T extends EntryItem> extends FastGlob.Options
+export interface IOptions<T extends EntryItem> extends Options
 {
 	cwd?: string,
 	deep?: number;

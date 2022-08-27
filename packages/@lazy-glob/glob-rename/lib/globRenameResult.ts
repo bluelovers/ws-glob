@@ -1,7 +1,7 @@
 import { IResultGlobListRow, IOptionsGlobRenameResult, IResultGlobListReturnRow } from './types';
 import { handleResultGlobList } from './handleResultGlobList';
 import { handleOptions } from './handleOptions';
-import FastGlob from '@bluelovers/fast-glob';
+import { sync as syncFastGlob } from '@bluelovers/fast-glob';
 import { globRenameResultCore } from './globRenameResultCore';
 
 export function globRenameResult(searchGlobPattern: string | string[],
@@ -18,7 +18,7 @@ export function globRenameResult(searchGlobPattern: string | string[],
 
 	options = handleOptions(options);
 
-	const fileList = FastGlob.sync(searchGlobPattern, options.globOptions) as any as string[];
+	const fileList = syncFastGlob(searchGlobPattern, options.globOptions) as any as string[];
 
 	return globRenameResultCore(fileList, resultGlobList, options)
 }

@@ -7,16 +7,16 @@ export interface IApi<T> {
     (options: IOptions): T;
     (patterns?: string[], options?: IOptions): T;
 }
-export declare type IApiSync = IApi<IReturnList>;
-export declare type IApiAsync = IApi<Bluebird<IReturnList>>;
+export type IApiSync = IApi<IReturnList>;
+export type IApiAsync = IApi<Bluebird<IReturnList>>;
 export interface IApiWithReturnGlob<T> {
     (options: IOptionsWithReturnGlobList): T;
     (patterns?: string[], options?: IOptionsWithReturnGlobList): T;
 }
-export declare type IApiWithReturnGlobSync = IApiWithReturnGlob<IReturnGlob>;
-export declare type IApiWithReturnGlobAsync = IApiWithReturnGlob<Bluebird<IReturnGlob>>;
-export declare type IOptionsWithReturnGlobList = IOptions & IReturnGlobListOptions;
-export declare type IReturnGlob = string[];
+export type IApiWithReturnGlobSync = IApiWithReturnGlob<IReturnGlob>;
+export type IApiWithReturnGlobAsync = IApiWithReturnGlob<Bluebird<IReturnGlob>>;
+export type IOptionsWithReturnGlobList = IOptions & IReturnGlobListOptions;
+export type IReturnGlob = string[];
 export interface IReturnRow {
     source_idx: number;
     source_totals: number;

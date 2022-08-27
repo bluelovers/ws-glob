@@ -9,7 +9,7 @@ export interface IOptionsGlobRename extends IOptionsGlobRenameResult {
     disallowResultNotChanged?: boolean;
     handler?(result: IResultGlobListReturnRow, options: IOptionsGlobRename): ITSResolvable<any>;
 }
-export declare type IResultGlobListRow = [string, string];
+export type IResultGlobListRow = [string, string];
 export interface IResultGlobListReturnRow {
     source: string;
     target: string;

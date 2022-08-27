@@ -3,10 +3,11 @@
  * Created by user on 2018/3/29/029.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = void 0;
 const tslib_1 = require("tslib");
-const sort_tree_1 = tslib_1.__importDefault(require("@lazy-glob/sort-tree"));
 tslib_1.__exportStar(require("@lazy-glob/sort-tree"), exports);
-exports.default = sort_tree_1.default;
+var sort_tree_1 = require("@lazy-glob/sort-tree");
+Object.defineProperty(exports, "default", { enumerable: true, get: function () { return tslib_1.__importDefault(sort_tree_1).default; } });
 /*
 let data = `00020_1章.txt
 00020_2章/
