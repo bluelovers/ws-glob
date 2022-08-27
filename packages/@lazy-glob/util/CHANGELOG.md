@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.10](https://github.com/bluelovers/ws-glob/compare/@lazy-glob/util@1.0.9...@lazy-glob/util@1.0.10) (2022-08-27)
+
+
+
+### 📦　Code Refactoring
+
+* update configuration and import ([86b99b5](https://github.com/bluelovers/ws-glob/commit/86b99b509badbacb5c5deceff92578a1170b8ef3))
+
+
+
 ## [1.0.9](https://github.com/bluelovers/ws-glob/compare/@lazy-glob/util@1.0.5...@lazy-glob/util@1.0.9) (2022-07-26)
 
 

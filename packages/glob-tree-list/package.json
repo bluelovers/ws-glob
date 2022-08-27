@@ -1,6 +1,6 @@
 {
   "name": "glob-tree-list",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "description": "glob result list to tree",
   "keywords": [
     "node-novel",
@@ -38,8 +38,8 @@
   },
   "dependencies": {
     "@bluelovers/string-natural-compare": "^2.0.7",
-    "@lazy-glob/sort-entries": "^1.0.8",
-    "@lazy-glob/util": "^1.0.9",
+    "@lazy-glob/sort-entries": "^1.0.9",
+    "@lazy-glob/util": "^1.0.10",
     "tslib": "^2",
     "upath2": "^3.1.15"
   },

@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.17](https://github.com/bluelovers/ws-glob/compare/glob-tree-list@1.0.16...glob-tree-list@1.0.17) (2022-08-27)
+
+
+
+### 📦　Code Refactoring
+
+* update configuration and import ([86b99b5](https://github.com/bluelovers/ws-glob/commit/86b99b509badbacb5c5deceff92578a1170b8ef3))
+
+
+### 🚨　Tests
+
+* **snapshot:** update snapshot ([068deae](https://github.com/bluelovers/ws-glob/commit/068deaed1bb88be47f03e6ef7b220a4ac1175261))
+
+
+
 ## [1.0.16](https://github.com/bluelovers/ws-glob/compare/glob-tree-list@1.0.13...glob-tree-list@1.0.16) (2022-07-26)
 
 
