@@ -1,5 +1,5 @@
 
-import { globToTree, treeToGlob } from '../core';
+import { globToTree, treeToGlob } from '../src/core';
 import { sort } from '@lazy-glob/sort-entries';
 import { naturalCompare } from '@bluelovers/string-natural-compare';
 
