@@ -2,42 +2,38 @@
  * Created by user on 2018/3/29/029.
  */
 
-//export * from './lib/types'
 import { SymGlobTree } from '@lazy-glob/util';
-
-export * from '@lazy-glob/util/lib/types';
-import path from 'upath2';
-
+import { normalize, parse, sep } from 'upath2';
 import { ITree } from '@lazy-glob/util/lib/types';
-export { path }
+
+export type { ITree }
 
 export function globToTree(data: string[]): ITree
 {
 	return data.reduce(function (a, b)
 	{
-		b = path.normalize(b);
-		let dirname = path.dirname(b);
-		let basename = path.basename(b);
+		b = normalize(b);
+		let { dir: dirname, base: basename } = parse(b);
 
-		let isdir = b.slice(-1) == path.sep;
+		const isdir = b.slice(-1) == sep;
 
 		if (isdir)
 		{
-			basename += path.sep;
+			basename += sep;
 		}
 
 		//console.log([dirname, basename]);
 
 		if (dirname == '.')
 		{
-			let f = a;
+			const f = a;
 
 			f[basename] = isdir ? null : basename;
 		}
 		else
 		{
-			let c = dirname
-				.split(path.sep)
+			const c = dirname
+				.split(sep)
 			;
 
 			if (c[0] == '.')
@@ -49,9 +45,9 @@ export function globToTree(data: string[]): ITree
 
 			c.forEach(function (e)
 			{
-				e += path.sep;
+				e += sep;
 
-        // @ts-ignore
+				// @ts-ignore
 				f[e] = f[e] || {};
 
 				// @ts-ignore
@@ -62,7 +58,7 @@ export function globToTree(data: string[]): ITree
 
 			if (isdir)
 			{
-        // @ts-ignore
+				// @ts-ignore
 				f[basename][SymGlobTree] = true;
 				//console.dir({ b, basename, f })
 			}
@@ -80,7 +76,7 @@ export function treeToGlob(a: ITree, d: string[] = []): string[]
 
 		if (b[1] === null || typeof b[1] == 'string')
 		{
-			let k = (b[1] === null ? b[0] : b[1]) as string;
+			const k = (b[1] === null ? b[0] : b[1]) as string;
 
 			if (d.length)
 			{
@@ -94,7 +90,7 @@ export function treeToGlob(a: ITree, d: string[] = []): string[]
 		}
 		else
 		{
-			let ls = treeToGlob(b[1], d.concat(b[0]));
+			const ls = treeToGlob(b[1], d.concat(b[0]));
 
 			if (b[1][SymGlobTree])
 			{
@@ -118,9 +114,9 @@ export function treeToGlob(a: ITree, d: string[] = []): string[]
 	}, [] as string[]);
 }
 
-globToTree.globToTree = globToTree;
-globToTree.treeToGlob = treeToGlob;
-globToTree.default = globToTree;
+Object.defineProperty(globToTree, "__esModule", { value: true });
+Object.defineProperty(globToTree, "globToTree", { value: globToTree });
+Object.defineProperty(globToTree, "treeToGlob", { value: treeToGlob });
+Object.defineProperty(globToTree, "default", { value: globToTree });
 
-export default exports as typeof import('./core');
-
+export default globToTree

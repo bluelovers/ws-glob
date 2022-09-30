@@ -2,9 +2,9 @@
  * Created by user on 2018/3/30/030.
  */
 
-import { globToTree, treeToGlob, ITree } from '../index';
-import { naturalCompare } from '../lib/util';
-import { sort } from '@node-novel/glob-tree-sort/lib/entries';
+import { globToTree, treeToGlob } from '../src';
+import { naturalCompare } from '@bluelovers/string-natural-compare';
+import { sort } from '@lazy-glob/sort-entries';
 
 let data = `00020_1章.txt
 00020_2章/
@@ -27,9 +27,9 @@ let t = globToTree(data);
 
 //console.log(t);
 
-let t2;
+let t2: any;
 
-console.dir(t2 = sort(t, function (a, b, cache)
+console.dir(t2 = sort(t, function (a: any, b: any, cache: any)
 {
 
 
@@ -40,7 +40,7 @@ console.dir(t2 = sort(t, function (a, b, cache)
 
 console.log(treeToGlob(t2));
 
-function _c(k, cache): string
+function _c(k: any, cache: any): string
 {
 	if (k in cache)
 	{
