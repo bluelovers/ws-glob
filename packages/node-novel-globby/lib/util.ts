@@ -84,7 +84,7 @@ export function foreachArrayDeep<T, R extends unknown = unknown, D = unknown, U 
 		}))
 	;
 
-	function fnDeep(value: T | IArrayDeepInterface<T>, index: number, array: IArrayDeepInterface<T>, cache: IForeachArrayDeepCache<D, U>)
+	function fnDeep(value: T | IArrayDeepInterface<T>, index: number, array: IArrayDeepInterface<T>, cache: IForeachArrayDeepCache<D, U>): any
 	{
 		if (Array.isArray(value))
 		{
@@ -92,7 +92,7 @@ export function foreachArrayDeep<T, R extends unknown = unknown, D = unknown, U 
 				return fnDeep(value, index, array, {
 					...cache,
 					deep: cache.deep + 1,
-				})
+				}) as R
 			})
 		}
 		else
@@ -100,7 +100,7 @@ export function foreachArrayDeep<T, R extends unknown = unknown, D = unknown, U 
 			return fn({
 				value, index, array,
 				cache,
-			})
+			}) as R
 		}
 	}
 
@@ -136,12 +136,12 @@ export function foreachArrayDeepAsync<T, R extends unknown = unknown, D = unknow
 			let ret = await Bluebird.resolve(arr)
 				.then(array => {
 					return Bluebird.mapSeries(array, ((value, index) => {
-						return fnDeep(value, index, array, topCache)
+						return fnDeep(value, index, array, topCache) as R
 					}))
 				})
 			;
 
-			function fnDeep(value: T | IArrayDeepInterface<T>, index: number, array: IArrayDeepInterface<T>, cache: IForeachArrayDeepCache<D, U>)
+			function fnDeep(value: T | IArrayDeepInterface<T>, index: number, array: IArrayDeepInterface<T>, cache: IForeachArrayDeepCache<D, U>): any
 			{
 				if (Array.isArray(value))
 				{
@@ -151,7 +151,7 @@ export function foreachArrayDeepAsync<T, R extends unknown = unknown, D = unknow
 								return fnDeep(value, index, array, {
 									...cache,
 									deep: cache.deep + 1,
-								})
+								}) as R
 							})
 						})
 				}
@@ -160,7 +160,7 @@ export function foreachArrayDeepAsync<T, R extends unknown = unknown, D = unknow
 					return fn({
 						value, index, array,
 						cache,
-					})
+					}) as R
 				}
 			}
 
@@ -168,7 +168,7 @@ export function foreachArrayDeepAsync<T, R extends unknown = unknown, D = unknow
 				ret,
 				data: topCache.data,
 				temp: topCache.temp,
-			};
+			} as IForeachArrayDeepReturn<T, R, D, U>;
 		})
 	;
 }

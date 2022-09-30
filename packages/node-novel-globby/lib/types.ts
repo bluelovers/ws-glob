@@ -83,7 +83,7 @@ export function returnGlobList(ls: IReturnList, options: IReturnGlobListOptions 
 		.reduce(function (a: string[], b)
 		{
 			Object.values(b)
-				.forEach(function (value, index, array)
+				.forEach(function (value)
 				{
 					a.push(useSourcePath ? value.source_path : value.path);
 				})

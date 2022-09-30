@@ -33,11 +33,14 @@ function globToTree(data) {
             let f = a;
             c.forEach(function (e) {
                 e += upath2_1.default.sep;
+                // @ts-ignore
                 f[e] = f[e] || {};
+                // @ts-ignore
                 f = f[e];
             });
             f[basename] = isdir ? (f[basename] || {}) : basename;
             if (isdir) {
+                // @ts-ignore
                 f[basename][util_1.SymGlobTree] = true;
                 //console.dir({ b, basename, f })
             }

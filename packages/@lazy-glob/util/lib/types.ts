@@ -30,7 +30,7 @@ export type IOptionsNovelGlobby = GlobbyOptions & {
 
 	throwEmpty?: boolean,
 
-	sortCallback?(a, b): number,
+	sortCallback?(a: any, b: any): number,
 
 	sortFn?<T>(arr: T): T,
 

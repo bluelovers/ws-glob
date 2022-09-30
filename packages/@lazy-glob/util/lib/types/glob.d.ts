@@ -20,7 +20,7 @@ export interface IForeachArrayDeepCache<D = any, U = any> {
     temp: U;
     topCache?: IForeachArrayDeepCache<D, U>;
 }
-export interface IForeachArrayDeepReturn<T, R extends unknown = unknown, D = unknown, U = unknown> {
+export interface IForeachArrayDeepReturn<T extends any, R extends unknown = unknown, D = unknown, U = unknown> {
     ret: R[];
     data: D;
     temp: U;

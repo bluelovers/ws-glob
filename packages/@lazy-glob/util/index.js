@@ -5,5 +5,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SymGlobTree = void 0;
 exports.SymGlobTree = Symbol.for('@lazy-glob/sort-tree');
-exports.default = exports;
+exports.default = {
+    SymGlobTree: exports.SymGlobTree,
+};
 //# sourceMappingURL=index.js.map

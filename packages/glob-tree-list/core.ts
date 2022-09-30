@@ -51,8 +51,10 @@ export function globToTree(data: string[]): ITree
 			{
 				e += path.sep;
 
+        // @ts-ignore
 				f[e] = f[e] || {};
 
+				// @ts-ignore
 				f = f[e];
 			});
 
@@ -60,13 +62,14 @@ export function globToTree(data: string[]): ITree
 
 			if (isdir)
 			{
+        // @ts-ignore
 				f[basename][SymGlobTree] = true;
 				//console.dir({ b, basename, f })
 			}
 		}
 
 		return a;
-	}, {});
+	}, {} as ITree);
 }
 
 export function treeToGlob(a: ITree, d: string[] = []): string[]

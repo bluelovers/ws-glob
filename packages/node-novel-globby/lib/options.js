@@ -50,6 +50,7 @@ function getOptions(patterns, options = {}) {
         patterns: patterns.slice(),
         options: Object.assign({}, exports.defaultOptions, options),
     };
+    // @ts-ignore
     ret[Symbol.iterator] = function* () {
         yield this.patterns;
         yield this.options;

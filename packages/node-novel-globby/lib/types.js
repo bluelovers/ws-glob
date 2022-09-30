@@ -14,7 +14,7 @@ function returnGlobList(ls, options = {}) {
     return Object.values(ls)
         .reduce(function (a, b) {
         Object.values(b)
-            .forEach(function (value, index, array) {
+            .forEach(function (value) {
             a.push(useSourcePath ? value.source_path : value.path);
         });
         return a;

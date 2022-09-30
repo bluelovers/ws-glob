@@ -4,4 +4,6 @@
 
 export const SymGlobTree = Symbol.for('@lazy-glob/sort-tree');
 
-export default exports as typeof import('./index');
+export default {
+  SymGlobTree,
+};

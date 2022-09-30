@@ -20,12 +20,12 @@ export function sortTree(ls: string[], sortFn = defaultSortCallback, options: IO
 	let t = globToTree(ls);
 
 	let _cache = {};
-	let t2 = sort(t, function (a, b, cache)
+	let t2 = sort(t, function (a: any, b: any, cache: any)
 	{
 		return sortFn(_c(a, cache), _c(b, cache));
 	});
 
-	function _c(k: string, cache): string
+	function _c(k: string, cache: any): string
 	{
 		cache = _cache;
 

@@ -230,6 +230,7 @@ export function sortList2(ls: IReturnList2, options: IOptions = {})
 			;
 
 			// 防止純數字的資料夾名稱導致排序失敗
+      // @ts-ignore
 			a[dir + '.dir'] = ls;
 
 			return a;

@@ -16,7 +16,7 @@ import { IReturnList } from './lib/types';
 
 export function globbySync(options: IOptions): IReturnList
 export function globbySync(patterns?: string[], options?: IOptions): IReturnList
-export function globbySync(patterns?, options: IOptions = {}): IReturnList
+export function globbySync(patterns?: any, options: IOptions = {}): IReturnList
 {
 	{
 		let ret = getOptions(patterns, options);
@@ -33,7 +33,7 @@ type IglobbyASyncReturnType = ReturnType<typeof globToList>;
 
 export function globbyASync(options: IOptions): Bluebird<IglobbyASyncReturnType>
 export function globbyASync(patterns?: string[], options?: IOptions): Bluebird<IglobbyASyncReturnType>
-export function globbyASync(patterns?, options: IOptions = {}): Bluebird<IglobbyASyncReturnType>
+export function globbyASync(patterns?: any, options: IOptions = {}): Bluebird<IglobbyASyncReturnType>
 {
 	{
 		/*

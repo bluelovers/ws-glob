@@ -47,7 +47,7 @@ export const defaultOptions: IOptions = {
 
 export function getOptions(options: IOptions): IReturnOptions
 export function getOptions(patterns?: string[], options?: IOptions): IReturnOptions
-export function getOptions(patterns?, options: IOptions = {}): IReturnOptions
+export function getOptions(patterns?: any, options: IOptions = {}): IReturnOptions
 {
 	if (!Array.isArray(patterns) && typeof patterns == 'object')
 	{
@@ -64,6 +64,7 @@ export function getOptions(patterns?, options: IOptions = {}): IReturnOptions
 		options: Object.assign({}, defaultOptions, options),
 	};
 
+  // @ts-ignore
 	ret[Symbol.iterator] = function* ()
 	{
 		yield this.patterns;
@@ -82,9 +83,9 @@ export function getOptions(patterns?, options: IOptions = {}): IReturnOptions
 
 export function getOptions2(options: IOptions): IReturnOptions
 export function getOptions2(patterns?: string[], options?: IOptions): IReturnOptions
-export function getOptions2(patterns?, options: IOptions = {}): IReturnOptions
+export function getOptions2(patterns?: any, options: IOptions = {}): IReturnOptions
 {
-	let ret = getOptions(patterns, options)
+	let ret = getOptions(patterns as any, options)
 
 	ret.options = getOptionsRuntime(ret.options);
 
