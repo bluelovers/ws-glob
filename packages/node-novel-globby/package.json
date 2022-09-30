@@ -33,7 +33,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bluelovers/ws-glob.git"
+    "url": "git+https://github.com/bluelovers/ws-glob.git",
+    "directory": "packages/node-novel-globby"
   },
   "license": "ISC",
   "author": "bluelovers",
@@ -49,6 +50,7 @@
     "test:jest": "jest --passWithNoTests",
     "test:jest:snapshot": "yarn run test:jest -- -u",
     "test:snapshot": "yarn run test -- -u",
+    "test:tsd": "ynpx tsd",
     "npm:publish": "npm publish",
     "npm:publish:lerna": "npx lerna publish --yes --cd-version patch",
     "preversion": "yarn run test",
@@ -70,7 +72,7 @@
     "glob-tree-list": "^1.0.17",
     "globby": "<12 >=11.1.0",
     "tslib": "^2",
-    "upath2": "^3.1.15"
+    "upath2": "^3.1.18"
   },
   "gitHead": "abd32e1be69b41f53f982edf0f11b65a491014c8"
 }

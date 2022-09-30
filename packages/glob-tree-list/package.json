@@ -14,7 +14,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bluelovers/ws-glob.git"
+    "url": "git+https://github.com/bluelovers/ws-glob.git",
+    "directory": "packages/glob-tree-list"
   },
   "license": "ISC",
   "author": "bluelovers",
@@ -28,6 +29,7 @@
     "test:jest": "jest --passWithNoTests",
     "test:jest:snapshot": "yarn run test:jest -- -u",
     "test:snapshot": "yarn run test -- -u",
+    "test:tsd": "ynpx tsd",
     "npm:publish": "npm publish",
     "npm:publish:lerna": "npx lerna publish --yes --cd-version patch",
     "preversion": "yarn run test",
@@ -37,11 +39,11 @@
     "sort-package-json": "npx yarn-tool sort"
   },
   "dependencies": {
-    "@bluelovers/string-natural-compare": "^2.0.7",
+    "@bluelovers/string-natural-compare": "^2.0.9",
     "@lazy-glob/sort-entries": "^1.0.9",
     "@lazy-glob/util": "^1.0.10",
     "tslib": "^2",
-    "upath2": "^3.1.15"
+    "upath2": "^3.1.18"
   },
   "gitHead": "abd32e1be69b41f53f982edf0f11b65a491014c8"
 }
