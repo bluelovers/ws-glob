@@ -1,6 +1,6 @@
 import { globToTree } from 'glob-tree-list/core';
 import { inspect } from "util";
-import { sort, entries_sort, entries_reduce } from '../index';
+import { sort, entries_sort, entries_reduce } from '../src/index';
 
 describe(`no empty`, () =>
 {
