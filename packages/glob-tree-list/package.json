@@ -28,6 +28,11 @@
       "import": "./dist/index.esm.mjs",
       "require": "./dist/index.cjs"
     },
+    "./core": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.esm.mjs",
+      "require": "./dist/index.cjs"
+    },
     "./package.json": "./package.json",
     "./src/*": "./src/*"
   },
