@@ -22,6 +22,8 @@ test(`globToTree / treeToGlob`, () =>
 {
 	let t = globToTree(data);
 
+	expect(t).toHaveProperty('00020_2章/', null);
+
 	let actual = sort(t, function (a, b, cache)
 	{
 		return naturalCompare(_c(a, cache), _c(b, cache));

@@ -3,7 +3,13 @@
  */
 
 import { SymGlobTree } from '@lazy-glob/util';
-import { normalize, parse, sep } from 'upath2';
+import {
+	join,
+	normalize,
+	sep,
+	dirname as _dirname,
+	basename as _basename,
+} from 'upath2';
 import { ITree } from '@lazy-glob/util/lib/types';
 
 export type { ITree }
@@ -13,9 +19,10 @@ export function globToTree(data: string[]): ITree
 	return data.reduce(function (a, b)
 	{
 		b = normalize(b);
-		let { dir: dirname, base: basename } = parse(b);
+		let dirname = _dirname(b);
+		let basename = _basename(b);
 
-		const isdir = b.slice(-1) == sep;
+		const isdir = b.slice(-1) === sep;
 
 		if (isdir)
 		{
@@ -24,7 +31,7 @@ export function globToTree(data: string[]): ITree
 
 		//console.log([dirname, basename]);
 
-		if (dirname == '.')
+		if (dirname === '.')
 		{
 			const f = a;
 
@@ -36,7 +43,7 @@ export function globToTree(data: string[]): ITree
 				.split(sep)
 			;
 
-			if (c[0] == '.')
+			if (c[0] === '.')
 			{
 				c.shift();
 			}
@@ -74,14 +81,13 @@ export function treeToGlob(a: ITree, d: string[] = []): string[]
 	{
 		//console.log(b);
 
-		if (b[1] === null || typeof b[1] == 'string')
+		if (b[1] === null || typeof b[1] === 'string')
 		{
 			const k = (b[1] === null ? b[0] : b[1]) as string;
 
 			if (d.length)
 			{
-				// @ts-ignore
-				a.push(path.join(...d, k));
+				a.push(join(...d as [string], k));
 			}
 			else
 			{
@@ -98,8 +104,7 @@ export function treeToGlob(a: ITree, d: string[] = []): string[]
 
 				if (d.length)
 				{
-					// @ts-ignore
-					a.push(path.join(...d, k));
+					a.push(join(...d as [string], k));
 				}
 				else
 				{
