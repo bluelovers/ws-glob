@@ -38,7 +38,7 @@
     "@lazy-glob/util": "^1.0.10",
     "@node-novel/normalize": "^1.0.30",
     "@node-novel/sort": "^1.0.20",
-    "glob-tree-list": "^1.0.17",
+    "glob-tree-list": "^2.0.0",
     "tslib": "^2"
   },
   "publishConfig": {
