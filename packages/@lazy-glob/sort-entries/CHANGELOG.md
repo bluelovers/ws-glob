@@ -3,6 +3,43 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.10](https://github.com/bluelovers/ws-glob/compare/@lazy-glob/sort-entries@1.0.9...@lazy-glob/sort-entries@1.0.10) (2022-10-01)
+
+
+
+### 🐛　Bug Fixes
+
+* try avoid error during build ([61cc482](https://github.com/bluelovers/ws-glob/commit/61cc482db8c623a19eaed567dd285da0e53a454b))
+* update types ([68b21cc](https://github.com/bluelovers/ws-glob/commit/68b21cca5b5fabdf49f017b42ce6b066b3246169))
+
+
+### 📦　Code Refactoring
+
+* update type ([afc5758](https://github.com/bluelovers/ws-glob/commit/afc5758c85ac011b5e4104d0373d420068cbbd22))
+* update type and move to tsdx ([b1241bc](https://github.com/bluelovers/ws-glob/commit/b1241bc72521c40d910c090ded1e9dd9eb3f9359))
+
+
+### 📚　Documentation
+
+* update metadata ([3f30418](https://github.com/bluelovers/ws-glob/commit/3f30418f0fe0441a71f77a889402645f8ed2df6e))
+
+
+### 🚨　Tests
+
+* try avoid error during test ([d2f660d](https://github.com/bluelovers/ws-glob/commit/d2f660daf106e873988e4f19657c89bbe5218e27))
+
+
+### 🛠　Build System
+
+* update build ([f4caa12](https://github.com/bluelovers/ws-glob/commit/f4caa12f6785192aa5d906652fcef627ec9273c8))
+
+
+### 🔖　Miscellaneous
+
+* . ([d0d2ac7](https://github.com/bluelovers/ws-glob/commit/d0d2ac75f58ca1e5e8b3f587fd19641e81400103))
+
+
+
 ## [1.0.9](https://github.com/bluelovers/ws-glob/compare/@lazy-glob/sort-entries@1.0.8...@lazy-glob/sort-entries@1.0.9) (2022-08-27)
 
 

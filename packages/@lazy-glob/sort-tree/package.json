@@ -1,6 +1,6 @@
 {
   "name": "@lazy-glob/sort-tree",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "",
   "homepage": "https://github.com/bluelovers/ws-glob/tree/master/packages/@lazy-glob/sort-tree#readme",
   "bugs": {
@@ -34,11 +34,11 @@
     "tsc:esm": "tsc -p tsconfig.esm.json"
   },
   "dependencies": {
-    "@lazy-glob/sort-entries": "^1.0.9",
-    "@lazy-glob/util": "^1.0.10",
+    "@lazy-glob/sort-entries": "^1.0.10",
+    "@lazy-glob/util": "^1.0.11",
     "@node-novel/normalize": "^1.0.30",
     "@node-novel/sort": "^1.0.20",
-    "glob-tree-list": "^2.0.0",
+    "glob-tree-list": "^2.0.1",
     "tslib": "^2"
   },
   "publishConfig": {

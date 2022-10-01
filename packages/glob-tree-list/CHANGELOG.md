@@ -3,6 +3,50 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1](https://github.com/bluelovers/ws-glob/compare/glob-tree-list@1.0.17...glob-tree-list@2.0.1) (2022-10-01)
+
+
+### BREAKING CHANGES
+
+* update to tsdx
+
+
+
+### 🐛　Bug Fixes
+
+* try avoid error during build ([61cc482](https://github.com/bluelovers/ws-glob/commit/61cc482db8c623a19eaed567dd285da0e53a454b))
+* path.parse.dir not same as path.dirname ([c59cbeb](https://github.com/bluelovers/ws-glob/commit/c59cbebe73cd574619d15b5210b0e3ff2c2dc0f8))
+* update types ([68b21cc](https://github.com/bluelovers/ws-glob/commit/68b21cca5b5fabdf49f017b42ce6b066b3246169))
+
+
+### 📦　Code Refactoring
+
+* update to tsdx ([5f7a173](https://github.com/bluelovers/ws-glob/commit/5f7a173a670fa7d52e7461fa919c7561b145d122))
+
+
+### 📚　Documentation
+
+* update metadata ([3f30418](https://github.com/bluelovers/ws-glob/commit/3f30418f0fe0441a71f77a889402645f8ed2df6e))
+
+
+### 🚨　Tests
+
+* try avoid error during test ([d2f660d](https://github.com/bluelovers/ws-glob/commit/d2f660daf106e873988e4f19657c89bbe5218e27))
+
+
+### 🛠　Build System
+
+* update build ([812ac2c](https://github.com/bluelovers/ws-glob/commit/812ac2ca3ad45eb9425ccae2aca12194845c3514))
+
+
+### 🔖　Miscellaneous
+
+* . ([d0d2ac7](https://github.com/bluelovers/ws-glob/commit/d0d2ac75f58ca1e5e8b3f587fd19641e81400103))
+* . ([2d142f0](https://github.com/bluelovers/ws-glob/commit/2d142f045c10661b9e6bd5eccef53c9acb8628c3))
+* . ([59b1408](https://github.com/bluelovers/ws-glob/commit/59b1408bc15a3b5316fc55a17a23b026082a0586))
+
+
+
 ## [1.0.17](https://github.com/bluelovers/ws-glob/compare/glob-tree-list@1.0.16...glob-tree-list@1.0.17) (2022-08-27)
 
 

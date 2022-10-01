@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.7](https://github.com/bluelovers/ws-glob/compare/@lazy-glob/rename@1.0.6...@lazy-glob/rename@1.0.7) (2022-10-01)
+
+
+
+### 📚　Documentation
+
+* update metadata ([3f30418](https://github.com/bluelovers/ws-glob/commit/3f30418f0fe0441a71f77a889402645f8ed2df6e))
+
+
+
 ## [1.0.6](https://github.com/bluelovers/ws-glob/compare/@lazy-glob/rename@1.0.5...@lazy-glob/rename@1.0.6) (2022-08-27)
 
 
