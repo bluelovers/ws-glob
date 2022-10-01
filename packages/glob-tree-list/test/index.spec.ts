@@ -1,5 +1,6 @@
 
 import { globToTree, treeToGlob } from '../src';
+// @ts-ignore
 import { sort } from '@lazy-glob/sort-entries';
 import { naturalCompare } from '@bluelovers/string-natural-compare';
 
@@ -24,7 +25,7 @@ test(`globToTree / treeToGlob`, () =>
 
 	expect(t).toHaveProperty('00020_2章/', null);
 
-	let actual = sort(t, function (a, b, cache)
+	let actual = sort(t, function (a: any, b: any, cache: any)
 	{
 		return naturalCompare(_c(a, cache), _c(b, cache));
 	});

@@ -7,6 +7,7 @@ exports.sortTree = void 0;
 const sort_1 = require("@node-novel/sort");
 // @ts-ignore
 const glob_tree_list_1 = require("glob-tree-list");
+// @ts-ignore
 const sort_entries_1 = require("@lazy-glob/sort-entries");
 const normalize_1 = require("@node-novel/normalize");
 function sortTree(ls, sortFn = sort_1.defaultSortCallback, options = {}) {

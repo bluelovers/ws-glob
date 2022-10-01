@@ -9,7 +9,7 @@ function entries_sort(entries, fn = stringNaturalCompare.naturalCompare, cache =
   entries = entries.reduce(function (a, b) {
     const v = b[1];
 
-    if (v === null || typeof v == 'string') {
+    if (v === null || typeof v === 'string') {
       a.push(b);
     } else {
       const d = Object.entries(v);
@@ -26,7 +26,7 @@ function entries_sort(entries, fn = stringNaturalCompare.naturalCompare, cache =
 }
 function entries_reduce(entries) {
   return entries.reduce(function (a, [k, v, bool]) {
-    if (v === null || typeof v == 'string') {
+    if (v === null || typeof v === 'string') {
       a[k] = v;
     } else {
       a[k] = entries_reduce(v);

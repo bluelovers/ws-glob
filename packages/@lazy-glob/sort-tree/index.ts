@@ -5,6 +5,7 @@
 import { defaultSortCallback } from '@node-novel/sort';
 // @ts-ignore
 import { globToTree, treeToGlob } from 'glob-tree-list';
+// @ts-ignore
 import { sort } from '@lazy-glob/sort-entries';
 import { normalize_val } from '@node-novel/normalize';
 import { IOptions } from '@lazy-glob/util/lib/types/glob';

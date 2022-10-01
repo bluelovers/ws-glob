@@ -51,7 +51,7 @@
     "build:dts:copy": "copy .\\src\\index.d.ts .\\dist\\index.d.ts & echo build:dts",
     "build:dts:tsc": "yarn run build:dts:copy && yarn run build:dts:tsc:emit && yarn run build:dts:copy",
     "build:dts:tsc:emit": "tsc --emitDeclarationOnly --declaration --noEmit false",
-    "build:tsdx": "ynpx @bluelovers/tsdx build --target node",
+    "build:tsdx": "ynpx @bluelovers/tsdx build --target node --noClean",
     "ci:install": "echo ci:install",
     "ci:build": "echo ci:build",
     "npm:publish": "npm publish",

@@ -12,20 +12,23 @@ type IEntries<T extends ITree = ITree> = IEntry<T, keyof T>[];
 
 export type IEntriesInput = IEntries | ISortEntriesSort;
 
-export function entries_sort(entries: IEntriesInput, fn: (a: string, b: string, cache: any) => number = naturalCompare, cache: any = {}): ISortEntriesSort
+export function entries_sort(entries: IEntriesInput,
+	fn: (a: string, b: string, cache: any) => number = naturalCompare,
+	cache: any = {},
+): ISortEntriesSort
 {
 	entries = (entries as ISortEntriesSort).reduce(function (a: ISortEntriesSort, b: ISortEntriesSortRow)
 	{
-    const v = b[1];
+		const v = b[1];
 
-    if (v === null || typeof v === 'string')
+		if (v === null || typeof v === 'string')
 		{
 			a.push(b);
 		}
 		else
 		{
-      const d = Object.entries(v);
-      a.push([b[0], entries_sort(d, fn), (v as any)[SymGlobTree]]);
+			const d = Object.entries(v);
+			a.push([b[0], entries_sort(d, fn), (v as any)[SymGlobTree]]);
 		}
 
 		return a;
@@ -33,8 +36,8 @@ export function entries_sort(entries: IEntriesInput, fn: (a: string, b: string, 
 
 	(entries as ISortEntriesSort).sort(function (a, b)
 	{
-    const r = fn(a[0], b[0], cache);
-    return r;
+		const r = fn(a[0], b[0], cache);
+		return r;
 	});
 
 	return entries;
@@ -56,7 +59,7 @@ export function entries_reduce(entries: IEntriesInput)
 
 			if (bool)
 			{
-        // @ts-ignore
+				// @ts-ignore
 				a[k][SymGlobTree] = bool;
 			}
 
@@ -67,12 +70,12 @@ export function entries_reduce(entries: IEntriesInput)
 
 export function sort(a: ITree, fn: (a: string, b: string, cache: any) => number = naturalCompare)
 {
-  const r = Object.entries(a);
+	const r = Object.entries(a);
 
-  const a1 = entries_sort(r, fn);
-  const a2 = entries_reduce(a1);
+	const a1 = entries_sort(r, fn);
+	const a2 = entries_reduce(a1);
 
-  return a2
+	return a2
 }
 
 export default sort
