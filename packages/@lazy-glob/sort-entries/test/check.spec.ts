@@ -1,4 +1,4 @@
-import { globToTree } from 'glob-tree-list';
+import { globToTree } from 'glob-tree-list/src/index';
 import { inspect } from "util";
 import { sort, entries_sort, entries_reduce } from '../src/index';
 
