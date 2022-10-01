@@ -40,10 +40,10 @@ exports.defaultOptions = {
     sortCallback: sort_1.defaultSortCallback,
 };
 function getOptions(patterns, options = {}) {
-    if (!Array.isArray(patterns) && typeof patterns == 'object') {
+    if (!Array.isArray(patterns) && typeof patterns === 'object') {
         [patterns, options] = [undefined, patterns];
     }
-    if (patterns === null || typeof patterns == 'undefined') {
+    if (patterns === null || typeof patterns === 'undefined') {
         patterns = exports.defaultPatterns;
     }
     let ret = {

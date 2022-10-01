@@ -2,7 +2,7 @@
  * Created by user on 2018/2/14/014.
  */
 import path from 'upath2';
-import { IOptions, IArrayDeepInterface } from '@lazy-glob/util/lib/types/glob';
+import { IOptions } from '@lazy-glob/util/lib/types/glob';
 import { defaultPatternsExclude, getOptions, getOptionsRuntime, getOptions2 } from './options';
 import { normalize_val } from '@node-novel/normalize';
 import { pathToListRow } from './list';
@@ -21,7 +21,7 @@ export declare function createGlobToType<T>(fn: (glob_ls: string[], options?: IO
  */
 export declare const globToList: (glob_ls: string[], options?: IOptions) => IReturnList2;
 export declare const globToListArray: (glob_ls: string[], options?: IOptions) => import("./types").IReturnRow[];
-export declare const globToListArrayDeep: (glob_ls: string[], options?: IOptions) => IArrayDeepInterface<import("./types").IReturnRow>;
+export declare const globToListArrayDeep: (glob_ls: string[], options?: IOptions) => import("@lazy-glob/util/lib/types/glob").IArrayDeepInterface<import("./types").IReturnRow>;
 export declare function glob_to_list(glob_ls: string[], options?: IOptions): IReturnList2;
 export declare function p_sort_list(ls: IReturnList2, options?: IOptions): IReturnList;
 export declare function sortList2(ls: IReturnList2, options?: IOptions): {};

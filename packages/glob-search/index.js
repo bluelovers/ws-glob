@@ -305,6 +305,7 @@ function isPromise(ret) {
 }
 exports.isPromise = isPromise;
 function handleArgs(pattern, options) {
+    var _a;
     if (typeof pattern === 'string') {
         pattern = [pattern];
     }
@@ -353,11 +354,11 @@ function handleArgs(pattern, options) {
         }
         return path.normalize(v);
     });
-    if (opts.ignore == null) {
-        opts.ignore = [];
-    }
-    else if (typeof opts.ignore === 'string') {
+    if (typeof opts.ignore === 'string') {
         opts.ignore = [opts.ignore];
+    }
+    else {
+        (_a = opts.ignore) !== null && _a !== void 0 ? _a : (opts.ignore = []);
     }
     (0, chai_1.expect)(opts.ignore).is.an('array');
     opts.ignore.forEach(v => {

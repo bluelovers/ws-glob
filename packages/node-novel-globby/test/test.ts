@@ -4,9 +4,9 @@
 
 import self from '..';
 // @ts-ignore
-import * as path from 'upath2';
+import path from 'upath2';
 // @ts-ignore
-import * as fs from 'fs-iconv';
+import fs from 'fs-iconv';
 import { returnGlobList } from '../lib/types';
 
 let a;

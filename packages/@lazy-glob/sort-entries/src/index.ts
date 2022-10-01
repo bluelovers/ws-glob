@@ -18,7 +18,7 @@ export function entries_sort(entries: IEntriesInput, fn: (a: string, b: string, 
 	{
     const v = b[1];
 
-    if (v === null || typeof v == 'string')
+    if (v === null || typeof v === 'string')
 		{
 			a.push(b);
 		}
@@ -45,7 +45,7 @@ export function entries_reduce(entries: IEntriesInput)
 	return (entries as ISortEntriesSort)
 		.reduce(function (a, [k, v, bool]: ISortEntriesSortRow)
 		{
-			if (v === null || typeof v == 'string')
+			if (v === null || typeof v === 'string')
 			{
 				a[k] = v as string;
 			}

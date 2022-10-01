@@ -1,3 +1,5 @@
+// @ts-noUnusedParameters false
+// @ts-noUnusedLocals false
 /**
  * Created by user on 2020/6/9.
  */
@@ -31,6 +33,7 @@ export interface IForeachArrayDeepCache<D = any, U = any>
 	topCache?: IForeachArrayDeepCache<D, U>,
 }
 
+// @ts-ignore
 export interface IForeachArrayDeepReturn<T extends any, R extends unknown = unknown, D = unknown, U = unknown>
 {
 	ret: R[];

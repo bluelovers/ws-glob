@@ -6,10 +6,6 @@
 import path from 'upath2';
 import {
 	IOptions,
-	IArrayDeepInterface,
-	IArrayDeep,
-	IForeachArrayDeepReturn,
-	IForeachArrayDeepCache,
 } from '@lazy-glob/util/lib/types/glob';
 import {
 	defaultPatternsExclude,

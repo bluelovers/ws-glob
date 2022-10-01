@@ -49,12 +49,12 @@ export function getOptions(options: IOptions): IReturnOptions
 export function getOptions(patterns?: string[], options?: IOptions): IReturnOptions
 export function getOptions(patterns?: any, options: IOptions = {}): IReturnOptions
 {
-	if (!Array.isArray(patterns) && typeof patterns == 'object')
+	if (!Array.isArray(patterns) && typeof patterns === 'object')
 	{
 		[patterns, options] = [undefined, patterns];
 	}
 
-	if (patterns === null || typeof patterns == 'undefined')
+	if (patterns === null || typeof patterns === 'undefined')
 	{
 		patterns = defaultPatterns;
 	}

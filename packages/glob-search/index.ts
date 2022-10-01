@@ -582,13 +582,13 @@ export function handleArgs<T extends EntryItem = string>(pattern: string | strin
 		return path.normalize(v)
 	});
 
-	if (opts.ignore == null)
-	{
-		opts.ignore = [];
-	}
-	else if (typeof opts.ignore === 'string')
+	if (typeof opts.ignore === 'string')
 	{
 		opts.ignore = [opts.ignore];
+	}
+	else
+	{
+		opts.ignore ??= [];
 	}
 
 	expect(opts.ignore).is.an('array');
