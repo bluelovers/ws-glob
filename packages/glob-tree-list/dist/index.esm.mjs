@@ -1,50 +1,40 @@
 import { SymGlobTree as e } from "@lazy-glob/util";
 
-import { normalize as o, dirname as t, basename as r, sep as l, join as n } from "upath2";
+import { normalize as t, dirname as o, basename as n, sep as l, join as r } from "upath2";
 
-function globToTree(n) {
-  return n.reduce((function(n, u) {
-    u = o(u);
-    let T = t(u), c = r(u);
-    const b = u.slice(-1) === l;
-    if (b && (c += l), "." === T) n[c] = b ? null : c; else {
-      const o = T.split(l);
-      "." === o[0] && o.shift();
-      let t = n;
-      o.forEach((function(e) {
-        t[e += l] = t[e] || {}, t = t[e];
-      })), t[c] = b ? t[c] || {} : c, b && (t[c][e] = !0);
+function globToTree(r) {
+  return r.reduce((function(r, u) {
+    u = t(u);
+    let c = o(u), i = n(u);
+    const f = u.slice(-1) === l;
+    if (f && (i += l), "." === c) r[i] = f ? null : i; else {
+      const t = c.split(l);
+      "." === t[0] && t.shift();
+      let o = r;
+      t.forEach((function(e) {
+        o[e += l] = o[e] || {}, o = o[e];
+      })), o[i] = f ? o[i] || {} : i, f && (o[i][e] = !0);
     }
-    return n;
+    return r;
   }), {});
 }
 
-function treeToGlob(o, t = []) {
-  return Object.entries(o).reduce((function(o, r) {
-    if (null === r[1] || "string" == typeof r[1]) {
-      const e = null === r[1] ? r[0] : r[1];
-      o.push(t.length ? n(...t, e) : e);
+function treeToGlob(t, o = []) {
+  return Object.entries(t).reduce((function(t, n) {
+    if (null === n[1] || "string" == typeof n[1]) {
+      const e = null === n[1] ? n[0] : n[1];
+      t.push(o.length ? r(...o, e) : e);
     } else {
-      const l = treeToGlob(r[1], t.concat(r[0]));
-      if (r[1][e]) {
-        let e = r[0];
-        o.push(t.length ? n(...t, e) : e);
+      const l = treeToGlob(n[1], o.concat(n[0]));
+      if (n[1][e]) {
+        let e = n[0];
+        t.push(o.length ? r(...o, e) : e);
       }
-      o = o.concat(l);
+      t = t.concat(l);
     }
-    return o;
+    return t;
   }), []);
 }
-
-Object.defineProperty(globToTree, "__esModule", {
-  value: !0
-}), Object.defineProperty(globToTree, "globToTree", {
-  value: globToTree
-}), Object.defineProperty(globToTree, "treeToGlob", {
-  value: treeToGlob
-}), Object.defineProperty(globToTree, "default", {
-  value: globToTree
-});
 
 export { globToTree as default, globToTree, treeToGlob };
 //# sourceMappingURL=index.esm.mjs.map

@@ -71,21 +71,21 @@
   },
   "resolutions": {},
   "dependencies": {
-    "jest": "^29.1.2",
+    "jest": "^29.2.0",
     "ts-jest": "^29.0.3",
     "tslib": "^2"
   },
   "devDependencies": {
-    "@bluelovers/tsconfig": "^1.0.30",
+    "@bluelovers/tsconfig": "^1.0.31",
     "@types/chai": "^4.3.3",
     "@types/fs-extra": "^9.0.13",
-    "@types/jest": "^29.1.1",
+    "@types/jest": "^29.1.2",
     "@types/node": "*",
     "@yarn-tool/ws-find-up-paths": "*",
     "cjk-conv": "^1.2.139",
-    "fs-iconv": "^3.1.15"
+    "fs-iconv": "^3.1.16"
   },
   "peerDependencies": {
-    "lerna": "^5"
+    "lerna": "^6"
   }
 }

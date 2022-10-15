@@ -78,7 +78,7 @@
     "tsc:showConfig": "ynpx get-current-tsconfig -p"
   },
   "dependencies": {
-    "@bluelovers/string-natural-compare": "^2.0.9",
+    "@bluelovers/string-natural-compare": "^2.0.11",
     "@lazy-glob/util": "^1.0.11"
   },
   "packageManager": "yarn@1.22.19",

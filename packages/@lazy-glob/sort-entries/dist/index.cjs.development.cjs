@@ -8,14 +8,12 @@ var util = require('@lazy-glob/util');
 function entries_sort(entries, fn = stringNaturalCompare.naturalCompare, cache = {}) {
   entries = entries.reduce(function (a, b) {
     const v = b[1];
-
     if (v === null || typeof v === 'string') {
       a.push(b);
     } else {
       const d = Object.entries(v);
       a.push([b[0], entries_sort(d, fn), v[util.SymGlobTree]]);
     }
-
     return a;
   }, []);
   entries.sort(function (a, b) {
@@ -31,11 +29,9 @@ function entries_reduce(entries) {
     } else {
       a[k] = entries_reduce(v);
     }
-
     if (bool) {
       a[k][util.SymGlobTree] = bool;
     }
-
     return a;
   }, {});
 }
