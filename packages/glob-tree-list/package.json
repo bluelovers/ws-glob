@@ -57,7 +57,7 @@
     "build:dts:bundle": "ynpx dts-bundle-generator -o ./dist/index.d.ts ./src/index.ts --no-banner --inline-declare-global & echo build:dts:bundle",
     "build:dts:copy": "copy .\\src\\index.d.ts .\\dist\\index.d.ts & echo build:dts",
     "build:dts:tsc": "yarn run build:dts:tsc:emit && yarn run build:dts:copy",
-    "build:dts:tsc:emit": "tsc --emitDeclarationOnly --declaration --noEmit false",
+    "build:dts:tsc:emit": "tsc --emitDeclarationOnly --declaration --noEmit false --noPropertyAccessFromIndexSignature false & echo build:dts:tsc:emit",
     "build:tsdx": "ynpx @bluelovers/tsdx build --target node",
     "ci:install": "echo ci:install",
     "ci:build": "echo ci:build",
@@ -83,10 +83,10 @@
     "tsc:showConfig": "ynpx get-current-tsconfig -p"
   },
   "dependencies": {
-    "@bluelovers/string-natural-compare": "^2.0.9",
+    "@bluelovers/string-natural-compare": "^2.0.11",
     "@lazy-glob/sort-entries": "^1.0.10",
     "@lazy-glob/util": "^1.0.11",
-    "upath2": "^3.1.18"
+    "upath2": "^3.1.19"
   },
   "packageManager": "yarn@1.22.19",
   "gitHead": "abd32e1be69b41f53f982edf0f11b65a491014c8"

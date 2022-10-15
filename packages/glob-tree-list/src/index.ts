@@ -119,9 +119,13 @@ export function treeToGlob(a: ITree, d: string[] = []): string[]
 	}, [] as string[]);
 }
 
-Object.defineProperty(globToTree, "__esModule", { value: true });
-Object.defineProperty(globToTree, "globToTree", { value: globToTree });
-Object.defineProperty(globToTree, "treeToGlob", { value: treeToGlob });
-Object.defineProperty(globToTree, "default", { value: globToTree });
+// @ts-ignore
+if (process.env.TSDX_FORMAT !== 'esm')
+{
+	Object.defineProperty(globToTree, "__esModule", { value: true });
+	Object.defineProperty(globToTree, "globToTree", { value: globToTree });
+	Object.defineProperty(globToTree, "treeToGlob", { value: treeToGlob });
+	Object.defineProperty(globToTree, "default", { value: globToTree });
+}
 
 export default globToTree
