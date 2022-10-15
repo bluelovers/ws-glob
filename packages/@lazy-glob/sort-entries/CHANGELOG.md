@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.11](https://github.com/bluelovers/ws-glob/compare/@lazy-glob/sort-entries@1.0.10...@lazy-glob/sort-entries@1.0.11) (2022-10-15)
+
+
+
+### 🛠　Build System
+
+* update build ([70dd844](https://github.com/bluelovers/ws-glob/commit/70dd844d197238514ce8744f2eb0994936f0c132))
+
+
+
 ## [1.0.10](https://github.com/bluelovers/ws-glob/compare/@lazy-glob/sort-entries@1.0.9...@lazy-glob/sort-entries@1.0.10) (2022-10-01)
 
 

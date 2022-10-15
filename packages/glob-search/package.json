@@ -1,6 +1,6 @@
 {
   "name": "glob-search",
-  "version": "2.0.14",
+  "version": "2.0.15",
   "description": "glob search from current cwd up to root or stopPath",
   "keywords": [
     "dir",

@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.23](https://github.com/bluelovers/ws-glob/compare/node-novel-globby@2.0.22...node-novel-globby@2.0.23) (2022-10-15)
+
+
+
+### 🛠　Build System
+
+* update build ([70dd844](https://github.com/bluelovers/ws-glob/commit/70dd844d197238514ce8744f2eb0994936f0c132))
+
+
+
 ## [2.0.22](https://github.com/bluelovers/ws-glob/compare/node-novel-globby@2.0.21...node-novel-globby@2.0.22) (2022-10-01)
 
 

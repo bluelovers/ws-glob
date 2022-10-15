@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.15](https://github.com/bluelovers/ws-glob/compare/glob-search@2.0.14...glob-search@2.0.15) (2022-10-15)
+
+
+
+### 🛠　Build System
+
+* update build ([70dd844](https://github.com/bluelovers/ws-glob/commit/70dd844d197238514ce8744f2eb0994936f0c132))
+
+
+
 ## [2.0.14](https://github.com/bluelovers/ws-glob/compare/glob-search@2.0.13...glob-search@2.0.14) (2022-10-01)
 
 
