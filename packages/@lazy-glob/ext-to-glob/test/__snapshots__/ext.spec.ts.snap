@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`extToGlob 1`] = `".+(cts|mts|umd.ts|ts|tsx|jsx|cjs|mjs|umd.js|js)"`;
+
+exports[`extToRegexpPattern 1`] = `".(cts|mts|umd\\.ts|ts|tsx|jsx|cjs|mjs|umd\\.js|js)$"`;
+
+exports[`removeDotFromExtensions 1`] = `
+[
+  "cts",
+  "mts",
+  "umd.ts",
+  "ts",
+  "tsx",
+  "jsx",
+  "cjs",
+  "mjs",
+  "umd.js",
+  "js",
+]
+`;
