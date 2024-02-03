@@ -1,6 +1,6 @@
 {
   "name": "@lazy-glob/glob-rename",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "",
   "homepage": "https://github.com/bluelovers/ws-glob/tree/master/packages/@lazy-glob/glob-rename#readme",
   "bugs": {
@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "@bluelovers/fast-glob": "^3.0.4",
-    "@lazy-glob/rename": "^1.0.7",
+    "@lazy-glob/rename": "^1.0.8",
     "fs-extra": "^11.2.0",
     "ts-type": "^3.0.1",
     "tslib": "^2"

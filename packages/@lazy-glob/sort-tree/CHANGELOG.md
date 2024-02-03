@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.13](https://github.com/bluelovers/ws-glob/compare/@lazy-glob/sort-tree@1.0.12...@lazy-glob/sort-tree@1.0.13) (2024-02-03)
+
+
+
+### 🔖　Miscellaneous
+
+* . ([188ce07](https://github.com/bluelovers/ws-glob/commit/188ce07e8b49a524be68d73f96fe4f86c9d33c03))
+* . ([1752331](https://github.com/bluelovers/ws-glob/commit/1752331f17849245e403b8619ebdb7f8a4000b9e))
+
+
+
 ## [1.0.12](https://github.com/bluelovers/ws-glob/compare/@lazy-glob/sort-tree@1.0.11...@lazy-glob/sort-tree@1.0.12) (2022-10-15)
 
 **Note:** Version bump only for package @lazy-glob/sort-tree
