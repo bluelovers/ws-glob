@@ -75,7 +75,7 @@
     "tsc:showConfig": "ynpx get-current-tsconfig -p"
   },
   "dependencies": {
-    "regexp-helper-core": "^2.0.2"
+    "regexp-helper-core": "^2.0.8"
   },
   "packageManager": "yarn@1.22.19",
   "publishConfig": {

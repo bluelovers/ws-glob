@@ -26,7 +26,7 @@ exports.globbyASync = globbyASync;
         return (0, types_1.returnGlobList)((0, index_1.globbySync)(patterns, options), options);
     }
     globbyASync.sync = sync;
-})(globbyASync = exports.globbyASync || (exports.globbyASync = {}));
+})(globbyASync || (exports.globbyASync = globbyASync = {}));
 exports.globbySync = globbyASync.sync;
 globbyASync.async = globbyASync;
 exports.async = globbyASync;

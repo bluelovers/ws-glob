@@ -39,7 +39,7 @@
     "tslib": "^2"
   },
   "devDependencies": {
-    "@types/glob": "^8.0.0"
+    "@types/glob": "^8.1.0"
   },
   "publishConfig": {
     "access": "public"

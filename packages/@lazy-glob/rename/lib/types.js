@@ -5,10 +5,10 @@ var EnumWildcard;
 (function (EnumWildcard) {
     EnumWildcard["Asterisk"] = "*";
     EnumWildcard["QuestionMark"] = "?";
-})(EnumWildcard = exports.EnumWildcard || (exports.EnumWildcard = {}));
+})(EnumWildcard || (exports.EnumWildcard = EnumWildcard = {}));
 var EnumPartsAstType;
 (function (EnumPartsAstType) {
     EnumPartsAstType["wildcard"] = "wildcard";
     EnumPartsAstType["literal"] = "literal";
-})(EnumPartsAstType = exports.EnumPartsAstType || (exports.EnumPartsAstType = {}));
+})(EnumPartsAstType || (exports.EnumPartsAstType = EnumPartsAstType = {}));
 //# sourceMappingURL=types.js.map

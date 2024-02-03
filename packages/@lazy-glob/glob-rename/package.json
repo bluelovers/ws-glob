@@ -31,7 +31,7 @@
   "dependencies": {
     "@bluelovers/fast-glob": "^3.0.4",
     "@lazy-glob/rename": "^1.0.7",
-    "fs-extra": "^10.1.0",
+    "fs-extra": "^11.2.0",
     "ts-type": "^3.0.1",
     "tslib": "^2"
   },
